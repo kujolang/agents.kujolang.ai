@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="{{lang}}" data-theme="kujo-light">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{page_title}}</title>
+	<meta name="description" content="{{meta_description}}">
+	<meta name="keywords" content="{{seo_keywords}}">
+	<meta name="author" content="{{author_meta}}">
+	{{canonical_tag}}
+	<link rel="icon" type="image/svg+xml" href="{{relative_path}}assets/images/favicon.svg">
+	{{rss_link_tag}}
+	<meta property="og:title" content="{{seo_title}}">
+	<meta property="og:description" content="{{seo_description}}">
+	<meta property="og:url" content="{{og_url}}">
+	<meta property="og:type" content="{{og_type}}">
+	<meta property="og:site_name" content="{{site_title}}">
+	<meta property="og:locale" content="{{og_locale}}">
+	{{og_image_tag}}
+	{{og_article_tags}}
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="{{seo_title}}">
+	<meta name="twitter:description" content="{{seo_description}}">
+	{{twitter_image_tag}}
+	<link rel="stylesheet" href="{{relative_path}}assets/sitekit/sitekit.css?v=1.0.0">
+	<link rel="stylesheet" href="{{relative_path}}assets/css/site.css?v=20260809">
+	{{json_ld}}
+</head>
+<body>
+	<a class="sk-skip-link" href="#main-content">Skip to main content</a>
+
+	<header class="sk-header">
+		<div class="sk-header__inner">
+			<a class="brand-lockup" href="{{home_path}}" aria-label="Kujo Agents home">
+				<img src="{{relative_path}}assets/images/kujo-logomark.svg" alt="" width="36" height="36">
+				<span>Kujo Agents</span>
+			</a>
+			<nav aria-label="Primary">
+				<ul class="site-nav">{{navigation}}</ul>
+			</nav>
+			<div class="sk-header__actions">
+				<a class="sk-button" data-variant="secondary" href="https://github.com/kujolang/kujo-agents/tree/main/chain-of-command">Source</a>
+			</div>
+		</div>
+	</header>
+
+	{{content}}
+
+	<footer class="sk-footer">
+		<div class="sk-footer__inner">
+			<p>Kujo Agents</p>
+			<nav aria-label="Footer">
+				<a href="{{home_path}}">Home</a>
+				<a href="{{relative_path}}agents/">Agents</a>
+				<a href="https://kujolang.ai">Kujolang.ai</a>
+				<a href="https://github.com/kujolang/kujo-agents">GitHub</a>
+			</nav>
+			<small>Built with Kujo SSG and SiteKit.</small>
+		</div>
+	</footer>
+	<script src="{{relative_path}}assets/sitekit/sitekit.js" defer></script>
+</body>
+</html>
