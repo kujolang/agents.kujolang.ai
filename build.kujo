@@ -2979,7 +2979,12 @@ func normalize_settings(settings) {
 	settings["site_title"] = trim(to_string(settings["site_title"]))
 	settings["site_tagline"] = trim(to_string(settings["site_tagline"]))
 	settings["site_url"] = trim(to_string(settings["site_url"]))
-	settings["blog_slug"] = clean_slug(to_string(settings["blog_slug"]))
+	raw_blog_slug := trim(to_string(settings["blog_slug"]))
+	if len(raw_blog_slug) == 0 {
+		settings["blog_slug"] = ""
+	} else {
+		settings["blog_slug"] = clean_slug(raw_blog_slug)
+	}
 
 	raw_posts_per_page := settings["posts_per_page"]
 	settings["posts_per_page"] = parse_int_value(raw_posts_per_page, 5)
