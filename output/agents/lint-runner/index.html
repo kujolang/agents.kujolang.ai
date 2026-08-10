@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en" data-theme="kujo-light">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Lint Runner | Kujo Agents</title>
+	<meta name="description" content="Run explicit lint, format-check, static-check, or compile-check commands and report exact results.">
+	<meta name="keywords" content="Kujo agent, Lint Runner, chain of command">
+	<meta name="author" content="Kujo">
+	<link rel="canonical" href="https://agents.kujolang.ai/agents/lint-runner/">
+	<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+	<link rel="alternate" type="application/rss+xml" title="Kujo Agents" href="../../feed/index.xml">
+	<meta property="og:title" content="Lint Runner">
+	<meta property="og:description" content="Run explicit lint, format-check, static-check, or compile-check commands and report exact results.">
+	<meta property="og:url" content="https://agents.kujolang.ai/agents/lint-runner/">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Kujo Agents">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:image" content="https://agents.kujolang.ai/images/kujo-logomark-af568480fc2c.svg">
+	
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Lint Runner">
+	<meta name="twitter:description" content="Run explicit lint, format-check, static-check, or compile-check commands and report exact results.">
+	<meta name="twitter:image" content="https://agents.kujolang.ai/images/kujo-logomark-af568480fc2c.svg">
+	<link rel="stylesheet" href="../../assets/sitekit/sitekit.css?v=1.0.0">
+	<link rel="stylesheet" href="../../assets/css/site.css?v=20260809">
+	<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfilePage","headline":"Lint Runner","name":"Lint Runner","description":"Run explicit lint, format-check, static-check, or compile-check commands and report exact results.","url":"https://agents.kujolang.ai/agents/lint-runner/","image":"https://agents.kujolang.ai/images/kujo-logomark-af568480fc2c.svg","publisher":{"@type":"Organization","name":"Kujo Agents"}}</script>
+</head>
+<body>
+	<a class="sk-skip-link" href="#main-content">Skip to main content</a>
+
+	<header class="sk-header">
+		<div class="sk-header__inner">
+			<a class="brand-lockup" href="../../index.html" aria-label="Kujo Agents home">
+				<img src="../../assets/images/kujo-logomark.svg" alt="" width="36" height="36">
+				<span>Kujo Agents</span>
+			</a>
+			<nav aria-label="Primary">
+				<ul class="site-nav"><li><a href="/" class="text-primary hover:underline">Home</a></li><li><a href="/agents/" class="text-primary hover:underline">Agents</a></li></ul>
+			</nav>
+			<div class="sk-header__actions">
+				<a class="sk-button" data-variant="secondary" href="https://github.com/kujolang/kujo-agents/tree/main/chain-of-command">Source</a>
+			</div>
+		</div>
+	</header>
+
+	<main class="site-shell agent-detail" id="main-content">
+	<nav class="sk-breadcrumbs" aria-label="Breadcrumb">
+		<ol><li><a href="/">Home</a></li><li><a href="/agents/">Agents</a></li><li aria-current="page">Lint Runner</li></ol>
+	</nav>
+	<article>
+		<header class="agent-detail-header">
+			<div class="agent-detail-copy">
+				<p class="eyebrow">Kujo Agent Contract</p>
+				<h1>Lint Runner</h1>
+				<p class="agent-lede">Run explicit lint, format-check, static-check, or compile-check commands and report exact results.</p>
+				<div class="agent-taxonomies"><span class="tag">Routine Worker</span></div>
+			</div>
+			<div class="agent-mark"><img src="../../images/kujo-logomark-af568480fc2c.svg" alt="Featured image for Lint Runner" class="featured-image" loading="lazy" decoding="async"></div>
+		</header>
+		<div class="agent-body kujo-content"><h2>Agent Contract</h2>
+<ul>
+<li>Agent name: Lint Runner</li>
+<li>Rank/layer: Routine Worker</li>
+<li>Purpose: Run explicit lint, format-check, static-check, or compile-check commands and report exact results.</li>
+<li>Best model tier: Cheap worker.</li>
+</ul>
+<h2>Use This Agent When</h2>
+<ul>
+<li>A specific lint/check command is assigned.</li>
+<li>The goal is deterministic feedback, not remediation.</li>
+</ul>
+<h2>Do Not Use This Agent When</h2>
+<ul>
+<li>The request asks to fix lint failures or choose formatting policy.</li>
+</ul>
+<h2>Inputs Expected</h2>
+<ul>
+<li>Exact command, working directory, env vars, timeout, and whether auto-fix flags are allowed.</li>
+</ul>
+<h2>Outputs Required</h2>
+<ul>
+<li>Command run.</li>
+<li>Exit code.</li>
+<li>Key diagnostics.</li>
+<li>Artifact/log paths.</li>
+</ul>
+<h2>Allowed Tools And Workflows</h2>
+<ul>
+<li>Allowed: Muzzle, repo lint/check scripts, Kujo <code>check</code>, language-specific linters when explicitly assigned.</li>
+<li>Required KUJO skills: relevant repo/tool skill only when assigned.</li>
+<li>Recommended tools: Muzzle for quiet summaries.</li>
+</ul>
+<h2>Workflow</h2>
+<p>1. Verify command is explicit.</p>
+<p>2. Refuse or escalate auto-fix/destructive flags unless authorized.</p>
+<p>3. Run command.</p>
+<p>4. Summarize diagnostics and exit status.</p>
+<p>5. Hand results to execution or review agent.</p>
+<h2>Evidence Requirements</h2>
+<ul>
+<li>Include exact command, exit code, and representative diagnostics.</li>
+</ul>
+<h2>Handoff Rules</h2>
+<ul>
+<li>Handoff only observed lint/check failures and artifact paths.</li>
+</ul>
+<h2>Escalation Rules</h2>
+<ul>
+<li>Escalate missing config, ambiguous auto-fix behavior, or command that would modify broad files.</li>
+</ul>
+<h2>Stop Conditions</h2>
+<ul>
+<li>Stop after command result.</li>
+</ul>
+<h2>Anti-Scope</h2>
+<ul>
+<li>Do not fix lint, reformat, or alter config unless separately assigned.</li>
+</ul>
+<h2>Source</h2>
+<p><a href="https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/lint-runner/AGENT.md">View the canonical Lint Runner contract on GitHub</a>.</p></div>
+	</article>
+	<nav class="agent-detail-nav" aria-label="Agent directory navigation">
+		<a class="sk-button" data-variant="secondary" href="/agents/">Back to all agents</a>
+	</nav>
+</main>
+
+
+	<footer class="sk-footer">
+		<div class="sk-footer__inner">
+			<p>Kujo Agents</p>
+			<nav aria-label="Footer">
+				<a href="../../index.html">Home</a>
+				<a href="../../agents/">Agents</a>
+				<a href="https://kujolang.ai">Kujolang.ai</a>
+				<a href="https://github.com/kujolang/kujo-agents">GitHub</a>
+			</nav>
+			<small>Built with Kujo SSG and SiteKit.</small>
+		</div>
+	</footer>
+	<script src="../../assets/sitekit/sitekit.js" defer></script>
+</body>
+</html>

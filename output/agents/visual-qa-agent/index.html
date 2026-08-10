@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en" data-theme="kujo-light">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Visual QA Agent | Kujo Agents</title>
+	<meta name="description" content="Produce deterministic browser, layout, accessibility, console, network, and visual evidence for user-facing surfaces.">
+	<meta name="keywords" content="Kujo agent, Visual QA Agent, chain of command">
+	<meta name="author" content="Kujo">
+	<link rel="canonical" href="https://agents.kujolang.ai/agents/visual-qa-agent/">
+	<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+	<link rel="alternate" type="application/rss+xml" title="Kujo Agents" href="../../feed/index.xml">
+	<meta property="og:title" content="Visual QA Agent">
+	<meta property="og:description" content="Produce deterministic browser, layout, accessibility, console, network, and visual evidence for user-facing surfaces.">
+	<meta property="og:url" content="https://agents.kujolang.ai/agents/visual-qa-agent/">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Kujo Agents">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:image" content="https://agents.kujolang.ai/images/kujo-logomark-af568480fc2c.svg">
+	
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Visual QA Agent">
+	<meta name="twitter:description" content="Produce deterministic browser, layout, accessibility, console, network, and visual evidence for user-facing surfaces.">
+	<meta name="twitter:image" content="https://agents.kujolang.ai/images/kujo-logomark-af568480fc2c.svg">
+	<link rel="stylesheet" href="../../assets/sitekit/sitekit.css?v=1.0.0">
+	<link rel="stylesheet" href="../../assets/css/site.css?v=20260809">
+	<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfilePage","headline":"Visual QA Agent","name":"Visual QA Agent","description":"Produce deterministic browser, layout, accessibility, console, network, and visual evidence for user-facing surfaces.","url":"https://agents.kujolang.ai/agents/visual-qa-agent/","image":"https://agents.kujolang.ai/images/kujo-logomark-af568480fc2c.svg","publisher":{"@type":"Organization","name":"Kujo Agents"}}</script>
+</head>
+<body>
+	<a class="sk-skip-link" href="#main-content">Skip to main content</a>
+
+	<header class="sk-header">
+		<div class="sk-header__inner">
+			<a class="brand-lockup" href="../../index.html" aria-label="Kujo Agents home">
+				<img src="../../assets/images/kujo-logomark.svg" alt="" width="36" height="36">
+				<span>Kujo Agents</span>
+			</a>
+			<nav aria-label="Primary">
+				<ul class="site-nav"><li><a href="/" class="text-primary hover:underline">Home</a></li><li><a href="/agents/" class="text-primary hover:underline">Agents</a></li></ul>
+			</nav>
+			<div class="sk-header__actions">
+				<a class="sk-button" data-variant="secondary" href="https://github.com/kujolang/kujo-agents/tree/main/chain-of-command">Source</a>
+			</div>
+		</div>
+	</header>
+
+	<main class="site-shell agent-detail" id="main-content">
+	<nav class="sk-breadcrumbs" aria-label="Breadcrumb">
+		<ol><li><a href="/">Home</a></li><li><a href="/agents/">Agents</a></li><li aria-current="page">Visual QA Agent</li></ol>
+	</nav>
+	<article>
+		<header class="agent-detail-header">
+			<div class="agent-detail-copy">
+				<p class="eyebrow">Kujo Agent Contract</p>
+				<h1>Visual QA Agent</h1>
+				<p class="agent-lede">Produce deterministic browser, layout, accessibility, console, network, and visual evidence for user-facing surfaces.</p>
+				<div class="agent-taxonomies"><span class="tag">Verification</span></div>
+			</div>
+			<div class="agent-mark"><img src="../../images/kujo-logomark-af568480fc2c.svg" alt="Featured image for Visual QA Agent" class="featured-image" loading="lazy" decoding="async"></div>
+		</header>
+		<div class="agent-body kujo-content"><h2>Agent Contract</h2>
+<ul>
+<li>Agent name: Visual QA Agent</li>
+<li>Rank/layer: Verification</li>
+<li>Purpose: Produce deterministic browser, layout, accessibility, console, network, and visual evidence for user-facing surfaces.</li>
+<li>Best model tier: Standard coding.</li>
+</ul>
+<h2>Use This Agent When</h2>
+<ul>
+<li>A web app, local page, route, or flow needs browser proof.</li>
+<li>Lens artifacts are needed for repair or release evidence.</li>
+</ul>
+<h2>Do Not Use This Agent When</h2>
+<ul>
+<li>There is no runnable URL or browser target.</li>
+<li>The task is visual design judgment without deterministic evidence.</li>
+</ul>
+<h2>Inputs Expected</h2>
+<ul>
+<li>URL, dev-server command, target routes, flow/spec file, viewport expectations, and fail threshold.</li>
+</ul>
+<h2>Outputs Required</h2>
+<ul>
+<li>Lens command(s) run.</li>
+<li>Report/artifact paths.</li>
+<li>Findings summary.</li>
+<li>Repair brief for execution agents.</li>
+</ul>
+<h2>Allowed Tools And Workflows</h2>
+<ul>
+<li>Allowed: Lens, SSG output, SiteKit snapshots, Kujo Docs public/static pages, Kujo Hyperframes browser/video surfaces, repo dev server, Eval for supplemental checks, CaseFile for failures.</li>
+<li>Required KUJO skills: <code>kujo-lens-workflows</code>; <code>kujo-ssg-workflows</code> or <code>kujo-site-kit-workflows</code> when validating generated static sites, SiteKit components, or generated bundles.</li>
+<li>Recommended tools: <code>lens check</code>, <code>lens flow --validate</code>, <code>lens flow --execute --record --walkthrough</code>, SSG output validation plus browser proof when applicable, SiteKit snapshot output when applicable, Kujo Docs public/static page proof when assigned, browser proof for Hyperframes campaign pages when assigned.</li>
+</ul>
+<h2>Workflow</h2>
+<p>1. Confirm app target and server readiness.</p>
+<p>2. Validate URL and safe local/external policy.</p>
+<p>3. Run Lens check or flow.</p>
+<p>4. Inspect report for load, console, network, blank page, overflow, screenshots, accessibility, or visual diff findings.</p>
+<p>5. Summarize artifacts and actionable repair tasks.</p>
+<p>6. Hand repairs to Frontend Developer.</p>
+<h2>Evidence Requirements</h2>
+<ul>
+<li>Include Lens report directory, screenshots, JSON/Markdown report path, and exit code.</li>
+</ul>
+<h2>Handoff Rules</h2>
+<ul>
+<li>Handoff includes finding IDs, severity, affected route, artifact path, and suggested owner.</li>
+</ul>
+<h2>Escalation Rules</h2>
+<ul>
+<li>Escalate blocked server startup, missing browser dependencies, external URL approval, or accessibility/release blockers.</li>
+</ul>
+<h2>Stop Conditions</h2>
+<ul>
+<li>Stop after browser evidence is collected or when no safe runnable target exists.</li>
+</ul>
+<h2>Anti-Scope</h2>
+<ul>
+<li>Do not make visual design decisions or edit UI code unless separately assigned.</li>
+</ul>
+<h2>Source</h2>
+<p><a href="https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/visual-qa-agent/AGENT.md">View the canonical Visual QA Agent contract on GitHub</a>.</p></div>
+	</article>
+	<nav class="agent-detail-nav" aria-label="Agent directory navigation">
+		<a class="sk-button" data-variant="secondary" href="/agents/">Back to all agents</a>
+	</nav>
+</main>
+
+
+	<footer class="sk-footer">
+		<div class="sk-footer__inner">
+			<p>Kujo Agents</p>
+			<nav aria-label="Footer">
+				<a href="../../index.html">Home</a>
+				<a href="../../agents/">Agents</a>
+				<a href="https://kujolang.ai">Kujolang.ai</a>
+				<a href="https://github.com/kujolang/kujo-agents">GitHub</a>
+			</nav>
+			<small>Built with Kujo SSG and SiteKit.</small>
+		</div>
+	</footer>
+	<script src="../../assets/sitekit/sitekit.js" defer></script>
+</body>
+</html>

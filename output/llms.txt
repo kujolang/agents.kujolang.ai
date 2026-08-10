@@ -1,0 +1,41 @@
+# Kujo Agents
+
+This site contains structured content formatted for LLM-friendly consumption.
+
+## Posts
+
+## Pages
+
+## Agents
+- [Agents index](https://agents.kujolang.ai/agents/)
+- [Chief Of Staff](https://agents.kujolang.ai/agents/chief-of-staff/)
+- [General Commander](https://agents.kujolang.ai/agents/general-commander/)
+- [Product Strategist](https://agents.kujolang.ai/agents/product-strategist/)
+- [Systems Architect](https://agents.kujolang.ai/agents/systems-architect/)
+- [Planner](https://agents.kujolang.ai/agents/planner/)
+- [Research Analyst](https://agents.kujolang.ai/agents/research-analyst/)
+- [Risk Officer](https://agents.kujolang.ai/agents/risk-officer/)
+- [Spec Writer](https://agents.kujolang.ai/agents/spec-writer/)
+- [Backend Developer](https://agents.kujolang.ai/agents/backend-developer/)
+- [Core Developer](https://agents.kujolang.ai/agents/core-developer/)
+- [Frontend Developer](https://agents.kujolang.ai/agents/frontend-developer/)
+- [Integration Engineer](https://agents.kujolang.ai/agents/integration-engineer/)
+- [Tooling Developer](https://agents.kujolang.ai/agents/tooling-developer/)
+- [Code Reviewer](https://agents.kujolang.ai/agents/code-reviewer/)
+- [QA Lead](https://agents.kujolang.ai/agents/qa-lead/)
+- [Release Verifier](https://agents.kujolang.ai/agents/release-verifier/)
+- [Security Reviewer](https://agents.kujolang.ai/agents/security-reviewer/)
+- [Triage Agent](https://agents.kujolang.ai/agents/triage-agent/)
+- [Visual QA Agent](https://agents.kujolang.ai/agents/visual-qa-agent/)
+- [Context Packager](https://agents.kujolang.ai/agents/context-packager/)
+- [Documentation Writer](https://agents.kujolang.ai/agents/documentation-writer/)
+- [SITREP Agent](https://agents.kujolang.ai/agents/sitrep-agent/)
+- [Dependency Scanner](https://agents.kujolang.ai/agents/dependency-scanner/)
+- [Issue Hygiene Worker](https://agents.kujolang.ai/agents/issue-hygiene-worker/)
+- [Lint Runner](https://agents.kujolang.ai/agents/lint-runner/)
+- [Receipt Collector](https://agents.kujolang.ai/agents/receipt-collector/)
+- [Routine Worker](https://agents.kujolang.ai/agents/routine-worker/)
+- [Test Runner](https://agents.kujolang.ai/agents/test-runner/)
+
+## Sitemap
+https://agents.kujolang.ai/sitemap.xml

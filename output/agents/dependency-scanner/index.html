@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en" data-theme="kujo-light">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Dependency Scanner | Kujo Agents</title>
+	<meta name="description" content="Run explicit dependency, package, manifest, lockfile, and package-status checks.">
+	<meta name="keywords" content="Kujo agent, Dependency Scanner, chain of command">
+	<meta name="author" content="Kujo">
+	<link rel="canonical" href="https://agents.kujolang.ai/agents/dependency-scanner/">
+	<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+	<link rel="alternate" type="application/rss+xml" title="Kujo Agents" href="../../feed/index.xml">
+	<meta property="og:title" content="Dependency Scanner">
+	<meta property="og:description" content="Run explicit dependency, package, manifest, lockfile, and package-status checks.">
+	<meta property="og:url" content="https://agents.kujolang.ai/agents/dependency-scanner/">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Kujo Agents">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:image" content="https://agents.kujolang.ai/images/kujo-logomark-af568480fc2c.svg">
+	
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Dependency Scanner">
+	<meta name="twitter:description" content="Run explicit dependency, package, manifest, lockfile, and package-status checks.">
+	<meta name="twitter:image" content="https://agents.kujolang.ai/images/kujo-logomark-af568480fc2c.svg">
+	<link rel="stylesheet" href="../../assets/sitekit/sitekit.css?v=1.0.0">
+	<link rel="stylesheet" href="../../assets/css/site.css?v=20260809">
+	<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfilePage","headline":"Dependency Scanner","name":"Dependency Scanner","description":"Run explicit dependency, package, manifest, lockfile, and package-status checks.","url":"https://agents.kujolang.ai/agents/dependency-scanner/","image":"https://agents.kujolang.ai/images/kujo-logomark-af568480fc2c.svg","publisher":{"@type":"Organization","name":"Kujo Agents"}}</script>
+</head>
+<body>
+	<a class="sk-skip-link" href="#main-content">Skip to main content</a>
+
+	<header class="sk-header">
+		<div class="sk-header__inner">
+			<a class="brand-lockup" href="../../index.html" aria-label="Kujo Agents home">
+				<img src="../../assets/images/kujo-logomark.svg" alt="" width="36" height="36">
+				<span>Kujo Agents</span>
+			</a>
+			<nav aria-label="Primary">
+				<ul class="site-nav"><li><a href="/" class="text-primary hover:underline">Home</a></li><li><a href="/agents/" class="text-primary hover:underline">Agents</a></li></ul>
+			</nav>
+			<div class="sk-header__actions">
+				<a class="sk-button" data-variant="secondary" href="https://github.com/kujolang/kujo-agents/tree/main/chain-of-command">Source</a>
+			</div>
+		</div>
+	</header>
+
+	<main class="site-shell agent-detail" id="main-content">
+	<nav class="sk-breadcrumbs" aria-label="Breadcrumb">
+		<ol><li><a href="/">Home</a></li><li><a href="/agents/">Agents</a></li><li aria-current="page">Dependency Scanner</li></ol>
+	</nav>
+	<article>
+		<header class="agent-detail-header">
+			<div class="agent-detail-copy">
+				<p class="eyebrow">Kujo Agent Contract</p>
+				<h1>Dependency Scanner</h1>
+				<p class="agent-lede">Run explicit dependency, package, manifest, lockfile, and package-status checks.</p>
+				<div class="agent-taxonomies"><span class="tag">Routine Worker</span></div>
+			</div>
+			<div class="agent-mark"><img src="../../images/kujo-logomark-af568480fc2c.svg" alt="Featured image for Dependency Scanner" class="featured-image" loading="lazy" decoding="async"></div>
+		</header>
+		<div class="agent-body kujo-content"><h2>Agent Contract</h2>
+<ul>
+<li>Agent name: Dependency Scanner</li>
+<li>Rank/layer: Routine Worker</li>
+<li>Purpose: Run explicit dependency, package, manifest, lockfile, and package-status checks.</li>
+<li>Best model tier: Cheap worker.</li>
+</ul>
+<h2>Use This Agent When</h2>
+<ul>
+<li>The repo and dependency command are explicit.</li>
+<li>Kennel, Scout, package-manager, or repo scripts should report dependency status.</li>
+</ul>
+<h2>Do Not Use This Agent When</h2>
+<ul>
+<li>The task requires selecting dependency upgrades, resolving conflicts, or changing manifests.</li>
+</ul>
+<h2>Inputs Expected</h2>
+<ul>
+<li>Working directory, exact command, target manifests/lockfiles, expected output, and whether network is allowed.</li>
+</ul>
+<h2>Outputs Required</h2>
+<ul>
+<li>Commands run.</li>
+<li>Exit code.</li>
+<li>Dependency findings.</li>
+<li>Manifest/lockfile touched status if checked.</li>
+</ul>
+<h2>Allowed Tools And Workflows</h2>
+<ul>
+<li>Allowed: Kennel, Scout, package manager commands, ShipCheck when explicitly assigned.</li>
+<li>Required KUJO skills: <code>kujo-kennel-workflows</code>, <code>kujo-scout-workflows</code> as needed.</li>
+<li>Recommended tools: Kennel for Kujo package workflows, Scout for dependency maps.</li>
+</ul>
+<h2>Workflow</h2>
+<p>1. Verify exact dependency command and network policy.</p>
+<p>2. Run command without modifying files unless authorized.</p>
+<p>3. Capture output and artifact paths.</p>
+<p>4. Report findings mechanically.</p>
+<p>5. Hand remediation to Tooling Developer or Risk Officer.</p>
+<h2>Evidence Requirements</h2>
+<ul>
+<li>Include command, exit code, manifest paths, and reported findings.</li>
+</ul>
+<h2>Handoff Rules</h2>
+<ul>
+<li>Handoff upgrade or policy decisions to higher-scope agents.</li>
+</ul>
+<h2>Escalation Rules</h2>
+<ul>
+<li>Escalate network access, lockfile changes, vulnerability prioritization, or trust-policy decisions.</li>
+</ul>
+<h2>Stop Conditions</h2>
+<ul>
+<li>Stop after assigned scan completes.</li>
+</ul>
+<h2>Anti-Scope</h2>
+<ul>
+<li>Do not update dependencies, edit lockfiles, or approve risk.</li>
+</ul>
+<h2>Source</h2>
+<p><a href="https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/dependency-scanner/AGENT.md">View the canonical Dependency Scanner contract on GitHub</a>.</p></div>
+	</article>
+	<nav class="agent-detail-nav" aria-label="Agent directory navigation">
+		<a class="sk-button" data-variant="secondary" href="/agents/">Back to all agents</a>
+	</nav>
+</main>
+
+
+	<footer class="sk-footer">
+		<div class="sk-footer__inner">
+			<p>Kujo Agents</p>
+			<nav aria-label="Footer">
+				<a href="../../index.html">Home</a>
+				<a href="../../agents/">Agents</a>
+				<a href="https://kujolang.ai">Kujolang.ai</a>
+				<a href="https://github.com/kujolang/kujo-agents">GitHub</a>
+			</nav>
+			<small>Built with Kujo SSG and SiteKit.</small>
+		</div>
+	</footer>
+	<script src="../../assets/sitekit/sitekit.js" defer></script>
+</body>
+</html>
