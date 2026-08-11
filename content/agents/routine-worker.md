@@ -7,6 +7,7 @@ seo_title: "Routine Worker"
 seo_description: "Run explicitly assigned local commands or scripts and report exact results without interpretation beyond simple status."
 keywords: "Kujo agent, Routine Worker, chain of command"
 featured_image: "assets/images/kujo-logomark.svg"
+categories: ["Chain of Command"]
 tags: ["Routine Worker"]
 order: 605
 ---

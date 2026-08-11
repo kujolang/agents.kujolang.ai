@@ -7,6 +7,7 @@ seo_title: "Visual QA Agent"
 seo_description: "Produce deterministic browser, layout, accessibility, console, network, and visual evidence for user-facing surfaces."
 keywords: "Kujo agent, Visual QA Agent, chain of command"
 featured_image: "assets/images/kujo-logomark.svg"
+categories: ["Chain of Command"]
 tags: ["Verification"]
 order: 406
 ---

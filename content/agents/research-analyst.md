@@ -6,7 +6,8 @@ excerpt: "Gather repo, API, dependency, workflow, or technical context and separ
 seo_title: "Research Analyst"
 seo_description: "Gather repo, API, dependency, workflow, or technical context and separate confirmed facts from inference."
 keywords: "Kujo agent, Research Analyst, chain of command"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/research-analyst.jpg"
+categories: ["Chain of Command"]
 tags: ["Planning"]
 order: 202
 ---

@@ -7,6 +7,7 @@ seo_title: "QA Lead"
 seo_description: "Define test plans, evidence requirements, acceptance gates, and quality status for a change or release candidate."
 keywords: "Kujo agent, QA Lead, chain of command"
 featured_image: "assets/images/kujo-logomark.svg"
+categories: ["Chain of Command"]
 tags: ["Verification"]
 order: 402
 ---

@@ -7,6 +7,7 @@ seo_title: "Release Verifier"
 seo_description: "Check release readiness, run or coordinate release gates, and report blockers before ship decisions."
 keywords: "Kujo agent, Release Verifier, chain of command"
 featured_image: "assets/images/kujo-logomark.svg"
+categories: ["Chain of Command"]
 tags: ["Verification"]
 order: 403
 ---

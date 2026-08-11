@@ -7,6 +7,7 @@ seo_title: "Documentation Writer"
 seo_description: "Update READMEs, onboarding docs, changelogs, examples, runbooks, and user-facing technical documentation from source-grounded facts."
 keywords: "Kujo agent, Documentation Writer, chain of command"
 featured_image: "assets/images/kujo-logomark.svg"
+categories: ["Chain of Command"]
 tags: ["Knowledge"]
 order: 502
 ---

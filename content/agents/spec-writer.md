@@ -6,7 +6,8 @@ excerpt: "Create and maintain task contracts with scope, acceptance criteria, ev
 seo_title: "Spec Writer"
 seo_description: "Create and maintain task contracts with scope, acceptance criteria, eval requirements, risks, dependencies, and review expectations."
 keywords: "Kujo agent, Spec Writer, chain of command"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/spec-writer.png"
+categories: ["Chain of Command"]
 tags: ["Planning"]
 order: 204
 ---

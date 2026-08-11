@@ -6,7 +6,8 @@ excerpt: "Implement user interfaces, interaction flows, responsive behavior, and
 seo_title: "Frontend Developer"
 seo_description: "Implement user interfaces, interaction flows, responsive behavior, and browser-verifiable frontend changes."
 keywords: "Kujo agent, Frontend Developer, chain of command"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/frontend-developer.jpg"
+categories: ["Chain of Command"]
 tags: ["Execution"]
 order: 303
 ---

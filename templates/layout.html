@@ -23,7 +23,7 @@
 	<meta name="twitter:description" content="{{seo_description}}">
 	{{twitter_image_tag}}
 	<link rel="stylesheet" href="{{relative_path}}assets/sitekit/sitekit.css?v=1.0.0">
-	<link rel="stylesheet" href="{{relative_path}}assets/css/site.css?v=20260809">
+	<link rel="stylesheet" href="{{relative_path}}assets/css/site.css?v=20260810">
 	{{json_ld}}
 </head>
 <body>
@@ -36,10 +36,22 @@
 				<span>Kujo Agents</span>
 			</a>
 			<nav aria-label="Primary">
-				<ul class="site-nav">{{navigation}}</ul>
+				<ul class="site-nav">
+					<li><a href="{{home_path}}">Home</a></li>
+					<li>
+						<details class="site-nav-dropdown">
+							<summary>Agents</summary>
+							<ul>
+								<li><a href="{{relative_path}}agents/">All agents</a></li>
+								<li><a href="{{relative_path}}agents/#chain-of-command">Chain of Command</a></li>
+								<li><a href="{{relative_path}}agents/#webops">WebOps</a></li>
+							</ul>
+						</details>
+					</li>
+				</ul>
 			</nav>
 			<div class="sk-header__actions">
-				<a class="sk-button" data-variant="secondary" href="https://github.com/kujolang/kujo-agents/tree/main/chain-of-command">Source</a>
+				<a class="sk-button" data-variant="secondary" href="https://github.com/kujolang/kujo-agents">Source</a>
 			</div>
 		</div>
 	</header>
@@ -59,5 +71,6 @@
 		</div>
 	</footer>
 	<script src="{{relative_path}}assets/sitekit/sitekit.js" defer></script>
+	<script src="{{relative_path}}assets/js/site.js?v=20260810" defer></script>
 </body>
 </html>

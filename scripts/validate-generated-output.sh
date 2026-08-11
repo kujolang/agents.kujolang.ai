@@ -65,6 +65,24 @@ if [[ -f "$OUT_DIR/feed/index.xml" ]]; then
 	fi
 fi
 
+if [[ -f "$OUT_DIR/index.html" ]]; then
+	if ! grep -q 'class="agent-carousel"' "$OUT_DIR/index.html"; then
+		record_failure "FAIL agent-carousel: homepage does not render grouped agent carousels"
+	fi
+	if ! grep -q 'id="chain-of-command"' "$OUT_DIR/index.html"; then
+		record_failure "FAIL agent-set: homepage does not render the Chain of Command set"
+	fi
+	if ! grep -q 'site-nav-dropdown' "$OUT_DIR/index.html"; then
+		record_failure "FAIL agent-navigation: homepage does not render the Agents dropdown"
+	fi
+	if grep -q 'card-grid agent-grid' "$OUT_DIR/index.html"; then
+		record_failure "FAIL homepage-grid: homepage still renders the old agent grid"
+	fi
+	if ! grep -q '/images/general-commander-' "$OUT_DIR/index.html"; then
+		record_failure "FAIL demo-portrait: homepage does not render the original agent portrait assets"
+	fi
+fi
+
 echo "Checked HTML files: $html_count"
 
 if [[ "$failures" -gt 0 ]]; then

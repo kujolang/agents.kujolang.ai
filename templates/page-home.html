@@ -2,12 +2,12 @@
 	<section class="sk-hero chain-hero" data-layout="split" aria-labelledby="hero-title">
 		<div class="sk-hero__inner">
 			<div class="sk-stack">
-				<p class="eyebrow">Kujo / Chain of Command</p>
+				<p class="eyebrow">Kujo / Agent Library</p>
 				<h1 id="hero-title">{{title}}</h1>
 				<p>{{description}}</p>
 				<div class="sk-hero__actions">
-					<a class="sk-button" href="/agents/">Explore all agents</a>
-					<a class="sk-button" data-variant="secondary" href="https://github.com/kujolang/kujo-agents/tree/main/chain-of-command">View source</a>
+					<a class="sk-button" href="/agents/">Explore agent sets</a>
+					<a class="sk-button" data-variant="secondary" href="https://github.com/kujolang/kujo-agents">View source</a>
 				</div>
 			</div>
 			<div class="hero-mark" aria-hidden="true">
@@ -17,20 +17,21 @@
 	</section>
 
 	<section class="sk-command-strip" aria-label="Roster status">
-		<div><span>Roster</span><strong>28 agents</strong></div>
+		<div><span>Library</span><strong>Growing roster</strong></div>
 		<div><span>Content type</span><strong>Agents</strong></div>
-		<div><span>Source</span><strong>Kujo Agents</strong></div>
+		<div><span>Organization</span><strong>Agent sets</strong></div>
 		<div><span>Status</span><strong>Operational</strong></div>
 	</section>
 
-	<section class="roster-section" aria-labelledby="roster-title">
+	<section class="library-intro" aria-labelledby="roster-title">
 		<div class="section-heading">
 			<div>
 				<p class="eyebrow">Agent directory</p>
-				<h2 id="roster-title">Chain of Command</h2>
+				<h2 id="roster-title">Purpose-built teams</h2>
 			</div>
-			<p>Choose an agent to inspect its contract, inputs, workflow, evidence requirements, and handoff rules.</p>
+			<p>Browse one focused roster at a time. Each row shows three agents on desktop and scrolls horizontally through the complete set.</p>
 		</div>
-		<ul class="card-grid agent-grid">{{featured_storefronts_html}}</ul>
 	</section>
+
+	<div class="agent-sets">{{agent_sets_html}}</div>
 </main>

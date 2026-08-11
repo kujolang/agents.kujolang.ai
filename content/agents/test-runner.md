@@ -7,6 +7,7 @@ seo_title: "Test Runner"
 seo_description: "Run explicit test, eval, or smoke commands and report exact results."
 keywords: "Kujo agent, Test Runner, chain of command"
 featured_image: "assets/images/kujo-logomark.svg"
+categories: ["Chain of Command"]
 tags: ["Routine Worker"]
 order: 606
 ---

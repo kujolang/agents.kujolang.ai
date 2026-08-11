@@ -7,6 +7,7 @@ seo_title: "Triage Agent"
 seo_description: "Review flagged wrong outputs, stopped workflow states, failed handoffs, and abnormal results so the chain can decide whether to resume, reroute, require human review, or coordinate the immediate next response."
 keywords: "Kujo agent, Triage Agent, chain of command"
 featured_image: "assets/images/kujo-logomark.svg"
+categories: ["Chain of Command"]
 tags: ["Verification"]
 order: 405
 ---

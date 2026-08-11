@@ -1,6 +1,6 @@
 site_url: https://agents.kujolang.ai
 site_title: Kujo Agents
-site_tagline: A source-grounded directory of the agents in the Kujo Chain of Command.
+site_tagline: A source-grounded library of specialized Kujo agent sets.
 
 output: output
 content: content

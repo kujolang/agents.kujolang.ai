@@ -2405,10 +2405,56 @@ func listing_card_html_interpreted(route, title, excerpt, featured_image, terms,
 
 	media_block := "<span class=\"listing-card-image-link\"><span class=\"listing-card-image-placeholder\" aria-hidden=\"true\"></span></span>"
 	if len(media_url) > 0 {
-		media_block = "<span class=\"listing-card-image-link\"><img src=\"" + safe_media_url + "\" alt=\"\" class=\"listing-card-image\" loading=\"lazy\" decoding=\"async\"></span>"
+		image_class := "listing-card-image"
+		if contains(media_url, ".svg") {
+			image_class = image_class + " listing-card-image--mark"
+		}
+		media_block = "<span class=\"listing-card-image-link\"><img src=\"" + safe_media_url + "\" alt=\"Agent image for " + safe_title + "\" class=\"" + image_class + "\" loading=\"lazy\" decoding=\"async\"></span>"
 	}
 
-	return "<li class=\"listing-card sk-card\"><a class=\"listing-card-link\" href=\"" + safe_href + "\">" + media_block + "<span class=\"listing-card-body\">" + tags_block + "<span class=\"listing-card-title\">" + safe_title + "</span><span class=\"listing-card-excerpt\">" + safe_excerpt + "</span><span class=\"listing-card-button\">" + safe_button_text + "</span></span></a></li>"
+	return "<li class=\"listing-card agent-card sk-card\"><a class=\"listing-card-link\" href=\"" + safe_href + "\">" + media_block + "<span class=\"listing-card-body\">" + tags_block + "<span class=\"listing-card-title\">" + safe_title + "</span><span class=\"listing-card-excerpt\">" + safe_excerpt + "</span><span class=\"listing-card-button\">" + safe_button_text + "</span><span class=\"listing-card-status\">online</span></span></a></li>"
+}
+
+func agent_sets_html(items) {
+	set_names := []
+	set_cards := {}
+	set_counts := {}
+	item_idx := 0
+	loop {
+		if item_idx >= len(items) {
+			break
+		}
+		item := items[item_idx]
+		item_idx := item_idx + 1
+		set_name := trim(to_string(item["category"]))
+		if len(set_name) == 0 || set_name == "Agents" {
+			set_name = "Other Agents"
+		}
+		if has_key(set_cards, set_name) == 0 {
+			set_names = push(set_names, set_name)
+			set_cards[set_name] = ""
+			set_counts[set_name] = 0
+		}
+		set_cards[set_name] = set_cards[set_name] + listing_card_html(item["route"], item["title"], item["excerpt"], item["featured_image"], item["tags"], "View Agent")
+		set_counts[set_name] = set_counts[set_name] + 1
+	}
+
+	html := ""
+	set_idx := 0
+	loop {
+		if set_idx >= len(set_names) {
+			break
+		}
+		set_name := set_names[set_idx]
+		set_idx := set_idx + 1
+		set_slug := clean_slug(set_name)
+		carousel_id := "agent-set-" + set_slug
+		safe_set_name := html_escape(set_name)
+		safe_carousel_id := xml_escape(carousel_id)
+		count_label := to_string(set_counts[set_name]) + " agents"
+		html = html + "<section class=\"agent-set roster-section\" id=\"" + xml_escape(set_slug) + "\" data-agent-set=\"" + xml_escape(set_name) + "\"><div class=\"section-heading\"><div><p class=\"eyebrow\">Agent set / " + html_escape(count_label) + "</p><h2>" + safe_set_name + "</h2></div><p>Explore the " + safe_set_name + " roster and open any agent to inspect its full operating contract.</p></div><div class=\"agent-carousel-shell\"><div class=\"agent-carousel-controls\"><button class=\"carousel-button\" type=\"button\" data-carousel-prev aria-controls=\"" + safe_carousel_id + "\" aria-label=\"Previous " + safe_set_name + " agents\">&#8592;</button><button class=\"carousel-button\" type=\"button\" data-carousel-next aria-controls=\"" + safe_carousel_id + "\" aria-label=\"Next " + safe_set_name + " agents\">&#8594;</button></div><ul class=\"agent-carousel\" id=\"" + safe_carousel_id + "\" tabindex=\"0\">" + set_cards[set_name] + "</ul></div></section>"
+	}
+	return html
 }
 
 func pad2(n) {
@@ -3407,6 +3453,7 @@ func build_site(settings) {
 	built_pages := []
 	storefront_preview_cards := ""
 	location_preview_cards := ""
+	agent_sets_markup := ""
 	page_data_idx := 0
 	loop {
 		if page_data_idx >= len(pages_data) || !do_finalize {
@@ -3916,6 +3963,7 @@ func build_site(settings) {
 				"description": description,
 				"excerpt": excerpt,
 				"featured_image": featured_image,
+				"category": item_category_text,
 				"tags": tags,
 				"location_terms": location_terms,
 				"route": route,
@@ -3928,6 +3976,9 @@ func build_site(settings) {
 		}
 
 		sorted_collection_items := sort_posts(collection_items, settings["sort_by"])
+		if collection_slug == "agents" {
+			agent_sets_markup = agent_sets_html(sorted_collection_items)
+		}
 		collection_cards := ""
 		preview_cards := ""
 		location_cards := ""
@@ -3974,6 +4025,7 @@ func build_site(settings) {
 				"cards": collection_cards,
 				"items": collection_cards,
 				"posts": collection_cards,
+				"agent_sets_html": agent_sets_markup,
 				"pagination": "",
 				"description": settings["site_tagline"]
 			})
@@ -4078,6 +4130,7 @@ func build_site(settings) {
 					"posts": cards,
 					"featured_posts_html": featured_posts_cards,
 					"featured_storefronts_html": storefront_preview,
+					"agent_sets_html": agent_sets_markup,
 					"featured_locations_html": location_preview,
 					"posts_html": index_posts_html,
 					"pagination": index_pagination,

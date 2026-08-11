@@ -18,6 +18,21 @@ RANK_ORDER = {
     "Routine Worker": 600,
 }
 
+AGENT_IMAGES = {
+    "general-commander": "content/media/agents/general-commander.png",
+    "chief-of-staff": "content/media/agents/chief-of-staff.png",
+    "systems-architect": "content/media/agents/systems-architect.png",
+    "product-strategist": "content/media/agents/product-strategist.png",
+    "planner": "content/media/agents/planner.png",
+    "spec-writer": "content/media/agents/spec-writer.png",
+    "research-analyst": "content/media/agents/research-analyst.jpg",
+    "risk-officer": "content/media/agents/risk-officer.jpg",
+    "core-developer": "content/media/agents/core-developer.jpg",
+    "tooling-developer": "content/media/agents/tooling-developer.jpg",
+    "frontend-developer": "content/media/agents/frontend-developer.jpg",
+    "backend-developer": "content/media/agents/backend-developer.jpg",
+}
+
 
 def field(body: str, name: str) -> str:
     match = re.search(rf"^- {re.escape(name)}:\s*(.+)$", body, re.MULTILINE)
@@ -59,6 +74,7 @@ def main() -> int:
         rank_counts[rank] = rank_counts.get(rank, 0) + 1
         order = RANK_ORDER.get(rank, 900) + rank_counts[rank]
         slug = contract.parent.name
+        featured_image = AGENT_IMAGES.get(slug, "assets/images/kujo-logomark.svg")
         source_url = (
             "https://github.com/kujolang/kujo-agents/blob/main/"
             f"chain-of-command/{slug}/AGENT.md"
@@ -73,7 +89,8 @@ def main() -> int:
             f"seo_title: {json.dumps(title)}",
             f"seo_description: {json.dumps(purpose)}",
             f"keywords: {json.dumps('Kujo agent, ' + title + ', chain of command')}",
-            f"featured_image: {json.dumps('assets/images/kujo-logomark.svg')}",
+            f"featured_image: {json.dumps(featured_image)}",
+            f"categories: [{json.dumps('Chain of Command')}]",
             f"tags: [{json.dumps(rank)}]",
             f"order: {order}",
             "---",

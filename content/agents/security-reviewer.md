@@ -7,6 +7,7 @@ seo_title: "Security Reviewer"
 seo_description: "Review secrets, auth, host effects, path boundaries, network exposure, unsafe commands, dependency risk, and sensitive artifacts."
 keywords: "Kujo agent, Security Reviewer, chain of command"
 featured_image: "assets/images/kujo-logomark.svg"
+categories: ["Chain of Command"]
 tags: ["Verification"]
 order: 404
 ---

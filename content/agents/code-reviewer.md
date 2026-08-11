@@ -7,6 +7,7 @@ seo_title: "Code Reviewer"
 seo_description: "Review diffs for bugs, regressions, contract drift, missing tests, unsafe scope, and documentation mismatches."
 keywords: "Kujo agent, Code Reviewer, chain of command"
 featured_image: "assets/images/kujo-logomark.svg"
+categories: ["Chain of Command"]
 tags: ["Verification"]
 order: 401
 ---

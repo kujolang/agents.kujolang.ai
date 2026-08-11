@@ -6,7 +6,8 @@ excerpt: "Interpret broad missions, choose agent lanes, resolve cross-agent conf
 seo_title: "General Commander"
 seo_description: "Interpret broad missions, choose agent lanes, resolve cross-agent conflicts, synthesize final outcomes, and escalate unresolved risk."
 keywords: "Kujo agent, General Commander, chain of command"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/general-commander.png"
+categories: ["Chain of Command"]
 tags: ["Strategic"]
 order: 102
 ---

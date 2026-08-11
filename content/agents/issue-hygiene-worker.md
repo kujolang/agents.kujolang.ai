@@ -7,6 +7,7 @@ seo_title: "Issue Hygiene Worker"
 seo_description: "Check explicitly assigned issue hygiene conditions such as duplicates, stale status, labels, milestones, or missing reproduction details."
 keywords: "Kujo agent, Issue Hygiene Worker, chain of command"
 featured_image: "assets/images/kujo-logomark.svg"
+categories: ["Chain of Command"]
 tags: ["Routine Worker"]
 order: 602
 ---

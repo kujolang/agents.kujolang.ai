@@ -7,6 +7,7 @@ seo_title: "Integration Engineer"
 seo_description: "Connect GitHub/GitLab, MCP, CI, external services, deployment systems, telemetry, provider adapters, and workflow orchestration boundaries."
 keywords: "Kujo agent, Integration Engineer, chain of command"
 featured_image: "assets/images/kujo-logomark.svg"
+categories: ["Chain of Command"]
 tags: ["Execution"]
 order: 304
 ---
