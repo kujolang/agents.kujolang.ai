@@ -30,3 +30,47 @@ document.addEventListener("click", (event) => {
 		if (!dropdown.contains(event.target)) dropdown.removeAttribute("open");
 	});
 });
+
+document.querySelectorAll("[data-agent-directory-grid]").forEach((grid) => {
+	const categoryFilter = document.querySelector("[data-agent-category-filter]");
+	const sortControl = document.querySelector("[data-agent-sort]");
+	const results = document.querySelector("[data-agent-results]");
+	const cards = Array.from(grid.querySelectorAll(".listing-card"));
+
+	if (!categoryFilter || !sortControl || cards.length === 0) return;
+
+	const compareText = (a, b) => a.localeCompare(b, undefined, { sensitivity: "base" });
+	const cardValue = (card, key) => card.dataset[key] || "";
+
+	const refresh = () => {
+		const category = categoryFilter.value;
+		const sort = sortControl.value;
+		const sorted = [...cards].sort((a, b) => {
+			const aTitle = cardValue(a, "agentTitle");
+			const bTitle = cardValue(b, "agentTitle");
+			if (sort === "az") return compareText(aTitle, bTitle);
+			if (sort === "za") return compareText(bTitle, aTitle);
+			if (sort === "updated-desc") {
+				return compareText(cardValue(b, "agentUpdated"), cardValue(a, "agentUpdated")) || compareText(aTitle, bTitle);
+			}
+			if (sort === "updated-asc") {
+				return compareText(cardValue(a, "agentUpdated"), cardValue(b, "agentUpdated")) || compareText(aTitle, bTitle);
+			}
+			return Number(cardValue(a, "agentOrder")) - Number(cardValue(b, "agentOrder"));
+		});
+
+		let visible = 0;
+		sorted.forEach((card) => {
+			const matches = category === "all" || cardValue(card, "agentCategory") === category;
+			card.hidden = !matches;
+			if (matches) visible += 1;
+			grid.append(card);
+		});
+
+		if (results) results.textContent = `${visible} ${visible === 1 ? "agent" : "agents"}`;
+	};
+
+	categoryFilter.addEventListener("change", refresh);
+	sortControl.addEventListener("change", refresh);
+	refresh();
+});
