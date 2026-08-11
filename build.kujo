@@ -624,6 +624,7 @@ func parse_frontmatter(content, source_file) {
 		"lang": "en",
 		"canonical": "",
 		"featured_image": "",
+		"social_image": "",
 		"custom_url": "",
 			"template": "",
 			"draft": false,
@@ -1019,7 +1020,7 @@ func is_reserved_frontmatter_key(key_name) {
 	if key == "description" || key == "keywords" || key == "seo_title" || key == "seo_description" || key == "lang" || key == "canonical" {
 		return true
 	}
-	if key == "featured_image" || key == "custom_url" || key == "template" || key == "draft" || key == "order" || key == "excerpt" || key == "nav_hide" {
+	if key == "featured_image" || key == "social_image" || key == "custom_url" || key == "template" || key == "draft" || key == "order" || key == "excerpt" || key == "nav_hide" {
 		return true
 	}
 	return false
@@ -1761,7 +1762,10 @@ func render_layout_interpreted(layout_template, settings, route, page_title, met
 		og_url = route_absolute_url(site_url, route)
 	}
 
-	raw_featured := meta_string(page_meta, "featured_image", "")
+	raw_featured := meta_string(page_meta, "social_image", "")
+	if len(raw_featured) == 0 {
+		raw_featured = meta_string(page_meta, "featured_image", "")
+	}
 	# Social cards need absolute URLs; fall back to a prefix-relative path
 	# only when no site_url is configured.
 	social_image := absolute_media_url(raw_featured, site_url)
@@ -1781,8 +1785,9 @@ func render_layout_interpreted(layout_template, settings, route, page_title, met
 	twitter_image_tag := ""
 	if len(social_image) > 0 {
 		safe_image := xml_escape(social_image)
-		og_image_tag = "<meta property=\"og:image\" content=\"" + safe_image + "\">"
-		twitter_image_tag = "<meta name=\"twitter:image\" content=\"" + safe_image + "\">"
+		safe_image_alt := xml_escape(seo_title + " social preview")
+		og_image_tag = "<meta property=\"og:image\" content=\"" + safe_image + "\">\n\t<meta property=\"og:image:type\" content=\"image/jpeg\">\n\t<meta property=\"og:image:width\" content=\"1200\">\n\t<meta property=\"og:image:height\" content=\"630\">\n\t<meta property=\"og:image:alt\" content=\"" + safe_image_alt + "\">"
+		twitter_image_tag = "<meta name=\"twitter:image\" content=\"" + safe_image + "\">\n\t<meta name=\"twitter:image:alt\" content=\"" + safe_image_alt + "\">"
 	}
 
 	og_type := to_lower(meta_string(page_meta, "og_type", "website"))
@@ -4003,9 +4008,11 @@ func build_site(settings) {
 
 			item_og_type := "article"
 			item_schema_type := ""
+			item_social_image := ""
 			if collection_slug == "agents" {
 				item_og_type = "website"
 				item_schema_type = "SoftwareSourceCode"
+				item_social_image = "/assets/images/social/" + slug + ".jpg"
 			}
 			item_html := render_layout(
 				layout_template,
@@ -4022,6 +4029,7 @@ func build_site(settings) {
 					"lang": lang,
 					"canonical": canonical,
 					"featured_image": featured_image,
+					"social_image": item_social_image,
 					"author": item_author_name,
 					"og_type": item_og_type,
 					"schema_type": item_schema_type,
@@ -4151,6 +4159,7 @@ func build_site(settings) {
 				"seo_title": collection_title,
 				"seo_description": "Browse source-grounded Kujo agent contracts for planning, implementation, verification, research, security, and operations.",
 				"featured_image": "/assets/images/agent-hero-background.webp",
+				"social_image": "/assets/images/social/agents.jpg",
 				"schema_type": "CollectionPage",
 				"lang": "en"
 			}
@@ -4207,6 +4216,7 @@ func build_site(settings) {
 							"schema_type": "CollectionPage",
 							"robots": agent_set_robots,
 							"featured_image": "/assets/images/agent-hero-background.webp",
+							"social_image": "/assets/images/social/agents-" + agent_set_page["slug"] + ".jpg",
 							"lang": "en"
 						}
 					)
@@ -4324,6 +4334,7 @@ func build_site(settings) {
 					"seo_title": settings["site_title"],
 					"seo_description": settings["site_tagline"],
 					"featured_image": "/assets/images/agent-hero-background.webp",
+					"social_image": "/assets/images/social/home.jpg",
 					"lang": "en"
 				}
 			)
@@ -4497,6 +4508,7 @@ func build_site(settings) {
 			"canonical": "none",
 			"og_url": site_url + "/404.html",
 			"robots": "noindex,follow",
+			"social_image": "/assets/images/social/404.jpg",
 			"schema_type": "none",
 			"lang": "en"
 		}

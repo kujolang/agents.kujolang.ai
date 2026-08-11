@@ -10,6 +10,8 @@ fi
 
 failures=0
 html_count=0
+social_images_file="$(mktemp)"
+trap 'rm -f "$social_images_file"' EXIT
 
 record_failure() {
 	echo "$1"
@@ -43,6 +45,27 @@ while IFS= read -r html_file; do
 			record_failure "FAIL image-dimensions: $html_file"
 		fi
 	fi
+
+	social_image="$(grep -Eio '<meta property="og:image" content="[^"]+"' "$html_file" | sed -E 's/.*content="([^"]+)"/\1/' | head -n 1)"
+	if [[ -z "$social_image" ]]; then
+		record_failure "FAIL og-image: $html_file"
+	else
+		printf '%s\t%s\n' "$social_image" "$html_file" >> "$social_images_file"
+		if [[ ! "$social_image" =~ ^https://agents\.kujolang\.ai/assets/images/social/[a-z0-9-]+\.jpg$ ]]; then
+			record_failure "FAIL og-image-url: $html_file uses $social_image"
+		else
+			social_asset="${social_image#https://agents.kujolang.ai/}"
+			if [[ ! -f "$OUT_DIR/$social_asset" ]]; then
+				record_failure "FAIL og-image-file: $html_file references missing $OUT_DIR/$social_asset"
+			fi
+		fi
+	fi
+
+	for required_social_meta in 'og:image:type' 'og:image:width' 'og:image:height' 'og:image:alt' 'twitter:image' 'twitter:image:alt'; do
+		if ! grep -Fq "$required_social_meta" "$html_file"; then
+			record_failure "FAIL social-meta-$required_social_meta: $html_file"
+		fi
+	done
 
 	if grep -qi 'class="skip-link"' "$html_file"; then
 		if ! grep -qi 'id="main-content"' "$html_file"; then
@@ -80,6 +103,11 @@ fi
 
 if [[ "$html_count" -eq 0 ]]; then
 	record_failure "FAIL no-html: no HTML files found in $OUT_DIR"
+fi
+
+unique_social_images="$(cut -f1 "$social_images_file" | sort -u | wc -l | tr -d ' ')"
+if [[ "$unique_social_images" -ne "$html_count" ]]; then
+	record_failure "FAIL social-image-uniqueness: $html_count pages use $unique_social_images unique images"
 fi
 
 if [[ -f "$OUT_DIR/sitemap.xml" ]]; then
