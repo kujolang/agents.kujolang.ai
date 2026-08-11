@@ -3,14 +3,14 @@ title: "Documentation Writer"
 custom_url: "documentation-writer"
 description: "Update READMEs, onboarding docs, changelogs, examples, runbooks, and user-facing technical documentation from source-grounded facts."
 excerpt: "Update READMEs, onboarding docs, changelogs, examples, runbooks, and user-facing technical documentation from source-grounded facts."
-seo_title: "Documentation Writer"
+seo_title: "Documentation Writer | Kujo Chain of Command"
 seo_description: "Update READMEs, onboarding docs, changelogs, examples, runbooks, and user-facing technical documentation from source-grounded facts."
-keywords: "Kujo agent, Documentation Writer, chain of command"
+keywords: "Kujo agent, chain of command, Documentation Writer"
 featured_image: "assets/images/kujo-logomark.svg"
 categories: ["Chain of Command"]
 tags: ["Knowledge"]
-order: 21
-last_updated: 2026-08-10
+order: 20
+last_updated: 2026-08-08
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/documentation-writer/AGENT.md"
 ---
 ## Agent Contract

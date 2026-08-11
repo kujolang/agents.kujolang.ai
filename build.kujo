@@ -4174,7 +4174,7 @@ func build_site(settings) {
 					{
 						"title": "WebOps",
 						"slug": "webops",
-						"description": "Web operations agents are joining the directory soon.",
+						"description": "A coordinated roster for technical SEO, content intelligence, site quality, search analytics, and safe WebOps operations.",
 						"cards": webops_cards
 					}
 				]
@@ -4192,9 +4192,6 @@ func build_site(settings) {
 						"cards": agent_set_page["cards"]
 					})
 					agent_set_robots := ""
-					if agent_set_page["slug"] == "webops" {
-						agent_set_robots = "noindex,follow"
-					}
 					agent_set_navigation := build_navigation(pages_data, custom_collections, agent_set_route, settings["blog_slug"])
 					agent_set_html := render_layout(
 						layout_template,
@@ -4215,7 +4212,7 @@ func build_site(settings) {
 					)
 					write_route_page(output_dir, agent_set_route, agent_set_html)
 					write_route_alias(output_dir, agent_set_route, make_aliases)
-					if want_sitemap && agent_set_page["slug"] != "webops" {
+					if want_sitemap {
 						append_file(sitemap_tmp, sitemap_url_entry(site_url, agent_set_route, "", blog_prefix))
 					}
 				}

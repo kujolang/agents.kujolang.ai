@@ -65,12 +65,17 @@ if [[ -f "$OUT_DIR/404.html" ]]; then
 fi
 
 if [[ -f "$OUT_DIR/agents/webops/index.html" ]]; then
-	if ! grep -qi '<meta name="robots" content="noindex,follow">' "$OUT_DIR/agents/webops/index.html"; then
-		record_failure "FAIL webops-indexability: placeholder collection must be noindex,follow"
+	if grep -qi '<meta name="robots" content="noindex' "$OUT_DIR/agents/webops/index.html"; then
+		record_failure "FAIL webops-indexability: populated collection must be indexable"
 	fi
-	if [[ -f "$OUT_DIR/sitemap.xml" ]] && grep -q 'https://agents.kujolang.ai/agents/webops/' "$OUT_DIR/sitemap.xml"; then
-		record_failure "FAIL webops-sitemap: noindex placeholder collection is in sitemap"
+	if [[ -f "$OUT_DIR/sitemap.xml" ]] && ! grep -q 'https://agents.kujolang.ai/agents/webops/' "$OUT_DIR/sitemap.xml"; then
+		record_failure "FAIL webops-sitemap: populated collection is missing from sitemap"
 	fi
+	webops_count="$(find "$OUT_DIR/agents" -mindepth 2 -maxdepth 2 -name index.html -type f -exec grep -l 'WebOps' {} + | wc -l | tr -d ' ')"
+	if [[ "$webops_count" -lt 28 ]]; then record_failure "FAIL webops-count: expected at least 28 individual WebOps pages, found $webops_count"; fi
+	if ! grep -q 'class="card-grid agent-category-grid"' "$OUT_DIR/agents/webops/index.html"; then record_failure "FAIL webops-collection: missing agent card grid"; fi
+	if grep -Eqi 'coming soon|placeholder|lorem ipsum' "$OUT_DIR/agents/webops/index.html"; then record_failure "FAIL webops-placeholder: collection contains placeholder copy"; fi
+	if ! grep -q '/assets/images/kujo-logomark.svg' "$OUT_DIR/agents/webops/index.html"; then record_failure "FAIL webops-fallback-image: generic Kujo image is absent"; fi
 fi
 
 if [[ "$html_count" -eq 0 ]]; then
@@ -95,6 +100,9 @@ if [[ -f "$OUT_DIR/index.html" ]]; then
 	fi
 	if ! grep -q 'id="chain-of-command"' "$OUT_DIR/index.html"; then
 		record_failure "FAIL agent-set: homepage does not render the Chain of Command set"
+	fi
+	if ! grep -q 'id="webops"' "$OUT_DIR/index.html"; then
+		record_failure "FAIL agent-set: homepage does not render the WebOps set"
 	fi
 	if ! grep -q 'href="/agents/chain-of-command/">Chain of Command</a>' "$OUT_DIR/index.html" || ! grep -q 'href="/agents/webops/">WebOps</a>' "$OUT_DIR/index.html"; then
 		record_failure "FAIL agent-navigation: homepage does not render both direct agent-set links"

@@ -3,14 +3,14 @@ title: "Core Developer"
 custom_url: "core-developer"
 description: "Implement bounded source changes and focused tests inside an assigned scope."
 excerpt: "Implement bounded source changes and focused tests inside an assigned scope."
-seo_title: "Core Developer"
+seo_title: "Core Developer | Kujo Chain of Command"
 seo_description: "Implement bounded source changes and focused tests inside an assigned scope."
-keywords: "Kujo agent, Core Developer, chain of command"
+keywords: "Kujo agent, chain of command, Core Developer"
 featured_image: "content/media/agents/core-developer.webp"
 categories: ["Chain of Command"]
 tags: ["Execution"]
 order: 9
-last_updated: 2026-08-10
+last_updated: 2026-07-05
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/core-developer/AGENT.md"
 ---
 ## Agent Contract

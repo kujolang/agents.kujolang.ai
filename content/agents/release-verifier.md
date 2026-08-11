@@ -3,14 +3,14 @@ title: "Release Verifier"
 custom_url: "release-verifier"
 description: "Check release readiness, run or coordinate release gates, and report blockers before ship decisions."
 excerpt: "Check release readiness, run or coordinate release gates, and report blockers before ship decisions."
-seo_title: "Release Verifier"
+seo_title: "Release Verifier | Kujo Chain of Command"
 seo_description: "Check release readiness, run or coordinate release gates, and report blockers before ship decisions."
-keywords: "Kujo agent, Release Verifier, chain of command"
+keywords: "Kujo agent, chain of command, Release Verifier"
 featured_image: "assets/images/kujo-logomark.svg"
 categories: ["Chain of Command"]
 tags: ["Verification"]
 order: 18
-last_updated: 2026-08-10
+last_updated: 2026-08-01
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/release-verifier/AGENT.md"
 ---
 ## Agent Contract

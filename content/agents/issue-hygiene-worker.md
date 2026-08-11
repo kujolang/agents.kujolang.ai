@@ -3,14 +3,14 @@ title: "Issue Hygiene Worker"
 custom_url: "issue-hygiene-worker"
 description: "Check explicitly assigned issue hygiene conditions such as duplicates, stale status, labels, milestones, or missing reproduction details."
 excerpt: "Check explicitly assigned issue hygiene conditions such as duplicates, stale status, labels, milestones, or missing reproduction details."
-seo_title: "Issue Hygiene Worker"
+seo_title: "Issue Hygiene Worker | Kujo Chain of Command"
 seo_description: "Check explicitly assigned issue hygiene conditions such as duplicates, stale status, labels, milestones, or missing reproduction details."
-keywords: "Kujo agent, Issue Hygiene Worker, chain of command"
+keywords: "Kujo agent, chain of command, Issue Hygiene Worker"
 featured_image: "assets/images/kujo-logomark.svg"
 categories: ["Chain of Command"]
 tags: ["Routine Worker"]
-order: 27
-last_updated: 2026-08-10
+order: 26
+last_updated: 2026-07-05
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/issue-hygiene-worker/AGENT.md"
 ---
 ## Agent Contract

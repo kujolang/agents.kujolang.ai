@@ -3,14 +3,14 @@ title: "Test Runner"
 custom_url: "test-runner"
 description: "Run explicit test, eval, or smoke commands and report exact results."
 excerpt: "Run explicit test, eval, or smoke commands and report exact results."
-seo_title: "Test Runner"
+seo_title: "Test Runner | Kujo Chain of Command"
 seo_description: "Run explicit test, eval, or smoke commands and report exact results."
-keywords: "Kujo agent, Test Runner, chain of command"
+keywords: "Kujo agent, chain of command, Test Runner"
 featured_image: "assets/images/kujo-logomark.svg"
 categories: ["Chain of Command"]
 tags: ["Routine Worker"]
-order: 25
-last_updated: 2026-08-10
+order: 24
+last_updated: 2026-07-18
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/test-runner/AGENT.md"
 ---
 ## Agent Contract

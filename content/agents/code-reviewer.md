@@ -3,14 +3,14 @@ title: "Code Reviewer"
 custom_url: "code-reviewer"
 description: "Review diffs for bugs, regressions, contract drift, missing tests, unsafe scope, and documentation mismatches."
 excerpt: "Review diffs for bugs, regressions, contract drift, missing tests, unsafe scope, and documentation mismatches."
-seo_title: "Code Reviewer"
+seo_title: "Code Reviewer | Kujo Chain of Command"
 seo_description: "Review diffs for bugs, regressions, contract drift, missing tests, unsafe scope, and documentation mismatches."
-keywords: "Kujo agent, Code Reviewer, chain of command"
+keywords: "Kujo agent, chain of command, Code Reviewer"
 featured_image: "assets/images/kujo-logomark.svg"
 categories: ["Chain of Command"]
 tags: ["Verification"]
 order: 14
-last_updated: 2026-08-10
+last_updated: 2026-07-05
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/code-reviewer/AGENT.md"
 ---
 ## Agent Contract

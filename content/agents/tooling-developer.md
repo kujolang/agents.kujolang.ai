@@ -3,14 +3,14 @@ title: "Tooling Developer"
 custom_url: "tooling-developer"
 description: "Build or maintain CLI tools, scripts, local automation, developer workflows, and KUJO tool integrations."
 excerpt: "Build or maintain CLI tools, scripts, local automation, developer workflows, and KUJO tool integrations."
-seo_title: "Tooling Developer"
+seo_title: "Tooling Developer | Kujo Chain of Command"
 seo_description: "Build or maintain CLI tools, scripts, local automation, developer workflows, and KUJO tool integrations."
-keywords: "Kujo agent, Tooling Developer, chain of command"
+keywords: "Kujo agent, chain of command, Tooling Developer"
 featured_image: "content/media/agents/tooling-developer.webp"
 categories: ["Chain of Command"]
 tags: ["Execution"]
 order: 10
-last_updated: 2026-08-10
+last_updated: 2026-07-18
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/tooling-developer/AGENT.md"
 ---
 ## Agent Contract

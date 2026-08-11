@@ -3,14 +3,14 @@ title: "Visual QA Agent"
 custom_url: "visual-qa-agent"
 description: "Produce deterministic browser, layout, accessibility, console, network, and visual evidence for user-facing surfaces."
 excerpt: "Produce deterministic browser, layout, accessibility, console, network, and visual evidence for user-facing surfaces."
-seo_title: "Visual QA Agent"
+seo_title: "Visual QA Agent | Kujo Chain of Command"
 seo_description: "Produce deterministic browser, layout, accessibility, console, network, and visual evidence for user-facing surfaces."
-keywords: "Kujo agent, Visual QA Agent, chain of command"
+keywords: "Kujo agent, chain of command, Visual QA Agent"
 featured_image: "assets/images/kujo-logomark.svg"
 categories: ["Chain of Command"]
 tags: ["Verification"]
 order: 17
-last_updated: 2026-08-10
+last_updated: 2026-08-08
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/visual-qa-agent/AGENT.md"
 ---
 ## Agent Contract

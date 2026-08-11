@@ -3,14 +3,14 @@ title: "Research Analyst"
 custom_url: "research-analyst"
 description: "Gather repo, API, dependency, workflow, or technical context and separate confirmed facts from inference."
 excerpt: "Gather repo, API, dependency, workflow, or technical context and separate confirmed facts from inference."
-seo_title: "Research Analyst"
+seo_title: "Research Analyst | Kujo Chain of Command"
 seo_description: "Gather repo, API, dependency, workflow, or technical context and separate confirmed facts from inference."
-keywords: "Kujo agent, Research Analyst, chain of command"
+keywords: "Kujo agent, chain of command, Research Analyst"
 featured_image: "content/media/agents/research-analyst.webp"
 categories: ["Chain of Command"]
 tags: ["Planning"]
 order: 7
-last_updated: 2026-08-10
+last_updated: 2026-08-08
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/research-analyst/AGENT.md"
 ---
 ## Agent Contract

@@ -3,14 +3,14 @@ title: "Spec Writer"
 custom_url: "spec-writer"
 description: "Create and maintain task contracts with scope, acceptance criteria, eval requirements, risks, dependencies, and review expectations."
 excerpt: "Create and maintain task contracts with scope, acceptance criteria, eval requirements, risks, dependencies, and review expectations."
-seo_title: "Spec Writer"
+seo_title: "Spec Writer | Kujo Chain of Command"
 seo_description: "Create and maintain task contracts with scope, acceptance criteria, eval requirements, risks, dependencies, and review expectations."
-keywords: "Kujo agent, Spec Writer, chain of command"
+keywords: "Kujo agent, chain of command, Spec Writer"
 featured_image: "content/media/agents/spec-writer.webp"
 categories: ["Chain of Command"]
 tags: ["Planning"]
 order: 6
-last_updated: 2026-08-10
+last_updated: 2026-08-08
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/spec-writer/AGENT.md"
 ---
 ## Agent Contract

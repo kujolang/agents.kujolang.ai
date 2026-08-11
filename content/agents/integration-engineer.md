@@ -3,14 +3,14 @@ title: "Integration Engineer"
 custom_url: "integration-engineer"
 description: "Connect GitHub/GitLab, MCP, CI, external services, deployment systems, telemetry, provider adapters, and workflow orchestration boundaries."
 excerpt: "Connect GitHub/GitLab, MCP, CI, external services, deployment systems, telemetry, provider adapters, and workflow orchestration boundaries."
-seo_title: "Integration Engineer"
+seo_title: "Integration Engineer | Kujo Chain of Command"
 seo_description: "Connect GitHub/GitLab, MCP, CI, external services, deployment systems, telemetry, provider adapters, and workflow orchestration boundaries."
-keywords: "Kujo agent, Integration Engineer, chain of command"
+keywords: "Kujo agent, chain of command, Integration Engineer"
 featured_image: "assets/images/kujo-logomark.svg"
 categories: ["Chain of Command"]
 tags: ["Execution"]
 order: 13
-last_updated: 2026-08-10
+last_updated: 2026-07-18
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/integration-engineer/AGENT.md"
 ---
 ## Agent Contract

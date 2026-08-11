@@ -3,14 +3,14 @@ title: "Dependency Scanner"
 custom_url: "dependency-scanner"
 description: "Run explicit dependency, package, manifest, lockfile, and package-status checks."
 excerpt: "Run explicit dependency, package, manifest, lockfile, and package-status checks."
-seo_title: "Dependency Scanner"
+seo_title: "Dependency Scanner | Kujo Chain of Command"
 seo_description: "Run explicit dependency, package, manifest, lockfile, and package-status checks."
-keywords: "Kujo agent, Dependency Scanner, chain of command"
+keywords: "Kujo agent, chain of command, Dependency Scanner"
 featured_image: "assets/images/kujo-logomark.svg"
 categories: ["Chain of Command"]
 tags: ["Routine Worker"]
-order: 28
-last_updated: 2026-08-10
+order: 27
+last_updated: 2026-07-05
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/dependency-scanner/AGENT.md"
 ---
 ## Agent Contract

@@ -3,14 +3,14 @@ title: "Product Strategist"
 custom_url: "product-strategist"
 description: "Own user value, roadmap fit, feature framing, adoption assumptions, and ICP alignment."
 excerpt: "Own user value, roadmap fit, feature framing, adoption assumptions, and ICP alignment."
-seo_title: "Product Strategist"
+seo_title: "Product Strategist | Kujo Chain of Command"
 seo_description: "Own user value, roadmap fit, feature framing, adoption assumptions, and ICP alignment."
-keywords: "Kujo agent, Product Strategist, chain of command"
+keywords: "Kujo agent, chain of command, Product Strategist"
 featured_image: "content/media/agents/product-strategist.webp"
 categories: ["Chain of Command"]
 tags: ["Strategic"]
 order: 4
-last_updated: 2026-08-10
+last_updated: 2026-08-08
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/product-strategist/AGENT.md"
 ---
 ## Agent Contract

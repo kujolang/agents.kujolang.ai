@@ -3,14 +3,14 @@ title: "Receipt Collector"
 custom_url: "receipt-collector"
 description: "Capture command output, logs, RunLedger receipts, CaseFile bundles, Watchdog telemetry references, and evidence paths for auditability."
 excerpt: "Capture command output, logs, RunLedger receipts, CaseFile bundles, Watchdog telemetry references, and evidence paths for auditability."
-seo_title: "Receipt Collector"
+seo_title: "Receipt Collector | Kujo Chain of Command"
 seo_description: "Capture command output, logs, RunLedger receipts, CaseFile bundles, Watchdog telemetry references, and evidence paths for auditability."
-keywords: "Kujo agent, Receipt Collector, chain of command"
+keywords: "Kujo agent, chain of command, Receipt Collector"
 featured_image: "assets/images/kujo-logomark.svg"
 categories: ["Chain of Command"]
 tags: ["Routine Worker"]
-order: 29
-last_updated: 2026-08-10
+order: 28
+last_updated: 2026-08-01
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/receipt-collector/AGENT.md"
 ---
 ## Agent Contract

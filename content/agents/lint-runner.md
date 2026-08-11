@@ -3,14 +3,14 @@ title: "Lint Runner"
 custom_url: "lint-runner"
 description: "Run explicit lint, format-check, static-check, or compile-check commands and report exact results."
 excerpt: "Run explicit lint, format-check, static-check, or compile-check commands and report exact results."
-seo_title: "Lint Runner"
+seo_title: "Lint Runner | Kujo Chain of Command"
 seo_description: "Run explicit lint, format-check, static-check, or compile-check commands and report exact results."
-keywords: "Kujo agent, Lint Runner, chain of command"
+keywords: "Kujo agent, chain of command, Lint Runner"
 featured_image: "assets/images/kujo-logomark.svg"
 categories: ["Chain of Command"]
 tags: ["Routine Worker"]
-order: 26
-last_updated: 2026-08-10
+order: 25
+last_updated: 2026-07-05
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/lint-runner/AGENT.md"
 ---
 ## Agent Contract

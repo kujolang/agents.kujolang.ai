@@ -3,14 +3,14 @@ title: "Context Packager"
 custom_url: "context-packager"
 description: "Prepare compact context bundles, execution packs, workflow summaries, and handoff packets for downstream agents."
 excerpt: "Prepare compact context bundles, execution packs, workflow summaries, and handoff packets for downstream agents."
-seo_title: "Context Packager"
+seo_title: "Context Packager | Kujo Chain of Command"
 seo_description: "Prepare compact context bundles, execution packs, workflow summaries, and handoff packets for downstream agents."
-keywords: "Kujo agent, Context Packager, chain of command"
+keywords: "Kujo agent, chain of command, Context Packager"
 featured_image: "assets/images/kujo-logomark.svg"
 categories: ["Chain of Command"]
 tags: ["Knowledge"]
-order: 22
-last_updated: 2026-08-10
+order: 21
+last_updated: 2026-08-01
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/context-packager/AGENT.md"
 ---
 ## Agent Contract

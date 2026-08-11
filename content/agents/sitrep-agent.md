@@ -3,14 +3,14 @@ title: "SITREP Agent"
 custom_url: "sitrep-agent"
 description: "Produce short status reports, current-state summaries, and handoff snapshots from available evidence."
 excerpt: "Produce short status reports, current-state summaries, and handoff snapshots from available evidence."
-seo_title: "SITREP Agent"
+seo_title: "SITREP Agent | Kujo Chain of Command"
 seo_description: "Produce short status reports, current-state summaries, and handoff snapshots from available evidence."
-keywords: "Kujo agent, SITREP Agent, chain of command"
+keywords: "Kujo agent, chain of command, SITREP Agent"
 featured_image: "assets/images/kujo-logomark.svg"
 categories: ["Chain of Command"]
 tags: ["Knowledge"]
-order: 23
-last_updated: 2026-08-10
+order: 22
+last_updated: 2026-08-08
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/sitrep-agent/AGENT.md"
 ---
 ## Agent Contract

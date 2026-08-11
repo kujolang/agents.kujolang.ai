@@ -3,14 +3,14 @@ title: "Security Reviewer"
 custom_url: "security-reviewer"
 description: "Review secrets, auth, host effects, path boundaries, network exposure, unsafe commands, dependency risk, and sensitive artifacts."
 excerpt: "Review secrets, auth, host effects, path boundaries, network exposure, unsafe commands, dependency risk, and sensitive artifacts."
-seo_title: "Security Reviewer"
+seo_title: "Security Reviewer | Kujo Chain of Command"
 seo_description: "Review secrets, auth, host effects, path boundaries, network exposure, unsafe commands, dependency risk, and sensitive artifacts."
-keywords: "Kujo agent, Security Reviewer, chain of command"
+keywords: "Kujo agent, chain of command, Security Reviewer"
 featured_image: "assets/images/kujo-logomark.svg"
 categories: ["Chain of Command"]
 tags: ["Verification"]
 order: 19
-last_updated: 2026-08-10
+last_updated: 2026-08-01
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/security-reviewer/AGENT.md"
 ---
 ## Agent Contract

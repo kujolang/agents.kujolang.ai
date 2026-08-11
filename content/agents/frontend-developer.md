@@ -3,14 +3,14 @@ title: "Frontend Developer"
 custom_url: "frontend-developer"
 description: "Implement user interfaces, interaction flows, responsive behavior, and browser-verifiable frontend changes."
 excerpt: "Implement user interfaces, interaction flows, responsive behavior, and browser-verifiable frontend changes."
-seo_title: "Frontend Developer"
+seo_title: "Frontend Developer | Kujo Chain of Command"
 seo_description: "Implement user interfaces, interaction flows, responsive behavior, and browser-verifiable frontend changes."
-keywords: "Kujo agent, Frontend Developer, chain of command"
+keywords: "Kujo agent, chain of command, Frontend Developer"
 featured_image: "content/media/agents/frontend-developer.webp"
 categories: ["Chain of Command"]
 tags: ["Execution"]
 order: 11
-last_updated: 2026-08-10
+last_updated: 2026-08-08
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/frontend-developer/AGENT.md"
 ---
 ## Agent Contract

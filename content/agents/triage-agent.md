@@ -3,14 +3,14 @@ title: "Triage Agent"
 custom_url: "triage-agent"
 description: "Review flagged wrong outputs, stopped workflow states, failed handoffs, and abnormal results so the chain can decide whether to resume, reroute, require human review, or coordinate the immediate next response."
 excerpt: "Review flagged wrong outputs, stopped workflow states, failed handoffs, and abnormal results so the chain can decide whether to resume, reroute, require human review, or coordinate the immediate next response."
-seo_title: "Triage Agent"
+seo_title: "Triage Agent | Kujo Chain of Command"
 seo_description: "Review flagged wrong outputs, stopped workflow states, failed handoffs, and abnormal results so the chain can decide whether to resume, reroute, require human review, or coordinate the immediate next response."
-keywords: "Kujo agent, Triage Agent, chain of command"
+keywords: "Kujo agent, chain of command, Triage Agent"
 featured_image: "assets/images/kujo-logomark.svg"
 categories: ["Chain of Command"]
 tags: ["Verification"]
 order: 16
-last_updated: 2026-08-10
+last_updated: 2026-07-18
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/triage-agent/AGENT.md"
 ---
 ## Agent Contract

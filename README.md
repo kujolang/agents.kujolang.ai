@@ -1,6 +1,6 @@
 # Kujo Agents
 
-Static library for Kujo agent sets, including the [Kujo Chain of Command](https://github.com/kujolang/kujo-agents/tree/main/chain-of-command), built with [Kujo SSG](https://github.com/kujolang/ssg) and the vendored SiteKit distribution.
+Static library for the [Kujo Chain of Command](https://github.com/kujolang/kujo-agents/tree/main/chain-of-command) and [Kujo WebOps](https://github.com/kujolang/kujo-agents/tree/main/webops), built with [Kujo SSG](https://github.com/kujolang/ssg) and the vendored SiteKit distribution.
 
 ## Build
 
@@ -26,14 +26,21 @@ tags: ["Monitoring"]
 
 The SSG groups those categories into independent, single-row carousels that show three cards on desktop. When adding a new set, also add its destination to the Agents dropdown in `templates/layout.html`.
 
-## Refresh Chain of Command content
+## Refresh canonical agent content
 
 The checked-in `content/agents/` files are generated from the source agent contracts. Refresh them from a local `kujo-agents` checkout, then rebuild:
 
 ```bash
-python3 scripts/sync-agent-content.py /path/to/kujo-agents/chain-of-command
+python3 scripts/sync-agent-content.py /path/to/kujo-agents
 kujo run ./build.kujo -- --site-url https://agents.kujolang.ai
 ```
+
+Use `--set chain-of-command` or `--set webops` for a scoped refresh. The sync
+state owns slugs per set, so a scoped refresh can remove stale pages from that
+set but cannot delete another set. `last_updated` comes from each canonical
+contract's Git history (or filesystem modification date when Git evidence is
+unavailable). WebOps uses the generic Kujo logomark until custom portraits are
+added.
 
 ## GitHub Pages and Cloudflare
 

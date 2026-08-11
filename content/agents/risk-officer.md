@@ -3,14 +3,14 @@ title: "Risk Officer"
 custom_url: "risk-officer"
 description: "Identify risk, security concerns, migration issues, release blockers, scope creep, and evidence gaps before or during work."
 excerpt: "Identify risk, security concerns, migration issues, release blockers, scope creep, and evidence gaps before or during work."
-seo_title: "Risk Officer"
+seo_title: "Risk Officer | Kujo Chain of Command"
 seo_description: "Identify risk, security concerns, migration issues, release blockers, scope creep, and evidence gaps before or during work."
-keywords: "Kujo agent, Risk Officer, chain of command"
+keywords: "Kujo agent, chain of command, Risk Officer"
 featured_image: "content/media/agents/risk-officer.webp"
 categories: ["Chain of Command"]
 tags: ["Planning"]
 order: 8
-last_updated: 2026-08-10
+last_updated: 2026-07-18
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/risk-officer/AGENT.md"
 ---
 ## Agent Contract

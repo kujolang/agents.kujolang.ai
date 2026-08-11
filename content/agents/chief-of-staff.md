@@ -3,14 +3,14 @@ title: "Chief Of Staff"
 custom_url: "chief-of-staff"
 description: "Turn vague goals into structured objectives, assign lanes, manage handoffs, and keep work auditable."
 excerpt: "Turn vague goals into structured objectives, assign lanes, manage handoffs, and keep work auditable."
-seo_title: "Chief Of Staff"
+seo_title: "Chief Of Staff | Kujo Chain of Command"
 seo_description: "Turn vague goals into structured objectives, assign lanes, manage handoffs, and keep work auditable."
-keywords: "Kujo agent, Chief Of Staff, chain of command"
+keywords: "Kujo agent, chain of command, Chief Of Staff"
 featured_image: "content/media/agents/chief-of-staff.webp"
 categories: ["Chain of Command"]
 tags: ["Strategic"]
 order: 2
-last_updated: 2026-08-10
+last_updated: 2026-08-08
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/chief-of-staff/AGENT.md"
 ---
 ## Agent Contract

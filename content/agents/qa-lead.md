@@ -3,14 +3,14 @@ title: "QA Lead"
 custom_url: "qa-lead"
 description: "Define test plans, evidence requirements, acceptance gates, and quality status for a change or release candidate."
 excerpt: "Define test plans, evidence requirements, acceptance gates, and quality status for a change or release candidate."
-seo_title: "QA Lead"
+seo_title: "QA Lead | Kujo Chain of Command"
 seo_description: "Define test plans, evidence requirements, acceptance gates, and quality status for a change or release candidate."
-keywords: "Kujo agent, QA Lead, chain of command"
+keywords: "Kujo agent, chain of command, QA Lead"
 featured_image: "assets/images/kujo-logomark.svg"
 categories: ["Chain of Command"]
 tags: ["Verification"]
 order: 15
-last_updated: 2026-08-10
+last_updated: 2026-07-25
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/qa-lead/AGENT.md"
 ---
 ## Agent Contract

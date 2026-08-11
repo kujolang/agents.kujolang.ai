@@ -3,14 +3,14 @@ title: "Planner"
 custom_url: "planner"
 description: "Convert goals into milestones, tasks, sequencing, dependencies, acceptance criteria, and verification plans."
 excerpt: "Convert goals into milestones, tasks, sequencing, dependencies, acceptance criteria, and verification plans."
-seo_title: "Planner"
+seo_title: "Planner | Kujo Chain of Command"
 seo_description: "Convert goals into milestones, tasks, sequencing, dependencies, acceptance criteria, and verification plans."
-keywords: "Kujo agent, Planner, chain of command"
+keywords: "Kujo agent, chain of command, Planner"
 featured_image: "content/media/agents/planner.webp"
 categories: ["Chain of Command"]
 tags: ["Planning"]
 order: 5
-last_updated: 2026-08-10
+last_updated: 2026-07-05
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/planner/AGENT.md"
 ---
 ## Agent Contract

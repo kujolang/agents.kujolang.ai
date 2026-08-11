@@ -3,14 +3,14 @@ title: "Routine Worker"
 custom_url: "routine-worker"
 description: "Run explicitly assigned local commands or scripts and report exact results without interpretation beyond simple status."
 excerpt: "Run explicitly assigned local commands or scripts and report exact results without interpretation beyond simple status."
-seo_title: "Routine Worker"
+seo_title: "Routine Worker | Kujo Chain of Command"
 seo_description: "Run explicitly assigned local commands or scripts and report exact results without interpretation beyond simple status."
-keywords: "Kujo agent, Routine Worker, chain of command"
+keywords: "Kujo agent, chain of command, Routine Worker"
 featured_image: "assets/images/kujo-logomark.svg"
 categories: ["Chain of Command"]
 tags: ["Routine Worker"]
-order: 24
-last_updated: 2026-08-10
+order: 23
+last_updated: 2026-07-18
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/routine-worker/AGENT.md"
 ---
 ## Agent Contract

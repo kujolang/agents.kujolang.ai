@@ -3,14 +3,14 @@ title: "General Commander"
 custom_url: "general-commander"
 description: "Interpret broad missions, choose agent lanes, resolve cross-agent conflicts, synthesize final outcomes, and escalate unresolved risk."
 excerpt: "Interpret broad missions, choose agent lanes, resolve cross-agent conflicts, synthesize final outcomes, and escalate unresolved risk."
-seo_title: "General Commander"
+seo_title: "General Commander | Kujo Chain of Command"
 seo_description: "Interpret broad missions, choose agent lanes, resolve cross-agent conflicts, synthesize final outcomes, and escalate unresolved risk."
-keywords: "Kujo agent, General Commander, chain of command"
+keywords: "Kujo agent, chain of command, General Commander"
 featured_image: "content/media/agents/general-commander.webp"
 categories: ["Chain of Command"]
 tags: ["Strategic"]
 order: 1
-last_updated: 2026-08-10
+last_updated: 2026-08-08
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/general-commander/AGENT.md"
 ---
 ## Agent Contract

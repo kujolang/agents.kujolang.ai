@@ -3,14 +3,14 @@ title: "Backend Developer"
 custom_url: "backend-developer"
 description: "Implement APIs, persistence, jobs, auth boundaries, service logic, and server-side integrations within a bounded task."
 excerpt: "Implement APIs, persistence, jobs, auth boundaries, service logic, and server-side integrations within a bounded task."
-seo_title: "Backend Developer"
+seo_title: "Backend Developer | Kujo Chain of Command"
 seo_description: "Implement APIs, persistence, jobs, auth boundaries, service logic, and server-side integrations within a bounded task."
-keywords: "Kujo agent, Backend Developer, chain of command"
+keywords: "Kujo agent, chain of command, Backend Developer"
 featured_image: "content/media/agents/backend-developer.webp"
 categories: ["Chain of Command"]
 tags: ["Execution"]
 order: 12
-last_updated: 2026-08-10
+last_updated: 2026-07-05
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/backend-developer/AGENT.md"
 ---
 ## Agent Contract

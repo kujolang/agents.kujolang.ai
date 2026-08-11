@@ -3,14 +3,14 @@ title: "Systems Architect"
 custom_url: "systems-architect"
 description: "Own architecture, module boundaries, platform decisions, runtime tradeoffs, and long-term technical coherence."
 excerpt: "Own architecture, module boundaries, platform decisions, runtime tradeoffs, and long-term technical coherence."
-seo_title: "Systems Architect"
+seo_title: "Systems Architect | Kujo Chain of Command"
 seo_description: "Own architecture, module boundaries, platform decisions, runtime tradeoffs, and long-term technical coherence."
-keywords: "Kujo agent, Systems Architect, chain of command"
+keywords: "Kujo agent, chain of command, Systems Architect"
 featured_image: "content/media/agents/systems-architect.webp"
 categories: ["Chain of Command"]
 tags: ["Strategic"]
 order: 3
-last_updated: 2026-08-10
+last_updated: 2026-07-05
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/systems-architect/AGENT.md"
 ---
 ## Agent Contract
