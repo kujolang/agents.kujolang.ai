@@ -17,10 +17,6 @@ SETS={
   "chain-of-command":{"source":"chain-of-command","category":"Chain of Command","tag_field":"Rank/layer","keywords":"Kujo agent, chain of command","order":CHAIN_ORDER},
   "webops":{"source":"webops","category":"WebOps","tag_field":"Category","keywords":"Kujo agent, WebOps, website operations","order":None},
 }
-IMAGES={
-  "general-commander":"content/media/agents/general-commander.webp","chief-of-staff":"content/media/agents/chief-of-staff.webp","systems-architect":"content/media/agents/systems-architect.webp","product-strategist":"content/media/agents/product-strategist.webp","planner":"content/media/agents/planner.webp","spec-writer":"content/media/agents/spec-writer.webp","research-analyst":"content/media/agents/research-analyst.webp","risk-officer":"content/media/agents/risk-officer.webp","core-developer":"content/media/agents/core-developer.webp","tooling-developer":"content/media/agents/tooling-developer.webp","frontend-developer":"content/media/agents/frontend-developer.webp","backend-developer":"content/media/agents/backend-developer.webp",
-}
-
 def field(body:str,name:str)->str:
     match=re.search(rf"^- {re.escape(name)}:\s*(.+)$",body,re.MULTILINE)
     if not match: raise ValueError(f"missing {name}")
@@ -57,7 +53,8 @@ def sync_set(source_root:Path,set_id:str,state:dict)->tuple[int,list[str]]:
         contract=contracts[slug]; body=contract.read_text(encoding="utf-8").strip(); heading,_,remainder=body.partition("\n")
         if not heading.startswith("# "): raise ValueError(f"missing title heading: {contract}")
         title=heading[2:].strip(); purpose=field(body,"Purpose"); tag=field(body,config["tag_field"])
-        featured=IMAGES.get(slug,"assets/images/kujo-logomark.svg")
+        portrait=f"content/media/agents/{slug}.webp"
+        featured=portrait if (SITE_ROOT/portrait).is_file() else "assets/images/kujo-logomark.svg"
         source_url=f"https://github.com/kujolang/kujo-agents/blob/main/{config['source']}/{slug}/AGENT.md"
         frontmatter=["---",f"title: {json.dumps(title)}",f"custom_url: {json.dumps(slug)}",f"description: {json.dumps(purpose)}",f"excerpt: {json.dumps(purpose)}",f"seo_title: {json.dumps(title+' | Kujo '+config['category'])}",f"seo_description: {json.dumps(purpose)}",f"keywords: {json.dumps(config['keywords']+', '+title)}",f"featured_image: {json.dumps(featured)}",f"categories: [{json.dumps(config['category'])}]",f"tags: [{json.dumps(tag)}]",f"order: {order_by[slug]}",f"last_updated: {updated_date(source_root,contract)}",f"source_url: {json.dumps(source_url)}","---",""]
         remainder=re.sub(r"(^- (?:Required KUJO skills|WebOps domain skills|Existing Kujo skills):\s*)(.+)$",lambda m:m.group(1)+m.group(2).replace("`",""),remainder,flags=re.MULTILINE)

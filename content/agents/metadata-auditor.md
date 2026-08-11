@@ -6,7 +6,7 @@ excerpt: "Audit titles, descriptions, canonicals, robots, Open Graph, social, ar
 seo_title: "Metadata Auditor | Kujo WebOps"
 seo_description: "Audit titles, descriptions, canonicals, robots, Open Graph, social, article metadata, duplication, and missing fields."
 keywords: "Kujo agent, WebOps, website operations, Metadata Auditor"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/metadata-auditor.webp"
 categories: ["WebOps"]
 tags: ["Quality Operations"]
 order: 22

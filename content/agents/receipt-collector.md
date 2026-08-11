@@ -6,7 +6,7 @@ excerpt: "Capture command output, logs, RunLedger receipts, CaseFile bundles, Wa
 seo_title: "Receipt Collector | Kujo Chain of Command"
 seo_description: "Capture command output, logs, RunLedger receipts, CaseFile bundles, Watchdog telemetry references, and evidence paths for auditability."
 keywords: "Kujo agent, chain of command, Receipt Collector"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/receipt-collector.webp"
 categories: ["Chain of Command"]
 tags: ["Routine Worker"]
 order: 28

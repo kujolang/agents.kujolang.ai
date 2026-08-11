@@ -6,7 +6,7 @@ excerpt: "Identify stale or deteriorating content using measured movement, optio
 seo_title: "Content Decay Analyst | Kujo WebOps"
 seo_description: "Identify stale or deteriorating content using measured movement, optional analytics, factual age, source change, and relevance evidence."
 keywords: "Kujo agent, WebOps, website operations, Content Decay Analyst"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/content-decay-analyst.webp"
 categories: ["WebOps"]
 tags: ["Content Operations"]
 order: 11

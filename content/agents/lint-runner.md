@@ -6,7 +6,7 @@ excerpt: "Run explicit lint, format-check, static-check, or compile-check comman
 seo_title: "Lint Runner | Kujo Chain of Command"
 seo_description: "Run explicit lint, format-check, static-check, or compile-check commands and report exact results."
 keywords: "Kujo agent, chain of command, Lint Runner"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/lint-runner.webp"
 categories: ["Chain of Command"]
 tags: ["Routine Worker"]
 order: 25

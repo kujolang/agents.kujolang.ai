@@ -6,7 +6,7 @@ excerpt: "Analyze broken internal and outbound links, redirect chains, malformed
 seo_title: "Link Health Auditor | Kujo WebOps"
 seo_description: "Analyze broken internal and outbound links, redirect chains, malformed destinations, and unexpected targets."
 keywords: "Kujo agent, WebOps, website operations, Link Health Auditor"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/link-health-auditor.webp"
 categories: ["WebOps"]
 tags: ["Quality Operations"]
 order: 21

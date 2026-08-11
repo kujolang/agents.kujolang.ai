@@ -6,7 +6,7 @@ excerpt: "Run repeatable automated accessibility checks and produce evidence-bac
 seo_title: "Accessibility Auditor | Kujo WebOps"
 seo_description: "Run repeatable automated accessibility checks and produce evidence-backed repair priorities with explicit manual-review gaps."
 keywords: "Kujo agent, WebOps, website operations, Accessibility Auditor"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/accessibility-auditor.webp"
 categories: ["WebOps"]
 tags: ["Quality Operations"]
 order: 19

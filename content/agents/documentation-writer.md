@@ -6,7 +6,7 @@ excerpt: "Update READMEs, onboarding docs, changelogs, examples, runbooks, and u
 seo_title: "Documentation Writer | Kujo Chain of Command"
 seo_description: "Update READMEs, onboarding docs, changelogs, examples, runbooks, and user-facing technical documentation from source-grounded facts."
 keywords: "Kujo agent, chain of command, Documentation Writer"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/documentation-writer.webp"
 categories: ["Chain of Command"]
 tags: ["Knowledge"]
 order: 20

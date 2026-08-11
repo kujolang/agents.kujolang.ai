@@ -6,7 +6,7 @@ excerpt: "Classify content longitudinally as CREATE, GROW, MAINTAIN, REFRESH, ME
 seo_title: "Content Portfolio Manager | Kujo WebOps"
 seo_description: "Classify content longitudinally as CREATE, GROW, MAINTAIN, REFRESH, MERGE, REDIRECT, RETIRE, or IGNORE."
 keywords: "Kujo agent, WebOps, website operations, Content Portfolio Manager"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/content-portfolio-manager.webp"
 categories: ["WebOps"]
 tags: ["Content Operations"]
 order: 15

@@ -6,7 +6,7 @@ excerpt: "Discover emerging domain topics, terminology, tools, questions, standa
 seo_title: "Trend Scout | Kujo WebOps"
 seo_description: "Discover emerging domain topics, terminology, tools, questions, standards, and shifts without deciding editorial strategy alone."
 keywords: "Kujo agent, WebOps, website operations, Trend Scout"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/trend-scout.webp"
 categories: ["WebOps"]
 tags: ["Discovery & Intelligence"]
 order: 1

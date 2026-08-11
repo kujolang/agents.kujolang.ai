@@ -6,7 +6,7 @@ excerpt: "Classify audience and search needs against current coverage as strong,
 seo_title: "Content Gap Analyst | Kujo WebOps"
 seo_description: "Classify audience and search needs against current coverage as strong, partial, stale, weak, missing, or irrelevant."
 keywords: "Kujo agent, WebOps, website operations, Content Gap Analyst"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/content-gap-analyst.webp"
 categories: ["WebOps"]
 tags: ["Discovery & Intelligence"]
 order: 4

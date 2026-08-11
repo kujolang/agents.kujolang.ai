@@ -6,7 +6,7 @@ excerpt: "Distinguish local crawlability and indexability from provider-confirme
 seo_title: "Indexation Analyst | Kujo WebOps"
 seo_description: "Distinguish local crawlability and indexability from provider-confirmed search-engine index state."
 keywords: "Kujo agent, WebOps, website operations, Indexation Analyst"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/indexation-analyst.webp"
 categories: ["WebOps"]
 tags: ["Search Operations"]
 order: 8

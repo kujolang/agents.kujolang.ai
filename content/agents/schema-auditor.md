@@ -6,7 +6,7 @@ excerpt: "Review structured data validity, relevance, visible-content consistenc
 seo_title: "Schema Auditor | Kujo WebOps"
 seo_description: "Review structured data validity, relevance, visible-content consistency, missing appropriate types, and obsolete patterns."
 keywords: "Kujo agent, WebOps, website operations, Schema Auditor"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/schema-auditor.webp"
 categories: ["WebOps"]
 tags: ["Quality Operations"]
 order: 20

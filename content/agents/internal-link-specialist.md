@@ -6,7 +6,7 @@ excerpt: "Find and, under explicit ACT authority, apply contextually useful inte
 seo_title: "Internal Link Specialist | Kujo WebOps"
 seo_description: "Find and, under explicit ACT authority, apply contextually useful internal links supported by content relationships."
 keywords: "Kujo agent, WebOps, website operations, Internal Link Specialist"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/internal-link-specialist.webp"
 categories: ["WebOps"]
 tags: ["Content Operations"]
 order: 12

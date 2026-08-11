@@ -6,7 +6,7 @@ excerpt: "Analyze longitudinal measured impressions, clicks, CTR, position, quer
 seo_title: "Search Performance Analyst | Kujo WebOps"
 seo_description: "Analyze longitudinal measured impressions, clicks, CTR, position, query movement, page movement, and query/page relationships."
 keywords: "Kujo agent, WebOps, website operations, Search Performance Analyst"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/search-performance-analyst.webp"
 categories: ["WebOps"]
 tags: ["Search Operations"]
 order: 7

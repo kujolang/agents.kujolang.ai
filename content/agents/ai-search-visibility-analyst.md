@@ -6,7 +6,7 @@ excerpt: "Run repeatable fixed-query visibility benchmarks across explicitly con
 seo_title: "AI Search Visibility Analyst | Kujo WebOps"
 seo_description: "Run repeatable fixed-query visibility benchmarks across explicitly configured AI and search surfaces."
 keywords: "Kujo agent, WebOps, website operations, AI Search Visibility Analyst"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/ai-search-visibility-analyst.webp"
 categories: ["WebOps"]
 tags: ["Search Operations"]
 order: 10

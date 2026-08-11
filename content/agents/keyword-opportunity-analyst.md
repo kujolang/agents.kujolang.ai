@@ -6,7 +6,7 @@ excerpt: "Identify query opportunities from measured site data, optional third-p
 seo_title: "Keyword Opportunity Analyst | Kujo WebOps"
 seo_description: "Identify query opportunities from measured site data, optional third-party estimates, public research, and current site coverage."
 keywords: "Kujo agent, WebOps, website operations, Keyword Opportunity Analyst"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/keyword-opportunity-analyst.webp"
 categories: ["WebOps"]
 tags: ["Discovery & Intelligence"]
 order: 2

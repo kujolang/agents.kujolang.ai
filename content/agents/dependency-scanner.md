@@ -6,7 +6,7 @@ excerpt: "Run explicit dependency, package, manifest, lockfile, and package-stat
 seo_title: "Dependency Scanner | Kujo Chain of Command"
 seo_description: "Run explicit dependency, package, manifest, lockfile, and package-status checks."
 keywords: "Kujo agent, chain of command, Dependency Scanner"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/dependency-scanner.webp"
 categories: ["Chain of Command"]
 tags: ["Routine Worker"]
 order: 27

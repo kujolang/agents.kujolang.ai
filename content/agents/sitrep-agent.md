@@ -6,7 +6,7 @@ excerpt: "Produce short status reports, current-state summaries, and handoff sna
 seo_title: "SITREP Agent | Kujo Chain of Command"
 seo_description: "Produce short status reports, current-state summaries, and handoff snapshots from available evidence."
 keywords: "Kujo agent, chain of command, SITREP Agent"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/sitrep-agent.webp"
 categories: ["Chain of Command"]
 tags: ["Knowledge"]
 order: 22

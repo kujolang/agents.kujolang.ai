@@ -6,7 +6,7 @@ excerpt: "Synthesize existing WebOps evidence into quiet reports focused on impr
 seo_title: "WebOps Reporter | Kujo WebOps"
 seo_description: "Synthesize existing WebOps evidence into quiet reports focused on improvements, regressions, changes, actions, deferrals, and unavailable checks."
 keywords: "Kujo agent, WebOps, website operations, WebOps Reporter"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/webops-reporter.webp"
 categories: ["WebOps"]
 tags: ["Operations & Management"]
 order: 28

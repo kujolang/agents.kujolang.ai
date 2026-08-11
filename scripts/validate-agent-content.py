@@ -29,8 +29,11 @@ def main():
             if not re.search(r"^last_updated: \d{4}-\d{2}-\d{2}$",text,re.M): errors.append(f"{slug}: invalid last_updated")
             if set_id=="webops":
                 if meta.get("categories")!='["WebOps"]': errors.append(f"{slug}: wrong WebOps category")
-                if meta.get("featured_image")!='"assets/images/kujo-logomark.svg"': errors.append(f"{slug}: missing generic fallback image")
                 if re.search(r"(?i)coming soon|lorem ipsum|placeholder",text): errors.append(f"{slug}: placeholder content")
+            expected_portrait=f'"content/media/agents/{slug}.webp"'
+            if meta.get("featured_image")!=expected_portrait: errors.append(f"{slug}: wrong agent portrait")
+            portrait=ROOT/expected_portrait.strip('"')
+            if not portrait.is_file(): errors.append(f"{slug}: agent portrait file missing")
             route=OUTPUT/"agents"/slug/"index.html"
             if OUTPUT.is_dir() and not route.is_file(): errors.append(f"{slug}: generated route missing")
     if OUTPUT.is_dir():

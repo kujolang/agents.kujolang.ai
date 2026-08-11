@@ -98,7 +98,9 @@ if [[ -f "$OUT_DIR/agents/webops/index.html" ]]; then
 	if [[ "$webops_count" -lt 28 ]]; then record_failure "FAIL webops-count: expected at least 28 individual WebOps pages, found $webops_count"; fi
 	if ! grep -q 'class="card-grid agent-category-grid"' "$OUT_DIR/agents/webops/index.html"; then record_failure "FAIL webops-collection: missing agent card grid"; fi
 	if grep -Eqi 'coming soon|placeholder|lorem ipsum' "$OUT_DIR/agents/webops/index.html"; then record_failure "FAIL webops-placeholder: collection contains placeholder copy"; fi
-	if ! grep -q '/assets/images/kujo-logomark.svg' "$OUT_DIR/agents/webops/index.html"; then record_failure "FAIL webops-fallback-image: generic Kujo image is absent"; fi
+	if grep -q 'listing-card-image--mark' "$OUT_DIR/agents/webops/index.html"; then record_failure "FAIL webops-fallback-image: generic Kujo card image remains after portrait rollout"; fi
+	webops_portraits="$(grep -Eo '/images/[a-z0-9-]+-[a-f0-9]{12}\.webp' "$OUT_DIR/agents/webops/index.html" | sort -u | wc -l | tr -d ' ')"
+	if [[ "$webops_portraits" -lt 28 ]]; then record_failure "FAIL webops-portraits: expected 28 unique portraits, found $webops_portraits"; fi
 fi
 
 if [[ "$html_count" -eq 0 ]]; then

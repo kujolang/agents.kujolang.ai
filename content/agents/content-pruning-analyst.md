@@ -6,7 +6,7 @@ excerpt: "Find obsolete, redundant, or low-value content and propose evidence-ba
 seo_title: "Content Pruning Analyst | Kujo WebOps"
 seo_description: "Find obsolete, redundant, or low-value content and propose evidence-backed keep, merge, redirect, refresh, or retire decisions."
 keywords: "Kujo agent, WebOps, website operations, Content Pruning Analyst"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/content-pruning-analyst.webp"
 categories: ["WebOps"]
 tags: ["Content Operations"]
 order: 16

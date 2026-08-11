@@ -6,7 +6,7 @@ excerpt: "Review guidance, APIs, versions, products, references, and factual cla
 seo_title: "Content Accuracy Reviewer | Kujo WebOps"
 seo_description: "Review guidance, APIs, versions, products, references, and factual claims against current authoritative sources."
 keywords: "Kujo agent, WebOps, website operations, Content Accuracy Reviewer"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/content-accuracy-reviewer.webp"
 categories: ["WebOps"]
 tags: ["Content Operations"]
 order: 13

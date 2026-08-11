@@ -6,7 +6,7 @@ excerpt: "Run explicitly assigned local commands or scripts and report exact res
 seo_title: "Routine Worker | Kujo Chain of Command"
 seo_description: "Run explicitly assigned local commands or scripts and report exact results without interpretation beyond simple status."
 keywords: "Kujo agent, chain of command, Routine Worker"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/routine-worker.webp"
 categories: ["Chain of Command"]
 tags: ["Routine Worker"]
 order: 23

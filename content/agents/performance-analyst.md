@@ -6,7 +6,7 @@ excerpt: "Track lab and real-user field performance as distinct evidence classes
 seo_title: "Performance Analyst | Kujo WebOps"
 seo_description: "Track lab and real-user field performance as distinct evidence classes and compare them longitudinally."
 keywords: "Kujo agent, WebOps, website operations, Performance Analyst"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/performance-analyst.webp"
 categories: ["WebOps"]
 tags: ["Quality Operations"]
 order: 18

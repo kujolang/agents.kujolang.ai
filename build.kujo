@@ -2445,6 +2445,7 @@ func listing_card_html_interpreted(route, title, excerpt, featured_image, terms,
 
 func agent_card_html(item) {
 	route := item["route"]
+	slug := item["slug"]
 	title := item["title"]
 	excerpt := item["excerpt"]
 	featured_image := item["featured_image"]
@@ -2463,6 +2464,12 @@ func agent_card_html(item) {
 	safe_order := xml_escape(to_string(item["order"]))
 
 	media_url := listing_card_media_url(featured_image)
+	# Agent portraits have a deterministic output name. Resolve it from the slug
+	# at card-render time so directory cards cannot drift from their agent image.
+	agent_portrait_source := "content/media/agents/" + slug + ".webp"
+	if path_exists(agent_portrait_source) && path_is_file(agent_portrait_source) {
+		media_url = "/images/" + featured_image_output_base(agent_portrait_source) + ".webp"
+	}
 	safe_media_url := xml_escape(media_url)
 	tags_html := listing_card_tags_html(terms)
 	tags_block := ""
@@ -4050,6 +4057,7 @@ func build_site(settings) {
 				append_file(sitemap_tmp, sitemap_url_entry(site_url, route, item_sitemap_date, blog_prefix))
 			}
 			collection_items = push(collection_items, {
+				"slug": slug,
 				"title": title,
 				"author": item_author_name,
 				"date": item_date_raw,

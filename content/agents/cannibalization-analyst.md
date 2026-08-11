@@ -6,7 +6,7 @@ excerpt: "Identify pages substantially competing for the same intent while separ
 seo_title: "Cannibalization Analyst | Kujo WebOps"
 seo_description: "Identify pages substantially competing for the same intent while separating normal topical overlap from likely cannibalization."
 keywords: "Kujo agent, WebOps, website operations, Cannibalization Analyst"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/cannibalization-analyst.webp"
 categories: ["WebOps"]
 tags: ["Content Operations"]
 order: 14

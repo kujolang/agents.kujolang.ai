@@ -6,7 +6,7 @@ excerpt: "Prepare compact context bundles, execution packs, workflow summaries, 
 seo_title: "Context Packager | Kujo Chain of Command"
 seo_description: "Prepare compact context bundles, execution packs, workflow summaries, and handoff packets for downstream agents."
 keywords: "Kujo agent, chain of command, Context Packager"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/context-packager.webp"
 categories: ["Chain of Command"]
 tags: ["Knowledge"]
 order: 21

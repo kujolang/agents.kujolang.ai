@@ -6,7 +6,7 @@ excerpt: "Turn approved published content into source-grounded distribution asse
 seo_title: "Distribution Operator | Kujo WebOps"
 seo_description: "Turn approved published content into source-grounded distribution assets and publish only with explicit ACT authority and integration."
 keywords: "Kujo agent, WebOps, website operations, Distribution Operator"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/distribution-operator.webp"
 categories: ["WebOps"]
 tags: ["Operations & Management"]
 order: 26

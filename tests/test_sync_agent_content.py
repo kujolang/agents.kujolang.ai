@@ -22,9 +22,22 @@ class SyncTests(unittest.TestCase):
             (root/"webops/webops-catalog.json").write_text(json.dumps({"agents":[{"slug":"site-qa-operator"}]}))
             old_chain=output/"general-commander.md"; old_chain.write_text('categories: ["Chain of Command"]\n')
             stale_webops=output/"old-webops.md"; stale_webops.write_text('categories: ["WebOps"]\n')
-            module.OUTPUT_ROOT=output; module.STATE_PATH=output/".sync-state.json"
+            module.SITE_ROOT=Path(tmp); module.OUTPUT_ROOT=output; module.STATE_PATH=output/".sync-state.json"
             state={"sets":{"chain-of-command":["general-commander"],"webops":["old-webops"]}}
             count,slugs=module.sync_set(root,"webops",state)
             self.assertEqual(1,count); self.assertEqual(["site-qa-operator"],slugs); self.assertTrue(old_chain.is_file()); self.assertFalse(stale_webops.exists()); self.assertTrue((output/"site-qa-operator.md").is_file())
+
+    def test_sync_uses_matching_agent_portrait_when_available(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            site=Path(tmp); root=site/"kujo-agents"; output=site/"content/agents"
+            folder=root/"webops/site-qa-operator"; folder.mkdir(parents=True)
+            (folder/"AGENT.md").write_text(contract("Site QA Operator","Category","Quality Operations","A meaningful source-grounded purpose."))
+            (root/"webops/webops-catalog.json").write_text(json.dumps({"agents":[{"slug":"site-qa-operator"}]}))
+            portrait=site/"content/media/agents/site-qa-operator.webp"; portrait.parent.mkdir(parents=True); portrait.write_bytes(b"portrait")
+            output.mkdir(parents=True)
+            module.SITE_ROOT=site; module.OUTPUT_ROOT=output; module.STATE_PATH=output/".sync-state.json"
+            module.sync_set(root,"webops",{"sets":{}})
+            generated=(output/"site-qa-operator.md").read_text()
+            self.assertIn('featured_image: "content/media/agents/site-qa-operator.webp"',generated)
 
 if __name__=="__main__": unittest.main(verbosity=2)

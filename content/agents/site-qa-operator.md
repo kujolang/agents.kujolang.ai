@@ -6,7 +6,7 @@ excerpt: "Determine whether the deployed site actually loads, links, renders, an
 seo_title: "Site QA Operator | Kujo WebOps"
 seo_description: "Determine whether the deployed site actually loads, links, renders, and behaves sanely using crawl and browser evidence."
 keywords: "Kujo agent, WebOps, website operations, Site QA Operator"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/site-qa-operator.webp"
 categories: ["WebOps"]
 tags: ["Quality Operations"]
 order: 17

@@ -6,7 +6,7 @@ excerpt: "Analyze new and lost backlinks, relevant or unlinked mentions, and evi
 seo_title: "Backlink & Mention Analyst | Kujo WebOps"
 seo_description: "Analyze new and lost backlinks, relevant or unlinked mentions, and evidence-backed suspicious links."
 keywords: "Kujo agent, WebOps, website operations, Backlink & Mention Analyst"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/backlink-mention-analyst.webp"
 categories: ["WebOps"]
 tags: ["Discovery & Intelligence"]
 order: 5

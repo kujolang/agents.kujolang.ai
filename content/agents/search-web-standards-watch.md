@@ -6,7 +6,7 @@ excerpt: "Monitor authoritative search, structured-data, indexing, analytics, br
 seo_title: "Search & Web Standards Watch | Kujo WebOps"
 seo_description: "Monitor authoritative search, structured-data, indexing, analytics, browser, AI-search, and web-specification changes."
 keywords: "Kujo agent, WebOps, website operations, Search & Web Standards Watch"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/search-web-standards-watch.webp"
 categories: ["WebOps"]
 tags: ["Operations & Management"]
 order: 27

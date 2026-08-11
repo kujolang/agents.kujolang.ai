@@ -6,7 +6,7 @@ excerpt: "Synthesize specialist WebOps SEO evidence into a periodic prioritized 
 seo_title: "SEO Auditor | Kujo WebOps"
 seo_description: "Synthesize specialist WebOps SEO evidence into a periodic prioritized assessment without reimplementing each specialty."
 keywords: "Kujo agent, WebOps, website operations, SEO Auditor"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/seo-auditor.webp"
 categories: ["WebOps"]
 tags: ["Search Operations"]
 order: 6

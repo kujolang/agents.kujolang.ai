@@ -6,7 +6,7 @@ excerpt: "Analyze measured website behavior from a real analytics capability whi
 seo_title: "Analytics Analyst | Kujo WebOps"
 seo_description: "Analyze measured website behavior from a real analytics capability while preserving dimensions, metrics, identity settings, and uncertainty."
 keywords: "Kujo agent, WebOps, website operations, Analytics Analyst"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/analytics-analyst.webp"
 categories: ["WebOps"]
 tags: ["Operations & Management"]
 order: 24

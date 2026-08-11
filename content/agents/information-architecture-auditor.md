@@ -6,7 +6,7 @@ excerpt: "Review navigation, hierarchy, categories, tags, breadcrumbs, clusters,
 seo_title: "Information Architecture Auditor | Kujo WebOps"
 seo_description: "Review navigation, hierarchy, categories, tags, breadcrumbs, clusters, URLs, depth, discoverability, and orphaning."
 keywords: "Kujo agent, WebOps, website operations, Information Architecture Auditor"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/information-architecture-auditor.webp"
 categories: ["WebOps"]
 tags: ["Operations & Management"]
 order: 25

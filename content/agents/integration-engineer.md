@@ -6,7 +6,7 @@ excerpt: "Connect GitHub/GitLab, MCP, CI, external services, deployment systems,
 seo_title: "Integration Engineer | Kujo Chain of Command"
 seo_description: "Connect GitHub/GitLab, MCP, CI, external services, deployment systems, telemetry, provider adapters, and workflow orchestration boundaries."
 keywords: "Kujo agent, chain of command, Integration Engineer"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/integration-engineer.webp"
 categories: ["Chain of Command"]
 tags: ["Execution"]
 order: 13

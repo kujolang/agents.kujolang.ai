@@ -6,7 +6,7 @@ excerpt: "Monitor selected peers for meaningful changes in topics, positioning, 
 seo_title: "Competitor Intelligence Analyst | Kujo WebOps"
 seo_description: "Monitor selected peers for meaningful changes in topics, positioning, structure, search presence, content, and available backlink evidence."
 keywords: "Kujo agent, WebOps, website operations, Competitor Intelligence Analyst"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/competitor-intelligence-analyst.webp"
 categories: ["WebOps"]
 tags: ["Discovery & Intelligence"]
 order: 3

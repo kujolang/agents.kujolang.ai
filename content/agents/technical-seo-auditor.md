@@ -6,7 +6,7 @@ excerpt: "Audit deterministic crawl, canonical, redirect, metadata, structured-d
 seo_title: "Technical SEO Auditor | Kujo WebOps"
 seo_description: "Audit deterministic crawl, canonical, redirect, metadata, structured-data, internal-link, and indexability conditions."
 keywords: "Kujo agent, WebOps, website operations, Technical SEO Auditor"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/technical-seo-auditor.webp"
 categories: ["WebOps"]
 tags: ["Search Operations"]
 order: 9

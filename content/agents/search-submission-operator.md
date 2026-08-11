@@ -6,7 +6,7 @@ excerpt: "Submit authorized URLs or sitemaps through supported providers and pre
 seo_title: "Search Submission Operator | Kujo WebOps"
 seo_description: "Submit authorized URLs or sitemaps through supported providers and preserve auditable receipts without promising indexing."
 keywords: "Kujo agent, WebOps, website operations, Search Submission Operator"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/search-submission-operator.webp"
 categories: ["WebOps"]
 tags: ["Operations & Management"]
 order: 23
