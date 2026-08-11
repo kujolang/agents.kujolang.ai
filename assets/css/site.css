@@ -542,6 +542,14 @@ body:has(.chain-hero) .site-header .sk-header__inner {
 	line-height: var(--sk-type-line-loose);
 }
 
+.agent-provenance {
+	margin: var(--sk-space-0);
+	color: var(--sk-text-secondary);
+	font-family: var(--sk-font-mono);
+	font-size: var(--sk-type-size-xs);
+	line-height: var(--sk-type-line-loose);
+}
+
 .agent-mark {
 	display: grid;
 	place-items: center;

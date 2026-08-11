@@ -5,40 +5,40 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>{{page_title}}</title>
 	<meta name="description" content="{{meta_description}}">
-	<meta name="keywords" content="{{seo_keywords}}">
 	<meta name="author" content="{{author_meta}}">
-	{{canonical_tag}}
-	<link rel="icon" type="image/svg+xml" href="{{relative_path}}assets/images/favicon.svg">
-	{{rss_link_tag}}
+{{robots_meta_tag}}
+{{canonical_tag}}
+	<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+{{rss_link_tag}}
 	<meta property="og:title" content="{{seo_title}}">
 	<meta property="og:description" content="{{seo_description}}">
 	<meta property="og:url" content="{{og_url}}">
 	<meta property="og:type" content="{{og_type}}">
 	<meta property="og:site_name" content="{{site_title}}">
 	<meta property="og:locale" content="{{og_locale}}">
-	{{og_image_tag}}
-	{{og_article_tags}}
+{{og_image_tag}}
+{{og_article_tags}}
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="{{seo_title}}">
 	<meta name="twitter:description" content="{{seo_description}}">
-	{{twitter_image_tag}}
-	<link rel="stylesheet" href="{{relative_path}}assets/sitekit/sitekit.css?v=1.0.0">
-	<link rel="stylesheet" href="{{relative_path}}assets/css/site.css?v=20260810-4">
-	{{json_ld}}
+{{twitter_image_tag}}
+	<link rel="stylesheet" href="/assets/sitekit/sitekit.css?v=1.0.0">
+	<link rel="stylesheet" href="/assets/css/site.css?v=20260810-5">
+{{json_ld}}
 </head>
 <body>
 	<a class="sk-skip-link" href="#main-content">Skip to main content</a>
 
 	<header class="sk-header site-header" id="site-header">
 		<div class="sk-header__inner">
-			<a class="brand-lockup site-brand" href="{{home_path}}" aria-label="Kujo Agents home">
-				<img src="{{relative_path}}assets/images/kujo-logomark.svg" alt="" width="28" height="28">
+			<a class="brand-lockup site-brand" href="/" aria-label="Kujo Agents home">
+				<img src="/assets/images/kujo-logomark.svg" alt="" width="28" height="28">
 				<span>Kujo Agents</span>
 			</a>
 			<nav aria-label="Primary">
 				<ul class="site-nav">
-					<li><a href="{{relative_path}}agents/chain-of-command/">Chain of Command</a></li>
-					<li><a href="{{relative_path}}agents/webops/">WebOps</a></li>
+					<li><a href="/agents/chain-of-command/">Chain of Command</a></li>
+					<li><a href="/agents/webops/">WebOps</a></li>
 				</ul>
 			</nav>
 			<div class="sk-header__actions">
@@ -52,8 +52,8 @@
 	<footer class="sk-footer site-footer" id="footer">
 		<div class="sk-footer__inner">
 			<div class="site-footer__left">
-				<a class="footer-wordmark" href="https://kujolang.ai"><img src="{{relative_path}}assets/images/kujo-logomark.svg" alt="" width="24" height="24"><span>Kujo</span></a>
-				<nav aria-label="Footer"><a href="{{relative_path}}agents/">Agents</a><a href="{{relative_path}}agents/chain-of-command/">Chain of Command</a><a href="{{relative_path}}agents/webops/">WebOps</a></nav>
+				<a class="footer-wordmark" href="https://kujolang.ai"><img src="/assets/images/kujo-logomark.svg" alt="" width="24" height="24"><span>Kujo</span></a>
+				<nav aria-label="Footer"><a href="/agents/">Agents</a><a href="/agents/chain-of-command/">Chain of Command</a><a href="/agents/webops/">WebOps</a></nav>
 			</div>
 			<nav class="social-links" aria-label="Kujo social links">
 				<a href="https://x.com/kujolang" aria-label="Kujo on X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4l11.7 16H20L8.3 4H4zm0 16L17.5 4H20L6.5 20H4z"/></svg></a>
@@ -62,7 +62,7 @@
 			</nav>
 		</div>
 	</footer>
-	<script src="{{relative_path}}assets/sitekit/sitekit.js" defer></script>
-	<script src="{{relative_path}}assets/js/site.js?v=20260810-3" defer></script>
+	<script src="/assets/sitekit/sitekit.js" defer></script>
+	<script src="/assets/js/site.js?v=20260810-3" defer></script>
 </body>
 </html>

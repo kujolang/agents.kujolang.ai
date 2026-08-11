@@ -1710,7 +1710,7 @@ func featured_image_html_tag(featured_image_url, title) {
 	}
 	safe_url := xml_escape(url)
 	safe_title := xml_escape(title)
-	return "<img src=\"" + safe_url + "\" alt=\"Featured image for " + safe_title + "\" class=\"featured-image\" loading=\"lazy\" decoding=\"async\">"
+	return "<img src=\"" + safe_url + "\" alt=\"Featured image for " + safe_title + "\" class=\"featured-image\" width=\"640\" height=\"640\" loading=\"lazy\" decoding=\"async\">"
 }
 
 func render_layout(layout_template, settings, route, page_title, meta_description, navigation, content, page_meta) {
@@ -1739,7 +1739,10 @@ func render_layout_interpreted(layout_template, settings, route, page_title, met
 
 	site_url := trim(to_string(settings["site_url"]))
 	canonical_url := meta_string(page_meta, "canonical", "")
-	if len(canonical_url) == 0 {
+	canonical_disabled := canonical_url == "none"
+	if canonical_disabled {
+		canonical_url = ""
+	} else if len(canonical_url) == 0 {
 		canonical_url = route_absolute_url(site_url, route)
 	} else if len(site_url) > 0 && !starts_with(canonical_url, "http://") && !starts_with(canonical_url, "https://") && !starts_with(canonical_url, "//") {
 		site_root := trim(site_url)
@@ -1753,7 +1756,7 @@ func render_layout_interpreted(layout_template, settings, route, page_title, met
 		}
 	}
 
-	og_url := canonical_url
+	og_url := meta_string(page_meta, "og_url", canonical_url)
 	if len(og_url) == 0 {
 		og_url = route_absolute_url(site_url, route)
 	}
@@ -1768,6 +1771,11 @@ func render_layout_interpreted(layout_template, settings, route, page_title, met
 	canonical_tag := ""
 	if len(canonical_url) > 0 {
 		canonical_tag = "<link rel=\"canonical\" href=\"" + xml_escape(canonical_url) + "\">"
+	}
+	robots_directives := meta_string(page_meta, "robots", "")
+	robots_meta_tag := ""
+	if len(robots_directives) > 0 {
+		robots_meta_tag = "<meta name=\"robots\" content=\"" + xml_escape(robots_directives) + "\">"
 	}
 	og_image_tag := ""
 	twitter_image_tag := ""
@@ -1800,7 +1808,7 @@ func render_layout_interpreted(layout_template, settings, route, page_title, met
 
 	# RSS autodiscovery only when an aux feed is actually produced.
 	rss_link_tag := ""
-	if len(site_url) > 0 && !settings["no_aux"] {
+	if len(site_url) > 0 && !settings["no_aux"] && len(settings["blog_slug"]) > 0 {
 		rss_link_tag = "<link rel=\"alternate\" type=\"application/rss+xml\" title=\"" + html_escape(settings["site_title"]) + "\" href=\"" + prefix + "feed/index.xml\">"
 	}
 
@@ -1810,7 +1818,7 @@ func render_layout_interpreted(layout_template, settings, route, page_title, met
 	# JSON-LD structured data.
 	schema_type := "WebSite"
 	requested_schema_type := trim(meta_string(page_meta, "schema_type", ""))
-	if requested_schema_type == "ProfilePage" || requested_schema_type == "CollectionPage" || requested_schema_type == "WebPage" {
+	if requested_schema_type == "ProfilePage" || requested_schema_type == "CollectionPage" || requested_schema_type == "WebPage" || requested_schema_type == "SoftwareSourceCode" {
 		schema_type = requested_schema_type
 	} else if og_type == "article" {
 		schema_type = "BlogPosting"
@@ -1832,8 +1840,22 @@ func render_layout_interpreted(layout_template, settings, route, page_title, met
 			json_ld_parts = push(json_ld_parts, "\"datePublished\":\"" + json_escape(published_iso) + "\"")
 		}
 	}
-	json_ld_parts = push(json_ld_parts, "\"publisher\":{\"@type\":\"Organization\",\"name\":\"" + json_escape(settings["site_title"]) + "\"}")
-	json_ld := "<script type=\"application/ld+json\">{" + join(json_ld_parts, ",") + "}</script>"
+	modified_iso := trim(meta_string(page_meta, "modified_iso", ""))
+	if len(modified_iso) == 10 {
+		json_ld_parts = push(json_ld_parts, "\"dateModified\":\"" + json_escape(modified_iso) + "\"")
+	}
+	if schema_type == "SoftwareSourceCode" {
+		code_repository := trim(meta_string(page_meta, "code_repository", ""))
+		if len(code_repository) > 0 {
+			json_ld_parts = push(json_ld_parts, "\"codeRepository\":\"" + json_escape(code_repository) + "\"")
+		}
+		json_ld_parts = push(json_ld_parts, "\"maintainer\":{\"@type\":\"Organization\",\"name\":\"Kujo\",\"url\":\"https://kujolang.ai\"}")
+	}
+	json_ld_parts = push(json_ld_parts, "\"publisher\":{\"@type\":\"Organization\",\"name\":\"Kujo\",\"url\":\"https://kujolang.ai\"}")
+	json_ld := ""
+	if requested_schema_type != "none" {
+		json_ld = "<script type=\"application/ld+json\">{" + join(json_ld_parts, ",") + "}</script>"
+	}
 
 	computed_title := build_page_title(seo_title, settings["site_title"])
 	safe_title := xml_escape(computed_title)
@@ -1860,6 +1882,7 @@ func render_layout_interpreted(layout_template, settings, route, page_title, met
 			"seo_description": safe_description,
 			"seo_keywords": safe_keywords,
 			"author_meta": safe_author,
+			"robots_meta_tag": robots_meta_tag,
 			"canonical_tag": canonical_tag,
 			"og_url": safe_og_url,
 			"og_type": og_type,
@@ -2409,7 +2432,7 @@ func listing_card_html_interpreted(route, title, excerpt, featured_image, terms,
 		if contains(media_url, ".svg") {
 			image_class = image_class + " listing-card-image--mark"
 		}
-		media_block = "<span class=\"listing-card-image-link\"><img src=\"" + safe_media_url + "\" alt=\"Agent image for " + safe_title + "\" class=\"" + image_class + "\" loading=\"lazy\" decoding=\"async\"></span>"
+		media_block = "<span class=\"listing-card-image-link\"><img src=\"" + safe_media_url + "\" alt=\"Agent image for " + safe_title + "\" class=\"" + image_class + "\" width=\"640\" height=\"640\" loading=\"lazy\" decoding=\"async\"></span>"
 	}
 
 	return "<li class=\"listing-card agent-card sk-card\"><a class=\"listing-card-link\" href=\"" + safe_href + "\">" + media_block + "<span class=\"listing-card-body\">" + tags_block + "<span class=\"listing-card-title\">" + safe_title + "</span><span class=\"listing-card-excerpt\">" + safe_excerpt + "</span><span class=\"listing-card-footer\"><span class=\"listing-card-button\">" + safe_button_text + "</span><span class=\"listing-card-status\">online</span></span></span></a></li>"
@@ -2448,7 +2471,7 @@ func agent_card_html(item) {
 		if contains(media_url, ".svg") {
 			image_class = image_class + " listing-card-image--mark"
 		}
-		media_block = "<span class=\"listing-card-image-link\"><img src=\"" + safe_media_url + "\" alt=\"Agent image for " + safe_title + "\" class=\"" + image_class + "\" loading=\"lazy\" decoding=\"async\"></span>"
+		media_block = "<span class=\"listing-card-image-link\"><img src=\"" + safe_media_url + "\" alt=\"Agent image for " + safe_title + "\" class=\"" + image_class + "\" width=\"640\" height=\"640\" loading=\"lazy\" decoding=\"async\"></span>"
 	}
 
 	return "<li class=\"listing-card agent-card sk-card\" data-agent-category=\"" + safe_category + "\" data-agent-title=\"" + safe_title_attr + "\" data-agent-updated=\"" + safe_updated + "\" data-agent-order=\"" + safe_order + "\"><a class=\"listing-card-link\" href=\"" + safe_href + "\">" + media_block + "<span class=\"listing-card-body\">" + tags_block + "<span class=\"listing-card-title\">" + safe_title + "</span><span class=\"listing-card-excerpt\">" + safe_excerpt + "</span><span class=\"listing-card-footer\"><span class=\"listing-card-button\">View Agent</span><span class=\"listing-card-status\">online</span></span></span></a></li>"
@@ -3982,7 +4005,7 @@ func build_site(settings) {
 			item_schema_type := ""
 			if collection_slug == "agents" {
 				item_og_type = "website"
-				item_schema_type = "ProfilePage"
+				item_schema_type = "SoftwareSourceCode"
 			}
 			item_html := render_layout(
 				layout_template,
@@ -4002,14 +4025,21 @@ func build_site(settings) {
 					"author": item_author_name,
 					"og_type": item_og_type,
 					"schema_type": item_schema_type,
-					"published_iso": item_date["iso"]
+					"published_iso": item_date["iso"],
+					"modified_iso": trim(to_string(meta["last_updated"])),
+					"code_repository": trim(to_string(meta["source_url"]))
 				}
 			)
 			write_route_page(output_dir, route, item_html)
 			write_route_alias(output_dir, route, make_aliases)
 
 			if want_sitemap {
-				append_file(sitemap_tmp, sitemap_url_entry(site_url, route, item_date["iso"], blog_prefix))
+				item_sitemap_date := item_date["iso"]
+				item_modified_date := parse_post_date(trim(to_string(meta["last_updated"])))
+				if item_modified_date["valid"] {
+					item_sitemap_date = item_modified_date["iso"]
+				}
+				append_file(sitemap_tmp, sitemap_url_entry(site_url, route, item_sitemap_date, blog_prefix))
 			}
 			collection_items = push(collection_items, {
 				"title": title,
@@ -4114,12 +4144,13 @@ func build_site(settings) {
 			settings,
 			listing_route,
 			collection_title + " - " + settings["site_title"],
-			settings["site_tagline"],
+			"Browse source-grounded Kujo agent contracts for planning, implementation, verification, research, security, and operations.",
 			listing_navigation,
 			listing_content,
 			{
 				"seo_title": collection_title,
-				"seo_description": settings["site_tagline"],
+				"seo_description": "Browse source-grounded Kujo agent contracts for planning, implementation, verification, research, security, and operations.",
+				"featured_image": "/assets/images/agent-hero-background.webp",
 				"schema_type": "CollectionPage",
 				"lang": "en"
 			}
@@ -4160,6 +4191,10 @@ func build_site(settings) {
 						"description": agent_set_page["description"],
 						"cards": agent_set_page["cards"]
 					})
+					agent_set_robots := ""
+					if agent_set_page["slug"] == "webops" {
+						agent_set_robots = "noindex,follow"
+					}
 					agent_set_navigation := build_navigation(pages_data, custom_collections, agent_set_route, settings["blog_slug"])
 					agent_set_html := render_layout(
 						layout_template,
@@ -4173,12 +4208,14 @@ func build_site(settings) {
 							"seo_title": agent_set_page["title"] + " Agents",
 							"seo_description": agent_set_page["description"],
 							"schema_type": "CollectionPage",
+							"robots": agent_set_robots,
+							"featured_image": "/assets/images/agent-hero-background.webp",
 							"lang": "en"
 						}
 					)
 					write_route_page(output_dir, agent_set_route, agent_set_html)
 					write_route_alias(output_dir, agent_set_route, make_aliases)
-					if want_sitemap {
+					if want_sitemap && agent_set_page["slug"] != "webops" {
 						append_file(sitemap_tmp, sitemap_url_entry(site_url, agent_set_route, "", blog_prefix))
 					}
 				}
@@ -4289,6 +4326,7 @@ func build_site(settings) {
 				{
 					"seo_title": settings["site_title"],
 					"seo_description": settings["site_tagline"],
+					"featured_image": "/assets/images/agent-hero-background.webp",
 					"lang": "en"
 				}
 			)
@@ -4459,6 +4497,10 @@ func build_site(settings) {
 		{
 			"seo_title": "Page Not Found",
 			"seo_description": "Page not found",
+			"canonical": "none",
+			"og_url": site_url + "/404.html",
+			"robots": "noindex,follow",
+			"schema_type": "none",
 			"lang": "en"
 		}
 	)

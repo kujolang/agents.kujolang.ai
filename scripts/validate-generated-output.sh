@@ -39,6 +39,9 @@ while IFS= read -r html_file; do
 		if grep -Eio '<img[[:space:]][^>]*>' "$html_file" | grep -Eiv ' alt="' >/dev/null; then
 			record_failure "FAIL image-alt: $html_file"
 		fi
+		if grep -Eio '<img[[:space:]][^>]*>' "$html_file" | grep -Eiv ' width="[0-9]+"[^>]* height="[0-9]+"| height="[0-9]+"[^>]* width="[0-9]+"' >/dev/null; then
+			record_failure "FAIL image-dimensions: $html_file"
+		fi
 	fi
 
 	if grep -qi 'class="skip-link"' "$html_file"; then
@@ -48,6 +51,27 @@ while IFS= read -r html_file; do
 	fi
 
 done < <(find "$OUT_DIR" -name '*.html' -type f | sort)
+
+if [[ -f "$OUT_DIR/404.html" ]]; then
+	if ! grep -qi '<meta name="robots" content="noindex,follow">' "$OUT_DIR/404.html"; then
+		record_failure "FAIL 404-indexability: missing noindex,follow"
+	fi
+	if grep -qi 'rel="canonical"' "$OUT_DIR/404.html"; then
+		record_failure "FAIL 404-canonical: error page should not canonicalize to an indexable URL"
+	fi
+	if grep -Eq '(href|src)="(\.\.?/|assets/|agents/)' "$OUT_DIR/404.html"; then
+		record_failure "FAIL 404-relative-resource: nested 404 requests require root-relative internal resources"
+	fi
+fi
+
+if [[ -f "$OUT_DIR/agents/webops/index.html" ]]; then
+	if ! grep -qi '<meta name="robots" content="noindex,follow">' "$OUT_DIR/agents/webops/index.html"; then
+		record_failure "FAIL webops-indexability: placeholder collection must be noindex,follow"
+	fi
+	if [[ -f "$OUT_DIR/sitemap.xml" ]] && grep -q 'https://agents.kujolang.ai/agents/webops/' "$OUT_DIR/sitemap.xml"; then
+		record_failure "FAIL webops-sitemap: noindex placeholder collection is in sitemap"
+	fi
+fi
 
 if [[ "$html_count" -eq 0 ]]; then
 	record_failure "FAIL no-html: no HTML files found in $OUT_DIR"
@@ -72,7 +96,7 @@ if [[ -f "$OUT_DIR/index.html" ]]; then
 	if ! grep -q 'id="chain-of-command"' "$OUT_DIR/index.html"; then
 		record_failure "FAIL agent-set: homepage does not render the Chain of Command set"
 	fi
-	if ! grep -q 'href="agents/chain-of-command/">Chain of Command</a>' "$OUT_DIR/index.html" || ! grep -q 'href="agents/webops/">WebOps</a>' "$OUT_DIR/index.html"; then
+	if ! grep -q 'href="/agents/chain-of-command/">Chain of Command</a>' "$OUT_DIR/index.html" || ! grep -q 'href="/agents/webops/">WebOps</a>' "$OUT_DIR/index.html"; then
 		record_failure "FAIL agent-navigation: homepage does not render both direct agent-set links"
 	fi
 	if grep -q 'site-nav-dropdown' "$OUT_DIR/index.html"; then
