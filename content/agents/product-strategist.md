@@ -6,7 +6,7 @@ excerpt: "Own user value, roadmap fit, feature framing, adoption assumptions, an
 seo_title: "Product Strategist"
 seo_description: "Own user value, roadmap fit, feature framing, adoption assumptions, and ICP alignment."
 keywords: "Kujo agent, Product Strategist, chain of command"
-featured_image: "content/media/agents/product-strategist.png"
+featured_image: "content/media/agents/product-strategist.webp"
 categories: ["Chain of Command"]
 tags: ["Strategic"]
 order: 4

@@ -6,7 +6,7 @@ excerpt: "Turn vague goals into structured objectives, assign lanes, manage hand
 seo_title: "Chief Of Staff"
 seo_description: "Turn vague goals into structured objectives, assign lanes, manage handoffs, and keep work auditable."
 keywords: "Kujo agent, Chief Of Staff, chain of command"
-featured_image: "content/media/agents/chief-of-staff.png"
+featured_image: "content/media/agents/chief-of-staff.webp"
 categories: ["Chain of Command"]
 tags: ["Strategic"]
 order: 2

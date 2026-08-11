@@ -6,7 +6,7 @@ excerpt: "Implement bounded source changes and focused tests inside an assigned 
 seo_title: "Core Developer"
 seo_description: "Implement bounded source changes and focused tests inside an assigned scope."
 keywords: "Kujo agent, Core Developer, chain of command"
-featured_image: "content/media/agents/core-developer.jpg"
+featured_image: "content/media/agents/core-developer.webp"
 categories: ["Chain of Command"]
 tags: ["Execution"]
 order: 9

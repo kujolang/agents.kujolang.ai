@@ -6,7 +6,7 @@ excerpt: "Convert goals into milestones, tasks, sequencing, dependencies, accept
 seo_title: "Planner"
 seo_description: "Convert goals into milestones, tasks, sequencing, dependencies, acceptance criteria, and verification plans."
 keywords: "Kujo agent, Planner, chain of command"
-featured_image: "content/media/agents/planner.png"
+featured_image: "content/media/agents/planner.webp"
 categories: ["Chain of Command"]
 tags: ["Planning"]
 order: 5

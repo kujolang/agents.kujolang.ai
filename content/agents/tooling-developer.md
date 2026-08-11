@@ -6,7 +6,7 @@ excerpt: "Build or maintain CLI tools, scripts, local automation, developer work
 seo_title: "Tooling Developer"
 seo_description: "Build or maintain CLI tools, scripts, local automation, developer workflows, and KUJO tool integrations."
 keywords: "Kujo agent, Tooling Developer, chain of command"
-featured_image: "content/media/agents/tooling-developer.jpg"
+featured_image: "content/media/agents/tooling-developer.webp"
 categories: ["Chain of Command"]
 tags: ["Execution"]
 order: 10

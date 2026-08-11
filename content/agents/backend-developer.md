@@ -6,7 +6,7 @@ excerpt: "Implement APIs, persistence, jobs, auth boundaries, service logic, and
 seo_title: "Backend Developer"
 seo_description: "Implement APIs, persistence, jobs, auth boundaries, service logic, and server-side integrations within a bounded task."
 keywords: "Kujo agent, Backend Developer, chain of command"
-featured_image: "content/media/agents/backend-developer.jpg"
+featured_image: "content/media/agents/backend-developer.webp"
 categories: ["Chain of Command"]
 tags: ["Execution"]
 order: 12

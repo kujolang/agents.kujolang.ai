@@ -6,7 +6,7 @@ excerpt: "Own architecture, module boundaries, platform decisions, runtime trade
 seo_title: "Systems Architect"
 seo_description: "Own architecture, module boundaries, platform decisions, runtime tradeoffs, and long-term technical coherence."
 keywords: "Kujo agent, Systems Architect, chain of command"
-featured_image: "content/media/agents/systems-architect.png"
+featured_image: "content/media/agents/systems-architect.webp"
 categories: ["Chain of Command"]
 tags: ["Strategic"]
 order: 3

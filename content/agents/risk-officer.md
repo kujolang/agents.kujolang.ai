@@ -6,7 +6,7 @@ excerpt: "Identify risk, security concerns, migration issues, release blockers, 
 seo_title: "Risk Officer"
 seo_description: "Identify risk, security concerns, migration issues, release blockers, scope creep, and evidence gaps before or during work."
 keywords: "Kujo agent, Risk Officer, chain of command"
-featured_image: "content/media/agents/risk-officer.jpg"
+featured_image: "content/media/agents/risk-officer.webp"
 categories: ["Chain of Command"]
 tags: ["Planning"]
 order: 8
