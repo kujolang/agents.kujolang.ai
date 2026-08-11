@@ -6,13 +6,11 @@
 				<h1 id="hero-title">{{title}}</h1>
 				<p>{{description}}</p>
 				<div class="sk-hero__actions">
-					<a class="sk-button" href="/agents/">Explore agent sets</a>
-					<a class="sk-button" data-variant="secondary" href="https://github.com/kujolang/kujo-agents">View source</a>
+					<a class="sk-button" href="/agents/">Explore Agents</a>
+					<a class="sk-button" data-variant="secondary" href="https://github.com/kujolang/kujo-agents" target="_blank" rel="noopener noreferrer">View Source</a>
 				</div>
 			</div>
-			<div class="hero-mark" aria-hidden="true">
-				<img src="assets/images/kujo-logomark.svg" alt="">
-			</div>
+			<div class="hero-image" role="img" aria-label="A human and an AI agent coordinating work"></div>
 		</div>
 	</section>
 
@@ -21,16 +19,6 @@
 		<div><span>Content type</span><strong>Agents</strong></div>
 		<div><span>Organization</span><strong>Agent sets</strong></div>
 		<div><span>Status</span><strong>Operational</strong></div>
-	</section>
-
-	<section class="library-intro" aria-labelledby="roster-title">
-		<div class="section-heading">
-			<div>
-				<p class="eyebrow">Agent directory</p>
-				<h2 id="roster-title">Purpose-built teams</h2>
-			</div>
-			<p>Browse one focused roster at a time. Each row shows three agents on desktop and scrolls horizontally through the complete set.</p>
-		</div>
 	</section>
 
 	<div class="agent-sets">{{agent_sets_html}}</div>

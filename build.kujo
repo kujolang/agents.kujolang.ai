@@ -2412,7 +2412,60 @@ func listing_card_html_interpreted(route, title, excerpt, featured_image, terms,
 		media_block = "<span class=\"listing-card-image-link\"><img src=\"" + safe_media_url + "\" alt=\"Agent image for " + safe_title + "\" class=\"" + image_class + "\" loading=\"lazy\" decoding=\"async\"></span>"
 	}
 
-	return "<li class=\"listing-card agent-card sk-card\"><a class=\"listing-card-link\" href=\"" + safe_href + "\">" + media_block + "<span class=\"listing-card-body\">" + tags_block + "<span class=\"listing-card-title\">" + safe_title + "</span><span class=\"listing-card-excerpt\">" + safe_excerpt + "</span><span class=\"listing-card-button\">" + safe_button_text + "</span><span class=\"listing-card-status\">online</span></span></a></li>"
+	return "<li class=\"listing-card agent-card sk-card\"><a class=\"listing-card-link\" href=\"" + safe_href + "\">" + media_block + "<span class=\"listing-card-body\">" + tags_block + "<span class=\"listing-card-title\">" + safe_title + "</span><span class=\"listing-card-excerpt\">" + safe_excerpt + "</span><span class=\"listing-card-footer\"><span class=\"listing-card-button\">" + safe_button_text + "</span><span class=\"listing-card-status\">online</span></span></span></a></li>"
+}
+
+func agent_card_html(item) {
+	route := item["route"]
+	title := item["title"]
+	excerpt := item["excerpt"]
+	featured_image := item["featured_image"]
+	terms := item["tags"]
+	category := trim(to_string(item["category"]))
+	if len(category) == 0 || category == "Agents" {
+		category = "Other Agents"
+	}
+
+	safe_href := xml_escape(route_to_path(route))
+	safe_title := html_escape(title)
+	safe_excerpt := html_escape(excerpt)
+	safe_category := xml_escape(clean_slug(category))
+	safe_title_attr := xml_escape(to_lower(trim(to_string(title))))
+	safe_updated := xml_escape(trim(to_string(item["last_updated"])))
+	safe_order := xml_escape(to_string(item["order"]))
+
+	media_url := listing_card_media_url(featured_image)
+	safe_media_url := xml_escape(media_url)
+	tags_html := listing_card_tags_html(terms)
+	tags_block := ""
+	if len(tags_html) > 0 {
+		tags_block = "<div class=\"listing-card-tags\">" + tags_html + "</div>"
+	}
+
+	media_block := "<span class=\"listing-card-image-link\"><span class=\"listing-card-image-placeholder\" aria-hidden=\"true\"></span></span>"
+	if len(media_url) > 0 {
+		image_class := "listing-card-image"
+		if contains(media_url, ".svg") {
+			image_class = image_class + " listing-card-image--mark"
+		}
+		media_block = "<span class=\"listing-card-image-link\"><img src=\"" + safe_media_url + "\" alt=\"Agent image for " + safe_title + "\" class=\"" + image_class + "\" loading=\"lazy\" decoding=\"async\"></span>"
+	}
+
+	return "<li class=\"listing-card agent-card sk-card\" data-agent-category=\"" + safe_category + "\" data-agent-title=\"" + safe_title_attr + "\" data-agent-updated=\"" + safe_updated + "\" data-agent-order=\"" + safe_order + "\"><a class=\"listing-card-link\" href=\"" + safe_href + "\">" + media_block + "<span class=\"listing-card-body\">" + tags_block + "<span class=\"listing-card-title\">" + safe_title + "</span><span class=\"listing-card-excerpt\">" + safe_excerpt + "</span><span class=\"listing-card-footer\"><span class=\"listing-card-button\">View Agent</span><span class=\"listing-card-status\">online</span></span></span></a></li>"
+}
+
+func webops_placeholder_cards_html() {
+	html := ""
+	placeholder_idx := 1
+	loop {
+		if placeholder_idx > 3 {
+			break
+		}
+		title := "WebOps Agent " + to_string(placeholder_idx)
+		html = html + "<li class=\"listing-card listing-card--placeholder agent-card sk-card\" data-agent-category=\"webops\" data-agent-title=\"" + xml_escape(to_lower(title)) + "\" data-agent-updated=\"2026-08-10\" data-agent-order=\"" + to_string(1000 + placeholder_idx) + "\"><div class=\"listing-card-link\"> <span class=\"listing-card-image-link\"><span class=\"listing-card-placeholder-mark\" aria-hidden=\"true\">WO</span></span><span class=\"listing-card-body\"><div class=\"listing-card-tags\"><span class=\"tag listing-tag\">WebOps</span></div><span class=\"listing-card-title\">" + html_escape(title) + "</span><span class=\"listing-card-excerpt\">Profile coming soon.</span><span class=\"listing-card-footer\"><span class=\"listing-card-button\">Coming Soon</span><span class=\"listing-card-status listing-card-status--pending\">pending</span></span></span></div></li>"
+		placeholder_idx := placeholder_idx + 1
+	}
+	return html
 }
 
 func agent_sets_html(items) {
@@ -2435,8 +2488,13 @@ func agent_sets_html(items) {
 			set_cards[set_name] = ""
 			set_counts[set_name] = 0
 		}
-		set_cards[set_name] = set_cards[set_name] + listing_card_html(item["route"], item["title"], item["excerpt"], item["featured_image"], item["tags"], "View Agent")
+		set_cards[set_name] = set_cards[set_name] + agent_card_html(item)
 		set_counts[set_name] = set_counts[set_name] + 1
+	}
+	if has_key(set_cards, "WebOps") == 0 {
+		set_names = push(set_names, "WebOps")
+		set_cards["WebOps"] = webops_placeholder_cards_html()
+		set_counts["WebOps"] = 3
 	}
 
 	html := ""
@@ -2452,7 +2510,7 @@ func agent_sets_html(items) {
 		safe_set_name := html_escape(set_name)
 		safe_carousel_id := xml_escape(carousel_id)
 		count_label := to_string(set_counts[set_name]) + " agents"
-		html = html + "<section class=\"agent-set roster-section\" id=\"" + xml_escape(set_slug) + "\" data-agent-set=\"" + xml_escape(set_name) + "\"><div class=\"section-heading\"><div><p class=\"eyebrow\">Agent set / " + html_escape(count_label) + "</p><h2>" + safe_set_name + "</h2></div><p>Explore the " + safe_set_name + " roster and open any agent to inspect its full operating contract.</p></div><div class=\"agent-carousel-shell\"><div class=\"agent-carousel-controls\"><button class=\"carousel-button\" type=\"button\" data-carousel-prev aria-controls=\"" + safe_carousel_id + "\" aria-label=\"Previous " + safe_set_name + " agents\">&#8592;</button><button class=\"carousel-button\" type=\"button\" data-carousel-next aria-controls=\"" + safe_carousel_id + "\" aria-label=\"Next " + safe_set_name + " agents\">&#8594;</button></div><ul class=\"agent-carousel\" id=\"" + safe_carousel_id + "\" tabindex=\"0\">" + set_cards[set_name] + "</ul></div></section>"
+		html = html + "<section class=\"agent-set roster-section\" id=\"" + xml_escape(set_slug) + "\" data-agent-set=\"" + xml_escape(set_name) + "\"><div class=\"section-heading\"><div><p class=\"eyebrow\">Agent set / " + html_escape(count_label) + "</p><h2><a href=\"/agents/" + xml_escape(set_slug) + "/\">" + safe_set_name + "</a></h2></div><p>Explore the " + safe_set_name + " roster and open any agent to inspect its full operating contract.</p></div><div class=\"agent-carousel-shell\"><div class=\"agent-carousel-controls\"><button class=\"carousel-button\" type=\"button\" data-carousel-prev aria-controls=\"" + safe_carousel_id + "\" aria-label=\"Previous " + safe_set_name + " agents\">&#8592;</button><button class=\"carousel-button\" type=\"button\" data-carousel-next aria-controls=\"" + safe_carousel_id + "\" aria-label=\"Next " + safe_set_name + " agents\">&#8594;</button></div><ul class=\"agent-carousel\" id=\"" + safe_carousel_id + "\" tabindex=\"0\">" + set_cards[set_name] + "</ul></div></section>"
 	}
 	return html
 }
@@ -3967,7 +4025,8 @@ func build_site(settings) {
 				"tags": tags,
 				"location_terms": location_terms,
 				"route": route,
-				"order": parse_int_value(meta["order"], 1000)
+				"order": parse_int_value(meta["order"], 1000),
+				"last_updated": trim(to_string(meta["last_updated"]))
 			})
 		}
 
@@ -3980,6 +4039,8 @@ func build_site(settings) {
 			agent_sets_markup = agent_sets_html(sorted_collection_items)
 		}
 		collection_cards := ""
+		chain_of_command_cards := ""
+		webops_cards := ""
 		preview_cards := ""
 		location_cards := ""
 		preview_count := 0
@@ -3997,9 +4058,19 @@ func build_site(settings) {
 			} else if collection_slug == "agents" {
 				item_action_label = "View Agent"
 			}
-			collection_cards := collection_cards + listing_card_html(item["route"], item["title"], item["excerpt"], item["featured_image"], item["tags"], item_action_label)
+			item_card_html := listing_card_html(item["route"], item["title"], item["excerpt"], item["featured_image"], item["tags"], item_action_label)
+			if collection_slug == "agents" {
+				item_card_html = agent_card_html(item)
+				item_set_slug := clean_slug(item["category"])
+				if item_set_slug == "chain-of-command" {
+					chain_of_command_cards = chain_of_command_cards + item_card_html
+				} else if item_set_slug == "webops" {
+					webops_cards = webops_cards + item_card_html
+				}
+			}
+			collection_cards := collection_cards + item_card_html
 			if preview_count < 6 {
-				preview_cards = preview_cards + listing_card_html(item["route"], item["title"], item["excerpt"], item["featured_image"], item["tags"], item_action_label)
+				preview_cards = preview_cards + item_card_html
 				if collection_slug == "storefronts" {
 					location_cards = location_cards + listing_card_html(item["route"], item["title"], item["excerpt"], item["featured_image"], item["location_terms"], "View Location")
 				}
@@ -4013,6 +4084,11 @@ func build_site(settings) {
 			# Reuse the existing home-collection slot with the complete agent roster.
 			storefront_preview_cards = collection_cards
 		}
+		agent_directory_cards := collection_cards
+		if collection_slug == "agents" && len(webops_cards) == 0 {
+			webops_cards = webops_placeholder_cards_html()
+			agent_directory_cards = agent_directory_cards + webops_cards
+		}
 
 		listing_route := collection_slug + "/"
 		listing_content := "<main class=\"container max-w-2xl m-auto py-10 px-4\" id=\"main-content\"><h1 class=\"text-6xl font-bold mb-8 pb-8 text-links font-heading-bold border-b border-primary page-title\">" + collection_title + "</h1><ul class=\"card-grid\">" + collection_cards + "</ul></main>"
@@ -4022,9 +4098,9 @@ func build_site(settings) {
 			listing_content = apply_template(listing_template, {
 				"title": collection_title,
 				"content_type": collection_slug,
-				"cards": collection_cards,
-				"items": collection_cards,
-				"posts": collection_cards,
+				"cards": agent_directory_cards,
+				"items": agent_directory_cards,
+				"posts": agent_directory_cards,
 				"agent_sets_html": agent_sets_markup,
 				"pagination": "",
 				"description": settings["site_tagline"]
@@ -4051,6 +4127,61 @@ func build_site(settings) {
 		write_route_alias(output_dir, listing_route, make_aliases)
 		if want_sitemap {
 			append_file(sitemap_tmp, sitemap_url_entry(site_url, listing_route, "", blog_prefix))
+		}
+		if collection_slug == "agents" {
+			agent_set_template_path := path_join(templates_dir, "page-agent-set.html")
+			if path_exists(agent_set_template_path) {
+				agent_set_template := read_file(agent_set_template_path)
+				agent_set_pages := [
+					{
+						"title": "Chain of Command",
+						"slug": "chain-of-command",
+						"description": "A coordinated roster for strategy, planning, execution, verification, knowledge, and routine work.",
+						"cards": chain_of_command_cards
+					},
+					{
+						"title": "WebOps",
+						"slug": "webops",
+						"description": "Web operations agents are joining the directory soon.",
+						"cards": webops_cards
+					}
+				]
+				agent_set_idx := 0
+				loop {
+					if agent_set_idx >= len(agent_set_pages) {
+						break
+					}
+					agent_set_page := agent_set_pages[agent_set_idx]
+					agent_set_idx := agent_set_idx + 1
+					agent_set_route := "agents/" + agent_set_page["slug"] + "/"
+					agent_set_content := apply_template(agent_set_template, {
+						"title": agent_set_page["title"],
+						"description": agent_set_page["description"],
+						"cards": agent_set_page["cards"]
+					})
+					agent_set_navigation := build_navigation(pages_data, custom_collections, agent_set_route, settings["blog_slug"])
+					agent_set_html := render_layout(
+						layout_template,
+						settings,
+						agent_set_route,
+						agent_set_page["title"] + " Agents - " + settings["site_title"],
+						agent_set_page["description"],
+						agent_set_navigation,
+						agent_set_content,
+						{
+							"seo_title": agent_set_page["title"] + " Agents",
+							"seo_description": agent_set_page["description"],
+							"schema_type": "CollectionPage",
+							"lang": "en"
+						}
+					)
+					write_route_page(output_dir, agent_set_route, agent_set_html)
+					write_route_alias(output_dir, agent_set_route, make_aliases)
+					if want_sitemap {
+						append_file(sitemap_tmp, sitemap_url_entry(site_url, agent_set_route, "", blog_prefix))
+					}
+				}
+			}
 		}
 		if settings["llms"] == "public" && len(site_url) > 0 && !settings["no_aux"] {
 			append_file(llms_collections_tmp, "\n## " + collection_title + "\n")
