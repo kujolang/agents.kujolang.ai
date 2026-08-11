@@ -26,7 +26,6 @@ document.querySelectorAll(".agent-carousel-shell").forEach((shell) => {
 });
 
 function enhanceHeroDither() {
-	const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 	const bayer8 = [
 		[0, 48, 12, 60, 3, 51, 15, 63],
 		[32, 16, 44, 28, 35, 19, 47, 31],
@@ -47,15 +46,15 @@ function enhanceHeroDither() {
 		const sourceCanvas = document.createElement("canvas");
 		const sourceContext = sourceCanvas.getContext("2d", { willReadFrequently: true });
 		let sourcePixels = null;
-		let frame = 0;
-		let lastTick = 0;
 		let resizeFrame = 0;
 
 		if (!context || !sourceContext) return;
 
 		const sizeCanvas = () => {
-			const width = Math.max(1, Math.ceil(media.clientWidth / 2));
-			const height = Math.max(1, Math.ceil(media.clientHeight / 2));
+			// A low-resolution static pass keeps the ordered-dither treatment while
+			// avoiding a full-screen per-pixel animation on the main thread.
+			const width = Math.max(1, Math.ceil(media.clientWidth / 6));
+			const height = Math.max(1, Math.ceil(media.clientHeight / 6));
 			canvas.width = width;
 			canvas.height = height;
 			sourceCanvas.width = width;
@@ -76,17 +75,14 @@ function enhanceHeroDither() {
 			const output = context.createImageData(width, height);
 			const source = sourcePixels.data;
 			const target = output.data;
-			const driftX = Math.floor(frame / 2) % 8;
-			const driftY = Math.floor(frame / 3) % 8;
-			const thresholdShift = reducedMotion ? 0 : Math.sin(frame * 0.36) * 7;
 
 			for (let y = 0; y < height; y += 1) {
 				for (let x = 0; x < width; x += 1) {
 					const index = (y * width + x) * 4;
 					let luminance = 0.299 * source[index] + 0.587 * source[index + 1] + 0.114 * source[index + 2];
 					luminance = (luminance - 128) * 1.12 + 128;
-					const matrix = bayer8[(y + driftY) % 8][(x + driftX) % 8];
-					const threshold = 94 + matrix * 1.88 + thresholdShift;
+					const matrix = bayer8[y % 8][x % 8];
+					const threshold = 94 + matrix * 1.88;
 					const value = luminance > threshold ? 244 : 14;
 					target[index] = value;
 					target[index + 1] = value;
@@ -97,21 +93,11 @@ function enhanceHeroDither() {
 
 			context.putImageData(output, 0, 0);
 			canvas.dataset.ditherReady = "true";
-			frame += 1;
-		};
-
-		const render = (now) => {
-			if (now - lastTick >= 1000 / 14) {
-				lastTick = now;
-				drawFrame();
-			}
-			window.requestAnimationFrame(render);
 		};
 
 		const setup = () => {
 			sizeCanvas();
 			drawFrame();
-			if (!reducedMotion) window.requestAnimationFrame(render);
 		};
 
 		const handleResize = () => {
