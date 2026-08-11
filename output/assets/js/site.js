@@ -42,17 +42,21 @@ function enhanceHeroDither() {
 		const canvas = media.querySelector("[data-hero-dither]");
 		if (!image || !canvas) return;
 
+		const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 		const context = canvas.getContext("2d", { willReadFrequently: true });
 		const sourceCanvas = document.createElement("canvas");
 		const sourceContext = sourceCanvas.getContext("2d", { willReadFrequently: true });
 		let sourcePixels = null;
+		let outputPixels = null;
+		let animationTimer = 0;
+		let frame = 0;
+		let inViewport = true;
 		let resizeFrame = 0;
 
 		if (!context || !sourceContext) return;
 
 		const sizeCanvas = () => {
-			// A low-resolution static pass keeps the ordered-dither treatment while
-			// avoiding a full-screen per-pixel animation on the main thread.
+			// Keep the effect coarse enough to animate cheaply on the main thread.
 			const width = Math.max(1, Math.ceil(media.clientWidth / 6));
 			const height = Math.max(1, Math.ceil(media.clientHeight / 6));
 			canvas.width = width;
@@ -66,23 +70,26 @@ function enhanceHeroDither() {
 			sourceContext.clearRect(0, 0, width, height);
 			sourceContext.drawImage(image, width - drawWidth, (height - drawHeight) / 2, drawWidth, drawHeight);
 			sourcePixels = sourceContext.getImageData(0, 0, width, height);
+			outputPixels = context.createImageData(width, height);
 		};
 
 		const drawFrame = () => {
-			if (!sourcePixels) return;
+			if (!sourcePixels || !outputPixels) return;
 			const width = canvas.width;
 			const height = canvas.height;
-			const output = context.createImageData(width, height);
 			const source = sourcePixels.data;
-			const target = output.data;
+			const target = outputPixels.data;
+			const driftX = Math.floor(frame / 2) % 8;
+			const driftY = Math.floor(frame / 3) % 8;
+			const thresholdShift = reducedMotion ? 0 : Math.sin(frame * 0.42) * 7;
 
 			for (let y = 0; y < height; y += 1) {
 				for (let x = 0; x < width; x += 1) {
 					const index = (y * width + x) * 4;
 					let luminance = 0.299 * source[index] + 0.587 * source[index + 1] + 0.114 * source[index + 2];
 					luminance = (luminance - 128) * 1.12 + 128;
-					const matrix = bayer8[y % 8][x % 8];
-					const threshold = 94 + matrix * 1.88;
+					const matrix = bayer8[(y + driftY) % 8][(x + driftX) % 8];
+					const threshold = 94 + matrix * 1.88 + thresholdShift;
 					const value = luminance > threshold ? 244 : 14;
 					target[index] = value;
 					target[index + 1] = value;
@@ -91,13 +98,28 @@ function enhanceHeroDither() {
 				}
 			}
 
-			context.putImageData(output, 0, 0);
+			context.putImageData(outputPixels, 0, 0);
 			canvas.dataset.ditherReady = "true";
+			frame += 1;
+		};
+
+		const stopAnimation = () => {
+			window.clearInterval(animationTimer);
+			animationTimer = 0;
+		};
+
+		const syncAnimation = () => {
+			if (reducedMotion || document.hidden || !inViewport) {
+				stopAnimation();
+				return;
+			}
+			if (!animationTimer) animationTimer = window.setInterval(drawFrame, 160);
 		};
 
 		const setup = () => {
 			sizeCanvas();
 			drawFrame();
+			syncAnimation();
 		};
 
 		const handleResize = () => {
@@ -110,6 +132,14 @@ function enhanceHeroDither() {
 
 		if (image.complete && image.naturalWidth) setup();
 		else image.addEventListener("load", setup, { once: true });
+		if ("IntersectionObserver" in window) {
+			const observer = new IntersectionObserver(([entry]) => {
+				inViewport = entry.isIntersecting;
+				syncAnimation();
+			});
+			observer.observe(media);
+		}
+		document.addEventListener("visibilitychange", syncAnimation);
 		window.addEventListener("resize", handleResize);
 	});
 }
