@@ -26,6 +26,7 @@ document.querySelectorAll(".agent-carousel-shell").forEach((shell) => {
 });
 
 function enhanceHeroDither() {
+	const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 	const bayer8 = [
 		[0, 48, 12, 60, 3, 51, 15, 63],
 		[32, 16, 44, 28, 35, 19, 47, 31],
@@ -42,23 +43,19 @@ function enhanceHeroDither() {
 		const canvas = media.querySelector("[data-hero-dither]");
 		if (!image || !canvas) return;
 
-		const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 		const context = canvas.getContext("2d", { willReadFrequently: true });
 		const sourceCanvas = document.createElement("canvas");
 		const sourceContext = sourceCanvas.getContext("2d", { willReadFrequently: true });
 		let sourcePixels = null;
-		let outputPixels = null;
-		let animationTimer = 0;
 		let frame = 0;
-		let inViewport = true;
+		let lastTick = 0;
 		let resizeFrame = 0;
 
 		if (!context || !sourceContext) return;
 
 		const sizeCanvas = () => {
-			// Keep the effect coarse enough to animate cheaply on the main thread.
-			const width = Math.max(1, Math.ceil(media.clientWidth / 6));
-			const height = Math.max(1, Math.ceil(media.clientHeight / 6));
+			const width = Math.max(1, Math.ceil(media.clientWidth / 2));
+			const height = Math.max(1, Math.ceil(media.clientHeight / 2));
 			canvas.width = width;
 			canvas.height = height;
 			sourceCanvas.width = width;
@@ -70,18 +67,18 @@ function enhanceHeroDither() {
 			sourceContext.clearRect(0, 0, width, height);
 			sourceContext.drawImage(image, width - drawWidth, (height - drawHeight) / 2, drawWidth, drawHeight);
 			sourcePixels = sourceContext.getImageData(0, 0, width, height);
-			outputPixels = context.createImageData(width, height);
 		};
 
 		const drawFrame = () => {
-			if (!sourcePixels || !outputPixels) return;
+			if (!sourcePixels) return;
 			const width = canvas.width;
 			const height = canvas.height;
+			const output = context.createImageData(width, height);
 			const source = sourcePixels.data;
-			const target = outputPixels.data;
+			const target = output.data;
 			const driftX = Math.floor(frame / 2) % 8;
 			const driftY = Math.floor(frame / 3) % 8;
-			const thresholdShift = reducedMotion ? 0 : Math.sin(frame * 0.42) * 7;
+			const thresholdShift = reducedMotion ? 0 : Math.sin(frame * 0.36) * 7;
 
 			for (let y = 0; y < height; y += 1) {
 				for (let x = 0; x < width; x += 1) {
@@ -98,28 +95,23 @@ function enhanceHeroDither() {
 				}
 			}
 
-			context.putImageData(outputPixels, 0, 0);
+			context.putImageData(output, 0, 0);
 			canvas.dataset.ditherReady = "true";
 			frame += 1;
 		};
 
-		const stopAnimation = () => {
-			window.clearInterval(animationTimer);
-			animationTimer = 0;
-		};
-
-		const syncAnimation = () => {
-			if (reducedMotion || document.hidden || !inViewport) {
-				stopAnimation();
-				return;
+		const render = (now) => {
+			if (now - lastTick >= 1000 / 14) {
+				lastTick = now;
+				drawFrame();
 			}
-			if (!animationTimer) animationTimer = window.setInterval(drawFrame, 160);
+			window.requestAnimationFrame(render);
 		};
 
 		const setup = () => {
 			sizeCanvas();
 			drawFrame();
-			syncAnimation();
+			if (!reducedMotion) window.requestAnimationFrame(render);
 		};
 
 		const handleResize = () => {
@@ -132,14 +124,6 @@ function enhanceHeroDither() {
 
 		if (image.complete && image.naturalWidth) setup();
 		else image.addEventListener("load", setup, { once: true });
-		if ("IntersectionObserver" in window) {
-			const observer = new IntersectionObserver(([entry]) => {
-				inViewport = entry.isIntersecting;
-				syncAnimation();
-			});
-			observer.observe(media);
-		}
-		document.addEventListener("visibilitychange", syncAnimation);
 		window.addEventListener("resize", handleResize);
 	});
 }
