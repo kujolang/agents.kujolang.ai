@@ -157,16 +157,6 @@ def content_assessment(row: dict) -> tuple[dict, dict]:
         gap = "No adoption examples or measured outcomes are published."
         action = "Keep the overview concise; add real adoption examples only when evidence exists."
         questions = "What is Kujo Agents?; Which specialist agent should I use?"
-    elif row["url"].endswith("/agents/webops/"):
-        purpose = "Preview a planned WebOps agent set."
-        intent = "Navigational preview"
-        audience = "Developers looking for web operations agents"
-        entity = "Kujo WebOps agents"
-        theme = "WebOps AI agents"
-        supporting = "web operations; monitoring; deployment"
-        gap = "The page contains only generic placeholders and no usable agent contracts."
-        action = "Keep noindex until real source-grounded WebOps contracts replace placeholders."
-        questions = "Which WebOps agents are available?"
     elif row["page_type"] == "listing":
         purpose = "Help readers browse and compare source-grounded agent roles."
         intent = "Informational and navigational"

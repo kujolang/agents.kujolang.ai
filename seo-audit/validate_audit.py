@@ -3,12 +3,16 @@
 
 from __future__ import annotations
 
+import argparse
 import csv
 import json
 from pathlib import Path
 
 
-root = Path(__file__).resolve().parent / "2026-08-10"
+parser = argparse.ArgumentParser()
+parser.add_argument("--audit-root", required=True, type=Path)
+args = parser.parse_args()
+root = args.audit_root.resolve()
 required = [
     "executive-summary.md", "methodology.md", "research-sources.md", "data-availability.md",
     "site-inventory.csv", "baseline.csv", "baseline-summary.json", "after.csv", "after-summary.json",
@@ -28,7 +32,8 @@ for path in root.glob("*.csv"):
 
 baseline = json.loads((root / "baseline-summary.json").read_text(encoding="utf-8"))
 after = json.loads((root / "after-summary.json").read_text(encoding="utf-8"))
-assert baseline["pages_total"] == after["pages_total"] == 33
+assert baseline["pages_total"] == after["pages_total"]
+assert after["pages_total"] >= 61
 assert after["broken_internal_link_occurrences"] == 0
 assert after["images_missing_alt"] == 0
 assert after["images_missing_dimensions"] == 0
@@ -49,4 +54,4 @@ for phase in ("baseline", "after"):
 
 assert (root / "raw" / "baseline-build" / "index.html").is_file()
 assert (root / "raw" / "after-build" / "index.html").is_file()
-print("Audit validation passed: 33 pages, 0 open P0/P1 issues, production matches generated output")
+print(f"Audit validation passed: {after['pages_total']} pages, 0 open P0/P1 issues, production matches generated output")

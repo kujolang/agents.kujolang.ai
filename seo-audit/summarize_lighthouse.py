@@ -3,12 +3,12 @@
 
 from __future__ import annotations
 
+import argparse
 import csv
 import json
 from pathlib import Path
 
 
-AUDIT_ROOT = Path(__file__).resolve().parent / "2026-08-10"
 FIELDS = [
     "phase", "url", "template", "run_date", "environment", "lighthouse_version",
     "html_bytes", "css_bytes", "js_bytes", "image_bytes", "font_bytes", "requests",
@@ -26,10 +26,15 @@ def summary_map(payload: dict) -> dict:
     return {item["resourceType"]: item for item in items}
 
 
+parser = argparse.ArgumentParser()
+parser.add_argument("--audit-root", required=True, type=Path)
+args = parser.parse_args()
+audit_root = args.audit_root.resolve()
+
 rows = []
 for phase in ("baseline", "after"):
     for slug, template in TEMPLATES.items():
-        path = AUDIT_ROOT / "raw" / phase / f"lighthouse-{slug}.json"
+        path = audit_root / "raw" / phase / f"lighthouse-{slug}.json"
         payload = json.loads(path.read_text(encoding="utf-8"))
         resources = summary_map(payload)
         audits = payload["audits"]
@@ -60,11 +65,11 @@ for phase in ("baseline", "after"):
             "inp_ms": inp if inp is not None else "NOT AVAILABLE — DATA ACCESS REQUIRED",
             "cls": audits["cumulative-layout-shift"]["numericValue"],
             "ttfb_ms": audits["server-response-time"]["numericValue"],
-            "source": str(path.relative_to(AUDIT_ROOT)),
+            "source": str(path.relative_to(audit_root)),
             "notes": json.dumps(notes, separators=(",", ":")),
         })
 
-with (AUDIT_ROOT / "performance.csv").open("w", newline="", encoding="utf-8") as handle:
+with (audit_root / "performance.csv").open("w", newline="", encoding="utf-8") as handle:
     writer = csv.DictWriter(handle, fieldnames=FIELDS, lineterminator="\n")
     writer.writeheader()
     writer.writerows(rows)

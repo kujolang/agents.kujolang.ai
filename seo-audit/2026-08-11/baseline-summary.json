@@ -1,0 +1,21 @@
+{
+  "phase": "baseline",
+  "pages_total": 61,
+  "canonical_pages": 60,
+  "indexable_pages": 60,
+  "missing_titles": 0,
+  "duplicate_titles": 0,
+  "missing_descriptions": 0,
+  "duplicate_descriptions": 0,
+  "missing_canonicals": 0,
+  "h1_problems": 0,
+  "broken_internal_link_occurrences": 0,
+  "orphans": 0,
+  "pages_deeper_than_3": 0,
+  "images_missing_alt": 0,
+  "images_missing_dimensions": 0,
+  "schema_parse_errors": 0,
+  "valid_schema_pages": 60,
+  "production_non_200": 0,
+  "production_content_mismatches": 0
+}

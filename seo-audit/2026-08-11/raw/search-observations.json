@@ -1,0 +1,12 @@
+{
+  "date": "2026-08-11",
+  "provider": "OpenAI web search connector",
+  "limitations": "Underlying engine, locale, device, personalization, result depth, and complete result set were not exposed.",
+  "queries": [
+    {"query": "site:agents.kujolang.ai", "domain_observed": false},
+    {"query": "Kujo Agents chain of command AI agents", "domain_observed": false},
+    {"query": "Kujo WebOps agents", "domain_observed": false},
+    {"query": "\"General Commander\" \"agents.kujolang.ai\"", "domain_observed": false}
+  ],
+  "interpretation": "Dated observation only; not proof of index absence or a universal rank."
+}
