@@ -11,6 +11,7 @@ categories: ["Chain of Command"]
 tags: ["Routine Worker"]
 order: 26
 last_updated: 2026-08-10
+source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/lint-runner/AGENT.md"
 ---
 ## Agent Contract
 
@@ -72,7 +73,3 @@ last_updated: 2026-08-10
 ## Anti-Scope
 
 - Do not fix lint, reformat, or alter config unless separately assigned.
-
-## Source
-
-[View the canonical Lint Runner contract on GitHub](https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/lint-runner/AGENT.md).

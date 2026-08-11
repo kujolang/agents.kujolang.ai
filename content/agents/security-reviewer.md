@@ -11,6 +11,7 @@ categories: ["Chain of Command"]
 tags: ["Verification"]
 order: 19
 last_updated: 2026-08-10
+source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/security-reviewer/AGENT.md"
 ---
 ## Agent Contract
 
@@ -75,7 +76,3 @@ last_updated: 2026-08-10
 
 - Do not approve release alone.
 - Do not store or reproduce secrets in reports.
-
-## Source
-
-[View the canonical Security Reviewer contract on GitHub](https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/security-reviewer/AGENT.md).

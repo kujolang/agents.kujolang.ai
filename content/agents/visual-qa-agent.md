@@ -11,6 +11,7 @@ categories: ["Chain of Command"]
 tags: ["Verification"]
 order: 17
 last_updated: 2026-08-10
+source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/visual-qa-agent/AGENT.md"
 ---
 ## Agent Contract
 
@@ -74,7 +75,3 @@ last_updated: 2026-08-10
 ## Anti-Scope
 
 - Do not make visual design decisions or edit UI code unless separately assigned.
-
-## Source
-
-[View the canonical Visual QA Agent contract on GitHub](https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/visual-qa-agent/AGENT.md).

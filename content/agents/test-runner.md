@@ -11,6 +11,7 @@ categories: ["Chain of Command"]
 tags: ["Routine Worker"]
 order: 25
 last_updated: 2026-08-10
+source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/test-runner/AGENT.md"
 ---
 ## Agent Contract
 
@@ -72,7 +73,3 @@ last_updated: 2026-08-10
 ## Anti-Scope
 
 - Do not edit files, update snapshots, choose new tests, or debug.
-
-## Source
-
-[View the canonical Test Runner contract on GitHub](https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/test-runner/AGENT.md).

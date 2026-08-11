@@ -11,6 +11,7 @@ categories: ["Chain of Command"]
 tags: ["Planning"]
 order: 8
 last_updated: 2026-08-10
+source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/risk-officer/AGENT.md"
 ---
 ## Agent Contract
 
@@ -78,7 +79,3 @@ last_updated: 2026-08-10
 
 - Do not implement fixes or approve releases.
 - Do not exaggerate maturity beyond repo docs.
-
-## Source
-
-[View the canonical Risk Officer contract on GitHub](https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/risk-officer/AGENT.md).

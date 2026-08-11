@@ -11,6 +11,7 @@ categories: ["Chain of Command"]
 tags: ["Strategic"]
 order: 3
 last_updated: 2026-08-10
+source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/systems-architect/AGENT.md"
 ---
 ## Agent Contract
 
@@ -78,7 +79,3 @@ last_updated: 2026-08-10
 
 - Do not implement broad refactors unless explicitly assigned.
 - Do not invent architecture not grounded in current repo patterns.
-
-## Source
-
-[View the canonical Systems Architect contract on GitHub](https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/systems-architect/AGENT.md).

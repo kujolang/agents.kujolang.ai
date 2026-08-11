@@ -11,6 +11,7 @@ categories: ["Chain of Command"]
 tags: ["Execution"]
 order: 11
 last_updated: 2026-08-10
+source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/frontend-developer/AGENT.md"
 ---
 ## Agent Contract
 
@@ -74,7 +75,3 @@ last_updated: 2026-08-10
 ## Anti-Scope
 
 - Do not redesign unrelated pages or invent marketing/landing pages unless assigned.
-
-## Source
-
-[View the canonical Frontend Developer contract on GitHub](https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/frontend-developer/AGENT.md).

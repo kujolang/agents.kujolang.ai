@@ -11,6 +11,7 @@ categories: ["Chain of Command"]
 tags: ["Routine Worker"]
 order: 24
 last_updated: 2026-08-10
+source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/routine-worker/AGENT.md"
 ---
 ## Agent Contract
 
@@ -75,7 +76,3 @@ last_updated: 2026-08-10
 ## Anti-Scope
 
 - Do not edit files, debug failures, select alternate commands, or make product/architecture decisions.
-
-## Source
-
-[View the canonical Routine Worker contract on GitHub](https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/routine-worker/AGENT.md).

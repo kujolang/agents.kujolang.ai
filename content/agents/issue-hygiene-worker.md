@@ -11,6 +11,7 @@ categories: ["Chain of Command"]
 tags: ["Routine Worker"]
 order: 27
 last_updated: 2026-08-10
+source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/issue-hygiene-worker/AGENT.md"
 ---
 ## Agent Contract
 
@@ -73,7 +74,3 @@ last_updated: 2026-08-10
 ## Anti-Scope
 
 - Do not close, label, assign, prioritize, or comment unless explicitly authorized.
-
-## Source
-
-[View the canonical Issue Hygiene Worker contract on GitHub](https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/issue-hygiene-worker/AGENT.md).

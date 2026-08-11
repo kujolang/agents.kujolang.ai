@@ -11,6 +11,7 @@ categories: ["Chain of Command"]
 tags: ["Planning"]
 order: 5
 last_updated: 2026-08-10
+source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/planner/AGENT.md"
 ---
 ## Agent Contract
 
@@ -77,7 +78,3 @@ last_updated: 2026-08-10
 ## Anti-Scope
 
 - Do not implement, review, or run release gates unless separately assigned.
-
-## Source
-
-[View the canonical Planner contract on GitHub](https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/planner/AGENT.md).

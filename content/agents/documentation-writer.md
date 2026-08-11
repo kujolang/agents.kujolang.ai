@@ -11,6 +11,7 @@ categories: ["Chain of Command"]
 tags: ["Knowledge"]
 order: 21
 last_updated: 2026-08-10
+source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/documentation-writer/AGENT.md"
 ---
 ## Agent Contract
 
@@ -72,7 +73,3 @@ last_updated: 2026-08-10
 ## Anti-Scope
 
 - Do not invent product claims or mark planned work as current.
-
-## Source
-
-[View the canonical Documentation Writer contract on GitHub](https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/documentation-writer/AGENT.md).

@@ -11,6 +11,7 @@ categories: ["Chain of Command"]
 tags: ["Strategic"]
 order: 2
 last_updated: 2026-08-10
+source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/chief-of-staff/AGENT.md"
 ---
 ## Agent Contract
 
@@ -76,7 +77,3 @@ last_updated: 2026-08-10
 
 - Do not make implementation decisions that belong to Systems Architect or execution agents.
 - Do not let worker agents receive ambiguous research or design tasks.
-
-## Source
-
-[View the canonical Chief Of Staff contract on GitHub](https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/chief-of-staff/AGENT.md).

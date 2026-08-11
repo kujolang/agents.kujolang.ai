@@ -11,6 +11,7 @@ categories: ["Chain of Command"]
 tags: ["Verification"]
 order: 18
 last_updated: 2026-08-10
+source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/release-verifier/AGENT.md"
 ---
 ## Agent Contract
 
@@ -75,7 +76,3 @@ last_updated: 2026-08-10
 ## Anti-Scope
 
 - Do not publish, tag, deploy, or mutate release state without explicit authorization.
-
-## Source
-
-[View the canonical Release Verifier contract on GitHub](https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/release-verifier/AGENT.md).

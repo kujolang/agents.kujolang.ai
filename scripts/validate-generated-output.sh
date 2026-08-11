@@ -72,8 +72,11 @@ if [[ -f "$OUT_DIR/index.html" ]]; then
 	if ! grep -q 'id="chain-of-command"' "$OUT_DIR/index.html"; then
 		record_failure "FAIL agent-set: homepage does not render the Chain of Command set"
 	fi
-	if ! grep -q 'site-nav-dropdown' "$OUT_DIR/index.html"; then
-		record_failure "FAIL agent-navigation: homepage does not render the Agents dropdown"
+	if ! grep -q 'href="agents/chain-of-command/">Chain of Command</a>' "$OUT_DIR/index.html" || ! grep -q 'href="agents/webops/">WebOps</a>' "$OUT_DIR/index.html"; then
+		record_failure "FAIL agent-navigation: homepage does not render both direct agent-set links"
+	fi
+	if grep -q 'site-nav-dropdown' "$OUT_DIR/index.html"; then
+		record_failure "FAIL agent-navigation: homepage still renders the old Agents dropdown"
 	fi
 	if grep -q 'card-grid agent-grid' "$OUT_DIR/index.html"; then
 		record_failure "FAIL homepage-grid: homepage still renders the old agent grid"

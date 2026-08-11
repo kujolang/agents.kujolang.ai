@@ -11,6 +11,7 @@ categories: ["Chain of Command"]
 tags: ["Routine Worker"]
 order: 28
 last_updated: 2026-08-10
+source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/dependency-scanner/AGENT.md"
 ---
 ## Agent Contract
 
@@ -72,7 +73,3 @@ last_updated: 2026-08-10
 ## Anti-Scope
 
 - Do not update dependencies, edit lockfiles, or approve risk.
-
-## Source
-
-[View the canonical Dependency Scanner contract on GitHub](https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/dependency-scanner/AGENT.md).

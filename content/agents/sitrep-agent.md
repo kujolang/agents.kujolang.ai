@@ -11,6 +11,7 @@ categories: ["Chain of Command"]
 tags: ["Knowledge"]
 order: 23
 last_updated: 2026-08-10
+source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/sitrep-agent/AGENT.md"
 ---
 ## Agent Contract
 
@@ -76,7 +77,3 @@ last_updated: 2026-08-10
 
 - Do not perform new investigation beyond reading assigned evidence.
 - Do not make strategic calls.
-
-## Source
-
-[View the canonical SITREP Agent contract on GitHub](https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/sitrep-agent/AGENT.md).

@@ -11,6 +11,7 @@ categories: ["Chain of Command"]
 tags: ["Execution"]
 order: 12
 last_updated: 2026-08-10
+source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/backend-developer/AGENT.md"
 ---
 ## Agent Contract
 
@@ -73,7 +74,3 @@ last_updated: 2026-08-10
 ## Anti-Scope
 
 - Do not modify client UI, deployment config, or broad architecture unless assigned.
-
-## Source
-
-[View the canonical Backend Developer contract on GitHub](https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/backend-developer/AGENT.md).

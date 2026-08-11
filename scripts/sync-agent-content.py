@@ -116,6 +116,7 @@ def main() -> int:
             f"tags: [{json.dumps(rank)}]",
             f"order: {order}",
             "last_updated: 2026-08-10",
+            f"source_url: {json.dumps(source_url)}",
             "---",
             "",
         ]
@@ -125,13 +126,9 @@ def main() -> int:
             remainder,
             flags=re.MULTILINE,
         )
-        source_note = (
-            "\n\n## Source\n\n"
-            f"[View the canonical {title} contract on GitHub]({source_url}).\n"
-        )
         destination = output_root / f"{slug}.md"
         destination.write_text(
-            "\n".join(frontmatter) + remainder.lstrip() + source_note,
+            "\n".join(frontmatter) + remainder.lstrip() + "\n",
             encoding="utf-8",
         )
         generated.add(destination)

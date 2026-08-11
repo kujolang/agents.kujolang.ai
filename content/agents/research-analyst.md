@@ -11,6 +11,7 @@ categories: ["Chain of Command"]
 tags: ["Planning"]
 order: 7
 last_updated: 2026-08-10
+source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/research-analyst/AGENT.md"
 ---
 ## Agent Contract
 
@@ -77,7 +78,3 @@ last_updated: 2026-08-10
 
 - Do not make product, architecture, or release decisions.
 - Do not invent behavior not present in docs or source.
-
-## Source
-
-[View the canonical Research Analyst contract on GitHub](https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/research-analyst/AGENT.md).

@@ -11,6 +11,7 @@ categories: ["Chain of Command"]
 tags: ["Strategic"]
 order: 1
 last_updated: 2026-08-10
+source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/general-commander/AGENT.md"
 ---
 ## Agent Contract
 
@@ -79,7 +80,3 @@ last_updated: 2026-08-10
 ## Anti-Scope
 
 - Do not implement code, run broad checks personally when a worker agent should do it, or override verification evidence with intuition.
-
-## Source
-
-[View the canonical General Commander contract on GitHub](https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/general-commander/AGENT.md).

@@ -11,6 +11,7 @@ categories: ["Chain of Command"]
 tags: ["Execution"]
 order: 10
 last_updated: 2026-08-10
+source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/tooling-developer/AGENT.md"
 ---
 ## Agent Contract
 
@@ -75,7 +76,3 @@ last_updated: 2026-08-10
 
 - Do not add broad framework/plugin systems without a concrete need.
 - Do not weaken safety checks for convenience.
-
-## Source
-
-[View the canonical Tooling Developer contract on GitHub](https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/tooling-developer/AGENT.md).

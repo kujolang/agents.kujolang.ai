@@ -11,6 +11,7 @@ categories: ["Chain of Command"]
 tags: ["Execution"]
 order: 9
 last_updated: 2026-08-10
+source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/core-developer/AGENT.md"
 ---
 ## Agent Contract
 
@@ -75,7 +76,3 @@ last_updated: 2026-08-10
 ## Anti-Scope
 
 - Do not make product decisions, expand scope, or edit unrelated files.
-
-## Source
-
-[View the canonical Core Developer contract on GitHub](https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/core-developer/AGENT.md).

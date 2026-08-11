@@ -11,6 +11,7 @@ categories: ["Chain of Command"]
 tags: ["Strategic"]
 order: 4
 last_updated: 2026-08-10
+source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/product-strategist/AGENT.md"
 ---
 ## Agent Contract
 
@@ -78,7 +79,3 @@ last_updated: 2026-08-10
 
 - Do not write unsupported marketing claims.
 - Do not override architecture, security, or verification findings.
-
-## Source
-
-[View the canonical Product Strategist contract on GitHub](https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/product-strategist/AGENT.md).

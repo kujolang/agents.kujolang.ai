@@ -11,6 +11,7 @@ categories: ["Chain of Command"]
 tags: ["Verification"]
 order: 16
 last_updated: 2026-08-10
+source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/triage-agent/AGENT.md"
 ---
 ## Agent Contract
 
@@ -95,7 +96,3 @@ last_updated: 2026-08-10
 - Do not approve releases, deployments, or destructive recovery.
 - Do not override explicit human stop conditions.
 - Do not run long-lived incident response across multiple lanes; coordinate the immediate stopped workflow, then escalate.
-
-## Source
-
-[View the canonical Triage Agent contract on GitHub](https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/triage-agent/AGENT.md).

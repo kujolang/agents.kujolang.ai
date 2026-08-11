@@ -11,6 +11,7 @@ categories: ["Chain of Command"]
 tags: ["Routine Worker"]
 order: 29
 last_updated: 2026-08-10
+source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/receipt-collector/AGENT.md"
 ---
 ## Agent Contract
 
@@ -73,7 +74,3 @@ last_updated: 2026-08-10
 ## Anti-Scope
 
 - Do not judge quality, rerun commands, mutate git, or publish artifacts.
-
-## Source
-
-[View the canonical Receipt Collector contract on GitHub](https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/receipt-collector/AGENT.md).

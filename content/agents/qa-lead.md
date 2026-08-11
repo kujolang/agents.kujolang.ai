@@ -11,6 +11,7 @@ categories: ["Chain of Command"]
 tags: ["Verification"]
 order: 15
 last_updated: 2026-08-10
+source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/qa-lead/AGENT.md"
 ---
 ## Agent Contract
 
@@ -76,7 +77,3 @@ last_updated: 2026-08-10
 ## Anti-Scope
 
 - Do not implement fixes or approve release alone.
-
-## Source
-
-[View the canonical QA Lead contract on GitHub](https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/qa-lead/AGENT.md).

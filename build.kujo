@@ -3954,6 +3954,7 @@ func build_site(settings) {
 					"status": trim(to_string(meta["status"])),
 					"version": trim(to_string(meta["version"])),
 					"last_updated": trim(to_string(meta["last_updated"])),
+					"source_url": trim(to_string(meta["source_url"])),
 					"prerequisites_html": docs_list_html(meta["prerequisites"], "docs-prerequisites-list"),
 					"docs_meta_html": docs_meta_html(item_meta_for_docs),
 					"toc": docs_toc_html(parsed["body"]),

@@ -11,6 +11,7 @@ categories: ["Chain of Command"]
 tags: ["Planning"]
 order: 6
 last_updated: 2026-08-10
+source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/spec-writer/AGENT.md"
 ---
 ## Agent Contract
 
@@ -77,7 +78,3 @@ last_updated: 2026-08-10
 
 - Do not sneak implementation decisions into acceptance criteria.
 - Do not mark planned work as shipped behavior.
-
-## Source
-
-[View the canonical Spec Writer contract on GitHub](https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/spec-writer/AGENT.md).

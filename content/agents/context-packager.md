@@ -11,6 +11,7 @@ categories: ["Chain of Command"]
 tags: ["Knowledge"]
 order: 22
 last_updated: 2026-08-10
+source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/context-packager/AGENT.md"
 ---
 ## Agent Contract
 
@@ -76,7 +77,3 @@ last_updated: 2026-08-10
 
 - Do not implement the packaged task.
 - Do not claim redaction is perfect.
-
-## Source
-
-[View the canonical Context Packager contract on GitHub](https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/context-packager/AGENT.md).

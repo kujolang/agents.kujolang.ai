@@ -11,6 +11,7 @@ categories: ["Chain of Command"]
 tags: ["Verification"]
 order: 14
 last_updated: 2026-08-10
+source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/code-reviewer/AGENT.md"
 ---
 ## Agent Contract
 
@@ -76,7 +77,3 @@ last_updated: 2026-08-10
 
 - Do not rewrite the patch during review unless separately assigned.
 - Do not nitpick style when functional risks exist.
-
-## Source
-
-[View the canonical Code Reviewer contract on GitHub](https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/code-reviewer/AGENT.md).
