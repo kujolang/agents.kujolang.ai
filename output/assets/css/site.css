@@ -145,28 +145,60 @@ a { color: var(--sk-text-link); }
 
 .chain-hero {
 	position: relative;
-	min-block-size: clamp(28rem, 48vw, 38rem);
+	isolation: isolate;
+	display: grid;
+	min-block-size: 100svh;
 	overflow: hidden;
 	border: 0;
-	background: url("../images/agent-hero-background.webp") center / cover no-repeat;
+	background: var(--sk-surface-page);
+	padding-block: 0;
 }
 
-.chain-hero::before {
-	content: "";
+.chain-hero__media,
+.chain-hero__wash {
 	position: absolute;
 	inset: 0;
-	background: linear-gradient(90deg, #f9f9f9 0%, rgba(249, 249, 249, .96) 38%, rgba(249, 249, 249, .25) 76%, transparent 100%);
+	pointer-events: none;
+}
+
+.chain-hero__media {
+	z-index: -2;
+	inline-size: 100%;
+	block-size: 100%;
+	background: var(--sk-surface-page);
+}
+
+.chain-hero__media img {
+	inline-size: 100%;
+	block-size: 100%;
+	object-fit: cover;
+	object-position: right center;
+}
+
+.hero-dither-canvas {
+	position: absolute;
+	inset: 0;
+	inline-size: 100%;
+	block-size: 100%;
+	image-rendering: pixelated;
+	pointer-events: none;
+}
+
+.chain-hero__wash {
+	z-index: -1;
+	background: linear-gradient(90deg, var(--sk-surface-page) 0%, color-mix(in srgb, var(--sk-surface-page) 98%, transparent) 38%, color-mix(in srgb, var(--sk-surface-page) 60%, transparent) 62%, transparent 100%);
 }
 
 .chain-hero .sk-hero__inner {
-	position: relative;
-	z-index: 1;
+	inline-size: 100%;
+	max-inline-size: var(--sk-size-content-xl);
 	display: grid;
-	grid-template-columns: minmax(0, 52%);
+	grid-template-columns: minmax(0, 1fr);
 	align-items: center;
 	justify-items: stretch;
-	min-block-size: inherit;
-	padding: clamp(var(--sk-space-6), 6vw, var(--sk-space-16));
+	min-block-size: 100svh;
+	margin-inline: auto;
+	padding: var(--sk-space-16) var(--site-pad-inline) var(--sk-space-20);
 	text-align: start;
 }
 
@@ -174,6 +206,7 @@ a { color: var(--sk-text-link); }
 	display: grid;
 	gap: var(--sk-space-5);
 	align-content: center;
+	max-inline-size: 48rem;
 }
 
 .chain-hero .sk-hero__actions { justify-content: flex-start; }
@@ -691,7 +724,7 @@ a { color: var(--sk-text-link); }
 		transform: none;
 	}
 
-	.chain-hero::before {
+	.chain-hero__wash {
 		background: linear-gradient(90deg, rgba(249, 249, 249, .98) 0%, rgba(249, 249, 249, .92) 62%, rgba(249, 249, 249, .58) 100%);
 	}
 
