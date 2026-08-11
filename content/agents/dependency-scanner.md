@@ -9,7 +9,8 @@ keywords: "Kujo agent, Dependency Scanner, chain of command"
 featured_image: "assets/images/kujo-logomark.svg"
 categories: ["Chain of Command"]
 tags: ["Routine Worker"]
-order: 601
+order: 28
+last_updated: 2026-08-10
 ---
 ## Agent Contract
 
@@ -41,7 +42,7 @@ order: 601
 ## Allowed Tools And Workflows
 
 - Allowed: Kennel, Scout, package manager commands, ShipCheck when explicitly assigned.
-- Required KUJO skills: `kujo-kennel-workflows`, `kujo-scout-workflows` as needed.
+- Required KUJO skills: kujo-kennel-workflows, kujo-scout-workflows as needed.
 - Recommended tools: Kennel for Kujo package workflows, Scout for dependency maps.
 
 ## Workflow

@@ -9,7 +9,8 @@ keywords: "Kujo agent, Context Packager, chain of command"
 featured_image: "assets/images/kujo-logomark.svg"
 categories: ["Chain of Command"]
 tags: ["Knowledge"]
-order: 501
+order: 22
+last_updated: 2026-08-10
 ---
 ## Agent Contract
 
@@ -42,7 +43,7 @@ order: 501
 ## Allowed Tools And Workflows
 
 - Allowed: Scent, Redact, PackWrite, Muzzle, Scout, RunLedger, Capsule.
-- Required KUJO skills: `kujo-scent-workflows`, `kujo-redact-workflows`, `kujo-packwrite-workflows`, `kujo-muzzle-workflows`, `kujo-benchmarks-capsule-workflows` as needed.
+- Required KUJO skills: kujo-scent-workflows, kujo-redact-workflows, kujo-packwrite-workflows, kujo-muzzle-workflows, kujo-benchmarks-capsule-workflows as needed.
 - Recommended tools: Scent for task context, Redact for deterministic text/Markdown anonymization before sharing model-ready context, PackWrite for agent execution packs, Muzzle for quiet workflow summaries, Capsule for deterministic offline project handoff packages.
 
 ## Workflow

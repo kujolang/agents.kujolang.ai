@@ -9,14 +9,39 @@ import sys
 from pathlib import Path
 
 
-RANK_ORDER = {
-    "Strategic": 100,
-    "Planning": 200,
-    "Execution": 300,
-    "Verification": 400,
-    "Knowledge": 500,
-    "Routine Worker": 600,
-}
+DEMO_ORDER = [
+    "general-commander",
+    "chief-of-staff",
+    "systems-architect",
+    "product-strategist",
+    "planner",
+    "spec-writer",
+    "research-analyst",
+    "risk-officer",
+    "core-developer",
+    "tooling-developer",
+    "frontend-developer",
+    "backend-developer",
+    "integration-engineer",
+    "code-reviewer",
+    "qa-lead",
+    "triage-agent",
+    "visual-qa-agent",
+    "release-verifier",
+    "security-reviewer",
+    "archivist",
+    "documentation-writer",
+    "context-packager",
+    "sitrep-agent",
+    "routine-worker",
+    "test-runner",
+    "lint-runner",
+    "issue-hygiene-worker",
+    "dependency-scanner",
+    "receipt-collector",
+]
+
+ORDER_BY_SLUG = {slug: index for index, slug in enumerate(DEMO_ORDER, start=1)}
 
 AGENT_IMAGES = {
     "general-commander": "content/media/agents/general-commander.png",
@@ -59,8 +84,6 @@ def main() -> int:
 
     output_root.mkdir(parents=True, exist_ok=True)
     generated: set[Path] = set()
-    rank_counts: dict[str, int] = {}
-
     for contract in contracts:
         body = contract.read_text(encoding="utf-8").strip()
         heading, _, remainder = body.partition("\n")
@@ -71,9 +94,8 @@ def main() -> int:
         rank = field(body, "Rank/layer")
         purpose = field(body, "Purpose")
         model = field(body, "Best model tier")
-        rank_counts[rank] = rank_counts.get(rank, 0) + 1
-        order = RANK_ORDER.get(rank, 900) + rank_counts[rank]
         slug = contract.parent.name
+        order = ORDER_BY_SLUG.get(slug, 1000)
         featured_image = AGENT_IMAGES.get(slug, "assets/images/kujo-logomark.svg")
         source_url = (
             "https://github.com/kujolang/kujo-agents/blob/main/"
@@ -93,9 +115,16 @@ def main() -> int:
             f"categories: [{json.dumps('Chain of Command')}]",
             f"tags: [{json.dumps(rank)}]",
             f"order: {order}",
+            "last_updated: 2026-08-10",
             "---",
             "",
         ]
+        remainder = re.sub(
+            r"(^- Required KUJO skills:\s*)(.+)$",
+            lambda match: match.group(1) + match.group(2).replace("`", ""),
+            remainder,
+            flags=re.MULTILINE,
+        )
         source_note = (
             "\n\n## Source\n\n"
             f"[View the canonical {title} contract on GitHub]({source_url}).\n"

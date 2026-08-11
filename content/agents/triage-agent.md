@@ -9,7 +9,8 @@ keywords: "Kujo agent, Triage Agent, chain of command"
 featured_image: "assets/images/kujo-logomark.svg"
 categories: ["Chain of Command"]
 tags: ["Verification"]
-order: 405
+order: 16
+last_updated: 2026-08-10
 ---
 ## Agent Contract
 
@@ -50,7 +51,7 @@ order: 405
 ## Allowed Tools And Workflows
 
 - Allowed: CaseFile, RunLedger, Dispatch traces, Relay run evidence, PatchBrief, ChangeBucket, Eval, ShipCheck, Fence, Concord, Scout, Scent, git diff/status, local logs.
-- Required KUJO skills: `kujo-casefile-workflows`, `kujo-runledger-workflows`, `kujo-dispatch-workflows`, `kujo-relay-workflows`, `kujo-patchbrief-workflows`, `kujo-changebucket-workflows`, `kujo-eval-workflows` as needed.
+- Required KUJO skills: kujo-casefile-workflows, kujo-runledger-workflows, kujo-dispatch-workflows, kujo-relay-workflows, kujo-patchbrief-workflows, kujo-changebucket-workflows, kujo-eval-workflows as needed.
 - Recommended tools: CaseFile for stopped or failed workflows, RunLedger for run receipts, Dispatch or Relay traces for lane history, PatchBrief or ChangeBucket for diff context.
 
 ## Workflow

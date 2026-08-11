@@ -9,7 +9,8 @@ keywords: "Kujo agent, Product Strategist, chain of command"
 featured_image: "content/media/agents/product-strategist.png"
 categories: ["Chain of Command"]
 tags: ["Strategic"]
-order: 103
+order: 4
+last_updated: 2026-08-10
 ---
 ## Agent Contract
 
@@ -44,7 +45,7 @@ order: 103
 ## Allowed Tools And Workflows
 
 - Allowed: Research Analyst handoffs, Spec, Eval, RunLedger, Benchmark System prompt kits, Kujo Hyperframes claim maps, Kujo Docs content/IA evidence, local docs, user-provided research.
-- Required KUJO skills: `kujo-spec-workflows` for task-contract output.
+- Required KUJO skills: kujo-spec-workflows for task-contract output.
 - Recommended tools: Spec for product contracts, Eval for measurable outcome checks, Benchmark System outputs only when backed by run evidence, Kujo Docs only for source-backed docs IA and product explanation surfaces, Hyperframes only for source-grounded product narrative surfaces.
 
 ## Workflow

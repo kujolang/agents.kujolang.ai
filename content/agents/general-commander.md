@@ -9,7 +9,8 @@ keywords: "Kujo agent, General Commander, chain of command"
 featured_image: "content/media/agents/general-commander.png"
 categories: ["Chain of Command"]
 tags: ["Strategic"]
-order: 102
+order: 1
+last_updated: 2026-08-10
 ---
 ## Agent Contract
 
@@ -45,7 +46,7 @@ order: 102
 ## Allowed Tools And Workflows
 
 - Allowed: Spec, Dispatch, RunLedger, ShipCheck, Concord, Relay lifecycle evidence, Tribunal advisory packets, CaseFile, Scent, Muzzle, local repo inspection.
-- Required KUJO skills: `kujo-spec-workflows`, `kujo-dispatch-workflows`, `kujo-runledger-workflows`, `kujo-relay-workflows`, `kujo-tribunal-workflows` when those tools are used.
+- Required KUJO skills: kujo-spec-workflows, kujo-dispatch-workflows, kujo-runledger-workflows, kujo-relay-workflows, kujo-tribunal-workflows when those tools are used.
 - Recommended tools: Dispatch for orchestration, Spec for contracts, RunLedger for receipts, ShipCheck for release gates, Relay for bounded lifecycle handoffs, Tribunal for advisory governance evidence.
 
 ## Workflow

@@ -9,7 +9,8 @@ keywords: "Kujo agent, Issue Hygiene Worker, chain of command"
 featured_image: "assets/images/kujo-logomark.svg"
 categories: ["Chain of Command"]
 tags: ["Routine Worker"]
-order: 602
+order: 27
+last_updated: 2026-08-10
 ---
 ## Agent Contract
 

@@ -9,7 +9,8 @@ keywords: "Kujo agent, Risk Officer, chain of command"
 featured_image: "content/media/agents/risk-officer.jpg"
 categories: ["Chain of Command"]
 tags: ["Planning"]
-order: 203
+order: 8
+last_updated: 2026-08-10
 ---
 ## Agent Contract
 
@@ -44,7 +45,7 @@ order: 203
 ## Allowed Tools And Workflows
 
 - Allowed: ShipCheck, Fence, Concord, ChangeBucket, Tribunal advisory packets, Workcell boundary evidence, CaseFile, Eval, Scout, Scent.
-- Required KUJO skills: `kujo-shipcheck-workflows`, `kujo-fence-workflows`, `kujo-concord-workflows`, `kujo-changebucket-workflows`, `kujo-casefile-workflows`, `kujo-tribunal-workflows` as needed.
+- Required KUJO skills: kujo-shipcheck-workflows, kujo-fence-workflows, kujo-concord-workflows, kujo-changebucket-workflows, kujo-casefile-workflows, kujo-tribunal-workflows as needed.
 - Recommended tools: ShipCheck for release gates, Fence for boundaries, ChangeBucket for footprint, Tribunal for advisory decision evidence, CaseFile for failure evidence.
 
 ## Workflow

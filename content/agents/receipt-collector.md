@@ -9,7 +9,8 @@ keywords: "Kujo agent, Receipt Collector, chain of command"
 featured_image: "assets/images/kujo-logomark.svg"
 categories: ["Chain of Command"]
 tags: ["Routine Worker"]
-order: 604
+order: 29
+last_updated: 2026-08-10
 ---
 ## Agent Contract
 
@@ -42,7 +43,7 @@ order: 604
 ## Allowed Tools And Workflows
 
 - Allowed: RunLedger, CaseFile, Watchdog, Redact audit manifests, Relay run evidence, Capsule manifests, Muzzle report/log paths, local artifact inspection.
-- Required KUJO skills: `kujo-runledger-workflows`, `kujo-casefile-workflows`, `kujo-watchdog-workflows`, `kujo-redact-workflows`, `kujo-relay-workflows`, `kujo-benchmarks-capsule-workflows` when used.
+- Required KUJO skills: kujo-runledger-workflows, kujo-casefile-workflows, kujo-watchdog-workflows, kujo-redact-workflows, kujo-relay-workflows, kujo-benchmarks-capsule-workflows when used.
 - Recommended tools: RunLedger for run receipts, CaseFile for failure bundles, Watchdog for telemetry references, Redact audit manifests for anonymization evidence, Relay for lifecycle handoff receipts, Capsule manifests for deterministic handoff package evidence.
 
 ## Workflow

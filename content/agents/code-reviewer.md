@@ -9,7 +9,8 @@ keywords: "Kujo agent, Code Reviewer, chain of command"
 featured_image: "assets/images/kujo-logomark.svg"
 categories: ["Chain of Command"]
 tags: ["Verification"]
-order: 401
+order: 14
+last_updated: 2026-08-10
 ---
 ## Agent Contract
 
@@ -42,7 +43,7 @@ order: 401
 ## Allowed Tools And Workflows
 
 - Allowed: PatchBrief, ChangeBucket, Concord, Fence, Eval, git diff/status.
-- Required KUJO skills: `kujo-patchbrief-workflows`, `kujo-changebucket-workflows`, `kujo-concord-workflows` as needed.
+- Required KUJO skills: kujo-patchbrief-workflows, kujo-changebucket-workflows, kujo-concord-workflows as needed.
 - Recommended tools: PatchBrief for diff briefs, ChangeBucket for footprint, Concord for docs/contract drift.
 
 ## Workflow

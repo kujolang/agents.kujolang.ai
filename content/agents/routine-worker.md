@@ -9,7 +9,8 @@ keywords: "Kujo agent, Routine Worker, chain of command"
 featured_image: "assets/images/kujo-logomark.svg"
 categories: ["Chain of Command"]
 tags: ["Routine Worker"]
-order: 605
+order: 24
+last_updated: 2026-08-10
 ---
 ## Agent Contract
 

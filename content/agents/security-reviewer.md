@@ -9,7 +9,8 @@ keywords: "Kujo agent, Security Reviewer, chain of command"
 featured_image: "assets/images/kujo-logomark.svg"
 categories: ["Chain of Command"]
 tags: ["Verification"]
-order: 404
+order: 19
+last_updated: 2026-08-10
 ---
 ## Agent Contract
 
@@ -41,7 +42,7 @@ order: 404
 ## Allowed Tools And Workflows
 
 - Allowed: Scout, Fence, Scent, Redact, Eval, CaseFile, Watchdog, Kennel, Workcell boundary evidence, StegoCipher review subject, Kujo security docs.
-- Required KUJO skills: `kujo-security-hardening`, `kujo-scout-workflows`, `kujo-fence-workflows`, `kujo-scent-workflows`, `kujo-redact-workflows`, `kujo-workcell-workflows` as needed.
+- Required KUJO skills: kujo-security-hardening, kujo-scout-workflows, kujo-fence-workflows, kujo-scent-workflows, kujo-redact-workflows, kujo-workcell-workflows as needed.
 - Recommended tools: Scout security exports, Fence boundary checks, Scent redaction review, Redact scan/sanitize/verify artifacts for sensitive text and Markdown, Eval policy profiles, Workcell boundary receipts when sandbox claims are in scope.
 
 ## Workflow

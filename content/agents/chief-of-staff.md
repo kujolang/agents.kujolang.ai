@@ -9,7 +9,8 @@ keywords: "Kujo agent, Chief Of Staff, chain of command"
 featured_image: "content/media/agents/chief-of-staff.png"
 categories: ["Chain of Command"]
 tags: ["Strategic"]
-order: 101
+order: 2
+last_updated: 2026-08-10
 ---
 ## Agent Contract
 
@@ -43,7 +44,7 @@ order: 101
 ## Allowed Tools And Workflows
 
 - Allowed: Spec, Dispatch, Scent, Muzzle, PackWrite, RunLedger.
-- Required KUJO skills: `kujo-spec-workflows`, `kujo-dispatch-workflows`, `kujo-scent-workflows`, `kujo-muzzle-workflows` as needed.
+- Required KUJO skills: kujo-spec-workflows, kujo-dispatch-workflows, kujo-scent-workflows, kujo-muzzle-workflows as needed.
 - Recommended tools: Spec for task contracts, Dispatch for routed workflows, Scent for task context.
 
 ## Workflow

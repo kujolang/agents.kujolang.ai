@@ -9,7 +9,8 @@ keywords: "Kujo agent, Core Developer, chain of command"
 featured_image: "content/media/agents/core-developer.jpg"
 categories: ["Chain of Command"]
 tags: ["Execution"]
-order: 302
+order: 9
+last_updated: 2026-08-10
 ---
 ## Agent Contract
 
@@ -42,7 +43,7 @@ order: 302
 ## Allowed Tools And Workflows
 
 - Allowed: Spec, Eval, PatchBrief, CaseFile, repo test commands.
-- Required KUJO skills: relevant repo workflow skills plus `kujo-eval-workflows` when using Eval.
+- Required KUJO skills: relevant repo workflow skills plus kujo-eval-workflows when using Eval.
 - Recommended tools: Eval for outcome checks, PatchBrief for change summary, CaseFile for captured failures.
 
 ## Workflow

@@ -9,7 +9,8 @@ keywords: "Kujo agent, Tooling Developer, chain of command"
 featured_image: "content/media/agents/tooling-developer.jpg"
 categories: ["Chain of Command"]
 tags: ["Execution"]
-order: 305
+order: 10
+last_updated: 2026-08-10
 ---
 ## Agent Contract
 
@@ -42,7 +43,7 @@ order: 305
 ## Allowed Tools And Workflows
 
 - Allowed: Kujo runtime, Kujo Tool Building, Muzzle, Eval, Kennel, Workcell, RunLedger, CaseFile.
-- Required KUJO skills: `kujo-tool-building`, relevant tool repo skill, `kujo-eval-workflows` as needed; `kujo-workcell-workflows` when validating bounded execution packages.
+- Required KUJO skills: kujo-tool-building, relevant tool repo skill, kujo-eval-workflows as needed; kujo-workcell-workflows when validating bounded execution packages.
 - Recommended tools: Muzzle for repeatable local workflows, Eval for command/file checks, Kennel for package workflows, Workcell for declared local execution gates when the host boundary is acceptable.
 
 ## Workflow

@@ -9,7 +9,8 @@ keywords: "Kujo agent, QA Lead, chain of command"
 featured_image: "assets/images/kujo-logomark.svg"
 categories: ["Chain of Command"]
 tags: ["Verification"]
-order: 402
+order: 15
+last_updated: 2026-08-10
 ---
 ## Agent Contract
 
@@ -43,7 +44,7 @@ order: 402
 ## Allowed Tools And Workflows
 
 - Allowed: Eval, CaseFile, RunLedger, Lens, Workcell receipts, ShipCheck, Capsule benchmark evidence, Benchmark System prompt kits, repo test scripts.
-- Required KUJO skills: `kujo-eval-workflows`, `kujo-casefile-workflows`, `kujo-runledger-workflows`, `kujo-workcell-workflows`, `kujo-benchmarks-capsule-workflows` as needed.
+- Required KUJO skills: kujo-eval-workflows, kujo-casefile-workflows, kujo-runledger-workflows, kujo-workcell-workflows, kujo-benchmarks-capsule-workflows as needed.
 - Recommended tools: Eval for deterministic checks, CaseFile for failures, RunLedger for multi-agent receipts, Workcell receipts for bounded execution evidence, Capsule for benchmark handoff evidence when the benchmark repo is in scope.
 
 ## Workflow

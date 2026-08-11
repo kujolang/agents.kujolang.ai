@@ -9,7 +9,8 @@ keywords: "Kujo agent, Lint Runner, chain of command"
 featured_image: "assets/images/kujo-logomark.svg"
 categories: ["Chain of Command"]
 tags: ["Routine Worker"]
-order: 603
+order: 26
+last_updated: 2026-08-10
 ---
 ## Agent Contract
 

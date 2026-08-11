@@ -9,7 +9,8 @@ keywords: "Kujo agent, Backend Developer, chain of command"
 featured_image: "content/media/agents/backend-developer.jpg"
 categories: ["Chain of Command"]
 tags: ["Execution"]
-order: 301
+order: 12
+last_updated: 2026-08-10
 ---
 ## Agent Contract
 
@@ -41,7 +42,7 @@ order: 301
 ## Allowed Tools And Workflows
 
 - Allowed: Eval, Scout, RAG, Watchdog, CaseFile, repo test scripts.
-- Required KUJO skills: relevant repo skill plus `kujo-eval-workflows`; `kujo-watchdog-workflows` when using telemetry/proxy flows.
+- Required KUJO skills: relevant repo skill plus kujo-eval-workflows; kujo-watchdog-workflows when using telemetry/proxy flows.
 - Recommended tools: Eval for API/file checks, Scout for route maps, CaseFile for failures.
 
 ## Workflow

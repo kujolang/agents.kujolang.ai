@@ -9,7 +9,8 @@ keywords: "Kujo agent, Test Runner, chain of command"
 featured_image: "assets/images/kujo-logomark.svg"
 categories: ["Chain of Command"]
 tags: ["Routine Worker"]
-order: 606
+order: 25
+last_updated: 2026-08-10
 ---
 ## Agent Contract
 
@@ -41,7 +42,7 @@ order: 606
 ## Allowed Tools And Workflows
 
 - Allowed: Eval, repo test scripts, Muzzle, Workcell when explicitly assigned, CaseFile when instructed.
-- Required KUJO skills: `kujo-eval-workflows` when using Eval; `kujo-workcell-workflows` when using Workcell.
+- Required KUJO skills: kujo-eval-workflows when using Eval; kujo-workcell-workflows when using Workcell.
 - Recommended tools: Muzzle for noisy suites, Workcell for predeclared bounded test packages, CaseFile for important failures.
 
 ## Workflow

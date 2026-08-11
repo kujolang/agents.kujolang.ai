@@ -9,7 +9,8 @@ keywords: "Kujo agent, Planner, chain of command"
 featured_image: "content/media/agents/planner.png"
 categories: ["Chain of Command"]
 tags: ["Planning"]
-order: 201
+order: 5
+last_updated: 2026-08-10
 ---
 ## Agent Contract
 
@@ -44,7 +45,7 @@ order: 201
 ## Allowed Tools And Workflows
 
 - Allowed: Spec, Dispatch, Eval, PackWrite, Scent, CaseFile.
-- Required KUJO skills: `kujo-spec-workflows`, `kujo-dispatch-workflows`, `kujo-eval-workflows` as needed.
+- Required KUJO skills: kujo-spec-workflows, kujo-dispatch-workflows, kujo-eval-workflows as needed.
 - Recommended tools: Spec for durable task contracts, Eval for acceptance evidence.
 
 ## Workflow

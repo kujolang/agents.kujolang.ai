@@ -9,7 +9,8 @@ keywords: "Kujo agent, Frontend Developer, chain of command"
 featured_image: "content/media/agents/frontend-developer.jpg"
 categories: ["Chain of Command"]
 tags: ["Execution"]
-order: 303
+order: 11
+last_updated: 2026-08-10
 ---
 ## Agent Contract
 
@@ -41,7 +42,7 @@ order: 303
 ## Allowed Tools And Workflows
 
 - Allowed: Lens, Eval, SSG generated sites, SiteKit, CMS Experience, Kujo Hyperframes, Kujo Docs static site, repo frontend test/build tools, CaseFile.
-- Required KUJO skills: `kujo-lens-workflows` when using Lens; `kujo-ssg-workflows`, `kujo-site-kit-workflows`, or relevant showcase/app skill when applicable.
+- Required KUJO skills: kujo-lens-workflows when using Lens; kujo-ssg-workflows, kujo-site-kit-workflows, or relevant showcase/app skill when applicable.
 - Recommended tools: Lens for browser evidence, Eval for deterministic output checks, SSG for static site or docs starter UI changes, SiteKit for Kujo design-system contracts, Kujo Docs only when assigned to the official docs site, Hyperframes only when assigned to campaign/static-site or video-composition surfaces.
 
 ## Workflow

@@ -9,7 +9,8 @@ keywords: "Kujo agent, Documentation Writer, chain of command"
 featured_image: "assets/images/kujo-logomark.svg"
 categories: ["Chain of Command"]
 tags: ["Knowledge"]
-order: 502
+order: 21
+last_updated: 2026-08-10
 ---
 ## Agent Contract
 
@@ -40,7 +41,7 @@ order: 502
 ## Allowed Tools And Workflows
 
 - Allowed: Concord, PatchBrief, Howl, Spec, Scout, SSG docs starter output, SiteKit docs/components evidence, Kujo Hyperframes claim maps, Kujo Docs public-site content, local docs/tests.
-- Required KUJO skills: `kujo-concord-workflows`, `kujo-patchbrief-workflows`, `kujo-howl-workflows`, `kujo-ssg-workflows`, `kujo-site-kit-workflows` as needed.
+- Required KUJO skills: kujo-concord-workflows, kujo-patchbrief-workflows, kujo-howl-workflows, kujo-ssg-workflows, kujo-site-kit-workflows as needed.
 - Recommended tools: Concord for docs/CLI drift, PatchBrief for diff summary, Howl for deterministic showcase artifacts including branded social cards, SSG for static docs pipelines and reusable docs starters, SiteKit docs when documenting Kujo UI surfaces, Kujo Docs as the official public docs-site surface, Hyperframes claim maps only for source-grounded campaign copy.
 
 ## Workflow

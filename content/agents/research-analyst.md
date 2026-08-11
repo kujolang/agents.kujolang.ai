@@ -9,7 +9,8 @@ keywords: "Kujo agent, Research Analyst, chain of command"
 featured_image: "content/media/agents/research-analyst.jpg"
 categories: ["Chain of Command"]
 tags: ["Planning"]
-order: 202
+order: 7
+last_updated: 2026-08-10
 ---
 ## Agent Contract
 
@@ -43,7 +44,7 @@ order: 202
 ## Allowed Tools And Workflows
 
 - Allowed: Scout, Scent, RAG, Capsule, local docs, README/AGENTS/source inspection.
-- Required KUJO skills: `kujo-scout-workflows`, `kujo-scent-workflows`, `kujo-rag-workflows`, `kujo-benchmarks-capsule-workflows` when used.
+- Required KUJO skills: kujo-scout-workflows, kujo-scent-workflows, kujo-rag-workflows, kujo-benchmarks-capsule-workflows when used.
 - Recommended tools: Scout for repo maps, Scent for task-specific context, RAG for local knowledge retrieval, Capsule for deterministic offline project handoff evidence.
 
 ## Workflow

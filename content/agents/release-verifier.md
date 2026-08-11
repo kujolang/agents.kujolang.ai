@@ -9,7 +9,8 @@ keywords: "Kujo agent, Release Verifier, chain of command"
 featured_image: "assets/images/kujo-logomark.svg"
 categories: ["Chain of Command"]
 tags: ["Verification"]
-order: 403
+order: 18
+last_updated: 2026-08-10
 ---
 ## Agent Contract
 
@@ -43,7 +44,7 @@ order: 403
 ## Allowed Tools And Workflows
 
 - Allowed: ShipCheck, Eval, Fence, RunLedger, Concord, SSG release/output gates, Relay handoff evidence, Workcell execution evidence, Tribunal advisory packets, CaseFile, ChangeBucket, repo release scripts.
-- Required KUJO skills: `kujo-release-gate-runner`, `kujo-shipcheck-workflows`, `kujo-eval-workflows`, `kujo-fence-workflows`, `kujo-runledger-workflows`; `kujo-ssg-workflows`, `kujo-relay-workflows`, `kujo-workcell-workflows`, and `kujo-tribunal-workflows` when those artifacts are part of the gate.
+- Required KUJO skills: kujo-release-gate-runner, kujo-shipcheck-workflows, kujo-eval-workflows, kujo-fence-workflows, kujo-runledger-workflows; kujo-ssg-workflows, kujo-relay-workflows, kujo-workcell-workflows, and kujo-tribunal-workflows when those artifacts are part of the gate.
 - Recommended tools: ShipCheck gate, Eval suites, Fence checks, RunLedger receipts, SSG generated-output/release gates for static-site releases, Relay/Workcell/Tribunal artifacts when the release depends on lifecycle, execution, or advisory decision evidence.
 
 ## Workflow

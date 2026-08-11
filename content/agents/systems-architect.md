@@ -9,7 +9,8 @@ keywords: "Kujo agent, Systems Architect, chain of command"
 featured_image: "content/media/agents/systems-architect.png"
 categories: ["Chain of Command"]
 tags: ["Strategic"]
-order: 104
+order: 3
+last_updated: 2026-08-10
 ---
 ## Agent Contract
 
@@ -44,7 +45,7 @@ order: 104
 ## Allowed Tools And Workflows
 
 - Allowed: Scout, Fence, Concord, Spec, Eval, Agents SDK references, PatchBrief, ChangeBucket.
-- Required KUJO skills: `kujo-scout-workflows`, `kujo-fence-workflows`, `kujo-concord-workflows`, `kujo-spec-workflows` when used.
+- Required KUJO skills: kujo-scout-workflows, kujo-fence-workflows, kujo-concord-workflows, kujo-spec-workflows when used.
 - Recommended tools: Scout for repo maps, Fence for boundaries, Concord for artifact drift, Spec for architecture contracts.
 
 ## Workflow

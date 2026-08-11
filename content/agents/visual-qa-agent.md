@@ -9,7 +9,8 @@ keywords: "Kujo agent, Visual QA Agent, chain of command"
 featured_image: "assets/images/kujo-logomark.svg"
 categories: ["Chain of Command"]
 tags: ["Verification"]
-order: 406
+order: 17
+last_updated: 2026-08-10
 ---
 ## Agent Contract
 
@@ -42,7 +43,7 @@ order: 406
 ## Allowed Tools And Workflows
 
 - Allowed: Lens, SSG output, SiteKit snapshots, Kujo Docs public/static pages, Kujo Hyperframes browser/video surfaces, repo dev server, Eval for supplemental checks, CaseFile for failures.
-- Required KUJO skills: `kujo-lens-workflows`; `kujo-ssg-workflows` or `kujo-site-kit-workflows` when validating generated static sites, SiteKit components, or generated bundles.
+- Required KUJO skills: kujo-lens-workflows; kujo-ssg-workflows or kujo-site-kit-workflows when validating generated static sites, SiteKit components, or generated bundles.
 - Recommended tools: `lens check`, `lens flow --validate`, `lens flow --execute --record --walkthrough`, SSG output validation plus browser proof when applicable, SiteKit snapshot output when applicable, Kujo Docs public/static page proof when assigned, browser proof for Hyperframes campaign pages when assigned.
 
 ## Workflow

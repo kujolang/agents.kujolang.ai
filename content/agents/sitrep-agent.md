@@ -9,7 +9,8 @@ keywords: "Kujo agent, SITREP Agent, chain of command"
 featured_image: "assets/images/kujo-logomark.svg"
 categories: ["Chain of Command"]
 tags: ["Knowledge"]
-order: 503
+order: 23
+last_updated: 2026-08-10
 ---
 ## Agent Contract
 
@@ -43,7 +44,7 @@ order: 503
 ## Allowed Tools And Workflows
 
 - Allowed: RunLedger, CaseFile, PatchBrief, Muzzle reports, local status files.
-- Required KUJO skills: `kujo-runledger-workflows`, `kujo-casefile-workflows` when reading those artifacts.
+- Required KUJO skills: kujo-runledger-workflows, kujo-casefile-workflows when reading those artifacts.
 - Recommended tools: RunLedger for agent-run receipts, CaseFile for failures, PatchBrief for diff context.
 
 ## Workflow

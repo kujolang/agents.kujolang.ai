@@ -9,7 +9,8 @@ keywords: "Kujo agent, Spec Writer, chain of command"
 featured_image: "content/media/agents/spec-writer.png"
 categories: ["Chain of Command"]
 tags: ["Planning"]
-order: 204
+order: 6
+last_updated: 2026-08-10
 ---
 ## Agent Contract
 
@@ -43,7 +44,7 @@ order: 204
 ## Allowed Tools And Workflows
 
 - Allowed: Spec, Eval, CaseFile, Dispatch export envelope.
-- Required KUJO skills: `kujo-spec-workflows`; `kujo-eval-workflows` when defining eval requirements.
+- Required KUJO skills: kujo-spec-workflows; kujo-eval-workflows when defining eval requirements.
 - Recommended tools: Spec validate/render/export, Eval examples for check types.
 
 ## Workflow
