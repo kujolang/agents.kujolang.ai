@@ -8,6 +8,8 @@ This site contains structured content formatted for LLM-friendly consumption.
 
 ## Agents
 - [Agents index](https://agents.kujolang.ai/agents/)
+- [Chain of Command agents](https://agents.kujolang.ai/agents/chain-of-command/)
+- [WebOps agents](https://agents.kujolang.ai/agents/webops/)
 - [General Commander](https://agents.kujolang.ai/agents/general-commander/)
 - [Trend Scout](https://agents.kujolang.ai/agents/trend-scout/)
 - [Chief Of Staff](https://agents.kujolang.ai/agents/chief-of-staff/)

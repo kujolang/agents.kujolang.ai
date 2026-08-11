@@ -101,6 +101,11 @@ if [[ -f "$OUT_DIR/agents/webops/index.html" ]]; then
 	if grep -q 'listing-card-image--mark' "$OUT_DIR/agents/webops/index.html"; then record_failure "FAIL webops-fallback-image: generic Kujo card image remains after portrait rollout"; fi
 	webops_portraits="$(grep -Eo '/images/[a-z0-9-]+-[a-f0-9]{12}\.webp' "$OUT_DIR/agents/webops/index.html" | sort -u | wc -l | tr -d ' ')"
 	if [[ "$webops_portraits" -lt 28 ]]; then record_failure "FAIL webops-portraits: expected 28 unique portraits, found $webops_portraits"; fi
+	if ! grep -Eq 'alt="Agent image for Trend Scout"[^>]*loading="eager"[^>]*fetchpriority="high"' "$OUT_DIR/agents/webops/index.html"; then record_failure "FAIL webops-priority-image: first portrait is not prioritized"; fi
+fi
+
+if [[ -f "$OUT_DIR/agents/chain-of-command/index.html" ]] && ! grep -Eq 'alt="Agent image for General Commander"[^>]*loading="eager"[^>]*fetchpriority="high"' "$OUT_DIR/agents/chain-of-command/index.html"; then
+	record_failure "FAIL chain-priority-image: first portrait is not prioritized"
 fi
 
 if [[ "$html_count" -eq 0 ]]; then
@@ -116,6 +121,17 @@ if [[ -f "$OUT_DIR/sitemap.xml" ]]; then
 	if ! grep -q '<urlset' "$OUT_DIR/sitemap.xml"; then
 		record_failure "FAIL sitemap-format: $OUT_DIR/sitemap.xml"
 	fi
+	for aggregate_url in 'https://agents.kujolang.ai/' 'https://agents.kujolang.ai/agents/' 'https://agents.kujolang.ai/agents/chain-of-command/' 'https://agents.kujolang.ai/agents/webops/'; do
+		if ! grep -A1 -F "<loc>$aggregate_url</loc>" "$OUT_DIR/sitemap.xml" | grep -Eq '<lastmod>[0-9]{4}-[0-9]{2}-[0-9]{2}</lastmod>'; then
+			record_failure "FAIL sitemap-lastmod: $aggregate_url has no freshness date"
+		fi
+	done
+fi
+
+if [[ -f "$OUT_DIR/llms.txt" ]]; then
+	for agent_set_url in 'https://agents.kujolang.ai/agents/chain-of-command/' 'https://agents.kujolang.ai/agents/webops/'; do
+		if ! grep -Fq "$agent_set_url" "$OUT_DIR/llms.txt"; then record_failure "FAIL llms-agent-set: missing $agent_set_url"; fi
+	done
 fi
 
 if [[ -f "$OUT_DIR/feed/index.xml" ]]; then

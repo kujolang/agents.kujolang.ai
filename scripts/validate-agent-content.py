@@ -36,6 +36,17 @@ def main():
             if not portrait.is_file(): errors.append(f"{slug}: agent portrait file missing")
             route=OUTPUT/"agents"/slug/"index.html"
             if OUTPUT.is_dir() and not route.is_file(): errors.append(f"{slug}: generated route missing")
+            elif OUTPUT.is_dir():
+                route_text=route.read_text()
+                blocks=re.findall(r'<script type="application/ld\+json">(.*?)</script>',route_text,re.S)
+                schemas=[]
+                for block in blocks:
+                    try: schemas.append(json.loads(block))
+                    except json.JSONDecodeError: pass
+                source_schema=next((value for value in schemas if value.get("@type")=="SoftwareSourceCode"),None)
+                expected_name=json.loads(meta["title"])
+                if not source_schema: errors.append(f"{slug}: SoftwareSourceCode schema missing")
+                elif source_schema.get("name")!=expected_name: errors.append(f"{slug}: schema name does not match visible title")
     if OUTPUT.is_dir():
         for route in (OUTPUT/"index.html",OUTPUT/"agents/index.html",OUTPUT/"agents/chain-of-command/index.html",OUTPUT/"agents/webops/index.html",OUTPUT/"sitemap.xml",OUTPUT/"llms.txt"):
             if not route.is_file(): errors.append(f"generated output missing: {route.relative_to(ROOT)}")

@@ -1821,6 +1821,7 @@ func render_layout_interpreted(layout_template, settings, route, page_title, met
 	favicon_tag := "<link rel=\"icon\" type=\"image/svg+xml\" href=\"" + prefix + "favicon.svg\">"
 
 	# JSON-LD structured data.
+	schema_name := meta_string(page_meta, "schema_name", seo_title)
 	schema_type := "WebSite"
 	requested_schema_type := trim(meta_string(page_meta, "schema_type", ""))
 	if requested_schema_type == "ProfilePage" || requested_schema_type == "CollectionPage" || requested_schema_type == "WebPage" || requested_schema_type == "SoftwareSourceCode" {
@@ -1831,8 +1832,8 @@ func render_layout_interpreted(layout_template, settings, route, page_title, met
 	json_ld_parts := [
 		"\"@context\":\"https://schema.org\"",
 		"\"@type\":\"" + schema_type + "\"",
-		"\"headline\":\"" + json_escape(seo_title) + "\"",
-		"\"name\":\"" + json_escape(seo_title) + "\"",
+		"\"headline\":\"" + json_escape(schema_name) + "\"",
+		"\"name\":\"" + json_escape(schema_name) + "\"",
 		"\"description\":\"" + json_escape(seo_description) + "\"",
 		"\"url\":\"" + json_escape(og_url) + "\""
 	]
@@ -2480,10 +2481,14 @@ func agent_card_html(item) {
 	media_block := "<span class=\"listing-card-image-link\"><span class=\"listing-card-image-placeholder\" aria-hidden=\"true\"></span></span>"
 	if len(media_url) > 0 {
 		image_class := "listing-card-image"
+		loading_attributes := "loading=\"lazy\" decoding=\"async\""
+		if to_string(item["order"]) == "1" {
+			loading_attributes = "loading=\"eager\" decoding=\"async\" fetchpriority=\"high\""
+		}
 		if contains(media_url, ".svg") {
 			image_class = image_class + " listing-card-image--mark"
 		}
-		media_block = "<span class=\"listing-card-image-link\"><img src=\"" + safe_media_url + "\" alt=\"Agent image for " + safe_title + "\" class=\"" + image_class + "\" width=\"640\" height=\"640\" loading=\"lazy\" decoding=\"async\"></span>"
+		media_block = "<span class=\"listing-card-image-link\"><img src=\"" + safe_media_url + "\" alt=\"Agent image for " + safe_title + "\" class=\"" + image_class + "\" width=\"640\" height=\"640\" " + loading_attributes + "></span>"
 	}
 
 	return "<li class=\"listing-card agent-card sk-card\" data-agent-category=\"" + safe_category + "\" data-agent-title=\"" + safe_title_attr + "\" data-agent-updated=\"" + safe_updated + "\" data-agent-order=\"" + safe_order + "\"><a class=\"listing-card-link\" href=\"" + safe_href + "\">" + media_block + "<span class=\"listing-card-body\">" + tags_block + "<span class=\"listing-card-title\">" + safe_title + "</span><span class=\"listing-card-excerpt\">" + safe_excerpt + "</span><span class=\"listing-card-footer\"><span class=\"listing-card-button\">View Agent</span><span class=\"listing-card-status\">online</span></span></span></a></li>"
@@ -3867,6 +3872,7 @@ func build_site(settings) {
 	if path_exists(llms_collections_tmp) {
 		delete_file(llms_collections_tmp)
 	}
+	agent_latest_updated := ""
 	collection_idx := 0
 	loop {
 		if collection_idx >= len(custom_collections) {
@@ -3879,6 +3885,9 @@ func build_site(settings) {
 		collection_title := collection["title"]
 		collection_files := collection["files"]
 		collection_items := []
+		collection_latest_updated := ""
+		chain_latest_updated := ""
+		webops_latest_updated := ""
 
 		default_collection_item_template := post_template
 		collection_item_template_path := path_join(templates_dir, collection_slug + ".html")
@@ -3953,6 +3962,15 @@ func build_site(settings) {
 			item_category_text := collection_title
 			if len(item_categories) > 0 {
 				item_category_text = item_categories[0]
+			}
+			item_last_updated := trim(to_string(meta["last_updated"]))
+			if len(item_last_updated) == 10 && item_last_updated > collection_latest_updated {
+				collection_latest_updated = item_last_updated
+			}
+			if item_category_text == "Chain of Command" && item_last_updated > chain_latest_updated {
+				chain_latest_updated = item_last_updated
+			} else if item_category_text == "WebOps" && item_last_updated > webops_latest_updated {
+				webops_latest_updated = item_last_updated
 			}
 
 			route := collection_slug + "/" + slug + "/"
@@ -4037,6 +4055,7 @@ func build_site(settings) {
 					"canonical": canonical,
 					"featured_image": featured_image,
 					"social_image": item_social_image,
+					"schema_name": title,
 					"author": item_author_name,
 					"og_type": item_og_type,
 					"schema_type": item_schema_type,
@@ -4175,9 +4194,10 @@ func build_site(settings) {
 		write_route_page(output_dir, listing_route, listing_html)
 		write_route_alias(output_dir, listing_route, make_aliases)
 		if want_sitemap {
-			append_file(sitemap_tmp, sitemap_url_entry(site_url, listing_route, "", blog_prefix))
+			append_file(sitemap_tmp, sitemap_url_entry(site_url, listing_route, collection_latest_updated, blog_prefix))
 		}
 		if collection_slug == "agents" {
+			agent_latest_updated = collection_latest_updated
 			agent_set_template_path := path_join(templates_dir, "page-agent-set.html")
 			if path_exists(agent_set_template_path) {
 				agent_set_template := read_file(agent_set_template_path)
@@ -4186,13 +4206,15 @@ func build_site(settings) {
 						"title": "Chain of Command",
 						"slug": "chain-of-command",
 						"description": "A coordinated roster for strategy, planning, execution, verification, knowledge, and routine work.",
-						"cards": chain_of_command_cards
+						"cards": chain_of_command_cards,
+						"last_updated": chain_latest_updated
 					},
 					{
 						"title": "WebOps",
 						"slug": "webops",
 						"description": "A coordinated roster for technical SEO, content intelligence, site quality, search analytics, and safe WebOps operations.",
-						"cards": webops_cards
+						"cards": webops_cards,
+						"last_updated": webops_latest_updated
 					}
 				]
 				agent_set_idx := 0
@@ -4231,7 +4253,7 @@ func build_site(settings) {
 					write_route_page(output_dir, agent_set_route, agent_set_html)
 					write_route_alias(output_dir, agent_set_route, make_aliases)
 					if want_sitemap {
-						append_file(sitemap_tmp, sitemap_url_entry(site_url, agent_set_route, "", blog_prefix))
+						append_file(sitemap_tmp, sitemap_url_entry(site_url, agent_set_route, agent_set_page["last_updated"], blog_prefix))
 					}
 				}
 			}
@@ -4239,6 +4261,10 @@ func build_site(settings) {
 		if settings["llms"] == "public" && len(site_url) > 0 && !settings["no_aux"] {
 			append_file(llms_collections_tmp, "\n## " + collection_title + "\n")
 			append_file(llms_collections_tmp, "- [" + collection_title + " index](" + site_url + "/" + listing_route + ")\n")
+			if collection_slug == "agents" {
+				append_file(llms_collections_tmp, "- [Chain of Command agents](" + site_url + "/agents/chain-of-command/)\n")
+				append_file(llms_collections_tmp, "- [WebOps agents](" + site_url + "/agents/webops/)\n")
+			}
 			llms_item_idx := 0
 			loop {
 				if llms_item_idx >= len(sorted_collection_items) {
@@ -4349,7 +4375,7 @@ func build_site(settings) {
 			write_route_page(output_dir, index_route, index_html)
 			write_route_alias(output_dir, index_route, make_aliases)
 			if want_sitemap {
-				append_file(sitemap_tmp, sitemap_url_entry(site_url, index_route, "", blog_prefix))
+				append_file(sitemap_tmp, sitemap_url_entry(site_url, index_route, agent_latest_updated, blog_prefix))
 			}
 
 			if len(settings["blog_slug"]) > 0 {
