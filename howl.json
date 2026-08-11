@@ -76,7 +76,7 @@
       "file": "content/agents/accessibility-auditor.md",
       "variant": "social",
       "label": "WebOps",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/accessibility-auditor.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -88,7 +88,7 @@
       "file": "content/agents/ai-search-visibility-analyst.md",
       "variant": "social",
       "label": "WebOps",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/ai-search-visibility-analyst.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -100,7 +100,7 @@
       "file": "content/agents/analytics-analyst.md",
       "variant": "social",
       "label": "WebOps",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/analytics-analyst.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -124,7 +124,7 @@
       "file": "content/agents/backlink-mention-analyst.md",
       "variant": "social",
       "label": "WebOps",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/backlink-mention-analyst.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -136,7 +136,7 @@
       "file": "content/agents/cannibalization-analyst.md",
       "variant": "social",
       "label": "WebOps",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/cannibalization-analyst.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -160,7 +160,7 @@
       "file": "content/agents/code-reviewer.md",
       "variant": "social",
       "label": "Chain of Command",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/code-reviewer.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -172,7 +172,7 @@
       "file": "content/agents/competitor-intelligence-analyst.md",
       "variant": "social",
       "label": "WebOps",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/competitor-intelligence-analyst.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -184,7 +184,7 @@
       "file": "content/agents/content-accuracy-reviewer.md",
       "variant": "social",
       "label": "WebOps",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/content-accuracy-reviewer.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -196,7 +196,7 @@
       "file": "content/agents/content-decay-analyst.md",
       "variant": "social",
       "label": "WebOps",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/content-decay-analyst.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -208,7 +208,7 @@
       "file": "content/agents/content-gap-analyst.md",
       "variant": "social",
       "label": "WebOps",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/content-gap-analyst.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -220,7 +220,7 @@
       "file": "content/agents/content-portfolio-manager.md",
       "variant": "social",
       "label": "WebOps",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/content-portfolio-manager.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -232,7 +232,7 @@
       "file": "content/agents/content-pruning-analyst.md",
       "variant": "social",
       "label": "WebOps",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/content-pruning-analyst.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -244,7 +244,7 @@
       "file": "content/agents/context-packager.md",
       "variant": "social",
       "label": "Chain of Command",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/context-packager.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -268,7 +268,7 @@
       "file": "content/agents/dependency-scanner.md",
       "variant": "social",
       "label": "Chain of Command",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/dependency-scanner.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -280,7 +280,7 @@
       "file": "content/agents/distribution-operator.md",
       "variant": "social",
       "label": "WebOps",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/distribution-operator.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -292,7 +292,7 @@
       "file": "content/agents/documentation-writer.md",
       "variant": "social",
       "label": "Chain of Command",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/documentation-writer.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -328,7 +328,7 @@
       "file": "content/agents/indexation-analyst.md",
       "variant": "social",
       "label": "WebOps",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/indexation-analyst.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -340,7 +340,7 @@
       "file": "content/agents/information-architecture-auditor.md",
       "variant": "social",
       "label": "WebOps",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/information-architecture-auditor.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -352,7 +352,7 @@
       "file": "content/agents/integration-engineer.md",
       "variant": "social",
       "label": "Chain of Command",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/integration-engineer.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -364,7 +364,7 @@
       "file": "content/agents/internal-link-specialist.md",
       "variant": "social",
       "label": "WebOps",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/internal-link-specialist.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -376,7 +376,7 @@
       "file": "content/agents/issue-hygiene-worker.md",
       "variant": "social",
       "label": "Chain of Command",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/issue-hygiene-worker.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -388,7 +388,7 @@
       "file": "content/agents/keyword-opportunity-analyst.md",
       "variant": "social",
       "label": "WebOps",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/keyword-opportunity-analyst.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -400,7 +400,7 @@
       "file": "content/agents/link-health-auditor.md",
       "variant": "social",
       "label": "WebOps",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/link-health-auditor.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -412,7 +412,7 @@
       "file": "content/agents/lint-runner.md",
       "variant": "social",
       "label": "Chain of Command",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/lint-runner.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -424,7 +424,7 @@
       "file": "content/agents/metadata-auditor.md",
       "variant": "social",
       "label": "WebOps",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/metadata-auditor.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -436,7 +436,7 @@
       "file": "content/agents/performance-analyst.md",
       "variant": "social",
       "label": "WebOps",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/performance-analyst.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -472,7 +472,7 @@
       "file": "content/agents/qa-lead.md",
       "variant": "social",
       "label": "Chain of Command",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/qa-lead.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -484,7 +484,7 @@
       "file": "content/agents/receipt-collector.md",
       "variant": "social",
       "label": "Chain of Command",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/receipt-collector.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -496,7 +496,7 @@
       "file": "content/agents/release-verifier.md",
       "variant": "social",
       "label": "Chain of Command",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/release-verifier.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -532,7 +532,7 @@
       "file": "content/agents/routine-worker.md",
       "variant": "social",
       "label": "Chain of Command",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/routine-worker.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -544,7 +544,7 @@
       "file": "content/agents/schema-auditor.md",
       "variant": "social",
       "label": "WebOps",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/schema-auditor.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -556,7 +556,7 @@
       "file": "content/agents/search-performance-analyst.md",
       "variant": "social",
       "label": "WebOps",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/search-performance-analyst.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -568,7 +568,7 @@
       "file": "content/agents/search-submission-operator.md",
       "variant": "social",
       "label": "WebOps",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/search-submission-operator.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -580,7 +580,7 @@
       "file": "content/agents/search-web-standards-watch.md",
       "variant": "social",
       "label": "WebOps",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/search-web-standards-watch.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -592,7 +592,7 @@
       "file": "content/agents/security-reviewer.md",
       "variant": "social",
       "label": "Chain of Command",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/security-reviewer.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -604,7 +604,7 @@
       "file": "content/agents/seo-auditor.md",
       "variant": "social",
       "label": "WebOps",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/seo-auditor.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -616,7 +616,7 @@
       "file": "content/agents/site-qa-operator.md",
       "variant": "social",
       "label": "WebOps",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/site-qa-operator.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -628,7 +628,7 @@
       "file": "content/agents/sitrep-agent.md",
       "variant": "social",
       "label": "Chain of Command",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/sitrep-agent.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -664,7 +664,7 @@
       "file": "content/agents/technical-seo-auditor.md",
       "variant": "social",
       "label": "WebOps",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/technical-seo-auditor.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -676,7 +676,7 @@
       "file": "content/agents/test-runner.md",
       "variant": "social",
       "label": "Chain of Command",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/test-runner.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -700,7 +700,7 @@
       "file": "content/agents/trend-scout.md",
       "variant": "social",
       "label": "WebOps",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/trend-scout.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -712,7 +712,7 @@
       "file": "content/agents/triage-agent.md",
       "variant": "social",
       "label": "Chain of Command",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/triage-agent.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -724,7 +724,7 @@
       "file": "content/agents/visual-qa-agent.md",
       "variant": "social",
       "label": "Chain of Command",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/visual-qa-agent.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -736,7 +736,7 @@
       "file": "content/agents/webops-reporter.md",
       "variant": "social",
       "label": "WebOps",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/webops-reporter.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
