@@ -1,0 +1,57 @@
+{
+  "robots": {
+    "bytes": 1908,
+    "chain_length": 0,
+    "error": "",
+    "final_url": "https://agents.kujolang.ai/robots.txt",
+    "headers": {
+      "CF-RAY": "a29454bc08de7e6b-ORD",
+      "Connection": "keep-alive",
+      "Content-Encoding": "br",
+      "Content-Type": "text/plain; charset=utf-8",
+      "Date": "Tue, 11 Aug 2026 04:00:01 GMT",
+      "Server": "cloudflare",
+      "Transfer-Encoding": "chunked"
+    },
+    "initial_status": 200,
+    "status": 200
+  },
+  "sitemap": {
+    "bytes": 5002,
+    "chain_length": 0,
+    "error": "",
+    "final_url": "https://agents.kujolang.ai/sitemap.xml",
+    "headers": {
+      "Accept-Ranges": "bytes",
+      "Age": "0",
+      "CF-RAY": "a29454bcaa9f7e6b-ORD",
+      "Cache-Control": "max-age=600",
+      "Connection": "keep-alive",
+      "Content-Encoding": "gzip",
+      "Content-Length": "549",
+      "Content-Type": "application/xml",
+      "Date": "Tue, 11 Aug 2026 04:00:02 GMT",
+      "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+      "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=%2FHSw8q0dpq%2FSOsvD%2FPS1fC21svaEpGp2De1WRxUOXLKKgpZZ%2BNkKMf4MRUHK%2Fctc0HsELWjuQzisrERXbWJM1y3ir1Aij%2F0KfWs4O0iNZXp3xMxkrmDkR2HFuKYhEHjyDdyEsFGapSnidDsclUoNW7Q%3D\"}]}",
+      "Server": "cloudflare",
+      "access-control-allow-origin": "*",
+      "alt-svc": "h3=\":443\"; ma=86400",
+      "cf-cache-status": "DYNAMIC",
+      "etag": "W/\"6a7a9513-138a\"",
+      "expires": "Tue, 11 Aug 2026 04:10:02 GMT",
+      "last-modified": "Tue, 11 Aug 2026 03:20:51 GMT",
+      "vary": "Accept-Encoding",
+      "via": "1.1 varnish",
+      "x-cache": "MISS",
+      "x-cache-hits": "0",
+      "x-fastly-request-id": "c49b7db67a2d67b95becb90b77e826bce11e33b6",
+      "x-github-edge-region": "iad",
+      "x-github-request-id": "3E18:139C0C:F8B6DC:108B9C0:6A7A9E40",
+      "x-proxy-cache": "MISS",
+      "x-served-by": "cache-chi-klot8100108-CHI",
+      "x-timer": "S1786420802.026620,VS0,VE62"
+    },
+    "initial_status": 200,
+    "status": 200
+  }
+}
