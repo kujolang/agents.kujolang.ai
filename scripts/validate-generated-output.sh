@@ -159,6 +159,12 @@ if [[ -f "$OUT_DIR/index.html" ]]; then
 	if grep -q 'card-grid agent-grid' "$OUT_DIR/index.html"; then
 		record_failure "FAIL homepage-grid: homepage still renders the old agent grid"
 	fi
+	if ! grep -q 'class="sk-button source-link"' "$OUT_DIR/index.html" || ! grep -q 'M9 19c-4.3 1.4' "$OUT_DIR/index.html"; then
+		record_failure "FAIL mobile-source-icon: header source link does not render the Tabler GitHub icon"
+	fi
+	if ! grep -q 'data-mobile-menu-toggle' "$OUT_DIR/index.html" || ! grep -q 'data-mobile-navigation' "$OUT_DIR/index.html"; then
+		record_failure "FAIL mobile-navigation: header toggle or menu overlay is missing"
+	fi
 	if ! grep -q '/images/general-commander-' "$OUT_DIR/index.html"; then
 		record_failure "FAIL demo-portrait: homepage does not render the original agent portrait assets"
 	fi
