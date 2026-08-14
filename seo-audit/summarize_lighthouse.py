@@ -17,7 +17,8 @@ FIELDS = [
 TEMPLATES = {
     "home": "home",
     "agents": "agent directory",
-    "agent-detail": "agent detail",
+    "publishing-house": "Publishing House directory",
+    "publisher": "Publishing House agent detail",
 }
 
 
@@ -53,7 +54,7 @@ for phase in ("baseline", "after"):
             "url": payload.get("finalDisplayedUrl", payload.get("finalUrl", "")),
             "template": template,
             "run_date": payload["fetchTime"],
-            "environment": "Lighthouse mobile lab run against production",
+            "environment": "Lighthouse mobile lab run against production" if "agents.kujolang.ai" in payload.get("finalUrl", "") else "Lighthouse mobile lab run against local generated output",
             "lighthouse_version": payload["lighthouseVersion"],
             "html_bytes": resources.get("document", {}).get("transferSize", ""),
             "css_bytes": resources.get("stylesheet", {}).get("transferSize", ""),

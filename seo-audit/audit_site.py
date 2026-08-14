@@ -96,12 +96,24 @@ def local_path_for_url(root: Path, absolute_url: str, origin: str) -> Path | Non
     return next((candidate for candidate in candidates if candidate.is_file()), candidates[0] if candidates else None)
 
 
-def source_for_route(route: str, repo_root: Path) -> str:
+def agent_set_routes(repo_root: Path) -> set[str]:
+    manifest = repo_root / "agent-sets.json"
+    if not manifest.exists():
+        return set()
+    payload = json.loads(manifest.read_text(encoding="utf-8"))
+    return {
+        str(item["public_path"])
+        for item in payload.get("sets", [])
+        if isinstance(item, dict) and item.get("public_path")
+    }
+
+
+def source_for_route(route: str, repo_root: Path, set_routes: set[str]) -> str:
     if route == "/":
         return "templates/page-home.html"
     if route == "/agents/":
         return "templates/page-agents.html"
-    if route in {"/agents/chain-of-command/", "/agents/webops/"}:
+    if route in set_routes:
         return "templates/page-agent-set.html"
     match = re.fullmatch(r"/agents/([^/]+)/", route)
     if match and (repo_root / "content" / "agents" / f"{match.group(1)}.md").exists():
@@ -220,6 +232,7 @@ def main() -> int:
     root = args.root.resolve()
     repo_root = args.repo_root.resolve()
     origin = args.origin.rstrip("/")
+    set_routes = agent_set_routes(repo_root)
     html_files = sorted(root.rglob("*.html"))
     if not html_files:
         raise SystemExit(f"No HTML files found under {root}")
@@ -354,8 +367,8 @@ def main() -> int:
             if not production_matches_local:
                 issues.append("production HTML differs from generated artifact")
         pages[url] = {
-            "phase": args.phase, "url": url, "source_file": source_for_route(route, repo_root),
-            "page_type": "404" if route == "/404.html" else ("agent" if re.fullmatch(r"/agents/[^/]+/", route) and route not in {"/agents/chain-of-command/", "/agents/webops/"} else "listing" if route.startswith("/agents/") else "home"),
+            "phase": args.phase, "url": url, "source_file": source_for_route(route, repo_root, set_routes),
+            "page_type": "404" if route == "/404.html" else ("agent" if re.fullmatch(r"/agents/[^/]+/", route) and route not in set_routes else "listing" if route.startswith("/agents/") else "home"),
             "local_status": 404 if route == "/404.html" else 200,
             "production_status": production["status"], "indexable": str(indexable).lower(),
             "robots_directives": robots or "default index,follow", "canonical": canonical,
