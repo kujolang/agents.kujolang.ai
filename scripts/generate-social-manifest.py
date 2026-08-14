@@ -86,6 +86,13 @@ def main() -> int:
             "README.md",
         ),
         card(
+            "agents-publishing-house",
+            "Publishing House",
+            "A standalone editorial roster for strategy, writing, review, and production.",
+            "Agent set",
+            "README.md",
+        ),
+        card(
             "404",
             "Signal Lost",
             "This route is outside the active agent network.",

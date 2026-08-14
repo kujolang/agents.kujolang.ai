@@ -16,6 +16,7 @@ CHAIN_ORDER=["general-commander","chief-of-staff","systems-architect","product-s
 SETS={
   "chain-of-command":{"source":"chain-of-command","category":"Chain of Command","tag_field":"Rank/layer","keywords":"Kujo agent, chain of command","order":CHAIN_ORDER},
   "webops":{"source":"webops","category":"WebOps","tag_field":"Category","keywords":"Kujo agent, WebOps, website operations","order":None},
+  "publishing-house":{"source":"publishing-house","category":"Publishing House","tag_field":"Desk","keywords":"Kujo agent, Publishing House, editorial operations","order":None},
 }
 def field(body:str,name:str)->str:
     match=re.search(rf"^- {re.escape(name)}:\s*(.+)$",body,re.MULTILINE)
@@ -36,7 +37,8 @@ def current_category(path:Path)->str:
 
 def source_order(source_root:Path,set_id:str,config:dict)->list[str]:
     if config["order"]: return config["order"]
-    catalog=source_root/config["source"]/"webops-catalog.json"
+    catalog_name="publishing-house-catalog.json" if set_id=="publishing-house" else "webops-catalog.json"
+    catalog=source_root/config["source"]/catalog_name
     if catalog.is_file(): return [x["slug"] for x in json.loads(catalog.read_text())["agents"]]
     return sorted(x.parent.name for x in (source_root/config["source"]).glob("*/AGENT.md"))
 
@@ -72,7 +74,7 @@ def main()->int:
     parser=argparse.ArgumentParser(); parser.add_argument("source",type=Path,help="path to kujo-agents root (legacy set directory also accepted)"); parser.add_argument("--set",dest="sets",action="append",choices=sorted(SETS)); args=parser.parse_args()
     source=args.source.expanduser().resolve(); selected=args.sets or sorted(SETS)
     if source.name in SETS and (source/"README.md").is_file(): selected=[source.name]; source=source.parent
-    if not (source/"chain-of-command").is_dir() and not (source/"webops").is_dir(): print(f"kujo-agents root not found: {source}",file=sys.stderr); return 2
+    if not any((source/set_id).is_dir() for set_id in SETS): print(f"kujo-agents root not found: {source}",file=sys.stderr); return 2
     OUTPUT_ROOT.mkdir(parents=True,exist_ok=True); state=load_state(); total=0
     try:
         for set_id in selected:

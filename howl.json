@@ -58,6 +58,18 @@
       "show_url": false
     },
     {
+      "id": "agents-publishing-house",
+      "title": "Publishing House",
+      "tagline": "A standalone editorial roster for strategy, writing, review, and production.",
+      "file": "README.md",
+      "variant": "social",
+      "label": "Agent set",
+      "background_image": "assets/images/agent-hero-background.webp",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_border": true,
+      "show_url": false
+    },
+    {
       "id": "404",
       "title": "Signal Lost",
       "tagline": "This route is outside the active agent network.",
@@ -106,6 +118,30 @@
       "show_url": false
     },
     {
+      "id": "art-director",
+      "title": "Art Director",
+      "tagline": "Define visual concepts, systems, composition, typography direction,\u2026",
+      "file": "content/agents/art-director.md",
+      "variant": "social",
+      "label": "Publishing House",
+      "background_image": "assets/images/agent-hero-background.webp",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_border": true,
+      "show_url": false
+    },
+    {
+      "id": "audience-development-director",
+      "title": "Audience Development Director",
+      "tagline": "Design distribution, subscriber, community, and audience-learning\u2026",
+      "file": "content/agents/audience-development-director.md",
+      "variant": "social",
+      "label": "Publishing House",
+      "background_image": "assets/images/agent-hero-background.webp",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_border": true,
+      "show_url": false
+    },
+    {
       "id": "backend-developer",
       "title": "Backend Developer",
       "tagline": "Implement APIs, persistence, jobs, auth boundaries, service logic,\u2026",
@@ -130,6 +166,30 @@
       "show_url": false
     },
     {
+      "id": "brand-strategy-director",
+      "title": "Brand Strategy Director",
+      "tagline": "Define positioning, category framing, audience promise,\u2026",
+      "file": "content/agents/brand-strategy-director.md",
+      "variant": "social",
+      "label": "Publishing House",
+      "background_image": "assets/images/agent-hero-background.webp",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_border": true,
+      "show_url": false
+    },
+    {
+      "id": "campaign-copywriter",
+      "title": "Campaign Copywriter",
+      "tagline": "Write headlines, campaign lines, landing copy, launch messaging,\u2026",
+      "file": "content/agents/campaign-copywriter.md",
+      "variant": "social",
+      "label": "Publishing House",
+      "background_image": "assets/images/agent-hero-background.webp",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_border": true,
+      "show_url": false
+    },
+    {
       "id": "cannibalization-analyst",
       "title": "Cannibalization Analyst",
       "tagline": "Identify pages substantially competing for the same intent while\u2026",
@@ -137,6 +197,18 @@
       "variant": "social",
       "label": "WebOps",
       "background_image": "content/media/agents/cannibalization-analyst.webp",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_border": true,
+      "show_url": false
+    },
+    {
+      "id": "case-study-editor",
+      "title": "Case Study Editor",
+      "tagline": "Develop customer, project, and product evidence into credible case\u2026",
+      "file": "content/agents/case-study-editor.md",
+      "variant": "social",
+      "label": "Publishing House",
+      "background_image": "assets/images/agent-hero-background.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -161,6 +233,18 @@
       "variant": "social",
       "label": "Chain of Command",
       "background_image": "content/media/agents/code-reviewer.webp",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_border": true,
+      "show_url": false
+    },
+    {
+      "id": "commissioning-editor",
+      "title": "Commissioning Editor",
+      "tagline": "Convert approved strategy into sharp assignments with a thesis,\u2026",
+      "file": "content/agents/commissioning-editor.md",
+      "variant": "social",
+      "label": "Publishing House",
+      "background_image": "assets/images/agent-hero-background.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -250,6 +334,18 @@
       "show_url": false
     },
     {
+      "id": "copy-chief",
+      "title": "Copy Chief",
+      "tagline": "Own sentence-level clarity, rhythm, terminology, grammar,\u2026",
+      "file": "content/agents/copy-chief.md",
+      "variant": "social",
+      "label": "Publishing House",
+      "background_image": "assets/images/agent-hero-background.webp",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_border": true,
+      "show_url": false
+    },
+    {
       "id": "core-developer",
       "title": "Core Developer",
       "tagline": "Implement bounded source changes and focused tests inside an\u2026",
@@ -262,6 +358,18 @@
       "show_url": false
     },
     {
+      "id": "creative-director",
+      "title": "Creative Director",
+      "tagline": "Develop the central creative idea and direct its coherent\u2026",
+      "file": "content/agents/creative-director.md",
+      "variant": "social",
+      "label": "Publishing House",
+      "background_image": "assets/images/agent-hero-background.webp",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_border": true,
+      "show_url": false
+    },
+    {
       "id": "dependency-scanner",
       "title": "Dependency Scanner",
       "tagline": "Run explicit dependency, package, manifest, lockfile, and package-\u2026",
@@ -269,6 +377,30 @@
       "variant": "social",
       "label": "Chain of Command",
       "background_image": "content/media/agents/dependency-scanner.webp",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_border": true,
+      "show_url": false
+    },
+    {
+      "id": "developmental-editor",
+      "title": "Developmental Editor",
+      "tagline": "Interrogate and improve argument, structure, narrative, audience\u2026",
+      "file": "content/agents/developmental-editor.md",
+      "variant": "social",
+      "label": "Publishing House",
+      "background_image": "assets/images/agent-hero-background.webp",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_border": true,
+      "show_url": false
+    },
+    {
+      "id": "director-of-editorial-intelligence",
+      "title": "Director of Editorial Intelligence",
+      "tagline": "Synthesize audience, category, product, cultural, search,\u2026",
+      "file": "content/agents/director-of-editorial-intelligence.md",
+      "variant": "social",
+      "label": "Publishing House",
+      "background_image": "assets/images/agent-hero-background.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -293,6 +425,54 @@
       "variant": "social",
       "label": "Chain of Command",
       "background_image": "content/media/agents/documentation-writer.webp",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_border": true,
+      "show_url": false
+    },
+    {
+      "id": "editor-in-chief",
+      "title": "Editor-in-Chief",
+      "tagline": "Own editorial judgment, point of view, intellectual ambition, and\u2026",
+      "file": "content/agents/editor-in-chief.md",
+      "variant": "social",
+      "label": "Publishing House",
+      "background_image": "assets/images/agent-hero-background.webp",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_border": true,
+      "show_url": false
+    },
+    {
+      "id": "editorial-strategy-director",
+      "title": "Editorial Strategy Director",
+      "tagline": "Turn organizational goals into editorial theses, campaign\u2026",
+      "file": "content/agents/editorial-strategy-director.md",
+      "variant": "social",
+      "label": "Publishing House",
+      "background_image": "assets/images/agent-hero-background.webp",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_border": true,
+      "show_url": false
+    },
+    {
+      "id": "features-writer",
+      "title": "Features Writer",
+      "tagline": "Write essays, features, arguments, profiles, case-led narratives,\u2026",
+      "file": "content/agents/features-writer.md",
+      "variant": "social",
+      "label": "Publishing House",
+      "background_image": "assets/images/agent-hero-background.webp",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_border": true,
+      "show_url": false
+    },
+    {
+      "id": "franchise-adaptation-editor",
+      "title": "Franchise & Adaptation Editor",
+      "tagline": "Extend approved primary work into durable editorial franchises and\u2026",
+      "file": "content/agents/franchise-adaptation-editor.md",
+      "variant": "social",
+      "label": "Publishing House",
+      "background_image": "assets/images/agent-hero-background.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -418,6 +598,18 @@
       "show_url": false
     },
     {
+      "id": "managing-editor",
+      "title": "Managing Editor",
+      "tagline": "Operate the house queue, assignments, dependencies, handoffs,\u2026",
+      "file": "content/agents/managing-editor.md",
+      "variant": "social",
+      "label": "Publishing House",
+      "background_image": "assets/images/agent-hero-background.webp",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_border": true,
+      "show_url": false
+    },
+    {
       "id": "metadata-auditor",
       "title": "Metadata Auditor",
       "tagline": "Audit titles, descriptions, canonicals, robots, Open Graph, social,\u2026",
@@ -425,6 +617,18 @@
       "variant": "social",
       "label": "WebOps",
       "background_image": "content/media/agents/metadata-auditor.webp",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_border": true,
+      "show_url": false
+    },
+    {
+      "id": "newsletter-editor",
+      "title": "Newsletter Editor",
+      "tagline": "Shape newsletter issues, recurring sections, subject lines, preview\u2026",
+      "file": "content/agents/newsletter-editor.md",
+      "variant": "social",
+      "label": "Publishing House",
+      "background_image": "assets/images/agent-hero-background.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -461,6 +665,42 @@
       "variant": "social",
       "label": "Chain of Command",
       "background_image": "content/media/agents/product-strategist.webp",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_border": true,
+      "show_url": false
+    },
+    {
+      "id": "production-editor",
+      "title": "Production Editor",
+      "tagline": "Assemble validated, versioned, reviewable content packages with\u2026",
+      "file": "content/agents/production-editor.md",
+      "variant": "social",
+      "label": "Publishing House",
+      "background_image": "assets/images/agent-hero-background.webp",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_border": true,
+      "show_url": false
+    },
+    {
+      "id": "publisher",
+      "title": "Publisher",
+      "tagline": "Set the house charter, portfolio priorities, commercial posture,\u2026",
+      "file": "content/agents/publisher.md",
+      "variant": "social",
+      "label": "Publishing House",
+      "background_image": "assets/images/agent-hero-background.webp",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_border": true,
+      "show_url": false
+    },
+    {
+      "id": "publishing-operations-director",
+      "title": "Publishing Operations Director",
+      "tagline": "Publish or schedule only an explicitly approved artifact version\u2026",
+      "file": "content/agents/publishing-operations-director.md",
+      "variant": "social",
+      "label": "Publishing House",
+      "background_image": "assets/images/agent-hero-background.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -634,6 +874,18 @@
       "show_url": false
     },
     {
+      "id": "social-community-editor",
+      "title": "Social & Community Editor",
+      "tagline": "Create platform-native social posts, threads, prompts, replies, and\u2026",
+      "file": "content/agents/social-community-editor.md",
+      "variant": "social",
+      "label": "Publishing House",
+      "background_image": "assets/images/agent-hero-background.webp",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_border": true,
+      "show_url": false
+    },
+    {
       "id": "spec-writer",
       "title": "Spec Writer",
       "tagline": "Create and maintain task contracts with scope, acceptance criteria,\u2026",
@@ -646,6 +898,18 @@
       "show_url": false
     },
     {
+      "id": "standards-evidence-editor",
+      "title": "Standards & Evidence Editor",
+      "tagline": "Independently verify claims, sources, quotations, attribution,\u2026",
+      "file": "content/agents/standards-evidence-editor.md",
+      "variant": "social",
+      "label": "Publishing House",
+      "background_image": "assets/images/agent-hero-background.webp",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_border": true,
+      "show_url": false
+    },
+    {
       "id": "systems-architect",
       "title": "Systems Architect",
       "tagline": "Own architecture, module boundaries, platform decisions, runtime\u2026",
@@ -653,6 +917,18 @@
       "variant": "social",
       "label": "Chain of Command",
       "background_image": "content/media/agents/systems-architect.webp",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_border": true,
+      "show_url": false
+    },
+    {
+      "id": "technical-editor-writer",
+      "title": "Technical Editor & Writer",
+      "tagline": "Create technical explanations, tutorials, workflow walkthroughs,\u2026",
+      "file": "content/agents/technical-editor-writer.md",
+      "variant": "social",
+      "label": "Publishing House",
+      "background_image": "assets/images/agent-hero-background.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -713,6 +989,18 @@
       "variant": "social",
       "label": "Chain of Command",
       "background_image": "content/media/agents/triage-agent.webp",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_border": true,
+      "show_url": false
+    },
+    {
+      "id": "video-audio-producer",
+      "title": "Video & Audio Producer",
+      "tagline": "Turn approved editorial ideas into treatments, scripts,\u2026",
+      "file": "content/agents/video-audio-producer.md",
+      "variant": "social",
+      "label": "Publishing House",
+      "background_image": "assets/images/agent-hero-background.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false

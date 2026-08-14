@@ -3888,6 +3888,7 @@ func build_site(settings) {
 		collection_latest_updated := ""
 		chain_latest_updated := ""
 		webops_latest_updated := ""
+		publishing_house_latest_updated := ""
 
 		default_collection_item_template := post_template
 		collection_item_template_path := path_join(templates_dir, collection_slug + ".html")
@@ -3971,6 +3972,8 @@ func build_site(settings) {
 				chain_latest_updated = item_last_updated
 			} else if item_category_text == "WebOps" && item_last_updated > webops_latest_updated {
 				webops_latest_updated = item_last_updated
+			} else if item_category_text == "Publishing House" && item_last_updated > publishing_house_latest_updated {
+				publishing_house_latest_updated = item_last_updated
 			}
 
 			route := collection_slug + "/" + slug + "/"
@@ -4107,6 +4110,7 @@ func build_site(settings) {
 		collection_cards := ""
 		chain_of_command_cards := ""
 		webops_cards := ""
+		publishing_house_cards := ""
 		preview_cards := ""
 		location_cards := ""
 		preview_count := 0
@@ -4132,6 +4136,8 @@ func build_site(settings) {
 					chain_of_command_cards = chain_of_command_cards + item_card_html
 				} else if item_set_slug == "webops" {
 					webops_cards = webops_cards + item_card_html
+				} else if item_set_slug == "publishing-house" {
+					publishing_house_cards = publishing_house_cards + item_card_html
 				}
 			}
 			collection_cards := collection_cards + item_card_html
@@ -4215,6 +4221,13 @@ func build_site(settings) {
 						"description": "A coordinated roster for technical SEO, content intelligence, site quality, search analytics, and safe WebOps operations.",
 						"cards": webops_cards,
 						"last_updated": webops_latest_updated
+					},
+					{
+						"title": "Publishing House",
+						"slug": "publishing-house",
+						"description": "A standalone editorial team for strategy, creative development, writing, independent review, production, and bounded publishing operations.",
+						"cards": publishing_house_cards,
+						"last_updated": publishing_house_latest_updated
 					}
 				]
 				agent_set_idx := 0
@@ -4264,6 +4277,7 @@ func build_site(settings) {
 			if collection_slug == "agents" {
 				append_file(llms_collections_tmp, "- [Chain of Command agents](" + site_url + "/agents/chain-of-command/)\n")
 				append_file(llms_collections_tmp, "- [WebOps agents](" + site_url + "/agents/webops/)\n")
+				append_file(llms_collections_tmp, "- [Publishing House agents](" + site_url + "/agents/publishing-house/)\n")
 			}
 			llms_item_idx := 0
 			loop {

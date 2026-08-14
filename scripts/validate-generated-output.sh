@@ -108,6 +108,16 @@ if [[ -f "$OUT_DIR/agents/chain-of-command/index.html" ]] && ! grep -Eq 'alt="Ag
 	record_failure "FAIL chain-priority-image: first portrait is not prioritized"
 fi
 
+if [[ -f "$OUT_DIR/agents/publishing-house/index.html" ]]; then
+	if grep -qi '<meta name="robots" content="noindex' "$OUT_DIR/agents/publishing-house/index.html"; then record_failure "FAIL publishing-house-indexability: populated collection must be indexable"; fi
+	if [[ -f "$OUT_DIR/sitemap.xml" ]] && ! grep -q 'https://agents.kujolang.ai/agents/publishing-house/' "$OUT_DIR/sitemap.xml"; then record_failure "FAIL publishing-house-sitemap: populated collection is missing from sitemap"; fi
+	publishing_count="$(find "$OUT_DIR/agents" -mindepth 2 -maxdepth 2 -name index.html -type f -exec grep -l 'Publishing House' {} + | wc -l | tr -d ' ')"
+	if [[ "$publishing_count" -lt 23 ]]; then record_failure "FAIL publishing-house-count: expected at least 23 individual Publishing House pages, found $publishing_count"; fi
+	if ! grep -q 'class="card-grid agent-category-grid"' "$OUT_DIR/agents/publishing-house/index.html"; then record_failure "FAIL publishing-house-collection: missing agent card grid"; fi
+	if grep -Eqi 'coming soon|placeholder|lorem ipsum' "$OUT_DIR/agents/publishing-house/index.html"; then record_failure "FAIL publishing-house-placeholder: collection contains placeholder copy"; fi
+	if ! grep -Eq 'alt="Agent image for Publisher"[^>]*loading="eager"[^>]*fetchpriority="high"' "$OUT_DIR/agents/publishing-house/index.html"; then record_failure "FAIL publishing-house-priority-image: first agent image is not prioritized"; fi
+fi
+
 if [[ "$html_count" -eq 0 ]]; then
 	record_failure "FAIL no-html: no HTML files found in $OUT_DIR"
 fi
@@ -121,7 +131,7 @@ if [[ -f "$OUT_DIR/sitemap.xml" ]]; then
 	if ! grep -q '<urlset' "$OUT_DIR/sitemap.xml"; then
 		record_failure "FAIL sitemap-format: $OUT_DIR/sitemap.xml"
 	fi
-	for aggregate_url in 'https://agents.kujolang.ai/' 'https://agents.kujolang.ai/agents/' 'https://agents.kujolang.ai/agents/chain-of-command/' 'https://agents.kujolang.ai/agents/webops/'; do
+	for aggregate_url in 'https://agents.kujolang.ai/' 'https://agents.kujolang.ai/agents/' 'https://agents.kujolang.ai/agents/chain-of-command/' 'https://agents.kujolang.ai/agents/webops/' 'https://agents.kujolang.ai/agents/publishing-house/'; do
 		if ! grep -A1 -F "<loc>$aggregate_url</loc>" "$OUT_DIR/sitemap.xml" | grep -Eq '<lastmod>[0-9]{4}-[0-9]{2}-[0-9]{2}</lastmod>'; then
 			record_failure "FAIL sitemap-lastmod: $aggregate_url has no freshness date"
 		fi
@@ -129,7 +139,7 @@ if [[ -f "$OUT_DIR/sitemap.xml" ]]; then
 fi
 
 if [[ -f "$OUT_DIR/llms.txt" ]]; then
-	for agent_set_url in 'https://agents.kujolang.ai/agents/chain-of-command/' 'https://agents.kujolang.ai/agents/webops/'; do
+	for agent_set_url in 'https://agents.kujolang.ai/agents/chain-of-command/' 'https://agents.kujolang.ai/agents/webops/' 'https://agents.kujolang.ai/agents/publishing-house/'; do
 		if ! grep -Fq "$agent_set_url" "$OUT_DIR/llms.txt"; then record_failure "FAIL llms-agent-set: missing $agent_set_url"; fi
 	done
 fi
@@ -150,8 +160,11 @@ if [[ -f "$OUT_DIR/index.html" ]]; then
 	if ! grep -q 'id="webops"' "$OUT_DIR/index.html"; then
 		record_failure "FAIL agent-set: homepage does not render the WebOps set"
 	fi
-	if ! grep -q 'href="/agents/chain-of-command/">Chain of Command</a>' "$OUT_DIR/index.html" || ! grep -q 'href="/agents/webops/">WebOps</a>' "$OUT_DIR/index.html"; then
-		record_failure "FAIL agent-navigation: homepage does not render both direct agent-set links"
+	if ! grep -q 'id="publishing-house"' "$OUT_DIR/index.html"; then
+		record_failure "FAIL agent-set: homepage does not render the Publishing House set"
+	fi
+	if ! grep -q 'href="/agents/chain-of-command/">Chain of Command</a>' "$OUT_DIR/index.html" || ! grep -q 'href="/agents/webops/">WebOps</a>' "$OUT_DIR/index.html" || ! grep -q 'href="/agents/publishing-house/">Publishing House</a>' "$OUT_DIR/index.html"; then
+		record_failure "FAIL agent-navigation: homepage does not render all direct agent-set links"
 	fi
 	if grep -q 'site-nav-dropdown' "$OUT_DIR/index.html"; then
 		record_failure "FAIL agent-navigation: homepage still renders the old Agents dropdown"

@@ -60,7 +60,32 @@
       "distribution-operator",
       "search-web-standards-watch",
       "webops-reporter"
+    ],
+    "publishing-house": [
+      "publisher",
+      "editor-in-chief",
+      "managing-editor",
+      "editorial-strategy-director",
+      "brand-strategy-director",
+      "director-of-editorial-intelligence",
+      "creative-director",
+      "commissioning-editor",
+      "features-writer",
+      "technical-editor-writer",
+      "campaign-copywriter",
+      "art-director",
+      "developmental-editor",
+      "copy-chief",
+      "standards-evidence-editor",
+      "franchise-adaptation-editor",
+      "audience-development-director",
+      "production-editor",
+      "publishing-operations-director",
+      "newsletter-editor",
+      "social-community-editor",
+      "case-study-editor",
+      "video-audio-producer"
     ]
   },
-  "updated_at": "2026-08-11T15:25:53Z"
+  "updated_at": "2026-08-14T18:55:53Z"
 }
