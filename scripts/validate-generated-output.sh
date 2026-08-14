@@ -108,6 +108,14 @@ if [[ -f "$OUT_DIR/agents/chain-of-command/index.html" ]] && ! grep -Eq 'alt="Ag
 	record_failure "FAIL chain-priority-image: first portrait is not prioritized"
 fi
 
+if [[ -f "$OUT_DIR/agents/index.html" ]]; then
+	agent_directory_carousels="$(grep -o 'class="agent-carousel"' "$OUT_DIR/agents/index.html" | wc -l | tr -d ' ')"
+	if [[ "$agent_directory_carousels" -ne 3 ]]; then record_failure "FAIL agent-directory-carousels: expected 3 agent-set carousels, found $agent_directory_carousels"; fi
+	if grep -Eq 'data-agent-category-filter|data-agent-sort|class="agent-filter-bar"' "$OUT_DIR/agents/index.html"; then record_failure "FAIL agent-directory-filters: category or sort controls remain"; fi
+	if [[ "$(grep -o 'data-carousel-prev' "$OUT_DIR/agents/index.html" | wc -l | tr -d ' ')" -ne 3 ]] || [[ "$(grep -o 'data-carousel-next' "$OUT_DIR/agents/index.html" | wc -l | tr -d ' ')" -ne 3 ]]; then record_failure "FAIL agent-directory-controls: expected previous and next controls for every set"; fi
+	if ! grep -q '&lt;</button>' "$OUT_DIR/agents/index.html" || ! grep -q '&gt;</button>' "$OUT_DIR/agents/index.html"; then record_failure "FAIL agent-directory-control-symbols: carousel controls must use less-than and greater-than symbols"; fi
+fi
+
 if [[ -f "$OUT_DIR/agents/publishing-house/index.html" ]]; then
 	if grep -qi '<meta name="robots" content="noindex' "$OUT_DIR/agents/publishing-house/index.html"; then record_failure "FAIL publishing-house-indexability: populated collection must be indexable"; fi
 	if [[ -f "$OUT_DIR/sitemap.xml" ]] && ! grep -q 'https://agents.kujolang.ai/agents/publishing-house/' "$OUT_DIR/sitemap.xml"; then record_failure "FAIL publishing-house-sitemap: populated collection is missing from sitemap"; fi

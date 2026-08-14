@@ -2509,9 +2509,9 @@ func webops_placeholder_cards_html() {
 }
 
 func agent_sets_html(items) {
-	set_names := []
-	set_cards := {}
-	set_counts := {}
+	set_names := ["Chain of Command", "WebOps", "Publishing House"]
+	set_cards := {"Chain of Command": "", "WebOps": "", "Publishing House": ""}
+	set_counts := {"Chain of Command": 0, "WebOps": 0, "Publishing House": 0}
 	item_idx := 0
 	loop {
 		if item_idx >= len(items) {
@@ -2531,8 +2531,7 @@ func agent_sets_html(items) {
 		set_cards[set_name] = set_cards[set_name] + agent_card_html(item)
 		set_counts[set_name] = set_counts[set_name] + 1
 	}
-	if has_key(set_cards, "WebOps") == 0 {
-		set_names = push(set_names, "WebOps")
+	if set_counts["WebOps"] == 0 {
 		set_cards["WebOps"] = webops_placeholder_cards_html()
 		set_counts["WebOps"] = 3
 	}
@@ -2550,7 +2549,7 @@ func agent_sets_html(items) {
 		safe_set_name := html_escape(set_name)
 		safe_carousel_id := xml_escape(carousel_id)
 		count_label := to_string(set_counts[set_name]) + " agents"
-		html = html + "<section class=\"agent-set roster-section\" id=\"" + xml_escape(set_slug) + "\" data-agent-set=\"" + xml_escape(set_name) + "\"><div class=\"section-heading\"><div><p class=\"eyebrow\">Agent set / " + html_escape(count_label) + "</p><h2><a href=\"/agents/" + xml_escape(set_slug) + "/\">" + safe_set_name + "</a></h2></div><p>Explore the " + safe_set_name + " roster and open any agent to inspect its full operating contract.</p></div><div class=\"agent-carousel-shell\"><div class=\"agent-carousel-controls\"><button class=\"carousel-button\" type=\"button\" data-carousel-prev aria-controls=\"" + safe_carousel_id + "\" aria-label=\"Previous " + safe_set_name + " agents\">&#8592;</button><button class=\"carousel-button\" type=\"button\" data-carousel-next aria-controls=\"" + safe_carousel_id + "\" aria-label=\"Next " + safe_set_name + " agents\">&#8594;</button></div><ul class=\"agent-carousel\" id=\"" + safe_carousel_id + "\" tabindex=\"0\">" + set_cards[set_name] + "</ul></div></section>"
+		html = html + "<section class=\"agent-set roster-section\" id=\"" + xml_escape(set_slug) + "\" data-agent-set=\"" + xml_escape(set_name) + "\"><div class=\"section-heading\"><div class=\"section-heading-copy\"><p class=\"eyebrow\">Agent set / " + html_escape(count_label) + "</p><h2><a href=\"/agents/" + xml_escape(set_slug) + "/\">" + safe_set_name + "</a></h2><p>Explore the " + safe_set_name + " roster and open any agent to inspect its full operating contract.</p></div><div class=\"agent-carousel-controls\"><button class=\"carousel-button\" type=\"button\" data-carousel-prev aria-controls=\"" + safe_carousel_id + "\" aria-label=\"Previous " + safe_set_name + " agents\">&lt;</button><button class=\"carousel-button\" type=\"button\" data-carousel-next aria-controls=\"" + safe_carousel_id + "\" aria-label=\"Next " + safe_set_name + " agents\">&gt;</button></div></div><div class=\"agent-carousel-shell\"><ul class=\"agent-carousel\" id=\"" + safe_carousel_id + "\" tabindex=\"0\">" + set_cards[set_name] + "</ul></div></section>"
 	}
 	return html
 }

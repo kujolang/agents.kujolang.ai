@@ -9,27 +9,5 @@
 		</div>
 		<p>{{description}}</p>
 	</header>
-	<section class="agent-directory" aria-label="Agent directory">
-		<div class="agent-filter-bar">
-			<label>Category
-				<select data-agent-category-filter>
-					<option value="all">All categories</option>
-					<option value="chain-of-command">Chain of Command</option>
-					<option value="webops">WebOps</option>
-					<option value="publishing-house">Publishing House</option>
-				</select>
-			</label>
-			<label>Sort
-				<select data-agent-sort>
-					<option value="featured">Featured order</option>
-					<option value="az">Name: A → Z</option>
-					<option value="za">Name: Z → A</option>
-					<option value="updated-desc">Most recently updated</option>
-					<option value="updated-asc">Least recently updated</option>
-				</select>
-			</label>
-			<p class="agent-results" data-agent-results aria-live="polite"></p>
-		</div>
-		<ul class="card-grid agent-directory-grid" data-agent-directory-grid>{{cards}}</ul>
-	</section>
+	<div class="agent-sets" aria-label="Agent directory">{{agent_sets_html}}</div>
 </main>
