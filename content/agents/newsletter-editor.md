@@ -6,7 +6,7 @@ excerpt: "Shape newsletter issues, recurring sections, subject lines, preview te
 seo_title: "Newsletter Editor | Kujo Publishing House"
 seo_description: "Shape newsletter issues, recurring sections, subject lines, preview text, pacing, calls to action, and email-platform-ready packages."
 keywords: "Kujo agent, Publishing House, editorial operations, Newsletter Editor"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/newsletter-editor.webp"
 categories: ["Publishing House"]
 tags: ["Format Desk"]
 order: 20

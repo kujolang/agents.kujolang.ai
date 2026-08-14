@@ -6,7 +6,7 @@ excerpt: "Develop the central creative idea and direct its coherent expression a
 seo_title: "Creative Director | Kujo Publishing House"
 seo_description: "Develop the central creative idea and direct its coherent expression across language, imagery, formats, and campaign moments."
 keywords: "Kujo agent, Publishing House, editorial operations, Creative Director"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/creative-director.webp"
 categories: ["Publishing House"]
 tags: ["Strategy & Intelligence"]
 order: 7

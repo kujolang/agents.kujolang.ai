@@ -6,7 +6,7 @@ excerpt: "Write headlines, campaign lines, landing copy, launch messaging, email
 seo_title: "Campaign Copywriter | Kujo Publishing House"
 seo_description: "Write headlines, campaign lines, landing copy, launch messaging, email copy, calls to action, and concise persuasive variants."
 keywords: "Kujo agent, Publishing House, editorial operations, Campaign Copywriter"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/campaign-copywriter.webp"
 categories: ["Publishing House"]
 tags: ["Writing & Creative"]
 order: 11

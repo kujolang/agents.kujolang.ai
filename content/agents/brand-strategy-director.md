@@ -6,7 +6,7 @@ excerpt: "Define positioning, category framing, audience promise, differentiatio
 seo_title: "Brand Strategy Director | Kujo Publishing House"
 seo_description: "Define positioning, category framing, audience promise, differentiation, voice principles, distinctive assets, and brand boundaries."
 keywords: "Kujo agent, Publishing House, editorial operations, Brand Strategy Director"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/brand-strategy-director.webp"
 categories: ["Publishing House"]
 tags: ["Strategy & Intelligence"]
 order: 5

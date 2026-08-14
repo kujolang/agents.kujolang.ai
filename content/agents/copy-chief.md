@@ -6,7 +6,7 @@ excerpt: "Own sentence-level clarity, rhythm, terminology, grammar, formatting, 
 seo_title: "Copy Chief | Kujo Publishing House"
 seo_description: "Own sentence-level clarity, rhythm, terminology, grammar, formatting, headlines, captions, metadata, and the house style system."
 keywords: "Kujo agent, Publishing House, editorial operations, Copy Chief"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/copy-chief.webp"
 categories: ["Publishing House"]
 tags: ["Editorial Quality"]
 order: 14

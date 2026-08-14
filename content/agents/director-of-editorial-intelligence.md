@@ -6,7 +6,7 @@ excerpt: "Synthesize audience, category, product, cultural, search, community, c
 seo_title: "Director of Editorial Intelligence | Kujo Publishing House"
 seo_description: "Synthesize audience, category, product, cultural, search, community, competitor, and source intelligence into non-obvious editorial opportunities."
 keywords: "Kujo agent, Publishing House, editorial operations, Director of Editorial Intelligence"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/director-of-editorial-intelligence.webp"
 categories: ["Publishing House"]
 tags: ["Strategy & Intelligence"]
 order: 6

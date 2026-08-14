@@ -6,7 +6,7 @@ excerpt: "Independently verify claims, sources, quotations, attribution, disclos
 seo_title: "Standards & Evidence Editor | Kujo Publishing House"
 seo_description: "Independently verify claims, sources, quotations, attribution, disclosures, rights, privacy, product status, and evidence classifications."
 keywords: "Kujo agent, Publishing House, editorial operations, Standards & Evidence Editor"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/standards-evidence-editor.webp"
 categories: ["Publishing House"]
 tags: ["Editorial Quality"]
 order: 15

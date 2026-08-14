@@ -6,7 +6,7 @@ excerpt: "Extend approved primary work into durable editorial franchises and for
 seo_title: "Franchise & Adaptation Editor | Kujo Publishing House"
 seo_description: "Extend approved primary work into durable editorial franchises and format-native derivatives without changing its claim boundary."
 keywords: "Kujo agent, Publishing House, editorial operations, Franchise & Adaptation Editor"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/franchise-adaptation-editor.webp"
 categories: ["Publishing House"]
 tags: ["Adaptation & Audience"]
 order: 16

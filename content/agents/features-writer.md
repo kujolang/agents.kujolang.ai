@@ -6,7 +6,7 @@ excerpt: "Write essays, features, arguments, profiles, case-led narratives, and 
 seo_title: "Features Writer | Kujo Publishing House"
 seo_description: "Write essays, features, arguments, profiles, case-led narratives, and long-form thought leadership with a distinctive and defensible point of view."
 keywords: "Kujo agent, Publishing House, editorial operations, Features Writer"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/features-writer.webp"
 categories: ["Publishing House"]
 tags: ["Writing & Creative"]
 order: 9

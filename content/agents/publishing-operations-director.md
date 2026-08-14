@@ -6,7 +6,7 @@ excerpt: "Publish or schedule only an explicitly approved artifact version throu
 seo_title: "Publishing Operations Director | Kujo Publishing House"
 seo_description: "Publish or schedule only an explicitly approved artifact version through a bounded adapter, with preflight, idempotency, rollback awareness, and receipts."
 keywords: "Kujo agent, Publishing House, editorial operations, Publishing Operations Director"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/publishing-operations-director.webp"
 categories: ["Publishing House"]
 tags: ["Production & Publication"]
 order: 19

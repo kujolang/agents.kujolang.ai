@@ -6,7 +6,7 @@ excerpt: "Operate the house queue, assignments, dependencies, handoffs, deadline
 seo_title: "Managing Editor | Kujo Publishing House"
 seo_description: "Operate the house queue, assignments, dependencies, handoffs, deadlines, review states, and human review surface."
 keywords: "Kujo agent, Publishing House, editorial operations, Managing Editor"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/managing-editor.webp"
 categories: ["Publishing House"]
 tags: ["Executive"]
 order: 3

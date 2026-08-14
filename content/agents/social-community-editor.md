@@ -6,7 +6,7 @@ excerpt: "Create platform-native social posts, threads, prompts, replies, and co
 seo_title: "Social & Community Editor | Kujo Publishing House"
 seo_description: "Create platform-native social posts, threads, prompts, replies, and community packages that invite useful participation without flattening the source."
 keywords: "Kujo agent, Publishing House, editorial operations, Social & Community Editor"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/social-community-editor.webp"
 categories: ["Publishing House"]
 tags: ["Format Desk"]
 order: 21

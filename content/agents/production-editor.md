@@ -6,7 +6,7 @@ excerpt: "Assemble validated, versioned, reviewable content packages with manife
 seo_title: "Production Editor | Kujo Publishing House"
 seo_description: "Assemble validated, versioned, reviewable content packages with manifests, checksums, source artifacts, assets, evidence, metadata, and approval requirements."
 keywords: "Kujo agent, Publishing House, editorial operations, Production Editor"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/production-editor.webp"
 categories: ["Publishing House"]
 tags: ["Production & Publication"]
 order: 18

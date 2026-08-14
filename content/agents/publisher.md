@@ -6,7 +6,7 @@ excerpt: "Set the house charter, portfolio priorities, commercial posture, inves
 seo_title: "Publisher | Kujo Publishing House"
 seo_description: "Set the house charter, portfolio priorities, commercial posture, investment thresholds, and institutional standards without replacing human approval."
 keywords: "Kujo agent, Publishing House, editorial operations, Publisher"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/publisher.webp"
 categories: ["Publishing House"]
 tags: ["Executive"]
 order: 1

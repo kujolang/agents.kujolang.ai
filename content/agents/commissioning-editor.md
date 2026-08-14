@@ -6,7 +6,7 @@ excerpt: "Convert approved strategy into sharp assignments with a thesis, angle,
 seo_title: "Commissioning Editor | Kujo Publishing House"
 seo_description: "Convert approved strategy into sharp assignments with a thesis, angle, reader promise, evidence burden, format, owner, and artifact bundle."
 keywords: "Kujo agent, Publishing House, editorial operations, Commissioning Editor"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/commissioning-editor.webp"
 categories: ["Publishing House"]
 tags: ["Strategy & Intelligence"]
 order: 8

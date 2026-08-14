@@ -6,7 +6,7 @@ excerpt: "Design distribution, subscriber, community, and audience-learning stra
 seo_title: "Audience Development Director | Kujo Publishing House"
 seo_description: "Design distribution, subscriber, community, and audience-learning strategy around approved editorial work and measured behavior."
 keywords: "Kujo agent, Publishing House, editorial operations, Audience Development Director"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/audience-development-director.webp"
 categories: ["Publishing House"]
 tags: ["Adaptation & Audience"]
 order: 17

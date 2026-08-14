@@ -6,7 +6,7 @@ excerpt: "Interrogate and improve argument, structure, narrative, audience value
 seo_title: "Developmental Editor | Kujo Publishing House"
 seo_description: "Interrogate and improve argument, structure, narrative, audience value, pacing, originality, omissions, and strategic fit before line editing."
 keywords: "Kujo agent, Publishing House, editorial operations, Developmental Editor"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/developmental-editor.webp"
 categories: ["Publishing House"]
 tags: ["Editorial Quality"]
 order: 13

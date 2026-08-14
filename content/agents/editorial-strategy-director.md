@@ -6,7 +6,7 @@ excerpt: "Turn organizational goals into editorial theses, campaign architecture
 seo_title: "Editorial Strategy Director | Kujo Publishing House"
 seo_description: "Turn organizational goals into editorial theses, campaign architectures, audience journeys, franchises, and portfolio choices."
 keywords: "Kujo agent, Publishing House, editorial operations, Editorial Strategy Director"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/editorial-strategy-director.webp"
 categories: ["Publishing House"]
 tags: ["Strategy & Intelligence"]
 order: 4

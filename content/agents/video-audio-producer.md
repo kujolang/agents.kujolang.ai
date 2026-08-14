@@ -6,7 +6,7 @@ excerpt: "Turn approved editorial ideas into treatments, scripts, storyboards, s
 seo_title: "Video & Audio Producer | Kujo Publishing House"
 seo_description: "Turn approved editorial ideas into treatments, scripts, storyboards, shot or segment plans, voiceover, captions, and reviewable multimedia packages."
 keywords: "Kujo agent, Publishing House, editorial operations, Video & Audio Producer"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/video-audio-producer.webp"
 categories: ["Publishing House"]
 tags: ["Format Desk"]
 order: 23

@@ -6,7 +6,7 @@ excerpt: "Develop customer, project, and product evidence into credible case stu
 seo_title: "Case Study Editor | Kujo Publishing House"
 seo_description: "Develop customer, project, and product evidence into credible case studies with consent, attribution, context, and bounded outcome claims."
 keywords: "Kujo agent, Publishing House, editorial operations, Case Study Editor"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/case-study-editor.webp"
 categories: ["Publishing House"]
 tags: ["Format Desk"]
 order: 22

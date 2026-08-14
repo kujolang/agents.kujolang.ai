@@ -6,7 +6,7 @@ excerpt: "Own editorial judgment, point of view, intellectual ambition, and the 
 seo_title: "Editor-in-Chief | Kujo Publishing House"
 seo_description: "Own editorial judgment, point of view, intellectual ambition, and the final editorial recommendation before human approval."
 keywords: "Kujo agent, Publishing House, editorial operations, Editor-in-Chief"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/editor-in-chief.webp"
 categories: ["Publishing House"]
 tags: ["Executive"]
 order: 2

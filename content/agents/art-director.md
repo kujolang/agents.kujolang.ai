@@ -6,7 +6,7 @@ excerpt: "Define visual concepts, systems, composition, typography direction, il
 seo_title: "Art Director | Kujo Publishing House"
 seo_description: "Define visual concepts, systems, composition, typography direction, illustration language, diagrams, proof cards, and campaign coherence."
 keywords: "Kujo agent, Publishing House, editorial operations, Art Director"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/art-director.webp"
 categories: ["Publishing House"]
 tags: ["Writing & Creative"]
 order: 12

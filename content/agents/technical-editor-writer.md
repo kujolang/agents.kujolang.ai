@@ -6,7 +6,7 @@ excerpt: "Create technical explanations, tutorials, workflow walkthroughs, code 
 seo_title: "Technical Editor & Writer | Kujo Publishing House"
 seo_description: "Create technical explanations, tutorials, workflow walkthroughs, code examples, and product narratives that remain reproducible and source-grounded."
 keywords: "Kujo agent, Publishing House, editorial operations, Technical Editor & Writer"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/technical-editor-writer.webp"
 categories: ["Publishing House"]
 tags: ["Writing & Creative"]
 order: 10

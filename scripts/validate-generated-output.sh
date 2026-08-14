@@ -123,6 +123,9 @@ if [[ -f "$OUT_DIR/agents/publishing-house/index.html" ]]; then
 	if [[ "$publishing_count" -lt 23 ]]; then record_failure "FAIL publishing-house-count: expected at least 23 individual Publishing House pages, found $publishing_count"; fi
 	if ! grep -q 'class="card-grid agent-category-grid"' "$OUT_DIR/agents/publishing-house/index.html"; then record_failure "FAIL publishing-house-collection: missing agent card grid"; fi
 	if grep -Eqi 'coming soon|placeholder|lorem ipsum' "$OUT_DIR/agents/publishing-house/index.html"; then record_failure "FAIL publishing-house-placeholder: collection contains placeholder copy"; fi
+	if grep -q 'listing-card-image--mark' "$OUT_DIR/agents/publishing-house/index.html"; then record_failure "FAIL publishing-house-fallback-image: generic Kujo card image remains after portrait rollout"; fi
+	publishing_portraits="$(grep -Eo '/images/[a-z0-9-]+-[a-f0-9]{12}\.webp' "$OUT_DIR/agents/publishing-house/index.html" | sort -u | wc -l | tr -d ' ')"
+	if [[ "$publishing_portraits" -lt 23 ]]; then record_failure "FAIL publishing-house-portraits: expected 23 unique portraits, found $publishing_portraits"; fi
 	if ! grep -Eq 'alt="Agent image for Publisher"[^>]*loading="eager"[^>]*fetchpriority="high"' "$OUT_DIR/agents/publishing-house/index.html"; then record_failure "FAIL publishing-house-priority-image: first agent image is not prioritized"; fi
 fi
 
