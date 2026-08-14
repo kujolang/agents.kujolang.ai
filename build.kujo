@@ -1711,7 +1711,7 @@ func featured_image_html_tag(featured_image_url, title) {
 	}
 	safe_url := xml_escape(url)
 	safe_title := xml_escape(title)
-	return "<img src=\"" + safe_url + "\" alt=\"Featured image for " + safe_title + "\" class=\"featured-image\" width=\"640\" height=\"640\" loading=\"lazy\" decoding=\"async\">"
+	return "<img src=\"" + safe_url + "\" alt=\"Featured image for " + safe_title + "\" class=\"featured-image\" width=\"640\" height=\"640\" loading=\"eager\" fetchpriority=\"high\" decoding=\"async\">"
 }
 
 func render_layout(layout_template, settings, route, page_title, meta_description, navigation, content, page_meta) {
@@ -1851,11 +1851,23 @@ func render_layout_interpreted(layout_template, settings, route, page_title, met
 		json_ld_parts = push(json_ld_parts, "\"dateModified\":\"" + json_escape(modified_iso) + "\"")
 	}
 	if schema_type == "SoftwareSourceCode" {
+		json_ld_parts = push(json_ld_parts, "\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"" + json_escape(og_url) + "\"}")
 		code_repository := trim(meta_string(page_meta, "code_repository", ""))
 		if len(code_repository) > 0 {
 			json_ld_parts = push(json_ld_parts, "\"codeRepository\":\"" + json_escape(code_repository) + "\"")
 		}
 		json_ld_parts = push(json_ld_parts, "\"maintainer\":{\"@type\":\"Organization\",\"name\":\"Kujo\",\"url\":\"https://kujolang.ai\"}")
+		schema_parent_name := trim(meta_string(page_meta, "schema_parent_name", ""))
+		schema_parent_url := trim(meta_string(page_meta, "schema_parent_url", ""))
+		if len(schema_parent_name) > 0 && len(schema_parent_url) > 0 {
+			json_ld_parts = push(json_ld_parts, "\"isPartOf\":{\"@type\":\"CollectionPage\",\"name\":\"" + json_escape(schema_parent_name) + "\",\"url\":\"" + json_escape(schema_parent_url) + "\"}")
+		}
+	}
+	if schema_type == "CollectionPage" {
+		schema_has_part := trim(meta_string(page_meta, "schema_has_part", ""))
+		if len(schema_has_part) > 0 {
+			json_ld_parts = push(json_ld_parts, "\"hasPart\":[" + schema_has_part + "]")
+		}
 	}
 	json_ld_parts = push(json_ld_parts, "\"publisher\":{\"@type\":\"Organization\",\"name\":\"Kujo\",\"url\":\"https://kujolang.ai\"}")
 	json_ld := ""
@@ -3888,6 +3900,9 @@ func build_site(settings) {
 		chain_latest_updated := ""
 		webops_latest_updated := ""
 		publishing_house_latest_updated := ""
+		chain_schema_items := []
+		webops_schema_items := []
+		publishing_house_schema_items := []
 
 		default_collection_item_template := post_template
 		collection_item_template_path := path_join(templates_dir, collection_slug + ".html")
@@ -4036,10 +4051,23 @@ func build_site(settings) {
 			item_og_type := "article"
 			item_schema_type := ""
 			item_social_image := ""
+			item_schema_parent_name := ""
+			item_schema_parent_url := ""
 			if collection_slug == "agents" {
 				item_og_type = "website"
 				item_schema_type = "SoftwareSourceCode"
 				item_social_image = "/assets/images/social/" + slug + ".jpg"
+				item_set_slug := clean_slug(item_category_text)
+				item_schema_parent_name = item_category_text + " Agents"
+				item_schema_parent_url = route_absolute_url(site_url, "agents/" + item_set_slug + "/")
+				item_schema_entry := "{\"@type\":\"SoftwareSourceCode\",\"name\":\"" + json_escape(title) + "\",\"url\":\"" + json_escape(route_absolute_url(site_url, route)) + "\"}"
+				if item_set_slug == "chain-of-command" {
+					chain_schema_items = push(chain_schema_items, item_schema_entry)
+				} else if item_set_slug == "webops" {
+					webops_schema_items = push(webops_schema_items, item_schema_entry)
+				} else if item_set_slug == "publishing-house" {
+					publishing_house_schema_items = push(publishing_house_schema_items, item_schema_entry)
+				}
 			}
 			item_html := render_layout(
 				layout_template,
@@ -4063,7 +4091,9 @@ func build_site(settings) {
 					"schema_type": item_schema_type,
 					"published_iso": item_date["iso"],
 					"modified_iso": trim(to_string(meta["last_updated"])),
-					"code_repository": trim(to_string(meta["source_url"]))
+					"code_repository": trim(to_string(meta["source_url"])),
+					"schema_parent_name": item_schema_parent_name,
+					"schema_parent_url": item_schema_parent_url
 				}
 			)
 			write_route_page(output_dir, route, item_html)
@@ -4212,21 +4242,24 @@ func build_site(settings) {
 						"slug": "chain-of-command",
 						"description": "A coordinated roster for strategy, planning, execution, verification, knowledge, and routine work.",
 						"cards": chain_of_command_cards,
-						"last_updated": chain_latest_updated
+						"last_updated": chain_latest_updated,
+						"schema_has_part": join(chain_schema_items, ",")
 					},
 					{
 						"title": "WebOps",
 						"slug": "webops",
 						"description": "A coordinated roster for technical SEO, content intelligence, site quality, search analytics, and safe WebOps operations.",
 						"cards": webops_cards,
-						"last_updated": webops_latest_updated
+						"last_updated": webops_latest_updated,
+						"schema_has_part": join(webops_schema_items, ",")
 					},
 					{
 						"title": "Publishing House",
 						"slug": "publishing-house",
 						"description": "A standalone editorial team for strategy, creative development, writing, independent review, production, and bounded publishing operations.",
 						"cards": publishing_house_cards,
-						"last_updated": publishing_house_latest_updated
+						"last_updated": publishing_house_latest_updated,
+						"schema_has_part": join(publishing_house_schema_items, ",")
 					}
 				]
 				agent_set_idx := 0
@@ -4240,6 +4273,8 @@ func build_site(settings) {
 					agent_set_content := apply_template(agent_set_template, {
 						"title": agent_set_page["title"],
 						"description": agent_set_page["description"],
+						"last_updated": agent_set_page["last_updated"],
+						"source_url": "https://github.com/kujolang/kujo-agents/tree/main/" + agent_set_page["slug"],
 						"cards": agent_set_page["cards"]
 					})
 					agent_set_robots := ""
@@ -4256,6 +4291,7 @@ func build_site(settings) {
 							"seo_title": agent_set_page["title"] + " Agents",
 							"seo_description": agent_set_page["description"],
 							"schema_type": "CollectionPage",
+							"schema_has_part": agent_set_page["schema_has_part"],
 							"robots": agent_set_robots,
 							"featured_image": "/assets/images/agent-hero-background.webp",
 							"social_image": "/assets/images/social/agents-" + agent_set_page["slug"] + ".jpg",

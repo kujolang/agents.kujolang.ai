@@ -50,10 +50,29 @@ def main():
                 source_schema=next((value for value in schemas if value.get("@type")=="SoftwareSourceCode"),None)
                 expected_name=json.loads(meta["title"])
                 if not source_schema: errors.append(f"{slug}: SoftwareSourceCode schema missing")
-                elif source_schema.get("name")!=expected_name: errors.append(f"{slug}: schema name does not match visible title")
+                else:
+                    if source_schema.get("name")!=expected_name: errors.append(f"{slug}: schema name does not match visible title")
+                    if source_schema.get("mainEntityOfPage",{}).get("@id")!=f"https://agents.kujolang.ai/agents/{slug}/": errors.append(f"{slug}: schema mainEntityOfPage mismatch")
+                    parent=source_schema.get("isPartOf",{})
+                    if parent.get("url")!=f"https://agents.kujolang.ai/agents/{set_id}/": errors.append(f"{slug}: schema agent-set relationship mismatch")
+                portrait_tag=re.search(r'<img[^>]+class="featured-image"[^>]*>',route_text)
+                if portrait_tag and ('loading="eager"' not in portrait_tag.group(0) or 'fetchpriority="high"' not in portrait_tag.group(0)):
+                    errors.append(f"{slug}: profile portrait is not prioritized")
     if OUTPUT.is_dir():
         for route in (OUTPUT/"index.html",OUTPUT/"agents/index.html",OUTPUT/"agents/chain-of-command/index.html",OUTPUT/"agents/webops/index.html",OUTPUT/"agents/publishing-house/index.html",OUTPUT/"sitemap.xml",OUTPUT/"llms.txt"):
             if not route.is_file(): errors.append(f"generated output missing: {route.relative_to(ROOT)}")
+        for set_id,expected_count in expected_counts.items():
+            route=OUTPUT/"agents"/set_id/"index.html"
+            if not route.is_file(): continue
+            text=route.read_text()
+            blocks=re.findall(r'<script type="application/ld\+json">(.*?)</script>',text,re.S)
+            schemas=[]
+            for block in blocks:
+                try: schemas.append(json.loads(block))
+                except json.JSONDecodeError: pass
+            collection=next((value for value in schemas if value.get("@type")=="CollectionPage"),None)
+            if not collection or len(collection.get("hasPart",[]))!=expected_count: errors.append(f"{set_id}: incomplete CollectionPage membership schema")
+            if f'https://github.com/kujolang/kujo-agents/tree/main/{set_id}' not in text: errors.append(f"{set_id}: visible source provenance missing")
     if errors:
         print(json.dumps({"valid":False,"errors":errors},indent=2)); return 1
     print(json.dumps({"valid":True,"chain_of_command":28,"webops":28,"publishing_house":23,"individual_routes":79},indent=2)); return 0

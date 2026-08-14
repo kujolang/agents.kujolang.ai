@@ -277,15 +277,6 @@ body.mobile-menu-open .site-header { z-index: calc(var(--sk-z-modal) + 1); }
 	object-position: right center;
 }
 
-.hero-dither-canvas {
-	position: absolute;
-	inset: 0;
-	inline-size: 100%;
-	block-size: 100%;
-	image-rendering: pixelated;
-	pointer-events: none;
-}
-
 .chain-hero__wash {
 	z-index: -1;
 	background: linear-gradient(90deg, var(--sk-surface-page) 0%, color-mix(in srgb, var(--sk-surface-page) 98%, transparent) 38%, color-mix(in srgb, var(--sk-surface-page) 60%, transparent) 62%, transparent 100%);

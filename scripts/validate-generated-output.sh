@@ -61,7 +61,7 @@ while IFS= read -r html_file; do
 		fi
 	fi
 
-	for required_social_meta in 'og:image:type' 'og:image:width' 'og:image:height' 'og:image:alt' 'twitter:image' 'twitter:image:alt'; do
+	for required_social_meta in 'og:image:type' 'og:image:width' 'og:image:height' 'og:image:alt' 'twitter:site' 'twitter:image' 'twitter:image:alt'; do
 		if ! grep -Fq "$required_social_meta" "$html_file"; then
 			record_failure "FAIL social-meta-$required_social_meta: $html_file"
 		fi
@@ -191,6 +191,9 @@ if [[ -f "$OUT_DIR/index.html" ]]; then
 	fi
 	if ! grep -q '/images/general-commander-' "$OUT_DIR/index.html"; then
 		record_failure "FAIL demo-portrait: homepage does not render the original agent portrait assets"
+	fi
+	if grep -q 'data-hero-dither' "$OUT_DIR/index.html"; then
+		record_failure "FAIL hero-dither-runtime: homepage must use the pre-dithered hero asset without per-pixel runtime work"
 	fi
 fi
 
