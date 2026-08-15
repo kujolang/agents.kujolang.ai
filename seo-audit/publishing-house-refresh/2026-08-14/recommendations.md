@@ -2,10 +2,14 @@
 
 Audit date: 2026-08-14
 
-## Immediate after deployment
+## Completed after deployment
 
-- Verify production status, canonical, social image, hero, sitemap membership,
-  robots access, and exact generated/production content match.
+- Production status, canonical, social image, hero, sitemap membership, robots
+  access, and exact generated/production content match were verified on
+  2026-08-14.
+
+## Remaining operator action
+
 - Request recrawl through authorized search consoles if available; do not claim
   indexing from submission alone.
 
