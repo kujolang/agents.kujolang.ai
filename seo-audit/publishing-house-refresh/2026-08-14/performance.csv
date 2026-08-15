@@ -1,0 +1,2 @@
+phase,url,template,run_date,environment,lighthouse_version,html_bytes,css_bytes,js_bytes,image_bytes,font_bytes,requests,lcp_ms,inp_ms,cls,ttfb_ms,source,notes
+after,http://127.0.0.1:4173/publishing-house-system/,publishing-house-system,2026-08-14,"Lighthouse mobile lab; local generated output",13.4.1,,,,,,,2352.83,,0.04547,,raw/after/lighthouse-publishing-house-system.json,"Performance 0.96; Accessibility 1.00; Best Practices 1.00; SEO 1.00"

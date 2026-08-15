@@ -1,0 +1,8 @@
+crawler,purpose,robots_access,live_status,waf_or_cdn_result,recommended_action,action_taken,evidence
+Googlebot,search discovery and indexing,allowed,200,200 through Cloudflare,none,read-only live probe,baseline GET / with Googlebot user agent
+bingbot,Bing and Copilot search discovery,allowed,200,200 through Cloudflare,none,read-only live probe,baseline GET / with bingbot user agent
+OAI-SearchBot,OpenAI search discovery and citation,allowed,200,200 through Cloudflare,none,read-only live probe,baseline GET / with OAI-SearchBot user agent
+ChatGPT-User,user-triggered OpenAI fetches,allowed,200,200 through Cloudflare,none,read-only live probe,baseline GET / with ChatGPT-User user agent
+PerplexityBot,Perplexity search discovery and citation,allowed,200,200 through Cloudflare,none,read-only live probe,baseline GET / with PerplexityBot user agent
+ClaudeBot,Anthropic automated crawler; owner policy blocks it,disallowed by production robots.txt,200,200 through Cloudflare,none; preserve owner policy,read-only live probe,baseline GET / with ClaudeBot user agent
+GPTBot,OpenAI training crawler; owner policy blocks it,disallowed by production robots.txt,200,200 through Cloudflare,none; preserve owner policy,read-only live probe,baseline GET / with GPTBot user agent

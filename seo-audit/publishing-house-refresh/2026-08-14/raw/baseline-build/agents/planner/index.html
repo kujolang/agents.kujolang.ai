@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en" data-theme="kujo-light">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Planner | Kujo Chain of Command | Kujo Agents</title>
+	<meta name="description" content="Convert goals into milestones, tasks, sequencing, dependencies, acceptance criteria, and verification plans.">
+	<meta name="author" content="Kujo">
+
+<link rel="canonical" href="https://agents.kujolang.ai/agents/planner/">
+	<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+
+	<meta property="og:title" content="Planner | Kujo Chain of Command">
+	<meta property="og:description" content="Convert goals into milestones, tasks, sequencing, dependencies, acceptance criteria, and verification plans.">
+	<meta property="og:url" content="https://agents.kujolang.ai/agents/planner/">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Kujo Agents">
+	<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://agents.kujolang.ai/assets/images/social/planner.jpg">
+	<meta property="og:image:type" content="image/jpeg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta property="og:image:alt" content="Planner | Kujo Chain of Command social preview">
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@kujolang">
+	<meta name="twitter:title" content="Planner | Kujo Chain of Command">
+	<meta name="twitter:description" content="Convert goals into milestones, tasks, sequencing, dependencies, acceptance criteria, and verification plans.">
+<meta name="twitter:image" content="https://agents.kujolang.ai/assets/images/social/planner.jpg">
+	<meta name="twitter:image:alt" content="Planner | Kujo Chain of Command social preview">
+	<link rel="stylesheet" href="/assets/sitekit/sitekit.css?v=1.0.0">
+	<link rel="stylesheet" href="/assets/css/site.css?v=20260814-2">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","headline":"Planner","name":"Planner","description":"Convert goals into milestones, tasks, sequencing, dependencies, acceptance criteria, and verification plans.","url":"https://agents.kujolang.ai/agents/planner/","image":"https://agents.kujolang.ai/assets/images/social/planner.jpg","dateModified":"2026-07-05","mainEntityOfPage":{"@type":"WebPage","@id":"https://agents.kujolang.ai/agents/planner/"},"codeRepository":"https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/planner/AGENT.md","maintainer":{"@type":"Organization","name":"Kujo","url":"https://kujolang.ai"},"isPartOf":{"@type":"CollectionPage","name":"Chain of Command Agents","url":"https://agents.kujolang.ai/agents/chain-of-command/"},"publisher":{"@type":"Organization","name":"Kujo","url":"https://kujolang.ai"}}</script>
+</head>
+<body>
+	<a class="sk-skip-link" href="#main-content">Skip to main content</a>
+
+	<header class="sk-header site-header" id="site-header">
+		<div class="sk-header__inner">
+			<a class="brand-lockup site-brand" href="/" aria-label="Kujo Agents home">
+				<img src="/assets/images/kujo-logomark.svg" alt="" width="28" height="28">
+				<span>Kujo Agents</span>
+			</a>
+			<nav class="desktop-navigation" aria-label="Primary">
+				<ul class="site-nav">
+					<li><a href="/agents/chain-of-command/">Chain of Command</a></li>
+					<li><a href="/agents/webops/">WebOps</a></li>
+					<li><a href="/agents/publishing-house/">Publishing House</a></li>
+				</ul>
+			</nav>
+			<div class="sk-header__actions">
+				<a class="sk-button source-link" data-variant="secondary" href="https://github.com/kujolang/kujo-agents" target="_blank" rel="noopener noreferrer" aria-label="Kujo Agents source on GitHub">
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"/></svg>
+					<span>Source</span>
+				</a>
+				<button class="sk-button mobile-menu-button" type="button" data-variant="secondary" data-mobile-menu-toggle aria-controls="mobile-navigation" aria-expanded="false" aria-label="Open navigation">
+					<svg class="menu-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6l16 0"/><path d="M4 12l16 0"/><path d="M4 18l16 0"/></svg>
+					<svg class="close-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6l-12 12"/><path d="M6 6l12 12"/></svg>
+				</button>
+			</div>
+		</div>
+	</header>
+
+	<div class="mobile-drawer-shell" data-mobile-menu-shell>
+		<div class="mobile-menu-scrim" data-mobile-menu-scrim hidden aria-hidden="true"></div>
+		<aside class="mobile-navigation" id="mobile-navigation" data-mobile-navigation hidden aria-hidden="true" aria-label="Mobile navigation">
+			<nav aria-label="Mobile navigation">
+				<ul>
+					<li><a href="/agents/">All Agents</a></li>
+					<li><a href="/agents/chain-of-command/">Chain of Command</a></li>
+					<li><a href="/agents/webops/">WebOps</a></li>
+					<li><a href="/agents/publishing-house/">Publishing House</a></li>
+				</ul>
+			</nav>
+		</aside>
+	</div>
+
+	<main class="site-shell agent-detail" id="main-content">
+	<nav class="sk-breadcrumbs" aria-label="Breadcrumb">
+		<ol><li><a href="/">Home</a></li><li><a href="/agents/">Agents</a></li><li aria-current="page">Planner</li></ol>
+	</nav>
+	<article>
+		<header class="agent-detail-header">
+			<div class="agent-detail-copy">
+				<p class="eyebrow">Kujo Agent Contract</p>
+				<h1>Planner</h1>
+				<p class="agent-lede">Convert goals into milestones, tasks, sequencing, dependencies, acceptance criteria, and verification plans.</p>
+				<div class="agent-taxonomies"><span class="tag">Chain of Command</span><span class="tag">Planning</span></div>
+				<p class="agent-provenance">Maintained by Kujo · Updated <time datetime="2026-07-05">2026-07-05</time> · <a href="https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/planner/AGENT.md">Source contract</a></p>
+			</div>
+			<div class="agent-mark"><img src="../../images/planner-e871338c4b36.webp" alt="Featured image for Planner" class="featured-image" width="640" height="640" loading="eager" fetchpriority="high" decoding="async"></div>
+		</header>
+		<div class="agent-body kujo-content"><h2>Agent Contract</h2>
+<ul>
+<li>Agent name: Planner</li>
+<li>Rank/layer: Planning</li>
+<li>Purpose: Convert goals into milestones, tasks, sequencing, dependencies, acceptance criteria, and verification plans.</li>
+<li>Best model tier: Standard/high reasoning.</li>
+</ul>
+<h2>Use This Agent When</h2>
+<ul>
+<li>A clear goal needs execution steps.</li>
+<li>Multiple repos, agents, or checks must be sequenced.</li>
+<li>The user needs a plan before code changes.</li>
+</ul>
+<h2>Do Not Use This Agent When</h2>
+<ul>
+<li>Requirements are still ambiguous at the strategy/product level.</li>
+<li>The task is a direct single-step worker command.</li>
+</ul>
+<h2>Inputs Expected</h2>
+<ul>
+<li>Goal, constraints, scope, repo context, existing specs, target files, risks, and requested timeline.</li>
+</ul>
+<h2>Outputs Required</h2>
+<ul>
+<li>Milestones.</li>
+<li>Ordered tasks.</li>
+<li>Acceptance criteria.</li>
+<li>Suggested agents.</li>
+<li>Verification commands or tools.</li>
+</ul>
+<h2>Allowed Tools And Workflows</h2>
+<ul>
+<li>Allowed: Spec, Dispatch, Eval, PackWrite, Scent, CaseFile.</li>
+<li>Required KUJO skills: kujo-spec-workflows, kujo-dispatch-workflows, kujo-eval-workflows as needed.</li>
+<li>Recommended tools: Spec for durable task contracts, Eval for acceptance evidence.</li>
+</ul>
+<h2>Workflow</h2>
+<p>1. Restate goal, scope, non-goals, and assumptions.</p>
+<p>2. Identify dependencies and blocked decisions.</p>
+<p>3. Split work into milestones and bounded tasks.</p>
+<p>4. Attach acceptance criteria to each task.</p>
+<p>5. Assign verification tools and evidence outputs.</p>
+<p>6. Hand implementation tasks to execution agents or Spec Writer.</p>
+<h2>Evidence Requirements</h2>
+<ul>
+<li>Plans must point to source context or user-provided constraints.</li>
+<li>Acceptance criteria must be observable.</li>
+</ul>
+<h2>Handoff Rules</h2>
+<ul>
+<li>Handoff tasks must be small enough for one agent to complete and verify.</li>
+</ul>
+<h2>Escalation Rules</h2>
+<ul>
+<li>Escalate incomplete requirements, conflicting priorities, or architecture/security decisions.</li>
+</ul>
+<h2>Stop Conditions</h2>
+<ul>
+<li>Stop after producing a work plan or after identifying missing prerequisites.</li>
+</ul>
+<h2>Anti-Scope</h2>
+<ul>
+<li>Do not implement, review, or run release gates unless separately assigned.</li>
+</ul></div>
+	</article>
+	<nav class="agent-detail-nav" aria-label="Agent directory navigation">
+		<a class="sk-button" data-variant="secondary" href="/agents/">Back to all agents</a>
+		<a class="sk-button" data-variant="secondary" href="https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/planner/AGENT.md" target="_blank" rel="noopener noreferrer">View Source</a>
+	</nav>
+</main>
+
+
+	<footer class="sk-footer site-footer" id="footer">
+		<div class="sk-footer__inner">
+			<div class="site-footer__left">
+				<a class="footer-wordmark" href="https://kujolang.ai"><img src="/assets/images/kujo-logomark.svg" alt="" width="24" height="24"><span>Kujo</span></a>
+				<nav aria-label="Footer"><a href="/agents/">Agents</a><a href="/agents/chain-of-command/">Chain of Command</a><a href="/agents/webops/">WebOps</a><a href="/agents/publishing-house/">Publishing House</a></nav>
+			</div>
+			<nav class="social-links" aria-label="Kujo social links">
+				<a href="https://x.com/kujolang" aria-label="Kujo on X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4l11.7 16H20L8.3 4H4zm0 16L17.5 4H20L6.5 20H4z"/></svg></a>
+				<a href="https://github.com/kujolang" aria-label="Kujo on GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.35 1.09 2.92.83.09-.65.35-1.09.64-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.55 9.55 0 0 1 12 7c.85 0 1.71.11 2.51.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.6c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg></a>
+				<a href="https://discord.gg/RqDgyb3BX" aria-label="Kujo on Discord"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 5.3A16.3 16.3 0 0 0 15.4 4l-.5 1a14.8 14.8 0 0 0-5.8 0l-.5-1a16.3 16.3 0 0 0-4.1 1.3C1.9 9.2 1.2 13 1.6 16.8A16.5 16.5 0 0 0 6.7 19l1.2-1.7-1.7-.8.4-.3c3.5 1.6 7.3 1.6 10.8 0l.4.3-1.7.8 1.2 1.7a16.5 16.5 0 0 0 5.1-2.2c.5-4.4-.8-8.2-2.9-11.5zM8.5 14.5c-1 0-1.9-1-1.9-2.2s.8-2.2 1.9-2.2 1.9 1 1.9 2.2-.9 2.2-1.9 2.2zm7 0c-1 0-1.9-1-1.9-2.2s.8-2.2 1.9-2.2 1.9 1 1.9 2.2-.9 2.2-1.9 2.2z"/></svg></a>
+			</nav>
+		</div>
+	</footer>
+	<script src="/assets/sitekit/sitekit.js" defer></script>
+	<script src="/assets/js/site.js?v=20260814-2" defer></script>
+</body>
+</html>

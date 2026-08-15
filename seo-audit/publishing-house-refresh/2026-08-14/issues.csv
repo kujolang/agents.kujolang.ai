@@ -1,0 +1,4 @@
+id,phase,category,severity,affected_urls,affected_count,evidence,expected_benefit,confidence,difficulty,recommended_action,owner,status
+PH-001,baseline,content,P1,"/agents/publishing-house/",1,"Roster omitted tools workflows skills and approval architecture","Complete system/entity understanding",high,medium,"Publish a canonical system overview and link it from the collection","site maintainer",completed
+PH-002,baseline,accuracy,P1,"23 Publishing House agent profiles",23,"Synced pages retained superseded deferred-binding copy","Accurate role capability and workflow representation",high,low,"Resynchronize from canonical kujo-agents contracts","site maintainer",completed
+PH-003,baseline,media,P2,"/publishing-house-system/",1,"No page-specific hero or social preview existed","Clearer page identity and stronger social presentation",high,medium,"Generate a dither hero and unique Howl social card","site maintainer",completed
