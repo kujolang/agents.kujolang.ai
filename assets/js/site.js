@@ -84,9 +84,10 @@ function enhanceHeroDither() {
 	const media = canvas && canvas.closest(".chain-hero__media");
 	if (!media || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-	const image = media.querySelector("img");
+	const image = media.querySelector("[data-dither-source]") || media.querySelector("img");
 	const context = canvas && canvas.getContext("2d");
 	if (!image || !canvas || !context) return;
+	if (image.dataset.src && !image.getAttribute("src")) image.setAttribute("src", image.dataset.src);
 
 	const bayer8 = [
 		0, 48, 12, 60, 3, 51, 15, 63,

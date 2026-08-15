@@ -197,6 +197,15 @@ if [[ -f "$OUT_DIR/index.html" ]]; then
 	fi
 fi
 
+if [[ -f "$OUT_DIR/publishing-house-system/index.html" ]]; then
+	if ! grep -q 'data-hero-dither' "$OUT_DIR/publishing-house-system/index.html" || ! grep -q 'data-src="/assets/images/publishing-house-system-motion.webp"' "$OUT_DIR/publishing-house-system/index.html"; then
+		record_failure "FAIL publishing-system-dither: animated dither canvas or motion source is missing"
+	fi
+	if [[ ! -f "$OUT_DIR/assets/images/publishing-house-system-motion.webp" ]]; then
+		record_failure "FAIL publishing-system-dither: motion source asset is missing"
+	fi
+fi
+
 echo "Checked HTML files: $html_count"
 
 if [[ "$failures" -gt 0 ]]; then
