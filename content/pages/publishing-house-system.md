@@ -10,18 +10,21 @@ featured_image: "assets/images/publishing-house-system.webp"
 social_image: "/assets/images/social/publishing-house-system.jpg"
 template: "publishing-house-system"
 date: 2026-08-14
-last_updated: 2026-08-14
+last_updated: 2026-08-15
 nav_hide: true
 ---
 
-## One house, explicit ownership
+## The roster shows who. This page shows how.
 
-The Publishing House is a standalone editorial operating system. Its 23 agents
-cover leadership, intelligence, creative development, writing, independent
-review, adaptation, format production, publishing operations, and audience
-learning. Agents work inside role contracts; tools own durable records;
-workflows coordinate bounded steps; skills tell operators how to run and
-calibrate the system.
+The [Publishing House agent page](/agents/publishing-house/) is the role
+directory: it helps you find and inspect the 23 specialists. This companion
+page is the operating map: it explains how those roles coordinate through
+record-owning tools, lifecycle workflows, operator skills, approval, and
+publication boundaries. The house covers leadership, intelligence, creative
+development, writing, independent review, adaptation, format production,
+publishing operations, and audience learning. Agents work inside role
+contracts; tools own durable records; workflows coordinate bounded steps;
+skills tell operators how to run and calibrate the system.
 
 The local installation is deterministic, offline-capable, and receipt-driven.
 Every agent step loads its canonical house contracts, role contract, role

@@ -29,7 +29,7 @@
 <meta name="twitter:image" content="https://agents.kujolang.ai/assets/images/social/publishing-house-system.jpg">
 	<meta name="twitter:image:alt" content="Kujo Publishing House Agents, Tools, Workflows &amp; Skills social preview">
 	<link rel="stylesheet" href="/assets/sitekit/sitekit.css?v=1.0.0">
-	<link rel="stylesheet" href="/assets/css/site.css?v=20260814-3">
+	<link rel="stylesheet" href="/assets/css/site.css?v=20260815-1">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","headline":"Kujo Publishing House Agents, Tools, Workflows & Skills","name":"Kujo Publishing House Agents, Tools, Workflows & Skills","description":"Explore the complete Kujo Publishing House system: 23 agents, 8 editorial tools, 11 lifecycle workflows, and 11 operator skills for evidence-bound publishing.","url":"https://agents.kujolang.ai/publishing-house-system/","image":"https://agents.kujolang.ai/assets/images/social/publishing-house-system.jpg","publisher":{"@type":"Organization","name":"Kujo","url":"https://kujolang.ai"}}</script>
 </head>
 <body>
@@ -45,8 +45,15 @@
 				<ul class="site-nav">
 					<li><a href="/agents/chain-of-command/">Chain of Command</a></li>
 					<li><a href="/agents/webops/">WebOps</a></li>
-					<li><a href="/agents/publishing-house/">Publishing House</a></li>
-					<li><a href="/publishing-house-system/">Publishing System</a></li>
+					<li>
+						<details class="site-nav-dropdown">
+							<summary>Publishing House</summary>
+							<ul>
+								<li><a href="/agents/publishing-house/">Agent roster</a></li>
+								<li><a href="/publishing-house-system/">System overview</a></li>
+							</ul>
+						</details>
+					</li>
 				</ul>
 			</nav>
 			<div class="sk-header__actions">
@@ -70,26 +77,28 @@
 					<li><a href="/agents/">All Agents</a></li>
 					<li><a href="/agents/chain-of-command/">Chain of Command</a></li>
 					<li><a href="/agents/webops/">WebOps</a></li>
-					<li><a href="/agents/publishing-house/">Publishing House</a></li>
-					<li><a href="/publishing-house-system/">Publishing System</a></li>
+					<li class="mobile-nav-group"><span>Publishing House</span></li>
+					<li class="mobile-nav-child"><a href="/agents/publishing-house/">Agent roster</a></li>
+					<li class="mobile-nav-child"><a href="/publishing-house-system/">System overview</a></li>
 				</ul>
 			</nav>
 		</aside>
 	</div>
 
 	<main id="main-content">
-	<section class="publishing-system-hero" aria-labelledby="publishing-system-title">
-		<div class="publishing-system-hero__copy">
-			<p class="eyebrow">Kujo / Publishing House</p>
-			<h1 id="publishing-system-title">Kujo Publishing House System</h1>
-			<p>The complete Kujo Publishing House: 23 specialized agents, 8 record-owning tools, 11 lifecycle workflows, and 11 operator skills with evidence, approval, and publication boundaries.</p>
-			<div class="sk-hero__actions">
-				<a class="sk-button" href="/agents/publishing-house/">Explore 23 agents</a>
-				<a class="sk-button" data-variant="secondary" href="https://github.com/kujolang/kujo-workflows/tree/main/docs/publishing-house">Run the workflows</a>
+	<section class="sk-hero chain-hero publishing-system-hero" aria-labelledby="publishing-system-title">
+		<div class="chain-hero__media" aria-hidden="true"><img src="/assets/images/publishing-house-system.webp" alt="" width="1916" height="821" fetchpriority="high"></div>
+		<div class="chain-hero__wash" aria-hidden="true"></div>
+		<div class="sk-hero__inner">
+			<div class="sk-stack">
+				<p class="eyebrow">Kujo / Publishing House / System</p>
+				<h1 id="publishing-system-title">Kujo Publishing House System</h1>
+				<p>The complete Kujo Publishing House: 23 specialized agents, 8 record-owning tools, 11 lifecycle workflows, and 11 operator skills with evidence, approval, and publication boundaries.</p>
+				<div class="sk-hero__actions">
+					<a class="sk-button" href="/agents/publishing-house/">Explore 23 agents</a>
+					<a class="sk-button" data-variant="secondary" href="https://github.com/kujolang/kujo-workflows/tree/main/docs/publishing-house">Run the workflows</a>
+				</div>
 			</div>
-		</div>
-		<div class="publishing-system-hero__media">
-			<img src="/assets/images/publishing-house-system.webp" alt="Interconnected editorial desks, evidence archive, galley press, approval seal, publication console, and reader-signal board" width="1916" height="821" fetchpriority="high" decoding="async">
 		</div>
 	</section>
 	<div class="site-shell publishing-system-shell">
@@ -99,13 +108,16 @@
 			<div><span>Workflows</span><strong>11 stages</strong></div>
 			<div><span>Skills</span><strong>11 guides</strong></div>
 		</section>
-		<article class="agent-body kujo-content publishing-system-body"><h2>One house, explicit ownership</h2>
-<p>The Publishing House is a standalone editorial operating system. Its 23 agents</p>
-<p>cover leadership, intelligence, creative development, writing, independent</p>
-<p>review, adaptation, format production, publishing operations, and audience</p>
-<p>learning. Agents work inside role contracts; tools own durable records;</p>
-<p>workflows coordinate bounded steps; skills tell operators how to run and</p>
-<p>calibrate the system.</p>
+		<article class="agent-body kujo-content publishing-system-body"><h2>The roster shows who. This page shows how.</h2>
+<p>The <a href="/agents/publishing-house/">Publishing House agent page</a> is the role</p>
+<p>directory: it helps you find and inspect the 23 specialists. This companion</p>
+<p>page is the operating map: it explains how those roles coordinate through</p>
+<p>record-owning tools, lifecycle workflows, operator skills, approval, and</p>
+<p>publication boundaries. The house covers leadership, intelligence, creative</p>
+<p>development, writing, independent review, adaptation, format production,</p>
+<p>publishing operations, and audience learning. Agents work inside role</p>
+<p>contracts; tools own durable records; workflows coordinate bounded steps;</p>
+<p>skills tell operators how to run and calibrate the system.</p>
 <p>The local installation is deterministic, offline-capable, and receipt-driven.</p>
 <p>Every agent step loads its canonical house contracts, role contract, role</p>
 <p>skill, and Publishing House workflow skill, then records an instruction</p>
@@ -194,6 +206,6 @@
 		</div>
 	</footer>
 	<script src="/assets/sitekit/sitekit.js" defer></script>
-	<script src="/assets/js/site.js?v=20260814-2" defer></script>
+	<script src="/assets/js/site.js?v=20260815-1" defer></script>
 </body>
 </html>

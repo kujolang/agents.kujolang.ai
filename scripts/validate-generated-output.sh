@@ -177,8 +177,8 @@ if [[ -f "$OUT_DIR/index.html" ]]; then
 	if ! grep -q 'href="/agents/chain-of-command/">Chain of Command</a>' "$OUT_DIR/index.html" || ! grep -q 'href="/agents/webops/">WebOps</a>' "$OUT_DIR/index.html" || ! grep -q 'href="/agents/publishing-house/">Publishing House</a>' "$OUT_DIR/index.html"; then
 		record_failure "FAIL agent-navigation: homepage does not render all direct agent-set links"
 	fi
-	if grep -q 'site-nav-dropdown' "$OUT_DIR/index.html"; then
-		record_failure "FAIL agent-navigation: homepage still renders the old Agents dropdown"
+	if ! grep -q 'class="site-nav-dropdown"' "$OUT_DIR/index.html" || ! grep -q 'href="/publishing-house-system/">System overview</a>' "$OUT_DIR/index.html"; then
+		record_failure "FAIL agent-navigation: Publishing House dropdown does not include the system overview"
 	fi
 	if grep -q 'card-grid agent-grid' "$OUT_DIR/index.html"; then
 		record_failure "FAIL homepage-grid: homepage still renders the old agent grid"
@@ -192,8 +192,8 @@ if [[ -f "$OUT_DIR/index.html" ]]; then
 	if ! grep -q '/images/general-commander-' "$OUT_DIR/index.html"; then
 		record_failure "FAIL demo-portrait: homepage does not render the original agent portrait assets"
 	fi
-	if grep -q 'data-hero-dither' "$OUT_DIR/index.html"; then
-		record_failure "FAIL hero-dither-runtime: homepage must use the pre-dithered hero asset without per-pixel runtime work"
+	if ! grep -q 'data-hero-dither' "$OUT_DIR/index.html"; then
+		record_failure "FAIL hero-dither-runtime: homepage animated dither canvas is missing"
 	fi
 fi
 

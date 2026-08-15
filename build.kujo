@@ -4264,7 +4264,7 @@ func build_site(settings) {
 						"slug": "publishing-house",
 						"description": "A standalone editorial team for strategy, creative development, writing, independent review, production, and bounded publishing operations.",
 						"cards": publishing_house_cards,
-						"system_overview": "<aside class=\"publishing-system-callout\"><div><p class=\"eyebrow\">Complete operating system</p><h2>Agents are one layer of the house</h2><p>See the eight record-owning tools, eleven lifecycle workflows, eleven operator skills, approval boundary, and locked local proof.</p></div><a class=\"sk-button\" href=\"/publishing-house-system/\">Explore the full system</a></aside>",
+						"system_overview": "<aside class=\"publishing-system-callout\"><div><p class=\"eyebrow\">Roster and operating map</p><h2>This page shows who. The system page shows how.</h2><p>See how the 23 roles coordinate through eight record-owning tools, eleven lifecycle workflows, eleven operator skills, approval boundaries, and locked local proof.</p></div><a class=\"sk-button\" href=\"/publishing-house-system/\">Explore the system</a></aside>",
 						"last_updated": publishing_house_latest_updated,
 						"schema_has_part": join(publishing_house_schema_items, ",")
 					}
