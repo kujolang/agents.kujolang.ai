@@ -93,6 +93,14 @@ def main() -> int:
             "README.md",
         ),
         card(
+            "publishing-house-system",
+            "Publishing House System",
+            "23 agents, 8 record owners, 11 workflows, and 11 operator skills.",
+            "Editorial operating system",
+            "content/pages/publishing-house-system.md",
+            "assets/images/publishing-house-system.webp",
+        ),
+        card(
             "404",
             "Signal Lost",
             "This route is outside the active agent network.",

@@ -70,6 +70,18 @@
       "show_url": false
     },
     {
+      "id": "publishing-house-system",
+      "title": "Publishing House System",
+      "tagline": "23 agents, 8 record owners, 11 workflows, and 11 operator skills.",
+      "file": "content/pages/publishing-house-system.md",
+      "variant": "social",
+      "label": "Editorial operating system",
+      "background_image": "assets/images/publishing-house-system.webp",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_border": true,
+      "show_url": false
+    },
+    {
       "id": "404",
       "title": "Signal Lost",
       "tagline": "This route is outside the active agent network.",

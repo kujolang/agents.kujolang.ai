@@ -3490,6 +3490,7 @@ func build_site(settings) {
 		}
 		canonical := trim(to_string(meta["canonical"]))
 		featured_image := trim(to_string(meta["featured_image"]))
+		social_image := trim(to_string(meta["social_image"]))
 		author_name := resolve_lookup(meta["author"], authors_lookup, "")
 		page_categories := meta_terms(meta, "categories", categories_lookup)
 		page_tags := meta_terms(meta, "tags", tags_lookup)
@@ -3507,6 +3508,7 @@ func build_site(settings) {
 			"lang": lang,
 			"canonical": canonical,
 			"featured_image": featured_image,
+			"social_image": social_image,
 			"author": author_name,
 			"categories": page_categories,
 			"tags": page_tags,
@@ -3630,6 +3632,8 @@ func build_site(settings) {
 				"lang": page_data["lang"],
 				"canonical": page_data["canonical"],
 				"featured_image": processed_page_featured_image,
+				"social_image": page_data["social_image"],
+				"schema_type": "WebPage",
 				"author": page_data["author"]
 			}
 		)
@@ -4242,6 +4246,7 @@ func build_site(settings) {
 						"slug": "chain-of-command",
 						"description": "A coordinated roster for strategy, planning, execution, verification, knowledge, and routine work.",
 						"cards": chain_of_command_cards,
+						"system_overview": "",
 						"last_updated": chain_latest_updated,
 						"schema_has_part": join(chain_schema_items, ",")
 					},
@@ -4250,6 +4255,7 @@ func build_site(settings) {
 						"slug": "webops",
 						"description": "A coordinated roster for technical SEO, content intelligence, site quality, search analytics, and safe WebOps operations.",
 						"cards": webops_cards,
+						"system_overview": "",
 						"last_updated": webops_latest_updated,
 						"schema_has_part": join(webops_schema_items, ",")
 					},
@@ -4258,6 +4264,7 @@ func build_site(settings) {
 						"slug": "publishing-house",
 						"description": "A standalone editorial team for strategy, creative development, writing, independent review, production, and bounded publishing operations.",
 						"cards": publishing_house_cards,
+						"system_overview": "<aside class=\"publishing-system-callout\"><div><p class=\"eyebrow\">Complete operating system</p><h2>Agents are one layer of the house</h2><p>See the eight record-owning tools, eleven lifecycle workflows, eleven operator skills, approval boundary, and locked local proof.</p></div><a class=\"sk-button\" href=\"/publishing-house-system/\">Explore the full system</a></aside>",
 						"last_updated": publishing_house_latest_updated,
 						"schema_has_part": join(publishing_house_schema_items, ",")
 					}
@@ -4275,6 +4282,7 @@ func build_site(settings) {
 						"description": agent_set_page["description"],
 						"last_updated": agent_set_page["last_updated"],
 						"source_url": "https://github.com/kujolang/kujo-agents/tree/main/" + agent_set_page["slug"],
+						"system_overview": agent_set_page["system_overview"],
 						"cards": agent_set_page["cards"]
 					})
 					agent_set_robots := ""
