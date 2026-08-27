@@ -5131,23 +5131,6 @@ func build_site(settings) {
 	not_found_html = replace(not_found_html, "../", "/")
 	write_file(path_join(output_dir, "404.html"), not_found_html)
 
-	# Emit the WebMCP index after all routes are rendered so customized builds
-	# cannot leave the discovery document behind an earlier phase boundary.
-	if settings["webmcp"] {
-		final_webmcp_record_paths := [webmcp_records_tmp]
-		if phase == "finalize" {
-			final_webmcp_shard_idx := 0
-			loop {
-				if final_webmcp_shard_idx >= shards {
-					break
-				}
-				final_webmcp_record_paths = push(final_webmcp_record_paths, path_join(output_dir, ".kujo-webmcp-records-" + to_string(final_webmcp_shard_idx) + ".tmp"))
-				final_webmcp_shard_idx := final_webmcp_shard_idx + 1
-			}
-		}
-		write_public_site_index(settings, pages_data, custom_collections, final_webmcp_record_paths)
-	}
-
 	# Remove streaming temp files so they never appear in the published output.
 	if path_exists(sitemap_tmp) {
 		delete_file(sitemap_tmp)

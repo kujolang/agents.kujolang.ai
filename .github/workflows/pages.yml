@@ -45,10 +45,16 @@ jobs:
           bash scripts/validate-generated-output.sh output
 
       - name: Upload site artifact
-        uses: actions/upload-pages-artifact@v4
+        shell: bash
+        run: |
+          tar --dereference --hard-dereference --directory ./output -cvf "$RUNNER_TEMP/artifact.tar" --exclude=.git --exclude=.github .
+      - name: Store site artifact
+        uses: actions/upload-artifact@v4
         with:
-          path: ./output
-          include-hidden-files: true
+          name: github-pages
+          path: ${{ runner.temp }}/artifact.tar
+          retention-days: 1
+          if-no-files-found: error
 
       - name: Deploy to GitHub Pages
         id: deployment
