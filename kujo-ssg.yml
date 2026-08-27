@@ -21,4 +21,5 @@ minify: true
 download_remote_images: false
 no_index: false
 no_aux: false
+webmcp: true
 no_aliases: true

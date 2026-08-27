@@ -206,6 +206,16 @@ if [[ -f "$OUT_DIR/publishing-house-system/index.html" ]]; then
 	fi
 fi
 
+if [[ ! -s "$OUT_DIR/.well-known/kujo-site-index.json" || ! -s "$OUT_DIR/assets/js/kujo-webmcp.js" ]]; then
+	record_failure "FAIL webmcp-artifacts: index or runtime missing"
+fi
+if [[ -f "$OUT_DIR/index.html" ]] && [[ "$(grep -o 'data-kujo-webmcp' "$OUT_DIR/index.html" | wc -l | tr -d ' ')" != "1" ]]; then
+	record_failure "FAIL webmcp-homepage: expected exactly one runtime marker"
+fi
+if [[ -f "$OUT_DIR/404.html" ]] && grep -q 'data-kujo-webmcp' "$OUT_DIR/404.html"; then
+	record_failure "FAIL webmcp-404: runtime marker must be absent"
+fi
+
 echo "Checked HTML files: $html_count"
 
 if [[ "$failures" -gt 0 ]]; then
