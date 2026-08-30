@@ -162,6 +162,15 @@ if [[ -f "$OUT_DIR/feed/index.xml" ]]; then
 fi
 
 if [[ -f "$OUT_DIR/index.html" ]]; then
+	if ! grep -q 'href="/agent-development-platform/">Build your own agent</a>' "$OUT_DIR/index.html"; then
+		record_failure "FAIL agent-platform-homepage: homepage CTA is missing"
+	fi
+	if ! grep -Fq 'https://kujolang.ai/install.sh | bash -s -- --group agent' "$OUT_DIR/index.html"; then
+		record_failure "FAIL agent-platform-homepage: focused installer command is missing"
+	fi
+	if ! grep -Fq 'kujo agent new my-agent --profile basic --install' "$OUT_DIR/index.html" || ! grep -Fq 'kujo agent run' "$OUT_DIR/index.html"; then
+		record_failure "FAIL agent-platform-homepage: create or run command is missing"
+	fi
 	if ! grep -q 'class="agent-carousel"' "$OUT_DIR/index.html"; then
 		record_failure "FAIL agent-carousel: homepage does not render grouped agent carousels"
 	fi
@@ -194,6 +203,49 @@ if [[ -f "$OUT_DIR/index.html" ]]; then
 	fi
 	if ! grep -q 'data-hero-dither' "$OUT_DIR/index.html"; then
 		record_failure "FAIL hero-dither-runtime: homepage animated dither canvas is missing"
+	fi
+fi
+
+if [[ ! -f "$OUT_DIR/agent-development-platform/index.html" ]]; then
+	record_failure "FAIL agent-platform-page: generated page is missing"
+else
+	agent_platform_page="$OUT_DIR/agent-development-platform/index.html"
+	for expected in \
+		'https://kujolang.ai/install.sh' \
+		'--group agent' \
+		'kujo agent new my-agent --profile basic --install' \
+		'kujo agent run' \
+		'kujo agent auth set openai' \
+		'kujo agent auth set --name LINEAR_API_TOKEN' \
+		'kujo doctor agent' \
+		'kujo agent inspect' \
+		'kujo agent eval'; do
+		if ! grep -Fq -- "$expected" "$agent_platform_page"; then
+			record_failure "FAIL agent-platform-content: missing $expected"
+		fi
+	done
+	for profile in basic tools knowledge workflow hardened observable full; do
+		if ! grep -Fq "<code>$profile</code>" "$agent_platform_page"; then
+			record_failure "FAIL agent-platform-profile: missing $profile"
+		fi
+	done
+	if ! grep -Fq '/assets/images/agent-development-platform.webp' "$agent_platform_page"; then
+		record_failure "FAIL agent-platform-hero: platform hero is missing"
+	fi
+	if ! grep -Fq 'https://agents.kujolang.ai/assets/images/social/agent-development-platform.jpg' "$agent_platform_page"; then
+		record_failure "FAIL agent-platform-social: platform social card is missing"
+	fi
+	if ! grep -Fq 'href="/agent-development-platform/">Build an Agent</a>' "$agent_platform_page"; then
+		record_failure "FAIL agent-platform-navigation: desktop or footer route is missing"
+	fi
+	if [[ -f "$OUT_DIR/sitemap.xml" ]] && ! grep -Fq 'https://agents.kujolang.ai/agent-development-platform/' "$OUT_DIR/sitemap.xml"; then
+		record_failure "FAIL agent-platform-sitemap: page is missing"
+	fi
+	if [[ -f "$OUT_DIR/llms.txt" ]] && ! grep -Fq 'https://agents.kujolang.ai/agent-development-platform/' "$OUT_DIR/llms.txt"; then
+		record_failure "FAIL agent-platform-llms: page is missing"
+	fi
+	if [[ -f "$OUT_DIR/.well-known/kujo-site-index.json" ]] && ! grep -Fq 'agent-development-platform' "$OUT_DIR/.well-known/kujo-site-index.json"; then
+		record_failure "FAIL agent-platform-webmcp: page is missing"
 	fi
 fi
 

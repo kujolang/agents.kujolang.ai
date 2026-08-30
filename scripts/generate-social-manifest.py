@@ -101,6 +101,14 @@ def main() -> int:
             "assets/images/publishing-house-system.webp",
         ),
         card(
+            "agent-development-platform",
+            "Build Your Own Kujo Agent",
+            "One focused install. One owned project. A working agent you can talk to.",
+            "Agent Development Platform",
+            "content/pages/agent-development-platform.md",
+            "assets/images/agent-development-platform.webp",
+        ),
+        card(
             "404",
             "Signal Lost",
             "This route is outside the active agent network.",

@@ -1,6 +1,15 @@
 # Kujo Agents
 
-Static library for the [Kujo Chain of Command](https://github.com/kujolang/kujo-agents/tree/main/chain-of-command), [Kujo WebOps](https://github.com/kujolang/kujo-agents/tree/main/webops), and [Kujo Publishing House](https://github.com/kujolang/kujo-agents/tree/main/publishing-house), built with [Kujo SSG](https://github.com/kujolang/ssg) and the vendored SiteKit distribution.
+The showcase for Kujo's repository-owned Agent Development Platform and the
+static library for the [Kujo Chain of Command](https://github.com/kujolang/kujo-agents/tree/main/chain-of-command),
+[Kujo WebOps](https://github.com/kujolang/kujo-agents/tree/main/webops), and
+[Kujo Publishing House](https://github.com/kujolang/kujo-agents/tree/main/publishing-house),
+built with [Kujo SSG](https://github.com/kujolang/ssg) and the vendored SiteKit distribution.
+
+The `/agent-development-platform/` page documents the public installer,
+repository-owned scaffold, seven profiles, OS-backed credential management,
+local diagnostics, evaluation, and Workcell boundary introduced with Kujo
+v1.1.0.
 
 ## Build
 

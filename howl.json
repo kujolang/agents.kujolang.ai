@@ -82,6 +82,18 @@
       "show_url": false
     },
     {
+      "id": "agent-development-platform",
+      "title": "Build Your Own Kujo Agent",
+      "tagline": "One focused install. One owned project. A working agent you can talk to.",
+      "file": "content/pages/agent-development-platform.md",
+      "variant": "social",
+      "label": "Agent Development Platform",
+      "background_image": "assets/images/agent-development-platform.webp",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_border": true,
+      "show_url": false
+    },
+    {
       "id": "404",
       "title": "Signal Lost",
       "tagline": "This route is outside the active agent network.",

@@ -5,6 +5,7 @@ This site contains structured content formatted for LLM-friendly consumption.
 ## Posts
 
 ## Pages
+- [Build Your Own Kujo Agent](https://agents.kujolang.ai/agent-development-platform/)
 - [Kujo Publishing House System](https://agents.kujolang.ai/publishing-house-system/)
 
 ## Agents
