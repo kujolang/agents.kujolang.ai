@@ -232,6 +232,9 @@ else
 	if ! grep -Fq '/assets/images/agent-development-platform.webp' "$agent_platform_page"; then
 		record_failure "FAIL agent-platform-hero: platform hero is missing"
 	fi
+	if ! grep -Fq '.agent-platform-shell > * { min-inline-size: 0; }' "$OUT_DIR/assets/css/site.css"; then
+		record_failure "FAIL agent-platform-responsive: grid children are not allowed to shrink"
+	fi
 	if ! grep -Fq 'https://agents.kujolang.ai/assets/images/social/agent-development-platform.jpg' "$agent_platform_page"; then
 		record_failure "FAIL agent-platform-social: platform social card is missing"
 	fi

@@ -93,7 +93,11 @@ body:has(.chain-hero) .site-header {
 .publishing-system-callout p { margin-bottom: 0; max-width: 48rem; }
 
 .agent-platform-shell { padding-block: var(--sk-space-8) var(--sk-space-20); }
-.agent-platform-body { max-inline-size: 58rem; margin: var(--sk-space-12) auto 0; }
+.agent-platform-shell > * { min-inline-size: 0; }
+.agent-platform-shell .sk-command-strip { inline-size: 100%; min-inline-size: 0; }
+.agent-platform-body { inline-size: 100%; max-inline-size: 58rem; min-inline-size: 0; margin: var(--sk-space-12) auto 0; }
+.agent-platform-body pre,
+.agent-platform-body table { display: block; max-inline-size: 100%; overflow-x: auto; }
 .agent-platform-hero .sk-stack { max-inline-size: 46rem; }
 .agent-platform-hero h1 { max-inline-size: 12ch; }
 
