@@ -182,6 +182,70 @@ function enhanceHeroDither() {
 
 enhanceHeroDither();
 
+function enhanceCommandCopy() {
+	const copyIcon = '<svg class="command-copy-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="11" height="11" rx="1"></rect><path d="M16 8V5H5v11h3"></path></svg>';
+	const checkIcon = '<svg class="command-copy-check" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"></path></svg>';
+
+	const copyText = async (text) => {
+		if (navigator.clipboard && window.isSecureContext) {
+			await navigator.clipboard.writeText(text);
+			return;
+		}
+
+		const textarea = document.createElement("textarea");
+		textarea.value = text;
+		textarea.setAttribute("readonly", "");
+		textarea.style.position = "fixed";
+		textarea.style.opacity = "0";
+		document.body.appendChild(textarea);
+		textarea.select();
+		document.execCommand("copy");
+		textarea.remove();
+	};
+
+	const addCopyButton = (container, code) => {
+		if (!container || !code || container.querySelector("[data-copy-command]")) return;
+		const button = document.createElement("button");
+		button.type = "button";
+		button.className = "command-copy-button";
+		button.dataset.copyCommand = "";
+		button.setAttribute("aria-label", "Copy command");
+		button.title = "Copy command";
+		button.innerHTML = copyIcon + checkIcon;
+		button.addEventListener("click", async () => {
+			try {
+				await copyText(code.textContent.trim());
+				button.dataset.copied = "true";
+				button.setAttribute("aria-label", "Command copied");
+				button.title = "Copied";
+				window.setTimeout(() => {
+					delete button.dataset.copied;
+					button.setAttribute("aria-label", "Copy command");
+					button.title = "Copy command";
+				}, 1600);
+			} catch {
+				button.setAttribute("aria-label", "Copy failed");
+				button.title = "Copy failed";
+			}
+		});
+		container.appendChild(button);
+	};
+
+	document.querySelectorAll(".agent-platform-promo__commands p").forEach((command) => {
+		addCopyButton(command, command.querySelector("code"));
+	});
+
+	document.querySelectorAll(".agent-platform-body pre").forEach((pre) => {
+		const wrapper = document.createElement("div");
+		wrapper.className = "command-block";
+		pre.parentNode.insertBefore(wrapper, pre);
+		wrapper.appendChild(pre);
+		addCopyButton(wrapper, pre.querySelector("code"));
+	});
+}
+
+enhanceCommandCopy();
+
 document.addEventListener("click", (event) => {
 	document.querySelectorAll(".site-nav-dropdown[open]").forEach((dropdown) => {
 		if (!dropdown.contains(event.target)) dropdown.removeAttribute("open");
