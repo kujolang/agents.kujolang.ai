@@ -238,6 +238,15 @@ else
 	if ! grep -Fq 'https://agents.kujolang.ai/assets/images/social/agent-development-platform.jpg' "$agent_platform_page"; then
 		record_failure "FAIL agent-platform-social: platform social card is missing"
 	fi
+	if ! grep -Fq '<p>An Agent Project is a normal repository. Its instructions, model choice, skills, tools, knowledge, policies, workflows, evaluations, dependency pins, and runtime boundaries are files your team can review and change. Kujo does not hide the working contract in a hosted dashboard.</p>' "$agent_platform_page"; then
+		record_failure "FAIL agent-platform-markdown-flow: introductory paragraph was split during rendering"
+	fi
+	if ! grep -Fq '<p>Read the <a href="https://docs.kujolang.ai/build/owned-agent-projects/">complete Agent Project documentation</a>, explore the <a href="/agents/">agent library</a>, or inspect the <a href="https://github.com/kujolang/kujo">Kujo source</a>.</p>' "$agent_platform_page"; then
+		record_failure "FAIL agent-platform-markdown-links: closing links were split or left unrendered"
+	fi
+	if grep -Eq '\[[^]]+\]\([^)]*\)' "$agent_platform_page"; then
+		record_failure "FAIL agent-platform-markdown-links: raw Markdown link syntax remains"
+	fi
 	if ! grep -Fq 'href="/agent-development-platform/">Build an Agent</a>' "$agent_platform_page"; then
 		record_failure "FAIL agent-platform-navigation: desktop or footer route is missing"
 	fi

@@ -16,10 +16,7 @@ nav_hide: true
 
 ## One project you can inspect and own
 
-An Agent Project is a normal repository. Its instructions, model choice,
-skills, tools, knowledge, policies, workflows, evaluations, dependency pins,
-and runtime boundaries are files your team can review and change. Kujo does not
-hide the working contract in a hosted dashboard.
+An Agent Project is a normal repository. Its instructions, model choice, skills, tools, knowledge, policies, workflows, evaluations, dependency pins, and runtime boundaries are files your team can review and change. Kujo does not hide the working contract in a hosted dashboard.
 
 Install the focused Agent Development Platform:
 
@@ -39,9 +36,7 @@ Talk to it:
 cd my-agent && kujo agent run "What can you help me with?"
 ```
 
-The `basic` profile needs no API key, network connection, Watchdog, or
-RunLedger. It gives every developer a deterministic first run before they add a
-live model or external connector.
+The `basic` profile needs no API key, network connection, Watchdog, or RunLedger. It gives every developer a deterministic first run before they add a live model or external connector.
 
 ## Seven profiles, one ownership model
 
@@ -55,10 +50,7 @@ live model or external connector.
 | `observable` | Watchdog telemetry and RunLedger receipts |
 | `full` | The compatible local composition, including Relay |
 
-Start small. `kujo agent inspect` separates required dependencies, optional
-services, credential names, policies, and generated integration paths before a
-run. `kujo doctor agent` verifies the installed platform, and `kujo agent eval`
-runs the project's acceptance checks.
+Start small. `kujo agent inspect` separates required dependencies, optional services, credential names, policies, and generated integration paths before a run. `kujo doctor agent` verifies the installed platform, and `kujo agent eval` runs the project's acceptance checks.
 
 ## Save credentials once, reuse them safely
 
@@ -67,11 +59,7 @@ kujo agent auth set openai
 kujo agent auth status openai
 ```
 
-Kujo accepts masked input and stores reusable provider keys in macOS Keychain,
-Windows Credential Manager, or Linux Secret Service. Automation can use stdin
-or an existing environment variable. Project-specific overrides stay in an
-owner-only, Git-ignored `.env.local`. Status and diagnostic output report the
-credential source without printing the secret.
+Kujo accepts masked input and stores reusable provider keys in macOS Keychain, Windows Credential Manager, or Linux Secret Service. Automation can use stdin or an existing environment variable. Project-specific overrides stay in an owner-only, Git-ignored `.env.local`. Status and diagnostic output report the credential source without printing the secret.
 
 Named API-key connectors use the same contract:
 
@@ -81,11 +69,6 @@ kujo agent auth set --name LINEAR_API_TOKEN
 
 ## Local first, production controls when needed
 
-Kujo capabilities authorize effects, but do not pretend to be a sandbox. The
-`hardened` profile adds an explicit Workcell container boundary with a read-only
-root, resource limits, bounded commands, and a receipt. Eval provides repeatable
-acceptance checks. Watchdog and RunLedger remain optional until the project
-needs telemetry or durable run history.
+Kujo capabilities authorize effects, but do not pretend to be a sandbox. The `hardened` profile adds an explicit Workcell container boundary with a read-only root, resource limits, bounded commands, and a receipt. Eval provides repeatable acceptance checks. Watchdog and RunLedger remain optional until the project needs telemetry or durable run history.
 
-Read the [complete Agent Project documentation](https://docs.kujolang.ai/build/owned-agent-projects/),
-explore the [agent library](/agents/), or inspect the [Kujo source](https://github.com/kujolang/kujo).
+Read the [complete Agent Project documentation](https://docs.kujolang.ai/build/owned-agent-projects/), explore the [agent library](/agents/), or inspect the [Kujo source](https://github.com/kujolang/kujo).

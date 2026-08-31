@@ -111,19 +111,14 @@
 			<div><span>First run</span><strong>Offline ready</strong></div>
 		</section>
 		<article class="agent-body kujo-content agent-platform-body"><h2>One project you can inspect and own</h2>
-<p>An Agent Project is a normal repository. Its instructions, model choice,</p>
-<p>skills, tools, knowledge, policies, workflows, evaluations, dependency pins,</p>
-<p>and runtime boundaries are files your team can review and change. Kujo does not</p>
-<p>hide the working contract in a hosted dashboard.</p>
+<p>An Agent Project is a normal repository. Its instructions, model choice, skills, tools, knowledge, policies, workflows, evaluations, dependency pins, and runtime boundaries are files your team can review and change. Kujo does not hide the working contract in a hosted dashboard.</p>
 <p>Install the focused Agent Development Platform:</p>
 <pre><code class="language-bash">curl -fsSL https://kujolang.ai/install.sh | bash -s -- --group agent</code></pre>
 <p>Create a ready-to-run offline agent:</p>
 <pre><code class="language-bash">kujo agent new my-agent --profile basic --install</code></pre>
 <p>Talk to it:</p>
 <pre><code class="language-bash">cd my-agent &amp;&amp; kujo agent run &quot;What can you help me with?&quot;</code></pre>
-<p>The <code>basic</code> profile needs no API key, network connection, Watchdog, or</p>
-<p>RunLedger. It gives every developer a deterministic first run before they add a</p>
-<p>live model or external connector.</p>
+<p>The <code>basic</code> profile needs no API key, network connection, Watchdog, or RunLedger. It gives every developer a deterministic first run before they add a live model or external connector.</p>
 <h2>Seven profiles, one ownership model</h2>
 <table><thead><tr>
 <th>Profile</th>
@@ -158,28 +153,16 @@
 <td>The compatible local composition, including Relay</td>
 </tr>
 </tbody></table>
-<p>Start small. <code>kujo agent inspect</code> separates required dependencies, optional</p>
-<p>services, credential names, policies, and generated integration paths before a</p>
-<p>run. <code>kujo doctor agent</code> verifies the installed platform, and <code>kujo agent eval</code></p>
-<p>runs the project&apos;s acceptance checks.</p>
+<p>Start small. <code>kujo agent inspect</code> separates required dependencies, optional services, credential names, policies, and generated integration paths before a run. <code>kujo doctor agent</code> verifies the installed platform, and <code>kujo agent eval</code> runs the project&apos;s acceptance checks.</p>
 <h2>Save credentials once, reuse them safely</h2>
 <pre><code class="language-bash">kujo agent auth set openai
 kujo agent auth status openai</code></pre>
-<p>Kujo accepts masked input and stores reusable provider keys in macOS Keychain,</p>
-<p>Windows Credential Manager, or Linux Secret Service. Automation can use stdin</p>
-<p>or an existing environment variable. Project-specific overrides stay in an</p>
-<p>owner-only, Git-ignored <code>.env.local</code>. Status and diagnostic output report the</p>
-<p>credential source without printing the secret.</p>
+<p>Kujo accepts masked input and stores reusable provider keys in macOS Keychain, Windows Credential Manager, or Linux Secret Service. Automation can use stdin or an existing environment variable. Project-specific overrides stay in an owner-only, Git-ignored <code>.env.local</code>. Status and diagnostic output report the credential source without printing the secret.</p>
 <p>Named API-key connectors use the same contract:</p>
 <pre><code class="language-bash">kujo agent auth set --name LINEAR_API_TOKEN</code></pre>
 <h2>Local first, production controls when needed</h2>
-<p>Kujo capabilities authorize effects, but do not pretend to be a sandbox. The</p>
-<p><code>hardened</code> profile adds an explicit Workcell container boundary with a read-only</p>
-<p>root, resource limits, bounded commands, and a receipt. Eval provides repeatable</p>
-<p>acceptance checks. Watchdog and RunLedger remain optional until the project</p>
-<p>needs telemetry or durable run history.</p>
-<p>Read the <a href="https://docs.kujolang.ai/build/owned-agent-projects/">complete Agent Project documentation</a>,</p>
-<p>explore the <a href="/agents/">agent library</a>, or inspect the <a href="https://github.com/kujolang/kujo">Kujo source</a>.</p></article>
+<p>Kujo capabilities authorize effects, but do not pretend to be a sandbox. The <code>hardened</code> profile adds an explicit Workcell container boundary with a read-only root, resource limits, bounded commands, and a receipt. Eval provides repeatable acceptance checks. Watchdog and RunLedger remain optional until the project needs telemetry or durable run history.</p>
+<p>Read the <a href="https://docs.kujolang.ai/build/owned-agent-projects/">complete Agent Project documentation</a>, explore the <a href="/agents/">agent library</a>, or inspect the <a href="https://github.com/kujolang/kujo">Kujo source</a>.</p></article>
 	</div>
 </main>
 
