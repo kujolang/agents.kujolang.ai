@@ -235,7 +235,7 @@ else
 	if ! grep -Fq '.agent-platform-shell > * { min-inline-size: 0; }' "$OUT_DIR/assets/css/site.css"; then
 		record_failure "FAIL agent-platform-responsive: grid children are not allowed to shrink"
 	fi
-	if ! grep -Fq '.agent-platform-body table { display: table;' "$OUT_DIR/assets/css/site.css"; then
+	if ! grep -Fq '.agent-platform-body table {' "$OUT_DIR/assets/css/site.css" || ! grep -Fq 'display: table;' "$OUT_DIR/assets/css/site.css" || ! grep -Fq 'overflow: visible;' "$OUT_DIR/assets/css/site.css"; then
 		record_failure "FAIL agent-platform-table: profile table is still configured as a scrolling block"
 	fi
 	if ! grep -Fq 'https://agents.kujolang.ai/assets/images/social/agent-development-platform.jpg' "$agent_platform_page"; then

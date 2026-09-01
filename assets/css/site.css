@@ -271,9 +271,18 @@ body:has(.chain-hero) .site-header {
 	overflow-wrap: inherit;
 	word-break: inherit;
 }
-.agent-platform-body table { display: table; inline-size: 100%; max-inline-size: 100%; table-layout: fixed; overflow: visible; }
+.agent-platform-body table {
+	display: table;
+	inline-size: 100%;
+	max-inline-size: 100%;
+	table-layout: fixed;
+	overflow: visible;
+	border: var(--sk-border-1) solid var(--sk-border-default);
+	background: var(--sk-surface-card);
+}
 .agent-platform-body th,
-.agent-platform-body td { padding: var(--sk-space-3) var(--sk-space-4); text-align: start; vertical-align: top; overflow-wrap: anywhere; }
+.agent-platform-body td { padding: var(--sk-space-3) var(--sk-space-4); border: var(--sk-border-1) solid var(--sk-border-default); text-align: start; vertical-align: top; overflow-wrap: anywhere; }
+.agent-platform-body th { background: var(--sk-surface-inverse); color: var(--sk-text-inverse); font-family: var(--sk-font-mono); text-transform: uppercase; }
 .agent-platform-body th:first-child,
 .agent-platform-body td:first-child { inline-size: 24%; }
 .agent-platform-hero .sk-stack { max-inline-size: 46rem; }
