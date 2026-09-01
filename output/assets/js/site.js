@@ -182,6 +182,26 @@ function enhanceHeroDither() {
 
 enhanceHeroDither();
 
+function enhancePublishingSystem() {
+	const body = document.querySelector(".publishing-system-body");
+	if (!body) return;
+
+	const sectionIds = [
+		"operating-model",
+		"eight-record-owning-tools",
+		"eleven-lifecycle-workflows",
+		"eleven-operator-skills",
+		"the-approval-boundary",
+		"run-the-complete-local-proof",
+	];
+
+	body.querySelectorAll(":scope > h2").forEach((heading, index) => {
+		if (sectionIds[index]) heading.id = sectionIds[index];
+	});
+}
+
+enhancePublishingSystem();
+
 function enhanceCommandCopy() {
 	const copyIcon = '<svg class="command-copy-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="11" height="11" rx="1"></rect><path d="M16 8V5H5v11h3"></path></svg>';
 	const checkIcon = '<svg class="command-copy-check" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"></path></svg>';

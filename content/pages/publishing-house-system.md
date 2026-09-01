@@ -10,27 +10,22 @@ featured_image: "assets/images/publishing-house-system.webp"
 social_image: "/assets/images/social/publishing-house-system.jpg"
 template: "publishing-house-system"
 date: 2026-08-14
-last_updated: 2026-08-15
+last_updated: 2026-09-01
 nav_hide: true
 ---
 
-## The roster shows who. This page shows how.
+## Operating model
 
-The [Publishing House agent page](/agents/publishing-house/) is the role
-directory: it helps you find and inspect the 23 specialists. This companion
-page is the operating map: it explains how those roles coordinate through
-record-owning tools, lifecycle workflows, operator skills, approval, and
-publication boundaries. The house covers leadership, intelligence, creative
-development, writing, independent review, adaptation, format production,
-publishing operations, and audience learning. Agents work inside role
-contracts; tools own durable records; workflows coordinate bounded steps;
-skills tell operators how to run and calibrate the system.
+The [Publishing House agent page](/agents/publishing-house/) is the directory for the 23 specialist roles. This page is the operating map: it shows how those roles move work through record-owning tools, bounded workflows, operator skills, review, approval, publication, and learning.
 
-The local installation is deterministic, offline-capable, and receipt-driven.
-Every agent step loads its canonical house contracts, role contract, role
-skill, and Publishing House workflow skill, then records an instruction
-checksum. External model, retrieval, and destination adapters remain explicit
-operator choices. Publication still requires a checksum-bound human approval.
+The local system is deterministic, offline-capable, and receipt-driven. Every agent step loads the canonical house contract, role contract, role skill, and workflow skill before recording an instruction checksum. External model, retrieval, and destination adapters remain explicit operator choices.
+
+### Four contracts keep the house accountable
+
+- **Agents perform bounded roles.** Leadership, intelligence, creative, writing, review, adaptation, production, publishing, and audience roles stay inside inspectable contracts.
+- **Tools own durable records.** Editorial state, evidence, artifacts, reviews, approvals, publication receipts, measurements, and media provenance each have a named system of record.
+- **Workflows coordinate transitions.** Every lifecycle stage defines its inputs, outputs, checks, and next accountable handoff.
+- **Humans authorize publication.** No review result or orchestration state can substitute for a checksum-bound approval.
 
 ## Eight record-owning tools
 
@@ -47,35 +42,34 @@ operator choices. Publication still requires a checksum-bound human approval.
 
 ## Eleven lifecycle workflows
 
-1. [Governance](https://github.com/kujolang/kujo-workflows/tree/main/publishing-house-governance) — set the house mandate, portfolio priorities, and accountable operating handoffs.
-2. [Daily Desk](https://github.com/kujolang/kujo-workflows/tree/main/publishing-house-daily-desk) — normalize and route the editorial packet.
-3. [Commissioning](https://github.com/kujolang/kujo-workflows/tree/main/publishing-house-commissioning) — create the brief, assignments, and evidence work order.
-4. [Evidence Dossier](https://github.com/kujolang/kujo-workflows/tree/main/publishing-house-evidence-dossier) — bind material claims to reviewed evidence and rights records.
-5. [Primary Piece](https://github.com/kujolang/kujo-workflows/tree/main/publishing-house-primary-piece) — create the authoritative, evidence-linked artifact.
-6. [Asset Production](https://github.com/kujolang/kujo-workflows/tree/main/publishing-house-asset-production) — produce supported, accessible media manifests.
-7. [Editorial Review](https://github.com/kujolang/kujo-workflows/tree/main/publishing-house-editorial-review) — run independent review and a bounded revision loop.
-8. [Adaptation](https://github.com/kujolang/kujo-workflows/tree/main/publishing-house-adaptation) — create a versioned derivative plan without expanding approved claims.
-9. [Format Production](https://github.com/kujolang/kujo-workflows/tree/main/publishing-house-format-production) — produce newsletter, social, case-study, and audiovisual packages.
-10. [Approval and Publication](https://github.com/kujolang/kujo-workflows/tree/main/publishing-house-approval-publication) — pause for exact human approval before any bounded PressWire effect.
-11. [Post-Publication](https://github.com/kujolang/kujo-workflows/tree/main/publishing-house-post-publication) — record measurements, learning, limits, and a non-commissioning follow-up recommendation.
+- **[Governance](https://github.com/kujolang/kujo-workflows/tree/main/publishing-house-governance)** sets the house mandate, portfolio priorities, and accountable operating handoffs.
+- **[Daily Desk](https://github.com/kujolang/kujo-workflows/tree/main/publishing-house-daily-desk)** normalizes and routes the editorial packet.
+- **[Commissioning](https://github.com/kujolang/kujo-workflows/tree/main/publishing-house-commissioning)** creates the brief, assignments, and evidence work order.
+- **[Evidence Dossier](https://github.com/kujolang/kujo-workflows/tree/main/publishing-house-evidence-dossier)** binds material claims to reviewed evidence and rights records.
+- **[Primary Piece](https://github.com/kujolang/kujo-workflows/tree/main/publishing-house-primary-piece)** creates the authoritative, evidence-linked artifact.
+- **[Asset Production](https://github.com/kujolang/kujo-workflows/tree/main/publishing-house-asset-production)** produces supported, accessible media manifests.
+- **[Editorial Review](https://github.com/kujolang/kujo-workflows/tree/main/publishing-house-editorial-review)** runs independent review and a bounded revision loop.
+- **[Adaptation](https://github.com/kujolang/kujo-workflows/tree/main/publishing-house-adaptation)** creates a versioned derivative plan without expanding approved claims.
+- **[Format Production](https://github.com/kujolang/kujo-workflows/tree/main/publishing-house-format-production)** produces newsletter, social, case-study, and audiovisual packages.
+- **[Approval and Publication](https://github.com/kujolang/kujo-workflows/tree/main/publishing-house-approval-publication)** pauses for exact human approval before any bounded PressWire effect.
+- **[Post-Publication](https://github.com/kujolang/kujo-workflows/tree/main/publishing-house-post-publication)** records measurements, learning, limits, and a non-commissioning follow-up recommendation.
 
 ## Eleven operator skills
 
-Start with [Kujo Publishing House Workflows](https://github.com/kujolang/kujo-skills/tree/main/skills/kujo-publishing-house-workflows) for lifecycle routing. Use the eight tool skills for exact CLI contracts: [StoryDesk](https://github.com/kujolang/kujo-skills/tree/main/skills/kujo-storydesk-workflows), [Dossier](https://github.com/kujolang/kujo-skills/tree/main/skills/kujo-dossier-workflows), [GalleyPack](https://github.com/kujolang/kujo-skills/tree/main/skills/kujo-galleypack-workflows), [BluePencil](https://github.com/kujolang/kujo-skills/tree/main/skills/kujo-bluepencil-workflows), [VersionSeal](https://github.com/kujolang/kujo-skills/tree/main/skills/kujo-versionseal-workflows), [PressWire](https://github.com/kujolang/kujo-skills/tree/main/skills/kujo-presswire-workflows), [ReaderSignal](https://github.com/kujolang/kujo-skills/tree/main/skills/kujo-readersignal-workflows), and [AssetWorks](https://github.com/kujolang/kujo-skills/tree/main/skills/kujo-assetworks-workflows). Complete setup with [Publishing House Profile Setup](https://github.com/kujolang/kujo-skills/tree/main/skills/publishing-house-profile-setup) and [Publishing House Quality Calibration](https://github.com/kujolang/kujo-skills/tree/main/skills/publishing-house-quality-calibration).
+- **Route the lifecycle.** [Kujo Publishing House Workflows](https://github.com/kujolang/kujo-skills/tree/main/skills/kujo-publishing-house-workflows) tells operators which bounded workflow to run and what proof to expect.
+- **Operate the records.** Use the exact tool contracts for [StoryDesk](https://github.com/kujolang/kujo-skills/tree/main/skills/kujo-storydesk-workflows), [Dossier](https://github.com/kujolang/kujo-skills/tree/main/skills/kujo-dossier-workflows), [GalleyPack](https://github.com/kujolang/kujo-skills/tree/main/skills/kujo-galleypack-workflows), [BluePencil](https://github.com/kujolang/kujo-skills/tree/main/skills/kujo-bluepencil-workflows), [VersionSeal](https://github.com/kujolang/kujo-skills/tree/main/skills/kujo-versionseal-workflows), [PressWire](https://github.com/kujolang/kujo-skills/tree/main/skills/kujo-presswire-workflows), [ReaderSignal](https://github.com/kujolang/kujo-skills/tree/main/skills/kujo-readersignal-workflows), and [AssetWorks](https://github.com/kujolang/kujo-skills/tree/main/skills/kujo-assetworks-workflows).
+- **Set up and calibrate.** [Publishing House Profile Setup](https://github.com/kujolang/kujo-skills/tree/main/skills/publishing-house-profile-setup) installs the working profile, while [Publishing House Quality Calibration](https://github.com/kujolang/kujo-skills/tree/main/skills/publishing-house-quality-calibration) aligns review standards and thresholds.
 
 ## The approval boundary
 
-`OBSERVE`, `PROPOSE`, and `ACT` are upper bounds, not suggestions. BluePencil
-review is editorial evidence; Dispatch pause state is orchestration evidence;
-neither is publication authority. VersionSeal binds a human decision to exact
-GalleyPack bytes, destination, action, conditions, and expiry. If reviewed
-bytes change, approval is invalidated. PressWire is the only tool allowed to
-create a publication effect and receipt.
+> Observe, propose, and act are upper bounds, not suggestions. BluePencil review is editorial evidence and Dispatch pause state is orchestration evidence; neither grants publication authority. VersionSeal binds a human decision to exact GalleyPack bytes, destination, action, conditions, and expiry. Any byte change invalidates approval. PressWire alone may create the publication effect and receipt.
 
 ## Run the complete local proof
 
-Install the locked toolchain or inspect the all-eleven fixture in the
-[Kujo Workflows repository](https://github.com/kujolang/kujo-workflows/tree/main/docs/publishing-house).
-The fixture requires no credentials or network access and cannot publish to a
-live destination. Its proof covers contract loading, tool versions, record
-checksums, revision, pause/resume, idempotency, and the bounded local effect.
+Install the locked toolchain or inspect the all-eleven fixture in the [Kujo Workflows repository](https://github.com/kujolang/kujo-workflows/tree/main/docs/publishing-house). It requires no credentials or network access and cannot publish to a live destination.
+
+- Contract and role instruction loading
+- Locked tool versions and record checksums
+- Independent review and bounded revision
+- Approval pause and exact resume state
+- Idempotent publication simulation and local receipt

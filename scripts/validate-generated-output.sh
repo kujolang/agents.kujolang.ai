@@ -235,6 +235,9 @@ else
 	if ! grep -Fq '.agent-platform-shell > * { min-inline-size: 0; }' "$OUT_DIR/assets/css/site.css"; then
 		record_failure "FAIL agent-platform-responsive: grid children are not allowed to shrink"
 	fi
+	if ! grep -Fq '.agent-platform-body table { display: table;' "$OUT_DIR/assets/css/site.css"; then
+		record_failure "FAIL agent-platform-table: profile table is still configured as a scrolling block"
+	fi
 	if ! grep -Fq 'https://agents.kujolang.ai/assets/images/social/agent-development-platform.jpg' "$agent_platform_page"; then
 		record_failure "FAIL agent-platform-social: platform social card is missing"
 	fi
@@ -268,6 +271,25 @@ if [[ -f "$OUT_DIR/publishing-house-system/index.html" ]]; then
 	if [[ ! -f "$OUT_DIR/assets/images/publishing-house-system-motion.webp" ]]; then
 		record_failure "FAIL publishing-system-dither: motion source asset is missing"
 	fi
+	for required_system_markup in \
+		'class="sk-card publishing-system-jump"' \
+		'<blockquote>'; do
+		if ! grep -Fq -- "$required_system_markup" "$OUT_DIR/publishing-house-system/index.html"; then
+			record_failure "FAIL publishing-system-structure: missing $required_system_markup"
+		fi
+	done
+	if grep -Eq '<p>[0-9]+\. ' "$OUT_DIR/publishing-house-system/index.html"; then
+		record_failure "FAIL publishing-system-workflows: workflow steps rendered as numbered paragraphs"
+	fi
+	for required_section_id in operating-model eight-record-owning-tools eleven-lifecycle-workflows eleven-operator-skills the-approval-boundary run-the-complete-local-proof; do
+		if ! grep -Fq -- "\"$required_section_id\"" "$OUT_DIR/assets/js/site.js"; then
+			record_failure "FAIL publishing-system-navigation: missing runtime section target $required_section_id"
+		fi
+	done
+fi
+
+if ! grep -Fq 'scrollbar-color: var(--site-scrollbar-thumb) var(--site-scrollbar-track);' "$OUT_DIR/assets/css/site.css" || ! grep -Fq '*::-webkit-scrollbar-thumb' "$OUT_DIR/assets/css/site.css"; then
+	record_failure "FAIL site-scrollbars: shared themed scrollbar styles are missing"
 fi
 
 if [[ ! -s "$OUT_DIR/.well-known/kujo-site-index.json" || ! -s "$OUT_DIR/assets/js/kujo-webmcp.js" ]]; then
