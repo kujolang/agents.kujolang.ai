@@ -93,6 +93,13 @@ def main() -> int:
             "README.md",
         ),
         card(
+            "agents-videoops",
+            "VideoOps",
+            "A five-stage production line for planned, evidenced, and independently reviewed video.",
+            "Agent set",
+            "README.md",
+        ),
+        card(
             "publishing-house-system",
             "Publishing House System",
             "23 agents, 8 record owners, 11 workflows, and 11 operator skills.",

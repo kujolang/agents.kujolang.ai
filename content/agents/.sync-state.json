@@ -85,7 +85,14 @@
       "social-community-editor",
       "case-study-editor",
       "video-audio-producer"
+    ],
+    "videoops": [
+      "videoops-creative-director",
+      "videoops-asset-scout",
+      "videoops-media-generator",
+      "videoops-hyperframes-editor",
+      "videoops-video-critic"
     ]
   },
-  "updated_at": "2026-08-15T02:16:59Z"
+  "updated_at": "2026-09-04T22:29:47Z"
 }

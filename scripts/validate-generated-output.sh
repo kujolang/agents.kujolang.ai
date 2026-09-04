@@ -104,15 +104,25 @@ if [[ -f "$OUT_DIR/agents/webops/index.html" ]]; then
 	if ! grep -Eq 'alt="Agent image for Trend Scout"[^>]*loading="eager"[^>]*fetchpriority="high"' "$OUT_DIR/agents/webops/index.html"; then record_failure "FAIL webops-priority-image: first portrait is not prioritized"; fi
 fi
 
+if [[ -f "$OUT_DIR/agents/videoops/index.html" ]]; then
+	if grep -qi '<meta name="robots" content="noindex' "$OUT_DIR/agents/videoops/index.html"; then record_failure "FAIL videoops-indexability: populated collection must be indexable"; fi
+	if [[ -f "$OUT_DIR/sitemap.xml" ]] && ! grep -q 'https://agents.kujolang.ai/agents/videoops/' "$OUT_DIR/sitemap.xml"; then record_failure "FAIL videoops-sitemap: populated collection is missing from sitemap"; fi
+	videoops_count="$(find "$OUT_DIR/agents" -mindepth 2 -maxdepth 2 -name index.html -type f -exec grep -l 'VideoOps' {} + | wc -l | tr -d ' ')"
+	if [[ "$videoops_count" -lt 5 ]]; then record_failure "FAIL videoops-count: expected at least 5 individual VideoOps pages, found $videoops_count"; fi
+	if ! grep -q 'class="card-grid agent-category-grid"' "$OUT_DIR/agents/videoops/index.html"; then record_failure "FAIL videoops-collection: missing agent card grid"; fi
+	if grep -Eqi 'coming soon|placeholder|lorem ipsum' "$OUT_DIR/agents/videoops/index.html"; then record_failure "FAIL videoops-placeholder: collection contains placeholder copy"; fi
+	if ! grep -q 'listing-card-image--mark' "$OUT_DIR/agents/videoops/index.html"; then record_failure "FAIL videoops-fallback-image: generic Kujo fallback is missing"; fi
+fi
+
 if [[ -f "$OUT_DIR/agents/chain-of-command/index.html" ]] && ! grep -Eq 'alt="Agent image for General Commander"[^>]*loading="eager"[^>]*fetchpriority="high"' "$OUT_DIR/agents/chain-of-command/index.html"; then
 	record_failure "FAIL chain-priority-image: first portrait is not prioritized"
 fi
 
 if [[ -f "$OUT_DIR/agents/index.html" ]]; then
 	agent_directory_carousels="$(grep -o 'class="agent-carousel"' "$OUT_DIR/agents/index.html" | wc -l | tr -d ' ')"
-	if [[ "$agent_directory_carousels" -ne 3 ]]; then record_failure "FAIL agent-directory-carousels: expected 3 agent-set carousels, found $agent_directory_carousels"; fi
+	if [[ "$agent_directory_carousels" -ne 4 ]]; then record_failure "FAIL agent-directory-carousels: expected 4 agent-set carousels, found $agent_directory_carousels"; fi
 	if grep -Eq 'data-agent-category-filter|data-agent-sort|class="agent-filter-bar"' "$OUT_DIR/agents/index.html"; then record_failure "FAIL agent-directory-filters: category or sort controls remain"; fi
-	if [[ "$(grep -o 'data-carousel-prev' "$OUT_DIR/agents/index.html" | wc -l | tr -d ' ')" -ne 3 ]] || [[ "$(grep -o 'data-carousel-next' "$OUT_DIR/agents/index.html" | wc -l | tr -d ' ')" -ne 3 ]]; then record_failure "FAIL agent-directory-controls: expected previous and next controls for every set"; fi
+	if [[ "$(grep -o 'data-carousel-prev' "$OUT_DIR/agents/index.html" | wc -l | tr -d ' ')" -ne 4 ]] || [[ "$(grep -o 'data-carousel-next' "$OUT_DIR/agents/index.html" | wc -l | tr -d ' ')" -ne 4 ]]; then record_failure "FAIL agent-directory-controls: expected previous and next controls for every set"; fi
 	if ! grep -q '&lt;</button>' "$OUT_DIR/agents/index.html" || ! grep -q '&gt;</button>' "$OUT_DIR/agents/index.html"; then record_failure "FAIL agent-directory-control-symbols: carousel controls must use less-than and greater-than symbols"; fi
 fi
 
@@ -142,7 +152,7 @@ if [[ -f "$OUT_DIR/sitemap.xml" ]]; then
 	if ! grep -q '<urlset' "$OUT_DIR/sitemap.xml"; then
 		record_failure "FAIL sitemap-format: $OUT_DIR/sitemap.xml"
 	fi
-	for aggregate_url in 'https://agents.kujolang.ai/' 'https://agents.kujolang.ai/agents/' 'https://agents.kujolang.ai/agents/chain-of-command/' 'https://agents.kujolang.ai/agents/webops/' 'https://agents.kujolang.ai/agents/publishing-house/'; do
+	for aggregate_url in 'https://agents.kujolang.ai/' 'https://agents.kujolang.ai/agents/' 'https://agents.kujolang.ai/agents/chain-of-command/' 'https://agents.kujolang.ai/agents/webops/' 'https://agents.kujolang.ai/agents/publishing-house/' 'https://agents.kujolang.ai/agents/videoops/'; do
 		if ! grep -A1 -F "<loc>$aggregate_url</loc>" "$OUT_DIR/sitemap.xml" | grep -Eq '<lastmod>[0-9]{4}-[0-9]{2}-[0-9]{2}</lastmod>'; then
 			record_failure "FAIL sitemap-lastmod: $aggregate_url has no freshness date"
 		fi
@@ -150,7 +160,7 @@ if [[ -f "$OUT_DIR/sitemap.xml" ]]; then
 fi
 
 if [[ -f "$OUT_DIR/llms.txt" ]]; then
-	for agent_set_url in 'https://agents.kujolang.ai/agents/chain-of-command/' 'https://agents.kujolang.ai/agents/webops/' 'https://agents.kujolang.ai/agents/publishing-house/'; do
+	for agent_set_url in 'https://agents.kujolang.ai/agents/chain-of-command/' 'https://agents.kujolang.ai/agents/webops/' 'https://agents.kujolang.ai/agents/publishing-house/' 'https://agents.kujolang.ai/agents/videoops/'; do
 		if ! grep -Fq "$agent_set_url" "$OUT_DIR/llms.txt"; then record_failure "FAIL llms-agent-set: missing $agent_set_url"; fi
 	done
 fi
@@ -183,7 +193,10 @@ if [[ -f "$OUT_DIR/index.html" ]]; then
 	if ! grep -q 'id="publishing-house"' "$OUT_DIR/index.html"; then
 		record_failure "FAIL agent-set: homepage does not render the Publishing House set"
 	fi
-	if ! grep -q 'href="/agents/chain-of-command/">Chain of Command</a>' "$OUT_DIR/index.html" || ! grep -q 'href="/agents/webops/">WebOps</a>' "$OUT_DIR/index.html" || ! grep -q 'href="/agents/publishing-house/">Publishing House</a>' "$OUT_DIR/index.html"; then
+	if ! grep -q 'id="videoops"' "$OUT_DIR/index.html"; then
+		record_failure "FAIL agent-set: homepage does not render the VideoOps set"
+	fi
+	if ! grep -q 'href="/agents/chain-of-command/">Chain of Command</a>' "$OUT_DIR/index.html" || ! grep -q 'href="/agents/webops/">WebOps</a>' "$OUT_DIR/index.html" || ! grep -q 'href="/agents/publishing-house/">Publishing House</a>' "$OUT_DIR/index.html" || ! grep -q 'href="/agents/videoops/">VideoOps</a>' "$OUT_DIR/index.html"; then
 		record_failure "FAIL agent-navigation: homepage does not render all direct agent-set links"
 	fi
 	if ! grep -q 'class="site-nav-dropdown"' "$OUT_DIR/index.html" || ! grep -q 'href="/publishing-house-system/">System overview</a>' "$OUT_DIR/index.html"; then

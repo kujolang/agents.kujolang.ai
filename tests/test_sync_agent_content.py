@@ -57,4 +57,19 @@ class SyncTests(unittest.TestCase):
             generated=(output/"site-qa-operator.md").read_text()
             self.assertIn('featured_image: "content/media/agents/site-qa-operator.webp"',generated)
 
+    def test_videoops_prefix_avoids_cross_set_slug_collisions(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            site=Path(tmp); root=site/"kujo-agents"; output=site/"content/agents"; output.mkdir(parents=True)
+            folder=root/"videoops/creative-director"; folder.mkdir(parents=True)
+            (folder/"AGENT.md").write_text(contract("Video Creative Director","Stage","Planning","Create a bounded timed production plan."))
+            (root/"videoops/videoops-catalog.json").write_text(json.dumps({"agents":[{"slug":"creative-director"}]}))
+            existing=output/"creative-director.md"; existing.write_text('categories: ["Publishing House"]\n')
+            module.SITE_ROOT=site; module.OUTPUT_ROOT=output; module.STATE_PATH=output/".sync-state.json"
+            count,slugs=module.sync_set(root,"videoops",{"sets":{}})
+            self.assertEqual(1,count); self.assertEqual(["videoops-creative-director"],slugs)
+            self.assertTrue(existing.is_file())
+            generated=(output/"videoops-creative-director.md").read_text()
+            self.assertIn('custom_url: "videoops-creative-director"',generated)
+            self.assertIn('/videoops/creative-director/AGENT.md',generated)
+
 if __name__=="__main__": unittest.main(verbosity=2)

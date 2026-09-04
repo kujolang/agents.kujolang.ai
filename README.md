@@ -2,8 +2,9 @@
 
 The showcase for Kujo's repository-owned Agent Development Platform and the
 static library for the [Kujo Chain of Command](https://github.com/kujolang/kujo-agents/tree/main/chain-of-command),
-[Kujo WebOps](https://github.com/kujolang/kujo-agents/tree/main/webops), and
-[Kujo Publishing House](https://github.com/kujolang/kujo-agents/tree/main/publishing-house),
+[Kujo WebOps](https://github.com/kujolang/kujo-agents/tree/main/webops),
+[Kujo Publishing House](https://github.com/kujolang/kujo-agents/tree/main/publishing-house), and
+[Kujo VideoOps](https://github.com/kujolang/kujo-agents/tree/main/videoops),
 built with [Kujo SSG](https://github.com/kujolang/ssg) and the vendored SiteKit distribution.
 
 The `/agent-development-platform/` page documents the public installer,
@@ -61,7 +62,9 @@ python3 scripts/sync-agent-content.py /path/to/kujo-agents
 kujo run ./build.kujo -- --site-url https://agents.kujolang.ai
 ```
 
-Use `--set chain-of-command`, `--set webops`, or `--set publishing-house` for a scoped refresh. The sync
+Use `--set chain-of-command`, `--set webops`, `--set publishing-house`, or
+`--set videoops` for a scoped refresh. VideoOps profile slugs use a
+`videoops-` prefix to avoid collisions with other first-class sets. The sync
 state owns slugs per set, so a scoped refresh can remove stale pages from that
 set but cannot delete another set. `last_updated` comes from each canonical
 contract's Git history (or filesystem modification date when Git evidence is

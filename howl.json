@@ -70,6 +70,18 @@
       "show_url": false
     },
     {
+      "id": "agents-videoops",
+      "title": "VideoOps",
+      "tagline": "A five-stage production line for planned, evidenced, and independently reviewed video.",
+      "file": "README.md",
+      "variant": "social",
+      "label": "Agent set",
+      "background_image": "assets/images/agent-hero-background.webp",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_border": true,
+      "show_url": false
+    },
+    {
       "id": "publishing-house-system",
       "title": "Publishing House System",
       "tagline": "23 agents, 8 record owners, 11 workflows, and 11 operator skills.",
@@ -1025,6 +1037,66 @@
       "variant": "social",
       "label": "Publishing House",
       "background_image": "content/media/agents/video-audio-producer.webp",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_border": true,
+      "show_url": false
+    },
+    {
+      "id": "videoops-asset-scout",
+      "title": "Video Asset Scout",
+      "tagline": "Resolve approved asset requirements from first-party, captured,\u2026",
+      "file": "content/agents/videoops-asset-scout.md",
+      "variant": "social",
+      "label": "VideoOps",
+      "background_image": "assets/images/agent-hero-background.webp",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_border": true,
+      "show_url": false
+    },
+    {
+      "id": "videoops-creative-director",
+      "title": "Video Creative Director",
+      "tagline": "Transform validated PackWrite intake into a complete timed\u2026",
+      "file": "content/agents/videoops-creative-director.md",
+      "variant": "social",
+      "label": "VideoOps",
+      "background_image": "assets/images/agent-hero-background.webp",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_border": true,
+      "show_url": false
+    },
+    {
+      "id": "videoops-hyperframes-editor",
+      "title": "Video HyperFrames Editor",
+      "tagline": "Translate approved planning and asset contracts into a\u2026",
+      "file": "content/agents/videoops-hyperframes-editor.md",
+      "variant": "social",
+      "label": "VideoOps",
+      "background_image": "assets/images/agent-hero-background.webp",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_border": true,
+      "show_url": false
+    },
+    {
+      "id": "videoops-media-generator",
+      "title": "Video Media Generator",
+      "tagline": "Create only the smallest set of custom media explicitly marked\u2026",
+      "file": "content/agents/videoops-media-generator.md",
+      "variant": "social",
+      "label": "VideoOps",
+      "background_image": "assets/images/agent-hero-background.webp",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_border": true,
+      "show_url": false
+    },
+    {
+      "id": "videoops-video-critic",
+      "title": "Video Critic",
+      "tagline": "Independently compare the rendered artifact with approved intent\u2026",
+      "file": "content/agents/videoops-video-critic.md",
+      "variant": "social",
+      "label": "VideoOps",
+      "background_image": "assets/images/agent-hero-background.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false

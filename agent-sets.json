@@ -3,6 +3,7 @@
   "sets": [
     {"id": "chain-of-command", "source": "kujo-agents/chain-of-command", "category": "Chain of Command", "public_path": "/agents/chain-of-command/"},
     {"id": "webops", "source": "kujo-agents/webops", "category": "WebOps", "public_path": "/agents/webops/", "featured_image": "assets/images/kujo-logomark.svg"},
-    {"id": "publishing-house", "source": "kujo-agents/publishing-house", "category": "Publishing House", "public_path": "/agents/publishing-house/", "featured_image": "assets/images/kujo-logomark.svg"}
+    {"id": "publishing-house", "source": "kujo-agents/publishing-house", "category": "Publishing House", "public_path": "/agents/publishing-house/", "featured_image": "assets/images/kujo-logomark.svg"},
+    {"id": "videoops", "source": "kujo-agents/videoops", "category": "VideoOps", "public_path": "/agents/videoops/", "featured_image": "assets/images/kujo-logomark.svg"}
   ]
 }

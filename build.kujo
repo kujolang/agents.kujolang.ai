@@ -4393,9 +4393,11 @@ func build_site(settings) {
 		chain_latest_updated := ""
 		webops_latest_updated := ""
 		publishing_house_latest_updated := ""
+		videoops_latest_updated := ""
 		chain_schema_items := []
 		webops_schema_items := []
 		publishing_house_schema_items := []
+		videoops_schema_items := []
 
 		default_collection_item_template := post_template
 		collection_item_template_path := path_join(templates_dir, collection_slug + ".html")
@@ -4482,6 +4484,8 @@ func build_site(settings) {
 				webops_latest_updated = item_last_updated
 			} else if item_category_text == "Publishing House" && item_last_updated > publishing_house_latest_updated {
 				publishing_house_latest_updated = item_last_updated
+			} else if item_category_text == "VideoOps" && item_last_updated > videoops_latest_updated {
+				videoops_latest_updated = item_last_updated
 			}
 
 			route := collection_slug + "/" + slug + "/"
@@ -4561,6 +4565,8 @@ func build_site(settings) {
 					webops_schema_items = push(webops_schema_items, item_schema_entry)
 				} else if item_set_slug == "publishing-house" {
 					publishing_house_schema_items = push(publishing_house_schema_items, item_schema_entry)
+				} else if item_set_slug == "videoops" {
+					videoops_schema_items = push(videoops_schema_items, item_schema_entry)
 				}
 			}
 			item_html := render_layout(
@@ -4652,6 +4658,7 @@ func build_site(settings) {
 		chain_of_command_cards := ""
 		webops_cards := ""
 		publishing_house_cards := ""
+		videoops_cards := ""
 		preview_cards := ""
 		location_cards := ""
 		preview_count := 0
@@ -4679,6 +4686,8 @@ func build_site(settings) {
 					webops_cards = webops_cards + item_card_html
 				} else if item_set_slug == "publishing-house" {
 					publishing_house_cards = publishing_house_cards + item_card_html
+				} else if item_set_slug == "videoops" {
+					videoops_cards = videoops_cards + item_card_html
 				}
 			}
 			collection_cards := collection_cards + item_card_html
@@ -4775,6 +4784,15 @@ func build_site(settings) {
 						"system_overview": "<aside class=\"publishing-system-callout\"><div><p class=\"eyebrow\">Roster and operating map</p><h2>This page shows who. The system page shows how.</h2><p>See how the 23 roles coordinate through eight record-owning tools, eleven lifecycle workflows, eleven operator skills, approval boundaries, and locked local proof.</p></div><a class=\"sk-button\" href=\"/publishing-house-system/\">Explore the system</a></aside>",
 						"last_updated": publishing_house_latest_updated,
 						"schema_has_part": join(publishing_house_schema_items, ",")
+					},
+					{
+						"title": "VideoOps",
+						"slug": "videoops",
+						"description": "A five-stage video production line for planning, rights-aware asset resolution, explicit generation, HyperFrames editing, and independent critique.",
+						"cards": videoops_cards,
+						"system_overview": "",
+						"last_updated": videoops_latest_updated,
+						"schema_has_part": join(videoops_schema_items, ",")
 					}
 				]
 				agent_set_idx := 0
@@ -4829,6 +4847,7 @@ func build_site(settings) {
 				append_file(llms_collections_tmp, "- [Chain of Command agents](" + site_url + "/agents/chain-of-command/)\n")
 				append_file(llms_collections_tmp, "- [WebOps agents](" + site_url + "/agents/webops/)\n")
 				append_file(llms_collections_tmp, "- [Publishing House agents](" + site_url + "/agents/publishing-house/)\n")
+				append_file(llms_collections_tmp, "- [VideoOps agents](" + site_url + "/agents/videoops/)\n")
 			}
 			llms_item_idx := 0
 			loop {
