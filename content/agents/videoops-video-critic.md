@@ -9,7 +9,7 @@ keywords: "Kujo agent, VideoOps, video production, Video Critic"
 featured_image: "assets/images/kujo-logomark.svg"
 categories: ["VideoOps"]
 tags: ["Review"]
-order: 5
+order: 6
 last_updated: 2026-09-04
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/videoops/video-critic/AGENT.md"
 ---
@@ -63,7 +63,9 @@ Skills:
 - `videoops-actionable-fix-writing`
 - `videoops-approval-decision`
 
-Workflow: `videoops-quality-review`. Tool availability never broadens permission.
+Workflows:
+- `videoops-quality-review`
+Tool availability never broadens permission.
 
 ## Workflow
 

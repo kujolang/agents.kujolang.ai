@@ -4788,7 +4788,7 @@ func build_site(settings) {
 					{
 						"title": "VideoOps",
 						"slug": "videoops",
-						"description": "A five-stage video production line for planning, rights-aware asset resolution, explicit generation, HyperFrames editing, and independent critique.",
+						"description": "A production coordinator and five-stage video team for planning, rights-aware asset resolution, explicit generation, HyperFrames editing, and independent critique.",
 						"cards": videoops_cards,
 						"system_overview": "",
 						"last_updated": videoops_latest_updated,

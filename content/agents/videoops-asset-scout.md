@@ -9,7 +9,7 @@ keywords: "Kujo agent, VideoOps, video production, Video Asset Scout"
 featured_image: "assets/images/kujo-logomark.svg"
 categories: ["VideoOps"]
 tags: ["Asseting"]
-order: 2
+order: 3
 last_updated: 2026-09-04
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/videoops/asset-scout/AGENT.md"
 ---
@@ -59,7 +59,9 @@ Skills:
 - `videoops-asset-manifest-maintenance`
 - `videoops-generation-handoff`
 
-Workflow: `videoops-asset-resolution`. Tool availability never broadens permission.
+Workflows:
+- `videoops-asset-resolution`
+Tool availability never broadens permission.
 
 ## Workflow
 

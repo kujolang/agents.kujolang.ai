@@ -72,7 +72,7 @@
     {
       "id": "agents-videoops",
       "title": "VideoOps",
-      "tagline": "A five-stage production line for planned, evidenced, and independently reviewed video.",
+      "tagline": "A production coordinator and five-stage team for planned, evidenced, and independently reviewed video.",
       "file": "README.md",
       "variant": "social",
       "label": "Agent set",
@@ -1082,6 +1082,18 @@
       "title": "Video Media Generator",
       "tagline": "Create only the smallest set of custom media explicitly marked\u2026",
       "file": "content/agents/videoops-media-generator.md",
+      "variant": "social",
+      "label": "VideoOps",
+      "background_image": "assets/images/agent-hero-background.webp",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_border": true,
+      "show_url": false
+    },
+    {
+      "id": "videoops-producer",
+      "title": "VideoOps Producer",
+      "tagline": "Accept an arbitrary video-production mission and coordinate the\u2026",
+      "file": "content/agents/videoops-producer.md",
       "variant": "social",
       "label": "VideoOps",
       "background_image": "assets/images/agent-hero-background.webp",

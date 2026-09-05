@@ -9,7 +9,7 @@ keywords: "Kujo agent, VideoOps, video production, Video Media Generator"
 featured_image: "assets/images/kujo-logomark.svg"
 categories: ["VideoOps"]
 tags: ["Asseting"]
-order: 3
+order: 4
 last_updated: 2026-09-04
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/videoops/media-generator/AGENT.md"
 ---
@@ -57,7 +57,9 @@ Skills:
 - `videoops-generation-variant-selection`
 - `videoops-generated-asset-manifesting`
 
-Workflow: `videoops-media-generation`. Tool availability never broadens permission.
+Workflows:
+- `videoops-media-generation`
+Tool availability never broadens permission.
 
 ## Workflow
 

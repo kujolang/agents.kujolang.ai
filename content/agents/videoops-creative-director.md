@@ -9,7 +9,7 @@ keywords: "Kujo agent, VideoOps, video production, Video Creative Director"
 featured_image: "assets/images/kujo-logomark.svg"
 categories: ["VideoOps"]
 tags: ["Planning"]
-order: 1
+order: 2
 last_updated: 2026-09-04
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/videoops/creative-director/AGENT.md"
 ---
@@ -63,7 +63,9 @@ Skills:
 - `videoops-asset-requirement-specification`
 - `videoops-platform-duration-planning`
 
-Workflow: `videoops-creative-planning`. Tool availability never broadens permission.
+Workflows:
+- `videoops-creative-planning`
+Tool availability never broadens permission.
 
 ## Workflow
 

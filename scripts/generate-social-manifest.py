@@ -95,7 +95,7 @@ def main() -> int:
         card(
             "agents-videoops",
             "VideoOps",
-            "A five-stage production line for planned, evidenced, and independently reviewed video.",
+            "A production coordinator and five-stage team for planned, evidenced, and independently reviewed video.",
             "Agent set",
             "README.md",
         ),

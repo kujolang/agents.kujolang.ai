@@ -15,7 +15,7 @@ def fields(path):
 
 def main():
     errors=[]; state=json.loads((CONTENT/".sync-state.json").read_text()); sets=state.get("sets",{})
-    expected_counts={"chain-of-command":28,"webops":28,"publishing-house":23,"videoops":5}
+    expected_counts={"chain-of-command":28,"webops":28,"publishing-house":23,"videoops":6}
     expected_categories={"chain-of-command":"Chain of Command","webops":"WebOps","publishing-house":"Publishing House","videoops":"VideoOps"}
     for set_id,expected_count in expected_counts.items():
         slugs=sets.get(set_id,[])
@@ -76,6 +76,6 @@ def main():
             if f'https://github.com/kujolang/kujo-agents/tree/main/{set_id}' not in text: errors.append(f"{set_id}: visible source provenance missing")
     if errors:
         print(json.dumps({"valid":False,"errors":errors},indent=2)); return 1
-    print(json.dumps({"valid":True,"chain_of_command":28,"webops":28,"publishing_house":23,"videoops":5,"individual_routes":84},indent=2)); return 0
+    print(json.dumps({"valid":True,"chain_of_command":28,"webops":28,"publishing_house":23,"videoops":6,"individual_routes":85},indent=2)); return 0
 
 if __name__=="__main__": raise SystemExit(main())

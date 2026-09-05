@@ -87,6 +87,7 @@
       "video-audio-producer"
     ],
     "videoops": [
+      "videoops-producer",
       "videoops-creative-director",
       "videoops-asset-scout",
       "videoops-media-generator",
@@ -94,5 +95,5 @@
       "videoops-video-critic"
     ]
   },
-  "updated_at": "2026-09-04T22:29:47Z"
+  "updated_at": "2026-09-05T01:44:59Z"
 }

@@ -9,7 +9,7 @@ keywords: "Kujo agent, VideoOps, video production, Video HyperFrames Editor"
 featured_image: "assets/images/kujo-logomark.svg"
 categories: ["VideoOps"]
 tags: ["Production"]
-order: 4
+order: 5
 last_updated: 2026-09-04
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/videoops/hyperframes-editor/AGENT.md"
 ---
@@ -66,7 +66,9 @@ Skills:
 - `videoops-render-validation`
 - `videoops-fix-list-application`
 
-Workflow: `videoops-hyperframes-edit`. Tool availability never broadens permission.
+Workflows:
+- `videoops-hyperframes-edit`
+Tool availability never broadens permission.
 
 ## Workflow
 
