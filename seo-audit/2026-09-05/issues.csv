@@ -1,0 +1,2 @@
+id,phase,category,severity,affected_urls,affected_count,evidence,expected_benefit,confidence,difficulty,recommended_action,owner,status
+TRIBUNAL-RELEASE-COPY,after,content currentness,P2,https://agents.kujolang.ai/,1,Immutable baseline and current rendered content; Tribunal v1.0.1 tag and release receipt,Readers can find patch changes and accurate operating boundaries,High,Low,Publish factual release and documentation links,repository maintainers,resolved

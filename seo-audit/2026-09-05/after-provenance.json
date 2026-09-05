@@ -1,0 +1,16 @@
+{
+  "sourceRevision": "4ff16dcdede002d2fc27d980e5e80617e25c194c",
+  "runtimeVersion": "kujo 1.2.2",
+  "runtimeArchiveSha256": "4aab1033235af3179c12e6b311370a952589eb0432c8675dc0e58f1e9466921a",
+  "runtimeBinarySha256": "bee718fcabdda0de929eab330e8fa30051ce04bb4cfb47ea66e4554f9dbe4c8a",
+  "runtimeSourceTag": "v1.2.2",
+  "runtimeSourceRevision": "22582e7f0111a1005002579b44f5d03cd2ed1c9c",
+  "runtimeReceipt": "Publisher .sha256 verified before extracting executable; local override only",
+  "buildExit": 0,
+  "validationExit": 0,
+  "buildLog": "raw/after-build.log",
+  "validationLog": "raw/after-validation.log",
+  "generatedAt": "2026-09-05T15:05:58.919052+00:00",
+  "command": "<verified Kujo v1.2.2 binary> run ./build.kujo -- --site-url https://agents.kujolang.ai",
+  "deploymentRun": 33974294890
+}

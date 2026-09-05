@@ -1,0 +1,11 @@
+phase,source_url,source_variant,http_status,target_url,chain_length,final_status,canonical_target,query_preserved,verification,issues
+baseline,http://agents.kujolang.ai/,apex HTTP,301,https://agents.kujolang.ai/,1,200,yes,n/a,live request with redirects followed,
+baseline,https://agents.kujolang.ai/,apex HTTPS,200,https://agents.kujolang.ai/,0,200,yes,n/a,live request with redirects followed,
+baseline,https://agents.kujolang.ai/agents/release-verifier/,nested canonical,200,https://agents.kujolang.ai/agents/release-verifier/,0,200,yes,n/a,live request with redirects followed,
+baseline,https://agents.kujolang.ai/agents/release-verifier,nested no trailing slash,301,https://agents.kujolang.ai/agents/release-verifier/,1,200,yes,n/a,live request with redirects followed,
+baseline,https://agents.kujolang.ai/agents/release-verifier.html,flat HTML alias,404,https://agents.kujolang.ai/agents/release-verifier.html,0,404,n/a,n/a,live request with redirects followed,
+baseline,https://agents.kujolang.ai/agents/release-verifier/?audit=1,query string,200,https://agents.kujolang.ai/agents/release-verifier/?audit=1,0,200,yes,yes,live request with redirects followed,
+baseline,https://agents.kujolang.ai/robots.txt,robots,200,https://agents.kujolang.ai/robots.txt,0,200,yes,n/a,live request with redirects followed,
+baseline,https://agents.kujolang.ai/sitemap.xml,sitemap,200,https://agents.kujolang.ai/sitemap.xml,0,200,yes,n/a,live request with redirects followed,
+baseline,https://agents.kujolang.ai/llms.txt,llms experimental,200,https://agents.kujolang.ai/llms.txt,0,200,yes,n/a,live request with redirects followed,
+baseline,https://agents.kujolang.ai/seo-audit-missing-route-20260810/,404,404,https://agents.kujolang.ai/seo-audit-missing-route-20260810/,0,404,n/a,n/a,live request with redirects followed,

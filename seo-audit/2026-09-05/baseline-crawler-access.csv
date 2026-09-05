@@ -1,0 +1,11 @@
+phase,crawler,category,user_agent,robots_allowed,robots_status,homepage_status,key_page_status,sitemap_status,cdn_waf_result,policy,evidence,issues
+baseline,Googlebot,search indexing,Googlebot,yes,200,200,200,200,accessible,robots allow,live requests plus robots.txt parsing,
+baseline,Bingbot,search indexing and grounding,bingbot,yes,200,200,200,200,accessible,robots allow,live requests plus robots.txt parsing,
+baseline,OAI-SearchBot,AI search indexing,OAI-SearchBot,yes,200,200,200,200,accessible,robots allow,live requests plus robots.txt parsing,
+baseline,ChatGPT-User,user-triggered fetch,ChatGPT-User,yes,200,200,200,200,accessible,robots allow,live requests plus robots.txt parsing,
+baseline,GPTBot,model training,GPTBot,no,200,200,200,200,accessible,robots disallow; training policy unchanged,live requests plus robots.txt parsing,
+baseline,Claude-SearchBot,AI search indexing,Claude-SearchBot,yes,200,200,200,200,accessible,robots allow,live requests plus robots.txt parsing,
+baseline,Claude-User,user-triggered fetch,Claude-User,yes,200,200,200,200,accessible,robots allow,live requests plus robots.txt parsing,
+baseline,ClaudeBot,model training,ClaudeBot,no,200,200,200,200,accessible,robots disallow; training policy unchanged,live requests plus robots.txt parsing,
+baseline,PerplexityBot,AI search indexing,PerplexityBot,yes,200,200,200,200,accessible,robots allow,live requests plus robots.txt parsing,
+baseline,Perplexity-User,user-triggered fetch,Perplexity-User,yes,200,200,200,200,accessible,robots allow,live requests plus robots.txt parsing,
