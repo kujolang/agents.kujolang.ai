@@ -111,7 +111,10 @@ if [[ -f "$OUT_DIR/agents/videoops/index.html" ]]; then
 	if [[ "$videoops_count" -lt 5 ]]; then record_failure "FAIL videoops-count: expected at least 5 individual VideoOps pages, found $videoops_count"; fi
 	if ! grep -q 'class="card-grid agent-category-grid"' "$OUT_DIR/agents/videoops/index.html"; then record_failure "FAIL videoops-collection: missing agent card grid"; fi
 	if grep -Eqi 'coming soon|placeholder|lorem ipsum' "$OUT_DIR/agents/videoops/index.html"; then record_failure "FAIL videoops-placeholder: collection contains placeholder copy"; fi
-	if ! grep -q 'listing-card-image--mark' "$OUT_DIR/agents/videoops/index.html"; then record_failure "FAIL videoops-fallback-image: generic Kujo fallback is missing"; fi
+	if grep -q 'listing-card-image--mark' "$OUT_DIR/agents/videoops/index.html"; then record_failure "FAIL videoops-fallback-image: generic Kujo card image remains after portrait rollout"; fi
+	videoops_portraits="$(grep -Eo '/images/[a-z0-9-]+-[a-f0-9]{12}\.webp' "$OUT_DIR/agents/videoops/index.html" | sort -u | wc -l | tr -d ' ')"
+	if [[ "$videoops_portraits" -lt 6 ]]; then record_failure "FAIL videoops-portraits: expected 6 unique portraits, found $videoops_portraits"; fi
+	if ! grep -Eq 'alt="Agent image for VideoOps Producer"[^>]*loading="eager"[^>]*fetchpriority="high"' "$OUT_DIR/agents/videoops/index.html"; then record_failure "FAIL videoops-priority-image: first portrait is not prioritized"; fi
 fi
 
 if [[ -f "$OUT_DIR/agents/chain-of-command/index.html" ]] && ! grep -Eq 'alt="Agent image for General Commander"[^>]*loading="eager"[^>]*fetchpriority="high"' "$OUT_DIR/agents/chain-of-command/index.html"; then

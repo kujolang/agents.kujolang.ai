@@ -1048,7 +1048,7 @@
       "file": "content/agents/videoops-asset-scout.md",
       "variant": "social",
       "label": "VideoOps",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/videoops-asset-scout.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -1060,7 +1060,7 @@
       "file": "content/agents/videoops-creative-director.md",
       "variant": "social",
       "label": "VideoOps",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/videoops-creative-director.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -1072,7 +1072,7 @@
       "file": "content/agents/videoops-hyperframes-editor.md",
       "variant": "social",
       "label": "VideoOps",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/videoops-hyperframes-editor.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -1084,7 +1084,7 @@
       "file": "content/agents/videoops-media-generator.md",
       "variant": "social",
       "label": "VideoOps",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/videoops-media-generator.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -1096,7 +1096,7 @@
       "file": "content/agents/videoops-producer.md",
       "variant": "social",
       "label": "VideoOps",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/videoops-producer.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false
@@ -1108,7 +1108,7 @@
       "file": "content/agents/videoops-video-critic.md",
       "variant": "social",
       "label": "VideoOps",
-      "background_image": "assets/images/agent-hero-background.webp",
+      "background_image": "content/media/agents/videoops-video-critic.webp",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_border": true,
       "show_url": false

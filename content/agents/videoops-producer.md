@@ -6,11 +6,11 @@ excerpt: "Accept an arbitrary video-production mission and coordinate the five b
 seo_title: "VideoOps Producer | Kujo VideoOps"
 seo_description: "Accept an arbitrary video-production mission and coordinate the five bounded VideoOps specialists through a verified final deliverable."
 keywords: "Kujo agent, VideoOps, video production, VideoOps Producer"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/videoops-producer.webp"
 categories: ["VideoOps"]
 tags: ["Orchestration"]
 order: 1
-last_updated: 2026-09-05
+last_updated: 2026-09-04
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/videoops/producer/AGENT.md"
 ---
 ## Agent Contract

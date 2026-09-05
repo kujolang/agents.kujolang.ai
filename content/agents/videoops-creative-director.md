@@ -6,7 +6,7 @@ excerpt: "Transform validated PackWrite intake into a complete timed production 
 seo_title: "Video Creative Director | Kujo VideoOps"
 seo_description: "Transform validated PackWrite intake into a complete timed production plan without acquiring assets or rendering media."
 keywords: "Kujo agent, VideoOps, video production, Video Creative Director"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/videoops-creative-director.webp"
 categories: ["VideoOps"]
 tags: ["Planning"]
 order: 2

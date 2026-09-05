@@ -6,7 +6,7 @@ excerpt: "Create only the smallest set of custom media explicitly marked GENERAT
 seo_title: "Video Media Generator | Kujo VideoOps"
 seo_description: "Create only the smallest set of custom media explicitly marked GENERATE and register each result in the asset manifest."
 keywords: "Kujo agent, VideoOps, video production, Video Media Generator"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/videoops-media-generator.webp"
 categories: ["VideoOps"]
 tags: ["Asseting"]
 order: 4

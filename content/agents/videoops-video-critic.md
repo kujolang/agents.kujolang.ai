@@ -6,7 +6,7 @@ excerpt: "Independently compare the rendered artifact with approved intent and r
 seo_title: "Video Critic | Kujo VideoOps"
 seo_description: "Independently compare the rendered artifact with approved intent and return deterministic PASS or actionable FAIL evidence."
 keywords: "Kujo agent, VideoOps, video production, Video Critic"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/videoops-video-critic.webp"
 categories: ["VideoOps"]
 tags: ["Review"]
 order: 6

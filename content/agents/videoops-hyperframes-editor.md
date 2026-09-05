@@ -6,7 +6,7 @@ excerpt: "Translate approved planning and asset contracts into a deterministic H
 seo_title: "Video HyperFrames Editor | Kujo VideoOps"
 seo_description: "Translate approved planning and asset contracts into a deterministic HyperFrames composition, render, and bounded fix-list revisions."
 keywords: "Kujo agent, VideoOps, video production, Video HyperFrames Editor"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/videoops-hyperframes-editor.webp"
 categories: ["VideoOps"]
 tags: ["Production"]
 order: 5

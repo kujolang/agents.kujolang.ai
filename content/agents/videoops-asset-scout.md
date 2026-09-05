@@ -6,7 +6,7 @@ excerpt: "Resolve approved asset requirements from first-party, captured, licens
 seo_title: "Video Asset Scout | Kujo VideoOps"
 seo_description: "Resolve approved asset requirements from first-party, captured, licensed, or explicit generation sources while preserving provenance."
 keywords: "Kujo agent, VideoOps, video production, Video Asset Scout"
-featured_image: "assets/images/kujo-logomark.svg"
+featured_image: "content/media/agents/videoops-asset-scout.webp"
 categories: ["VideoOps"]
 tags: ["Asseting"]
 order: 3
