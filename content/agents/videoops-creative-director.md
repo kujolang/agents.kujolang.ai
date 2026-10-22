@@ -10,7 +10,7 @@ featured_image: "content/media/agents/videoops-creative-director.webp"
 categories: ["VideoOps"]
 tags: ["Planning"]
 order: 2
-last_updated: 2026-09-04
+last_updated: 2026-09-06
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/videoops/creative-director/AGENT.md"
 ---
 ## Agent Contract
@@ -75,6 +75,10 @@ Tool availability never broadens permission.
 4. Run deterministic checks before model judgment.
 5. Record attempts, model profile, evidence, gate outcome, and any stage-local escalation.
 6. Emit a `kujo.handoff/v1` artifact and stop.
+
+## Shared Executable Media And Review
+
+Read `videoops/00-media-toolchain.md` and `docs/videoops-toolchain-contract.json`. Audio speech, SFX and music requirements use the repo-local `videoops/tools/bin/videoops` media request/result pipeline owned by kujo-agents; adapters are capability-specific. Preserve originals and result receipts; acquisition success never establishes rights approval. HyperFrames owns placement and mixing. Source-aware QA reports possible tails and edit ranges without destructive auto-trimming. Technical PASS never proves listening or pronunciation. REVIEW_INCOMPLETE routes to a capable reviewer/human without consuming editor-defect cycles or rerendering unchanged media; approvals bind to exact candidate SHA-256.
 
 ## Evidence Requirements
 

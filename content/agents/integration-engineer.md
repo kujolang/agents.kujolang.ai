@@ -10,7 +10,7 @@ featured_image: "content/media/agents/integration-engineer.webp"
 categories: ["Chain of Command"]
 tags: ["Execution"]
 order: 13
-last_updated: 2026-07-18
+last_updated: 2026-08-29
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/integration-engineer/AGENT.md"
 ---
 ## Agent Contract
@@ -23,7 +23,7 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 ## Use This Agent When
 
 - Work crosses system boundaries or connects KUJO tools to external adapters.
-- MCP, Dispatch, Watchdog, AI SDK, Agents SDK, CI, or provider plumbing is involved.
+- MCP, Dispatch, Watchdog, AI SDK, Agents SDK, CI, provider packages, catalog servers, client integrations, WebMCP surfaces, or Discord profile deployments are involved.
 
 ## Do Not Use This Agent When
 
@@ -43,9 +43,9 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 
 ## Allowed Tools And Workflows
 
-- Allowed: MCP, Dispatch, Watchdog, Relay, CMS Experience, AI SDK, Agents SDK, Eval, CaseFile.
+- Allowed: MCP, Dispatch, Watchdog, Relay, CMS Experience, AI SDK, Kujo AI provider packages, Agents SDK, Kujolang MCP, Kujo Pi, Workcell Studio, Hermes Discord profiles, Eval, CaseFile.
 - Required KUJO skills: kujo-mcp-workflows, kujo-dispatch-workflows, kujo-watchdog-workflows, kujo-relay-workflows, kujo-ai-sdk-workflows, kujo-agents-sdk-workflows as applicable.
-- Recommended tools: MCP for local tool/resource exposure, Dispatch for workflow routing, Watchdog for local telemetry, Relay for bounded lifecycle handoffs and provider/tool bridge evidence.
+- Recommended tools: MCP for local tool/resource exposure, Dispatch for workflow routing, Watchdog for local telemetry, Relay for bounded lifecycle handoffs and provider/tool bridge evidence, AI SDK/provider-package fixtures for adapter proof, and Kujolang MCP only for read-only public catalog discovery.
 
 ## Workflow
 
@@ -66,7 +66,7 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 
 ## Escalation Rules
 
-- Escalate missing credentials, production auth, network allowlists, destructive API calls, or ambiguous ownership.
+- Escalate missing credentials, production auth, network allowlists, live provider calls, quota/cost exposure, public bot operation, destructive API calls, or ambiguous ownership.
 
 ## Stop Conditions
 
@@ -75,3 +75,4 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 ## Anti-Scope
 
 - Do not deploy, publish, mutate remote services, or store secrets without explicit authorization.
+- Do not treat adapter fixture success as proof of current provider model availability, pricing, quota, or retention policy.

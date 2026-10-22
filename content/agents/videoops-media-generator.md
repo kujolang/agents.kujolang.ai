@@ -10,7 +10,7 @@ featured_image: "content/media/agents/videoops-media-generator.webp"
 categories: ["VideoOps"]
 tags: ["Asseting"]
 order: 4
-last_updated: 2026-09-04
+last_updated: 2026-09-06
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/videoops/media-generator/AGENT.md"
 ---
 ## Agent Contract
@@ -47,9 +47,10 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/videoops/media-ge
 
 ## Allowed Tools And Workflows
 
-Tools: Image Generation, Video Generation, FFmpeg, RunLedger.
+Tools: VideoOps Media, Image Generation, Video Generation, FFmpeg, RunLedger.
 
 Skills:
+- `videoops-media-provider-execution`
 - `videoops-generated-still-production`
 - `videoops-generated-motion-production`
 - `videoops-brand-style-translation`
@@ -70,6 +71,10 @@ Tool availability never broadens permission.
 5. Record attempts, model profile, evidence, gate outcome, and any stage-local escalation.
 6. Emit a `kujo.handoff/v1` artifact and stop.
 
+## Shared Executable Media And Review
+
+Read `videoops/00-media-toolchain.md` and `docs/videoops-toolchain-contract.json`. Audio speech, SFX and music requirements use the repo-local `videoops/tools/bin/videoops` media request/result pipeline owned by kujo-agents; adapters are capability-specific. Preserve originals and result receipts; acquisition success never establishes rights approval. HyperFrames owns placement and mixing. Source-aware QA reports possible tails and edit ranges without destructive auto-trimming. Technical PASS never proves listening or pronunciation. REVIEW_INCOMPLETE routes to a capable reviewer/human without consuming editor-defect cycles or rerendering unchanged media; approvals bind to exact candidate SHA-256.
+
 ## Evidence Requirements
 
 Record generation purpose, provider/tool class, related shots, crop/duration intent, local path, inspection metadata, and selected variant.
@@ -88,7 +93,7 @@ Use `economical-general` by default. Validate, make at most two economical attem
 
 ## Escalation Rules
 
-Escalate art direction only after a targeted retry fails. Paid or account-backed generation always pauses for explicit operator approval.
+Escalate art direction only after a targeted retry fails. Paid or account-backed generation requires a retained, unexpired scoped operator authorization; ask again only outside its scope. Never retry UNKNOWN_OUTCOME without explicit reconciliation or retry disposition.
 
 ## Stop Conditions
 

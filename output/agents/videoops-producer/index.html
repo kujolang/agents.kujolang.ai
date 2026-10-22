@@ -30,7 +30,7 @@
 	<meta name="twitter:image:alt" content="VideoOps Producer | Kujo VideoOps social preview">
 	<link rel="stylesheet" href="/assets/sitekit/sitekit.css?v=1.0.0">
 	<link rel="stylesheet" href="/assets/css/site.css?v=20260901-1">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","headline":"VideoOps Producer","name":"VideoOps Producer","description":"Accept an arbitrary video-production mission and coordinate the five bounded VideoOps specialists through a verified final deliverable.","url":"https://agents.kujolang.ai/agents/videoops-producer/","image":"https://agents.kujolang.ai/assets/images/social/videoops-producer.jpg","dateModified":"2026-09-04","mainEntityOfPage":{"@type":"WebPage","@id":"https://agents.kujolang.ai/agents/videoops-producer/"},"codeRepository":"https://github.com/kujolang/kujo-agents/blob/main/videoops/producer/AGENT.md","maintainer":{"@type":"Organization","name":"Kujo","url":"https://kujolang.ai"},"isPartOf":{"@type":"CollectionPage","name":"VideoOps Agents","url":"https://agents.kujolang.ai/agents/videoops/"},"publisher":{"@type":"Organization","name":"Kujo","url":"https://kujolang.ai"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","headline":"VideoOps Producer","name":"VideoOps Producer","description":"Accept an arbitrary video-production mission and coordinate the five bounded VideoOps specialists through a verified final deliverable.","url":"https://agents.kujolang.ai/agents/videoops-producer/","image":"https://agents.kujolang.ai/assets/images/social/videoops-producer.jpg","dateModified":"2026-09-06","mainEntityOfPage":{"@type":"WebPage","@id":"https://agents.kujolang.ai/agents/videoops-producer/"},"codeRepository":"https://github.com/kujolang/kujo-agents/blob/main/videoops/producer/AGENT.md","maintainer":{"@type":"Organization","name":"Kujo","url":"https://kujolang.ai"},"isPartOf":{"@type":"CollectionPage","name":"VideoOps Agents","url":"https://agents.kujolang.ai/agents/videoops/"},"publisher":{"@type":"Organization","name":"Kujo","url":"https://kujolang.ai"}}</script>
 </head>
 <body>
 	<a class="sk-skip-link" href="#main-content">Skip to main content</a>
@@ -100,7 +100,7 @@
 				<h1>VideoOps Producer</h1>
 				<p class="agent-lede">Accept an arbitrary video-production mission and coordinate the five bounded VideoOps specialists through a verified final deliverable.</p>
 				<div class="agent-taxonomies"><span class="tag">VideoOps</span><span class="tag">Orchestration</span></div>
-				<p class="agent-provenance">Maintained by Kujo · Updated <time datetime="2026-09-04">2026-09-04</time> · <a href="https://github.com/kujolang/kujo-agents/blob/main/videoops/producer/AGENT.md">Source contract</a></p>
+				<p class="agent-provenance">Maintained by Kujo · Updated <time datetime="2026-09-06">2026-09-06</time> · <a href="https://github.com/kujolang/kujo-agents/blob/main/videoops/producer/AGENT.md">Source contract</a></p>
 			</div>
 			<div class="agent-mark"><img src="../../images/videoops-producer-1d63a728120e.webp" alt="Featured image for VideoOps Producer" class="featured-image" width="640" height="640" loading="eager" fetchpriority="high" decoding="async"></div>
 		</header>
@@ -166,6 +166,8 @@
 <p>4. Validate each file handoff before the next role starts; never substitute hidden conversation state for artifacts.</p>
 <p>5. On FAIL, send only the Critic&apos;s bounded fix list to the Editor and return the revised render to the Critic. Stop after three failed cycles.</p>
 <p>6. Finalize only the exact independently approved candidate, record the checksum and technical evidence, and report any external actions separately.</p>
+<h2>Shared Executable Media And Review</h2>
+<p>Read <code>videoops/00-media-toolchain.md</code> and <code>docs/videoops-toolchain-contract.json</code>. Audio speech, SFX and music requirements use the repo-local <code>videoops/tools/bin/videoops</code> media request/result pipeline owned by kujo-agents; adapters are capability-specific. Preserve originals and result receipts; acquisition success never establishes rights approval. HyperFrames owns placement and mixing. Source-aware QA reports possible tails and edit ranges without destructive auto-trimming. Technical PASS never proves listening or pronunciation. REVIEW_INCOMPLETE routes to a capable reviewer/human without consuming editor-defect cycles or rerendering unchanged media; approvals bind to exact candidate SHA-256.</p>
 <h2>Evidence Requirements</h2>
 <p>Preserve the original request, stage receipts, handoffs, approval state, exact render metadata, revision history, external effects, and final artifact checksum. Distinguish harness-native execution from fixture proof.</p>
 <h2>Degraded Operation</h2>

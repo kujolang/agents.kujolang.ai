@@ -10,7 +10,7 @@ featured_image: "content/media/agents/videoops-producer.webp"
 categories: ["VideoOps"]
 tags: ["Orchestration"]
 order: 1
-last_updated: 2026-09-04
+last_updated: 2026-09-06
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/videoops/producer/AGENT.md"
 ---
 ## Agent Contract
@@ -76,6 +76,10 @@ Tool availability never broadens permission.
 4. Validate each file handoff before the next role starts; never substitute hidden conversation state for artifacts.
 5. On FAIL, send only the Critic's bounded fix list to the Editor and return the revised render to the Critic. Stop after three failed cycles.
 6. Finalize only the exact independently approved candidate, record the checksum and technical evidence, and report any external actions separately.
+
+## Shared Executable Media And Review
+
+Read `videoops/00-media-toolchain.md` and `docs/videoops-toolchain-contract.json`. Audio speech, SFX and music requirements use the repo-local `videoops/tools/bin/videoops` media request/result pipeline owned by kujo-agents; adapters are capability-specific. Preserve originals and result receipts; acquisition success never establishes rights approval. HyperFrames owns placement and mixing. Source-aware QA reports possible tails and edit ranges without destructive auto-trimming. Technical PASS never proves listening or pronunciation. REVIEW_INCOMPLETE routes to a capable reviewer/human without consuming editor-defect cycles or rerendering unchanged media; approvals bind to exact candidate SHA-256.
 
 ## Evidence Requirements
 

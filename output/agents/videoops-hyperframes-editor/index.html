@@ -30,7 +30,7 @@
 	<meta name="twitter:image:alt" content="Video HyperFrames Editor | Kujo VideoOps social preview">
 	<link rel="stylesheet" href="/assets/sitekit/sitekit.css?v=1.0.0">
 	<link rel="stylesheet" href="/assets/css/site.css?v=20260901-1">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","headline":"Video HyperFrames Editor","name":"Video HyperFrames Editor","description":"Translate approved planning and asset contracts into a deterministic HyperFrames composition, render, and bounded fix-list revisions.","url":"https://agents.kujolang.ai/agents/videoops-hyperframes-editor/","image":"https://agents.kujolang.ai/assets/images/social/videoops-hyperframes-editor.jpg","dateModified":"2026-09-04","mainEntityOfPage":{"@type":"WebPage","@id":"https://agents.kujolang.ai/agents/videoops-hyperframes-editor/"},"codeRepository":"https://github.com/kujolang/kujo-agents/blob/main/videoops/hyperframes-editor/AGENT.md","maintainer":{"@type":"Organization","name":"Kujo","url":"https://kujolang.ai"},"isPartOf":{"@type":"CollectionPage","name":"VideoOps Agents","url":"https://agents.kujolang.ai/agents/videoops/"},"publisher":{"@type":"Organization","name":"Kujo","url":"https://kujolang.ai"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","headline":"Video HyperFrames Editor","name":"Video HyperFrames Editor","description":"Translate approved planning and asset contracts into a deterministic HyperFrames composition, render, and bounded fix-list revisions.","url":"https://agents.kujolang.ai/agents/videoops-hyperframes-editor/","image":"https://agents.kujolang.ai/assets/images/social/videoops-hyperframes-editor.jpg","dateModified":"2026-09-06","mainEntityOfPage":{"@type":"WebPage","@id":"https://agents.kujolang.ai/agents/videoops-hyperframes-editor/"},"codeRepository":"https://github.com/kujolang/kujo-agents/blob/main/videoops/hyperframes-editor/AGENT.md","maintainer":{"@type":"Organization","name":"Kujo","url":"https://kujolang.ai"},"isPartOf":{"@type":"CollectionPage","name":"VideoOps Agents","url":"https://agents.kujolang.ai/agents/videoops/"},"publisher":{"@type":"Organization","name":"Kujo","url":"https://kujolang.ai"}}</script>
 </head>
 <body>
 	<a class="sk-skip-link" href="#main-content">Skip to main content</a>
@@ -100,7 +100,7 @@
 				<h1>Video HyperFrames Editor</h1>
 				<p class="agent-lede">Translate approved planning and asset contracts into a deterministic HyperFrames composition, render, and bounded fix-list revisions.</p>
 				<div class="agent-taxonomies"><span class="tag">VideoOps</span><span class="tag">Production</span></div>
-				<p class="agent-provenance">Maintained by Kujo · Updated <time datetime="2026-09-04">2026-09-04</time> · <a href="https://github.com/kujolang/kujo-agents/blob/main/videoops/hyperframes-editor/AGENT.md">Source contract</a></p>
+				<p class="agent-provenance">Maintained by Kujo · Updated <time datetime="2026-09-06">2026-09-06</time> · <a href="https://github.com/kujolang/kujo-agents/blob/main/videoops/hyperframes-editor/AGENT.md">Source contract</a></p>
 			</div>
 			<div class="agent-mark"><img src="../../images/videoops-hyperframes-editor-f3ee22a319da.webp" alt="Featured image for Video HyperFrames Editor" class="featured-image" width="640" height="640" loading="eager" fetchpriority="high" decoding="async"></div>
 		</header>
@@ -144,7 +144,7 @@
 <li><code>output/metadata.json</code></li>
 </ul>
 <h2>Allowed Tools And Workflows</h2>
-<p>Tools: HyperFrames, FFmpeg, Eval, Lens, RunLedger.</p>
+<p>Tools: VideoOps Media, VideoOps Audio QA, HyperFrames, FFmpeg, Eval, Lens, RunLedger.</p>
 <p>Skills:</p>
 <ul>
 <li><code>videoops-hyperframes-project-bootstrap</code></li>
@@ -168,6 +168,8 @@
 <p>4. Run deterministic checks before model judgment.</p>
 <p>5. Record attempts, model profile, evidence, gate outcome, and any stage-local escalation.</p>
 <p>6. Emit a <code>kujo.handoff/v1</code> artifact and stop.</p>
+<h2>Shared Executable Media And Review</h2>
+<p>Read <code>videoops/00-media-toolchain.md</code> and <code>docs/videoops-toolchain-contract.json</code>. Audio speech, SFX and music requirements use the repo-local <code>videoops/tools/bin/videoops</code> media request/result pipeline owned by kujo-agents; adapters are capability-specific. Preserve originals and result receipts; acquisition success never establishes rights approval. HyperFrames owns placement and mixing. Source-aware QA reports possible tails and edit ranges without destructive auto-trimming. Technical PASS never proves listening or pronunciation. REVIEW_INCOMPLETE routes to a capable reviewer/human without consuming editor-defect cycles or rerendering unchanged media; approvals bind to exact candidate SHA-256.</p>
 <h2>Evidence Requirements</h2>
 <p>Record exact HyperFrames version and commands, checks, dimensions, FPS, duration, audio streams, file checksum, substitutions, and per-fix outcomes.</p>
 <h2>Degraded Operation</h2>

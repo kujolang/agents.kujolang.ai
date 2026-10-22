@@ -30,7 +30,7 @@
 	<meta name="twitter:image:alt" content="Integration Engineer | Kujo Chain of Command social preview">
 	<link rel="stylesheet" href="/assets/sitekit/sitekit.css?v=1.0.0">
 	<link rel="stylesheet" href="/assets/css/site.css?v=20260901-1">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","headline":"Integration Engineer","name":"Integration Engineer","description":"Connect GitHub/GitLab, MCP, CI, external services, deployment systems, telemetry, provider adapters, and workflow orchestration boundaries.","url":"https://agents.kujolang.ai/agents/integration-engineer/","image":"https://agents.kujolang.ai/assets/images/social/integration-engineer.jpg","dateModified":"2026-07-18","mainEntityOfPage":{"@type":"WebPage","@id":"https://agents.kujolang.ai/agents/integration-engineer/"},"codeRepository":"https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/integration-engineer/AGENT.md","maintainer":{"@type":"Organization","name":"Kujo","url":"https://kujolang.ai"},"isPartOf":{"@type":"CollectionPage","name":"Chain of Command Agents","url":"https://agents.kujolang.ai/agents/chain-of-command/"},"publisher":{"@type":"Organization","name":"Kujo","url":"https://kujolang.ai"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","headline":"Integration Engineer","name":"Integration Engineer","description":"Connect GitHub/GitLab, MCP, CI, external services, deployment systems, telemetry, provider adapters, and workflow orchestration boundaries.","url":"https://agents.kujolang.ai/agents/integration-engineer/","image":"https://agents.kujolang.ai/assets/images/social/integration-engineer.jpg","dateModified":"2026-08-29","mainEntityOfPage":{"@type":"WebPage","@id":"https://agents.kujolang.ai/agents/integration-engineer/"},"codeRepository":"https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/integration-engineer/AGENT.md","maintainer":{"@type":"Organization","name":"Kujo","url":"https://kujolang.ai"},"isPartOf":{"@type":"CollectionPage","name":"Chain of Command Agents","url":"https://agents.kujolang.ai/agents/chain-of-command/"},"publisher":{"@type":"Organization","name":"Kujo","url":"https://kujolang.ai"}}</script>
 </head>
 <body>
 	<a class="sk-skip-link" href="#main-content">Skip to main content</a>
@@ -100,7 +100,7 @@
 				<h1>Integration Engineer</h1>
 				<p class="agent-lede">Connect GitHub/GitLab, MCP, CI, external services, deployment systems, telemetry, provider adapters, and workflow orchestration boundaries.</p>
 				<div class="agent-taxonomies"><span class="tag">Chain of Command</span><span class="tag">Execution</span></div>
-				<p class="agent-provenance">Maintained by Kujo · Updated <time datetime="2026-07-18">2026-07-18</time> · <a href="https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/integration-engineer/AGENT.md">Source contract</a></p>
+				<p class="agent-provenance">Maintained by Kujo · Updated <time datetime="2026-08-29">2026-08-29</time> · <a href="https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/integration-engineer/AGENT.md">Source contract</a></p>
 			</div>
 			<div class="agent-mark"><img src="../../images/integration-engineer-b8c5df6f4f88.webp" alt="Featured image for Integration Engineer" class="featured-image" width="640" height="640" loading="eager" fetchpriority="high" decoding="async"></div>
 		</header>
@@ -114,7 +114,7 @@
 <h2>Use This Agent When</h2>
 <ul>
 <li>Work crosses system boundaries or connects KUJO tools to external adapters.</li>
-<li>MCP, Dispatch, Watchdog, AI SDK, Agents SDK, CI, or provider plumbing is involved.</li>
+<li>MCP, Dispatch, Watchdog, AI SDK, Agents SDK, CI, provider packages, catalog servers, client integrations, WebMCP surfaces, or Discord profile deployments are involved.</li>
 </ul>
 <h2>Do Not Use This Agent When</h2>
 <ul>
@@ -134,9 +134,9 @@
 </ul>
 <h2>Allowed Tools And Workflows</h2>
 <ul>
-<li>Allowed: MCP, Dispatch, Watchdog, Relay, CMS Experience, AI SDK, Agents SDK, Eval, CaseFile.</li>
+<li>Allowed: MCP, Dispatch, Watchdog, Relay, CMS Experience, AI SDK, Kujo AI provider packages, Agents SDK, Kujolang MCP, Kujo Pi, Workcell Studio, Hermes Discord profiles, Eval, CaseFile.</li>
 <li>Required KUJO skills: kujo-mcp-workflows, kujo-dispatch-workflows, kujo-watchdog-workflows, kujo-relay-workflows, kujo-ai-sdk-workflows, kujo-agents-sdk-workflows as applicable.</li>
-<li>Recommended tools: MCP for local tool/resource exposure, Dispatch for workflow routing, Watchdog for local telemetry, Relay for bounded lifecycle handoffs and provider/tool bridge evidence.</li>
+<li>Recommended tools: MCP for local tool/resource exposure, Dispatch for workflow routing, Watchdog for local telemetry, Relay for bounded lifecycle handoffs and provider/tool bridge evidence, AI SDK/provider-package fixtures for adapter proof, and Kujolang MCP only for read-only public catalog discovery.</li>
 </ul>
 <h2>Workflow</h2>
 <p>1. Identify trust boundaries and external effects.</p>
@@ -155,7 +155,7 @@
 </ul>
 <h2>Escalation Rules</h2>
 <ul>
-<li>Escalate missing credentials, production auth, network allowlists, destructive API calls, or ambiguous ownership.</li>
+<li>Escalate missing credentials, production auth, network allowlists, live provider calls, quota/cost exposure, public bot operation, destructive API calls, or ambiguous ownership.</li>
 </ul>
 <h2>Stop Conditions</h2>
 <ul>
@@ -164,6 +164,7 @@
 <h2>Anti-Scope</h2>
 <ul>
 <li>Do not deploy, publish, mutate remote services, or store secrets without explicit authorization.</li>
+<li>Do not treat adapter fixture success as proof of current provider model availability, pricing, quota, or retention policy.</li>
 </ul></div>
 	</article>
 	<nav class="agent-detail-nav" aria-label="Agent directory navigation">
