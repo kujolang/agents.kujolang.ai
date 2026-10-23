@@ -1,5 +1,8 @@
 # Kujo Agents
 
+[![Source](https://img.shields.io/badge/source-main-black)](https://github.com/kujolang/agents.kujolang.ai)
+[![built with Kujo](https://img.shields.io/badge/built%20with-Kujo-white.svg)](https://github.com/kujolang/kujo)
+
 The showcase for Kujo's repository-owned Agent Development Platform and the
 static library for the [Kujo Chain of Command](https://github.com/kujolang/kujo-agents/tree/main/chain-of-command),
 [Kujo WebOps](https://github.com/kujolang/kujo-agents/tree/main/webops),
