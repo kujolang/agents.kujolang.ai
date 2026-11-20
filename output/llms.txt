@@ -6,7 +6,7 @@ This site contains structured content formatted for LLM-friendly consumption.
 
 ## Pages
 - [Build Your Own Kujo Agent](https://agents.kujolang.ai/agent-development-platform/)
-- [Connect General Commander to Slack](https://agents.kujolang.ai/connect-slack-general-commander/)
+- [Connect a Kujo Agent to Slack](https://agents.kujolang.ai/connect-slack/)
 - [Kujo Publishing House System](https://agents.kujolang.ai/publishing-house-system/)
 
 ## Agents

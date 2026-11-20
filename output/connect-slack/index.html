@@ -3,34 +3,34 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Connect General Commander to Slack | Kujo Agents</title>
-	<meta name="description" content="Install General Commander as a distinct Slack bot with the local Kujo setup assistant.">
+	<title>Connect a Kujo Agent to Slack | Kujo Agents</title>
+	<meta name="description" content="Install a named Kujo bot with its catalog portrait in your Slack workspace.">
 	<meta name="author" content="Robert DeVore">
 
-<link rel="canonical" href="https://agents.kujolang.ai/connect-slack-general-commander/">
+<link rel="canonical" href="https://agents.kujolang.ai/connect-slack/">
 	<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
 
-	<meta property="og:title" content="Connect General Commander to Slack">
-	<meta property="og:description" content="Install General Commander as a distinct Slack bot with the local Kujo setup assistant.">
-	<meta property="og:url" content="https://agents.kujolang.ai/connect-slack-general-commander/">
+	<meta property="og:title" content="Connect a Kujo Agent to Slack">
+	<meta property="og:description" content="Install a named Kujo bot with its catalog portrait in your Slack workspace.">
+	<meta property="og:url" content="https://agents.kujolang.ai/connect-slack/">
 	<meta property="og:type" content="website">
 	<meta property="og:site_name" content="Kujo Agents">
 	<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://agents.kujolang.ai/assets/images/social/connect-slack-general-commander.jpg">
+<meta property="og:image" content="https://agents.kujolang.ai/assets/images/social/connect-slack.jpg">
 	<meta property="og:image:type" content="image/jpeg">
 	<meta property="og:image:width" content="1200">
 	<meta property="og:image:height" content="630">
-	<meta property="og:image:alt" content="Connect General Commander to Slack social preview">
+	<meta property="og:image:alt" content="Connect a Kujo Agent to Slack social preview">
 
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@kujolang">
-	<meta name="twitter:title" content="Connect General Commander to Slack">
-	<meta name="twitter:description" content="Install General Commander as a distinct Slack bot with the local Kujo setup assistant.">
-<meta name="twitter:image" content="https://agents.kujolang.ai/assets/images/social/connect-slack-general-commander.jpg">
-	<meta name="twitter:image:alt" content="Connect General Commander to Slack social preview">
+	<meta name="twitter:title" content="Connect a Kujo Agent to Slack">
+	<meta name="twitter:description" content="Install a named Kujo bot with its catalog portrait in your Slack workspace.">
+<meta name="twitter:image" content="https://agents.kujolang.ai/assets/images/social/connect-slack.jpg">
+	<meta name="twitter:image:alt" content="Connect a Kujo Agent to Slack social preview">
 	<link rel="stylesheet" href="/assets/sitekit/sitekit.css?v=1.0.0">
 	<link rel="stylesheet" href="/assets/css/site.css?v=20260901-1">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","headline":"Connect General Commander to Slack","name":"Connect General Commander to Slack","description":"Install General Commander as a distinct Slack bot with the local Kujo setup assistant.","url":"https://agents.kujolang.ai/connect-slack-general-commander/","image":"https://agents.kujolang.ai/assets/images/social/connect-slack-general-commander.jpg","publisher":{"@type":"Organization","name":"Kujo","url":"https://kujolang.ai"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","headline":"Connect a Kujo Agent to Slack","name":"Connect a Kujo Agent to Slack","description":"Install a named Kujo bot with its catalog portrait in your Slack workspace.","url":"https://agents.kujolang.ai/connect-slack/","image":"https://agents.kujolang.ai/assets/images/social/connect-slack.jpg","publisher":{"@type":"Organization","name":"Kujo","url":"https://kujolang.ai"}}</script>
 </head>
 <body>
 	<a class="sk-skip-link" href="#main-content">Skip to main content</a>
@@ -91,26 +91,25 @@
 
 	<main class="site-shell" id="main-content">
 	<article class="agent-body kujo-content">
-		<h1>Connect General Commander to Slack</h1>
-		<p>The self-hosted preview installs General Commander as a distinct Slack bot.</p>
-<p>You need permission to create an app in your Slack workspace, Node.js 24 or</p>
-<p>later, and the <a href="https://github.com/kujolang/kujo-agents">Kujo Agents checkout</a>.</p>
-<h2>Start the setup assistant</h2>
-<p><a href="/assets/downloads/kujo-slack-setup-0.1.0.tgz">Download the versioned setup package</a>,</p>
-<p>then run this command with the downloaded file and your Kujo Agents checkout:</p>
-<pre><code class="language-sh">npm exec --package=./kujo-slack-setup-0.1.0.tgz -- kujo-slack-setup &quot;$HOME/.local/state/kujo/slack&quot; /path/to/kujo-agents</code></pre>
-<p><a href="http://127.0.0.1:4396/setup?agent=chain.general-commander">Open the local setup assistant</a></p>
-<h2>Install and verify</h2>
-<p>The assistant opens Slack with a prefilled app manifest. Approve the installation,</p>
-<p>invite the bot to a test channel, and enter the Slack app credentials in the</p>
-<p>local assistant. Socket Mode connects directly to Slack. The website does not</p>
-<p>collect credentials. The assistant shows the test mention and confirms delivery</p>
-<p>after Commander replies in its own thread.</p>
-<p>For text advisory replies, supply an existing Software Factory checkout as the</p>
-<p>third argument after configuring its ChatGPT sign-in. Each request remains</p>
-<p>staged until an operator approves the model reply in the local assistant.</p>
-<p>Production workflows retain their own controls.</p>
+		<h1>Connect a Kujo Agent to Slack</h1>
+		<p>Set up a named Slack bot for the agent you selected. You need Node.js 24 or later, a <a href="https://github.com/kujolang/kujo-agents">Kujo Agents checkout</a>, and permission to create an app in the Slack workspace.</p>
+<h2>1. Start the local setup assistant</h2>
+<p><a href="/assets/downloads/kujo-slack-setup-0.1.1.tgz">Download the setup package</a>. Run the command below from your download folder. Replace <code>/path/to/kujo-agents</code> with your checkout path.</p>
+<h2>2. Install the bot and upload its portrait</h2>
+<p>Open the local setup assistant and follow its prefilled Slack manifest. In Slack’s <strong>Basic Information → Display Information</strong>, upload the PNG from this page as the app icon and save changes. Approve the app’s installation, invite the bot to your test channel, and enter its credentials in the local assistant. Slack handles app consent. The website never receives the credentials.</p>
+<h2>3. Verify the first reply</h2>
+<p>Send the test mention shown in the assistant and wait for your bot’s reply in the same thread. This verifies the Slack connection without using a model.</p>
+<p>For text advice, add your Software Factory checkout as the third positional argument and configure its model sign-in. General Commander uses ChatGPT. Other profiles use the configured Hermes free model. Every advisory request requires local approval. Profile-specific tools, Factory execution and native approvals require their own authorized host.</p>
+<p>For another bot, use its own state directory and a different <code>--port</code>. Open the loopback address printed by the assistant.</p>
+		<section id="slack-agent-setup" hidden>
+			<h2>Your Slack bot setup</h2>
+			<pre><code id="slack-setup-command"></code></pre>
+			<p><a id="slack-local-setup">Open the local setup assistant</a></p>
+			<p><a id="slack-portrait-download" download>Download this agent’s Slack portrait (PNG)</a></p>
+		</section>
+		<p id="slack-select-agent"><a href="/agents/">Choose an agent</a> and select Connect to Slack to see its setup command and portrait.</p>
 	</article>
+	<script src="/assets/js/slack-setup.js" defer></script>
 </main>
 
 
