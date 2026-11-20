@@ -34,6 +34,13 @@ class SyncTests(unittest.TestCase):
             self.assertIn("fixture tested", module.compatibility_text(chain["general-commander"]))
             self.assertNotIn("Connect to Slack", module.compatibility_text(chain["general-commander"]))
             self.assertIn("[Connect to Matrix]", module.compatibility_text(module.compatibility(source, "videoops")["producer"]))
+            preview = {**slack, "status": "experimental", "host": "local-setup",
+                       "preview_url": "https://agents.kujolang.ai/connect-slack-general-commander/"}
+            payload["entries"].append(preview)
+            index.write_text(json.dumps(payload))
+            chain = module.compatibility(source, "chain-of-command")
+            self.assertIn("[Connect to Slack](/connect-slack-general-commander/) (self-hosted preview)",
+                          module.compatibility_text(chain["general-commander"]))
             matrix["setup_url"] = "https://agents.kujolang.ai/setup?token=secret"
             index.write_text(json.dumps(payload))
             with self.assertRaisesRegex(ValueError, "qualification link"):

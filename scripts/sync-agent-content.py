@@ -78,6 +78,11 @@ def compatibility(source_root: Path, source: str) -> dict[str, list[dict]]:
                 if (url.scheme != "https" or url.netloc not in {"agents.kujolang.ai", "github.com"}
                         or url.query or url.fragment or not re.fullmatch(r"/[A-Za-z0-9_./-]+", url.path)):
                     raise ValueError("untrusted collaboration qualification link")
+        if "preview_url" in row:
+            preview = row["preview_url"]
+            if (state != "experimental" or platform != "slack" or not isinstance(preview, str)
+                    or not re.fullmatch(r"https://agents[.]kujolang[.]ai/connect-slack-[a-z0-9-]+/", preview)):
+                raise ValueError("untrusted Slack preview link")
         for agent in agents:
             key = (agent, platform, host)
             if agent not in paths or key in seen:
@@ -99,6 +104,8 @@ def compatibility_text(entries: list[dict], heading: str = "## Collaboration pla
         label = f"{name} ({row['host']} host, {status})"
         if row["status"] == "qualified":
             label = f"[Connect to {name}]({row['setup_url']}) ({row['host']} host), [qualification]({row['qualification_url']})"
+        elif "preview_url" in row:
+            label = f"[Connect to {name}]({urlsplit(row['preview_url']).path}) (self-hosted preview)"
         rows.append(f"- {label}. Operations: {', '.join(row['operations'])}.")
     return "\n\n" + "\n".join(rows) + "\n"
 
