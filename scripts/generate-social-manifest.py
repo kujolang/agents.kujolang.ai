@@ -116,6 +116,13 @@ def main() -> int:
             "assets/images/agent-development-platform.webp",
         ),
         card(
+            "connect-slack-general-commander",
+            "Connect General Commander to Slack",
+            "Install and verify a dedicated Slack bot in your workspace.",
+            "Self-hosted Slack setup",
+            "content/pages/connect-slack-general-commander.md",
+        ),
+        card(
             "404",
             "Signal Lost",
             "This route is outside the active agent network.",

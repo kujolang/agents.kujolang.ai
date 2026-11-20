@@ -106,6 +106,18 @@
       "show_url": false
     },
     {
+      "id": "connect-slack-general-commander",
+      "title": "Connect General Commander to Slack",
+      "tagline": "Install and verify a dedicated Slack bot in your workspace.",
+      "file": "content/pages/connect-slack-general-commander.md",
+      "variant": "social",
+      "label": "Self-hosted Slack setup",
+      "background_image": "assets/images/agent-hero-background.webp",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_border": true,
+      "show_url": false
+    },
+    {
       "id": "404",
       "title": "Signal Lost",
       "tagline": "This route is outside the active agent network.",

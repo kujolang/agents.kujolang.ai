@@ -2,6 +2,7 @@
 title: "Connect General Commander to Slack"
 custom_url: "connect-slack-general-commander"
 description: "Install General Commander as a distinct Slack bot with the local Kujo setup assistant."
+social_image: "/assets/images/social/connect-slack-general-commander.jpg"
 date: 2026-11-20
 last_updated: 2026-11-20
 nav_hide: true
