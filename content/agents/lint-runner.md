@@ -73,3 +73,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 ## Anti-Scope
 
 - Do not fix lint, reformat, or alter config unless separately assigned.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=chain.lint-runner) (self-hosted advisory preview). Operations: task.request, execution.observation.

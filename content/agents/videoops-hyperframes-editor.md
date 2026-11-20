@@ -111,3 +111,8 @@ Retry targeted build or schema repairs once. Escalate only this stage to a stron
 
 - Do not invent creative direction, use undocumented assets, silently change copy or timing, or approve your own render.
 - Do not store credentials, claim runtime enforcement from this contract, or conceal missing evidence.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=videoops.hyperframes-editor) (self-hosted advisory preview). Operations: task.request, execution.observation.

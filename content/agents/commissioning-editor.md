@@ -84,3 +84,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/publishing-house/
 
 - Do not issue generic topic prompts.
 - Do not promise publication or force every idea into the calendar.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=publishing-house.commissioning-editor) (self-hosted advisory preview). Operations: task.request, execution.observation.

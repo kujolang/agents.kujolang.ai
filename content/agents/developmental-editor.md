@@ -84,3 +84,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/publishing-house/
 
 - Do not copyedit prematurely.
 - Do not flatten a distinctive voice into house-safe consensus.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=publishing-house.developmental-editor) (self-hosted advisory preview). Operations: task.request, execution.observation.

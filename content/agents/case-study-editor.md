@@ -84,3 +84,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/publishing-house/
 
 - Do not fabricate social proof or composite testimony without explicit disclosure.
 - Do not let promotional needs override participant rights or factual context.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=publishing-house.case-study-editor) (self-hosted advisory preview). Operations: task.request, execution.observation.

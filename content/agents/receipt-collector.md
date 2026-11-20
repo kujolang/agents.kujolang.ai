@@ -74,3 +74,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 ## Anti-Scope
 
 - Do not judge quality, rerun commands, mutate git, or publish artifacts.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=chain.receipt-collector) (self-hosted advisory preview). Operations: task.request, execution.observation.

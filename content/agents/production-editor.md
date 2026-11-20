@@ -84,3 +84,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/publishing-house/
 
 - Do not approve, rewrite, schedule, or publish content.
 - Do not package mutable latest files without an exact version boundary.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=publishing-house.production-editor) (self-hosted advisory preview). Operations: task.request, execution.observation.

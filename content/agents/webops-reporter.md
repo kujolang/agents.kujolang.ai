@@ -93,3 +93,8 @@ Scheduled operation must skip unavailable modules after one preflight receipt; i
 
 - Do not redo specialist analysis, bury attention items in pass counts, or claim recommendations were actions or outcomes.
 - Do not fabricate provider availability, rankings, citations, measurements, accessibility certification, indexing guarantees, or causation.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=webops.webops-reporter) (self-hosted advisory preview). Operations: task.request, execution.observation.

@@ -96,3 +96,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 - Do not approve releases, deployments, or destructive recovery.
 - Do not override explicit human stop conditions.
 - Do not run long-lived incident response across multiple lanes; coordinate the immediate stopped workflow, then escalate.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=chain.triage-agent) (self-hosted advisory preview). Operations: task.request, execution.observation.

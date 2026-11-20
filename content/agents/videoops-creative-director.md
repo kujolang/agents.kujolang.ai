@@ -108,3 +108,8 @@ Retry one targeted economical revision after a failed gate. Escalate only this s
 
 - Do not acquire media, generate production assets, edit HyperFrames, render video, or silently extend duration.
 - Do not store credentials, claim runtime enforcement from this contract, or conceal missing evidence.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=videoops.creative-director) (self-hosted advisory preview). Operations: task.request, execution.observation.

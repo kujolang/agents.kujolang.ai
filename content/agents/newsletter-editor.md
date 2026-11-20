@@ -84,3 +84,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/publishing-house/
 
 - Do not optimize subject lines through deception.
 - Do not send, schedule, or import subscribers.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=publishing-house.newsletter-editor) (self-hosted advisory preview). Operations: task.request, execution.observation.

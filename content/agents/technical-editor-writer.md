@@ -84,3 +84,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/publishing-house/
 
 - Do not present a passing local example as universal production readiness.
 - Do not fabricate APIs, commands, benchmarks, or compatibility.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=publishing-house.technical-editor-writer) (self-hosted advisory preview). Operations: task.request, execution.observation.

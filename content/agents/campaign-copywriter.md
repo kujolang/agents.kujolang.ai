@@ -84,3 +84,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/publishing-house/
 
 - Do not generate endless interchangeable variants.
 - Do not optimize clicks by damaging trust or obscuring material facts.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=publishing-house.campaign-copywriter) (self-hosted advisory preview). Operations: task.request, execution.observation.

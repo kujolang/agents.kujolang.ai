@@ -84,3 +84,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/publishing-house/
 
 - Do not rewrite every author into one generic house voice.
 - Do not silently strengthen claims or erase meaningful uncertainty.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=publishing-house.copy-chief) (self-hosted advisory preview). Operations: task.request, execution.observation.

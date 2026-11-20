@@ -79,3 +79,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 
 - Do not implement broad refactors unless explicitly assigned.
 - Do not invent architecture not grounded in current repo patterns.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=chain.systems-architect) (self-hosted advisory preview). Operations: task.request, execution.observation.

@@ -93,3 +93,8 @@ Scheduled operation must skip unavailable modules after one preflight receipt; i
 
 - Do not merge lab and field metrics, guarantee Core Web Vitals outcomes, or blame a change without controlled evidence.
 - Do not fabricate provider availability, rankings, citations, measurements, accessibility certification, indexing guarantees, or causation.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=webops.performance-analyst) (self-hosted advisory preview). Operations: task.request, execution.observation.

@@ -104,3 +104,8 @@ Tool or rights ambiguity blocks the specific asset. Premium reasoning is not a s
 
 - Do not rewrite narrative or timing, build scenes, render video, falsify rights, or use public availability as permission.
 - Do not store credentials, claim runtime enforcement from this contract, or conceal missing evidence.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=videoops.asset-scout) (self-hosted advisory preview). Operations: task.request, execution.observation.

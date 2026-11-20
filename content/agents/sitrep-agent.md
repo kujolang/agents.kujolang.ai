@@ -77,3 +77,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 
 - Do not perform new investigation beyond reading assigned evidence.
 - Do not make strategic calls.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=chain.sitrep-agent) (self-hosted advisory preview). Operations: task.request, execution.observation.

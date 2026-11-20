@@ -84,3 +84,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/publishing-house/
 
 - Do not treat citations as proof without reading them.
 - Do not trade factual discipline for a stronger headline or smoother narrative.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=publishing-house.standards-evidence-editor) (self-hosted advisory preview). Operations: task.request, execution.observation.

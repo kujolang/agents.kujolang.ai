@@ -84,3 +84,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/publishing-house/
 
 - Do not imitate a named living writer or disguise generic synthesis as original reporting.
 - Do not approve, package, schedule, or publish the draft.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=publishing-house.features-writer) (self-hosted advisory preview). Operations: task.request, execution.observation.

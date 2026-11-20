@@ -93,3 +93,8 @@ Scheduled operation must skip unavailable modules after one preflight receipt; i
 
 - Do not invent claims, publish drafts, post without ACT authority, or bind assets to one content platform.
 - Do not fabricate provider availability, rankings, citations, measurements, accessibility certification, indexing guarantees, or causation.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=webops.distribution-operator) (self-hosted advisory preview). Operations: task.request, execution.observation.

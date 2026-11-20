@@ -77,3 +77,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 
 - Do not implement the packaged task.
 - Do not claim redaction is perfect.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=chain.context-packager) (self-hosted advisory preview). Operations: task.request, execution.observation.

@@ -93,3 +93,8 @@ Scheduled operation must skip unavailable modules after one preflight receipt; i
 
 - Do not duplicate every specialist audit, guarantee ranking outcomes, or apply changes without role-bounded ACT authority.
 - Do not fabricate provider availability, rankings, citations, measurements, accessibility certification, indexing guarantees, or causation.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=webops.seo-auditor) (self-hosted advisory preview). Operations: task.request, execution.observation.

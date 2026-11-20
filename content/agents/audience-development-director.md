@@ -84,3 +84,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/publishing-house/
 
 - Do not promise growth, virality, reach, or causation.
 - Do not let platform metrics become the sole definition of editorial value.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=publishing-house.audience-development-director) (self-hosted advisory preview). Operations: task.request, execution.observation.

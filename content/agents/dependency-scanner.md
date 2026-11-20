@@ -73,3 +73,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 ## Anti-Scope
 
 - Do not update dependencies, edit lockfiles, or approve risk.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=chain.dependency-scanner) (self-hosted advisory preview). Operations: task.request, execution.observation.

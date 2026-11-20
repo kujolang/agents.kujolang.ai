@@ -84,3 +84,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/publishing-house/
 
 - Do not confuse novelty, provocation, or ornate language with a big idea.
 - Do not approve final copy, evidence, or publication.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=publishing-house.creative-director) (self-hosted advisory preview). Operations: task.request, execution.observation.

@@ -93,3 +93,8 @@ Scheduled operation must skip unavailable modules after one preflight receipt; i
 
 - Do not claim indexed from a 200 response, submit URLs, or recommend blanket noindex/removal actions.
 - Do not fabricate provider availability, rankings, citations, measurements, accessibility certification, indexing guarantees, or causation.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=webops.indexation-analyst) (self-hosted advisory preview). Operations: task.request, execution.observation.

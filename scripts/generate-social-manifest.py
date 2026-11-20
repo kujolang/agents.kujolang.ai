@@ -116,11 +116,11 @@ def main() -> int:
             "assets/images/agent-development-platform.webp",
         ),
         card(
-            "connect-slack-general-commander",
-            "Connect General Commander to Slack",
+            "connect-slack",
+            "Connect a Kujo Agent to Slack",
             "Install and verify a dedicated Slack bot in your workspace.",
             "Self-hosted Slack setup",
-            "content/pages/connect-slack-general-commander.md",
+            "content/pages/connect-slack.md",
         ),
         card(
             "404",

@@ -76,3 +76,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 
 - Do not approve release alone.
 - Do not store or reproduce secrets in reports.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=chain.security-reviewer) (self-hosted advisory preview). Operations: task.request, execution.observation.

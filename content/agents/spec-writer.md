@@ -78,3 +78,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 
 - Do not sneak implementation decisions into acceptance criteria.
 - Do not mark planned work as shipped behavior.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=chain.spec-writer) (self-hosted advisory preview). Operations: task.request, execution.observation.

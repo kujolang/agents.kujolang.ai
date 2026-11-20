@@ -8,7 +8,7 @@ import subprocess
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import urlsplit
+from urllib.parse import urlencode, urlsplit
 
 SITE_ROOT=Path(__file__).resolve().parents[1]
 OUTPUT_ROOT=SITE_ROOT/"content/agents"
@@ -81,7 +81,7 @@ def compatibility(source_root: Path, source: str) -> dict[str, list[dict]]:
         if "preview_url" in row:
             preview = row["preview_url"]
             if (state != "experimental" or platform != "slack" or not isinstance(preview, str)
-                    or not re.fullmatch(r"https://agents[.]kujolang[.]ai/connect-slack-[a-z0-9-]+/", preview)):
+                    or not re.fullmatch(r"https://agents[.]kujolang[.]ai/connect-slack(?:-[a-z0-9-]+)?/", preview)):
                 raise ValueError("untrusted Slack preview link")
         for agent in agents:
             key = (agent, platform, host)
@@ -90,7 +90,7 @@ def compatibility(source_root: Path, source: str) -> dict[str, list[dict]]:
             seen.add(key)
             directory, _, slug = paths[agent].partition("/")
             if directory == source:
-                selected.setdefault(slug, []).append(row)
+                selected.setdefault(slug, []).append({**row, 'agent_id': agent})
     return selected
 
 
@@ -105,7 +105,10 @@ def compatibility_text(entries: list[dict], heading: str = "## Collaboration pla
         if row["status"] == "qualified":
             label = f"[Connect to {name}]({row['setup_url']}) ({row['host']} host), [qualification]({row['qualification_url']})"
         elif "preview_url" in row:
-            label = f"[Connect to {name}]({urlsplit(row['preview_url']).path}) (self-hosted preview)"
+            path = urlsplit(row['preview_url']).path
+            if path == "/connect-slack/":
+                path += "?" + urlencode({"agent": row["agent_id"]})
+            label = f"[Connect to {name}]({path}) (self-hosted advisory preview)"
         rows.append(f"- {label}. Operations: {', '.join(row['operations'])}.")
     return "\n\n" + "\n".join(rows) + "\n"
 

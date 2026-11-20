@@ -76,3 +76,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 
 - Do not add broad framework/plugin systems without a concrete need.
 - Do not weaken safety checks for convenience.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=chain.tooling-developer) (self-hosted advisory preview). Operations: task.request, execution.observation.

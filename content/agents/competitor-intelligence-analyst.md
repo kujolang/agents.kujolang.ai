@@ -93,3 +93,8 @@ Scheduled operation must skip unavailable modules after one preflight receipt; i
 
 - Do not imitate competitors by default, crawl disallowed surfaces, or infer private strategy.
 - Do not fabricate provider availability, rankings, citations, measurements, accessibility certification, indexing guarantees, or causation.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=webops.competitor-intelligence-analyst) (self-hosted advisory preview). Operations: task.request, execution.observation.

@@ -93,3 +93,8 @@ Scheduled operation must skip unavailable modules after one preflight receipt; i
 
 - Do not infer cannibalization from shared words alone or prescribe merging without intent and performance review.
 - Do not fabricate provider availability, rankings, citations, measurements, accessibility certification, indexing guarantees, or causation.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=webops.cannibalization-analyst) (self-hosted advisory preview). Operations: task.request, execution.observation.

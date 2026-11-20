@@ -74,3 +74,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 ## Anti-Scope
 
 - Do not close, label, assign, prioritize, or comment unless explicitly authorized.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=chain.issue-hygiene-worker) (self-hosted advisory preview). Operations: task.request, execution.observation.

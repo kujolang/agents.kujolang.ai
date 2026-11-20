@@ -93,3 +93,8 @@ Scheduled operation must skip unavailable modules after one preflight receipt; i
 
 - Do not add schema merely for eligibility, invent visible facts, or guarantee rich results.
 - Do not fabricate provider availability, rankings, citations, measurements, accessibility certification, indexing guarantees, or causation.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=webops.schema-auditor) (self-hosted advisory preview). Operations: task.request, execution.observation.

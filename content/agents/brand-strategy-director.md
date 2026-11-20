@@ -84,3 +84,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/publishing-house/
 
 - Do not invent founder beliefs, customer sentiment, or market leadership.
 - Do not reduce voice to adjectives or a list of banned words.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=publishing-house.brand-strategy-director) (self-hosted advisory preview). Operations: task.request, execution.observation.

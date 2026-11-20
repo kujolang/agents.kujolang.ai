@@ -84,3 +84,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/publishing-house/
 
 - Do not rewrite the piece to conceal a failed commission.
 - Do not equate polish, length, or confidence with editorial quality.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=publishing-house.editor-in-chief) (self-hosted advisory preview). Operations: task.request, execution.observation.

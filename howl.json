@@ -106,10 +106,10 @@
       "show_url": false
     },
     {
-      "id": "connect-slack-general-commander",
-      "title": "Connect General Commander to Slack",
+      "id": "connect-slack",
+      "title": "Connect a Kujo Agent to Slack",
       "tagline": "Install and verify a dedicated Slack bot in your workspace.",
-      "file": "content/pages/connect-slack-general-commander.md",
+      "file": "content/pages/connect-slack.md",
       "variant": "social",
       "label": "Self-hosted Slack setup",
       "background_image": "assets/images/agent-hero-background.webp",

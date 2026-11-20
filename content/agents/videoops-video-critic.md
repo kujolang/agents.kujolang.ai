@@ -108,3 +108,8 @@ Escalate only review to premium-multimodal when confidence is low, gates conflic
 
 - Do not edit the composition, source replacement assets, rewrite the concept, invent requirements, or fail solely on personal taste.
 - Do not store credentials, claim runtime enforcement from this contract, or conceal missing evidence.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=videoops.video-critic) (self-hosted advisory preview). Operations: task.request, execution.observation.

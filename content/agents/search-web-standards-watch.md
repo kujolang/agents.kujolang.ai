@@ -93,3 +93,8 @@ Scheduled operation must skip unavailable modules after one preflight receipt; i
 
 - Do not amplify SEO rumors, present draft standards as settled, or turn guidance changes directly into production action.
 - Do not fabricate provider availability, rankings, citations, measurements, accessibility certification, indexing guarantees, or causation.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=webops.search-web-standards-watch) (self-hosted advisory preview). Operations: task.request, execution.observation.

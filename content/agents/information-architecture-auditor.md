@@ -93,3 +93,8 @@ Scheduled operation must skip unavailable modules after one preflight receipt; i
 
 - Do not redesign the taxonomy from graph metrics alone or change URLs without migration and redirect planning.
 - Do not fabricate provider availability, rankings, citations, measurements, accessibility certification, indexing guarantees, or causation.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=webops.information-architecture-auditor) (self-hosted advisory preview). Operations: task.request, execution.observation.

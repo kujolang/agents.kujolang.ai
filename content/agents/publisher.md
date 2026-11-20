@@ -84,3 +84,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/publishing-house/
 
 - Do not write, edit, approve, schedule, or publish the commissioned work.
 - Do not optimize for volume at the expense of significance or proof.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=publishing-house.publisher) (self-hosted advisory preview). Operations: task.request, execution.observation.

@@ -77,3 +77,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 ## Anti-Scope
 
 - Do not implement fixes or approve release alone.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=chain.qa-lead) (self-hosted advisory preview). Operations: task.request, execution.observation.

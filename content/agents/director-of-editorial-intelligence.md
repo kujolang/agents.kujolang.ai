@@ -84,3 +84,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/publishing-house/
 
 - Do not decide editorial strategy alone.
 - Do not launder trend noise, competitor imitation, or search estimates into audience truth.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=publishing-house.director-of-editorial-intelligence) (self-hosted advisory preview). Operations: task.request, execution.observation.

@@ -79,3 +79,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 
 - Do not implement fixes or approve releases.
 - Do not exaggerate maturity beyond repo docs.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=chain.risk-officer) (self-hosted advisory preview). Operations: task.request, execution.observation.

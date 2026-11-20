@@ -73,3 +73,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 ## Anti-Scope
 
 - Do not edit files, update snapshots, choose new tests, or debug.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=chain.test-runner) (self-hosted advisory preview). Operations: task.request, execution.observation.

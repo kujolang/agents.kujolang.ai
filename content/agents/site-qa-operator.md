@@ -93,3 +93,8 @@ Scheduled operation must skip unavailable modules after one preflight receipt; i
 
 - Do not replace security testing, claim complete accessibility, or mutate the site during OBSERVE.
 - Do not fabricate provider availability, rankings, citations, measurements, accessibility certification, indexing guarantees, or causation.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=webops.site-qa-operator) (self-hosted advisory preview). Operations: task.request, execution.observation.

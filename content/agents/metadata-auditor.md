@@ -93,3 +93,8 @@ Scheduled operation must skip unavailable modules after one preflight receipt; i
 
 - Do not keyword-stuff metadata, force uniqueness that harms accuracy, or promise click-through improvement.
 - Do not fabricate provider availability, rankings, citations, measurements, accessibility certification, indexing guarantees, or causation.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=webops.metadata-auditor) (self-hosted advisory preview). Operations: task.request, execution.observation.

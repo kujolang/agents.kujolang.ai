@@ -84,3 +84,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/publishing-house/
 
 - Do not become the default writer, editor, or publisher.
 - Do not mark incomplete or unreviewed work ready merely to clear the queue.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=publishing-house.managing-editor) (self-hosted advisory preview). Operations: task.request, execution.observation.

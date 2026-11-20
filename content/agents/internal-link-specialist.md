@@ -93,3 +93,8 @@ Scheduled operation must skip unavailable modules after one preflight receipt; i
 
 - Do not add links to increase counts, force exact-match anchors, or mutate content outside explicit ACT scope.
 - Do not fabricate provider availability, rankings, citations, measurements, accessibility certification, indexing guarantees, or causation.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=webops.internal-link-specialist) (self-hosted advisory preview). Operations: task.request, execution.observation.

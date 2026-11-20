@@ -93,3 +93,8 @@ Scheduled operation must skip unavailable modules after one preflight receipt; i
 
 - Do not execute redirects, retire content, or treat portfolio state as permanent without reviewed evidence.
 - Do not fabricate provider availability, rankings, citations, measurements, accessibility certification, indexing guarantees, or causation.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=webops.content-portfolio-manager) (self-hosted advisory preview). Operations: task.request, execution.observation.

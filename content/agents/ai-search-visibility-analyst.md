@@ -93,3 +93,8 @@ Scheduled operation must skip unavailable modules after one preflight receipt; i
 
 - Do not claim universal GEO visibility, fabricate citations, or treat one volatile response as a trend.
 - Do not fabricate provider availability, rankings, citations, measurements, accessibility certification, indexing guarantees, or causation.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=webops.ai-search-visibility-analyst) (self-hosted advisory preview). Operations: task.request, execution.observation.

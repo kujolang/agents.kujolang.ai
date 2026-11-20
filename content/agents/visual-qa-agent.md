@@ -75,3 +75,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 ## Anti-Scope
 
 - Do not make visual design decisions or edit UI code unless separately assigned.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=chain.visual-qa-agent) (self-hosted advisory preview). Operations: task.request, execution.observation.

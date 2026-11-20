@@ -78,3 +78,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 
 - Do not make product, architecture, or release decisions.
 - Do not invent behavior not present in docs or source.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=chain.research-analyst) (self-hosted advisory preview). Operations: task.request, execution.observation.

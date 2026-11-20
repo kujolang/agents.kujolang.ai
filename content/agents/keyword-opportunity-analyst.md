@@ -93,3 +93,8 @@ Scheduled operation must skip unavailable modules after one preflight receipt; i
 
 - Do not present estimates as measurements, guarantee rankings, or approve content strategy alone.
 - Do not fabricate provider availability, rankings, citations, measurements, accessibility certification, indexing guarantees, or causation.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=webops.keyword-opportunity-analyst) (self-hosted advisory preview). Operations: task.request, execution.observation.

@@ -79,3 +79,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 
 - Do not write unsupported marketing claims.
 - Do not override architecture, security, or verification findings.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=chain.product-strategist) (self-hosted advisory preview). Operations: task.request, execution.observation.

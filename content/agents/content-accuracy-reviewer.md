@@ -93,3 +93,8 @@ Scheduled operation must skip unavailable modules after one preflight receipt; i
 
 - Do not treat snippets or secondary summaries as authority when primary sources exist, or silently rewrite editorial intent.
 - Do not fabricate provider availability, rankings, citations, measurements, accessibility certification, indexing guarantees, or causation.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=webops.content-accuracy-reviewer) (self-hosted advisory preview). Operations: task.request, execution.observation.

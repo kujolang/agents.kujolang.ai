@@ -77,3 +77,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 
 - Do not rewrite the patch during review unless separately assigned.
 - Do not nitpick style when functional risks exist.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=chain.code-reviewer) (self-hosted advisory preview). Operations: task.request, execution.observation.

@@ -77,3 +77,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 
 - Do not make implementation decisions that belong to Systems Architect or execution agents.
 - Do not let worker agents receive ambiguous research or design tasks.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=chain.chief-of-staff) (self-hosted advisory preview). Operations: task.request, execution.observation.

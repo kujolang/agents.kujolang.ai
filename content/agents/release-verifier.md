@@ -76,3 +76,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 ## Anti-Scope
 
 - Do not publish, tag, deploy, or mutate release state without explicit authorization.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=chain.release-verifier) (self-hosted advisory preview). Operations: task.request, execution.observation.

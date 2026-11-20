@@ -75,3 +75,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 ## Anti-Scope
 
 - Do not redesign unrelated pages or invent marketing/landing pages unless assigned.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=chain.frontend-developer) (self-hosted advisory preview). Operations: task.request, execution.observation.

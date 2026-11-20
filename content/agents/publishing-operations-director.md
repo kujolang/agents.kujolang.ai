@@ -84,3 +84,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/publishing-house/
 
 - Do not infer approval from draft status, conversation context, or credential availability.
 - Do not create, edit, or strengthen the content being published.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=publishing-house.publishing-operations-director) (self-hosted advisory preview). Operations: task.request, execution.observation.

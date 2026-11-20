@@ -93,3 +93,8 @@ Scheduled operation must skip unavailable modules after one preflight receipt; i
 
 - Do not recommend deletion solely because traffic is low or call content stale solely from its date.
 - Do not fabricate provider availability, rankings, citations, measurements, accessibility certification, indexing guarantees, or causation.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=webops.content-decay-analyst) (self-hosted advisory preview). Operations: task.request, execution.observation.

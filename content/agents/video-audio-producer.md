@@ -84,3 +84,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/publishing-house/
 
 - Do not imitate a living person's voice or create deceptive synthetic media.
 - Do not upload, schedule, or publish externally.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=publishing-house.video-audio-producer) (self-hosted advisory preview). Operations: task.request, execution.observation.

@@ -76,3 +76,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 
 - Do not deploy, publish, mutate remote services, or store secrets without explicit authorization.
 - Do not treat adapter fixture success as proof of current provider model availability, pricing, quota, or retention policy.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=chain.integration-engineer) (self-hosted advisory preview). Operations: task.request, execution.observation.

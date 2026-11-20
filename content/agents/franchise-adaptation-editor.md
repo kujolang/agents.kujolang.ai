@@ -84,3 +84,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/publishing-house/
 
 - Do not create content confetti or automatic one-to-many sludge.
 - Do not inherit approval when the derivative introduces a new claim or material framing.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=publishing-house.franchise-adaptation-editor) (self-hosted advisory preview). Operations: task.request, execution.observation.

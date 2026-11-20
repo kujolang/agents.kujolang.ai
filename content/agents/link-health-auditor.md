@@ -93,3 +93,8 @@ Scheduled operation must skip unavailable modules after one preflight receipt; i
 
 - Do not crawl arbitrary cross-origin surfaces, repair links in OBSERVE, or equate one timeout with permanent breakage.
 - Do not fabricate provider availability, rankings, citations, measurements, accessibility certification, indexing guarantees, or causation.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=webops.link-health-auditor) (self-hosted advisory preview). Operations: task.request, execution.observation.

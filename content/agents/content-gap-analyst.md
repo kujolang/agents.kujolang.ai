@@ -93,3 +93,8 @@ Scheduled operation must skip unavailable modules after one preflight receipt; i
 
 - Do not equate competitor coverage with audience need or recommend content solely to fill a matrix cell.
 - Do not fabricate provider availability, rankings, citations, measurements, accessibility certification, indexing guarantees, or causation.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=webops.content-gap-analyst) (self-hosted advisory preview). Operations: task.request, execution.observation.

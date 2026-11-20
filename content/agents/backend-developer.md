@@ -74,3 +74,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 ## Anti-Scope
 
 - Do not modify client UI, deployment config, or broad architecture unless assigned.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=chain.backend-developer) (self-hosted advisory preview). Operations: task.request, execution.observation.

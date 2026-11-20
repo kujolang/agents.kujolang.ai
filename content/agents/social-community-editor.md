@@ -84,3 +84,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/publishing-house/
 
 - Do not manufacture engagement bait, astroturfing, false consensus, or persona deception.
 - Do not post, reply, moderate, or delete externally.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=publishing-house.social-community-editor) (self-hosted advisory preview). Operations: task.request, execution.observation.

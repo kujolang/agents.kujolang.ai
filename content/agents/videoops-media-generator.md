@@ -103,3 +103,8 @@ Escalate art direction only after a targeted retry fails. Paid or account-backed
 
 - Do not generate for non-GENERATE requirements, alter the thesis or timing, acquire external footage, or perform the final edit.
 - Do not store credentials, claim runtime enforcement from this contract, or conceal missing evidence.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=videoops.media-generator) (self-hosted advisory preview). Operations: task.request, execution.observation.

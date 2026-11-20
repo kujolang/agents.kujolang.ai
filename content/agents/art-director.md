@@ -84,3 +84,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/publishing-house/
 
 - Do not treat image generation as art direction.
 - Do not approve editorial claims or external publication.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=publishing-house.art-director) (self-hosted advisory preview). Operations: task.request, execution.observation.

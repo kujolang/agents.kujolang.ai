@@ -78,3 +78,8 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 ## Anti-Scope
 
 - Do not implement, review, or run release gates unless separately assigned.
+
+
+## Collaboration platforms
+
+- [Connect to Slack](/connect-slack/?agent=chain.planner) (self-hosted advisory preview). Operations: task.request, execution.observation.
