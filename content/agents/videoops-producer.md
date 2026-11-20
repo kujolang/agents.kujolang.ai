@@ -109,3 +109,9 @@ Escalate only the failing specialist stage after two bounded economical attempts
 
 - Do not perform specialist work under the producer identity, bypass stage gates, approve the editor's own work, incur paid generation cost, publish, or claim unavailable capabilities.
 - Do not store credentials, claim runtime enforcement from this contract, or conceal missing evidence.
+
+
+## Collaboration platforms
+
+- Matrix (reference host, fixture tested). Operations: message, task.request, delegation.request.
+- Slack (reference host, fixture tested). Operations: message, task.request, delegation.request.

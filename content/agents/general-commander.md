@@ -80,3 +80,9 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 ## Anti-Scope
 
 - Do not implement code, run broad checks personally when a worker agent should do it, or override verification evidence with intuition.
+
+
+## Collaboration platforms
+
+- Matrix (reference host, fixture tested). Operations: message, task.request, delegation.request.
+- Slack (reference host, fixture tested). Operations: message, task.request, delegation.request.

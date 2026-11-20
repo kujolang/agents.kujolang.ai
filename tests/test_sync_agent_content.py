@@ -13,6 +13,32 @@ def contract(name,category_field,category,purpose):
     return f"# {name}\n\n## Agent Contract\n\n- Agent name: {name}\n- {category_field}: {category}\n- Purpose: {purpose}\n\n## Use This Agent When\n\n- Use it.\n"
 
 class SyncTests(unittest.TestCase):
+    def test_collaboration_index_is_joined_by_id_and_only_qualified_setup_is_active(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            source = Path(tmp)
+            (source / "agent-registry.json").write_text(json.dumps({"agents": [
+                {"id": "chain.general-commander", "path": "chain-of-command/general-commander"},
+                {"id": "videoops.producer", "path": "videoops/producer"},
+            ]}))
+            slack = {"agent_ids": ["chain.general-commander"], "platform": "slack",
+                     "host": "reference", "protocol_major": 1, "status": "fixture-only",
+                     "operations": ["message", "task.request"]}
+            matrix = {**slack, "agent_ids": ["videoops.producer"], "platform": "matrix",
+                      "status": "qualified", "setup_url": "https://agents.kujolang.ai/setup/matrix/",
+                      "qualification_url": "https://github.com/kujolang/fixture/blob/main/proof.md"}
+            index = source / "collaboration-integrations.json"
+            payload = {"schema": "kujo.collaboration.compatibility/v1", "entries": [slack, matrix]}
+            index.write_text(json.dumps(payload))
+            chain = module.compatibility(source, "chain-of-command")
+            self.assertEqual(list(chain), ["general-commander"])
+            self.assertIn("fixture tested", module.compatibility_text(chain["general-commander"]))
+            self.assertNotIn("Connect to Slack", module.compatibility_text(chain["general-commander"]))
+            self.assertIn("[Connect to Matrix]", module.compatibility_text(module.compatibility(source, "videoops")["producer"]))
+            matrix["setup_url"] = "https://agents.kujolang.ai/setup?token=secret"
+            index.write_text(json.dumps(payload))
+            with self.assertRaisesRegex(ValueError, "qualification link"):
+                module.compatibility(source, "videoops")
+
     def test_scoped_sync_preserves_other_set_and_removes_only_owned_stale(self):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp)/"kujo-agents"; output=Path(tmp)/"content/agents"; output.mkdir(parents=True)
