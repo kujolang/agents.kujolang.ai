@@ -82,4 +82,4 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 
 ## Collaboration platforms
 
-- [Connect to Slack](/connect-slack/?agent=chain.spec-writer) (self-hosted advisory preview). Operations: task.request, execution.observation.
+- [Slack setup in testing](/connect-slack/?agent=chain.spec-writer). Operations: task.request, execution.observation.

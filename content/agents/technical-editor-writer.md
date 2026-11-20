@@ -88,4 +88,4 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/publishing-house/
 
 ## Collaboration platforms
 
-- [Connect to Slack](/connect-slack/?agent=publishing-house.technical-editor-writer) (self-hosted advisory preview). Operations: task.request, execution.observation.
+- [Slack setup in testing](/connect-slack/?agent=publishing-house.technical-editor-writer). Operations: task.request, execution.observation.

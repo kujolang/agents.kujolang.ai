@@ -114,5 +114,5 @@ Escalate only the failing specialist stage after two bounded economical attempts
 ## Collaboration platforms
 
 - Matrix (reference host, fixture tested). Operations: message, task.request, delegation.request.
-- [Connect to Slack](/connect-slack/?agent=videoops.producer) (self-hosted advisory preview). Operations: task.request, execution.observation.
+- [Slack setup in testing](/connect-slack/?agent=videoops.producer). Operations: task.request, execution.observation.
 - Slack (reference host, fixture tested). Operations: message, task.request, delegation.request.

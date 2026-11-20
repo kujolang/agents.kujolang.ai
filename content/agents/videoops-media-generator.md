@@ -107,4 +107,4 @@ Escalate art direction only after a targeted retry fails. Paid or account-backed
 
 ## Collaboration platforms
 
-- [Connect to Slack](/connect-slack/?agent=videoops.media-generator) (self-hosted advisory preview). Operations: task.request, execution.observation.
+- [Slack setup in testing](/connect-slack/?agent=videoops.media-generator). Operations: task.request, execution.observation.

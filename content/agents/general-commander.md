@@ -85,5 +85,5 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 ## Collaboration platforms
 
 - Matrix (reference host, fixture tested). Operations: message, task.request, delegation.request.
-- [Connect to Slack](/connect-slack/?agent=chain.general-commander) (self-hosted advisory preview). Operations: task.request, execution.observation.
+- [Slack setup in testing](/connect-slack/?agent=chain.general-commander). Operations: task.request, execution.observation.
 - Slack (reference host, fixture tested). Operations: message, task.request, delegation.request.

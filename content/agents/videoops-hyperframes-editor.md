@@ -115,4 +115,4 @@ Retry targeted build or schema repairs once. Escalate only this stage to a stron
 
 ## Collaboration platforms
 
-- [Connect to Slack](/connect-slack/?agent=videoops.hyperframes-editor) (self-hosted advisory preview). Operations: task.request, execution.observation.
+- [Slack setup in testing](/connect-slack/?agent=videoops.hyperframes-editor). Operations: task.request, execution.observation.

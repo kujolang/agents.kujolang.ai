@@ -108,7 +108,7 @@ def compatibility_text(entries: list[dict], heading: str = "## Collaboration pla
             path = urlsplit(row['preview_url']).path
             if path == "/connect-slack/":
                 path += "?" + urlencode({"agent": row["agent_id"]})
-            label = f"[Connect to {name}]({path}) (self-hosted advisory preview)"
+            label = f"[Slack setup in testing]({path})"
         rows.append(f"- {label}. Operations: {', '.join(row['operations'])}.")
     return "\n\n" + "\n".join(rows) + "\n"
 

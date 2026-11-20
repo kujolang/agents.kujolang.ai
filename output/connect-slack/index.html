@@ -3,15 +3,15 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Connect a Kujo Agent to Slack | Kujo Agents</title>
-	<meta name="description" content="Install a named Kujo bot with its catalog portrait in your Slack workspace.">
+	<title>Connect a Kujo agent to Slack | Kujo Agents</title>
+	<meta name="description" content="Connect a Kujo agent to your Slack workspace.">
 	<meta name="author" content="Robert DeVore">
 
 <link rel="canonical" href="https://agents.kujolang.ai/connect-slack/">
 	<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
 
-	<meta property="og:title" content="Connect a Kujo Agent to Slack">
-	<meta property="og:description" content="Install a named Kujo bot with its catalog portrait in your Slack workspace.">
+	<meta property="og:title" content="Connect a Kujo agent to Slack">
+	<meta property="og:description" content="Connect a Kujo agent to your Slack workspace.">
 	<meta property="og:url" content="https://agents.kujolang.ai/connect-slack/">
 	<meta property="og:type" content="website">
 	<meta property="og:site_name" content="Kujo Agents">
@@ -20,17 +20,17 @@
 	<meta property="og:image:type" content="image/jpeg">
 	<meta property="og:image:width" content="1200">
 	<meta property="og:image:height" content="630">
-	<meta property="og:image:alt" content="Connect a Kujo Agent to Slack social preview">
+	<meta property="og:image:alt" content="Connect a Kujo agent to Slack social preview">
 
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@kujolang">
-	<meta name="twitter:title" content="Connect a Kujo Agent to Slack">
-	<meta name="twitter:description" content="Install a named Kujo bot with its catalog portrait in your Slack workspace.">
+	<meta name="twitter:title" content="Connect a Kujo agent to Slack">
+	<meta name="twitter:description" content="Connect a Kujo agent to your Slack workspace.">
 <meta name="twitter:image" content="https://agents.kujolang.ai/assets/images/social/connect-slack.jpg">
-	<meta name="twitter:image:alt" content="Connect a Kujo Agent to Slack social preview">
+	<meta name="twitter:image:alt" content="Connect a Kujo agent to Slack social preview">
 	<link rel="stylesheet" href="/assets/sitekit/sitekit.css?v=1.0.0">
 	<link rel="stylesheet" href="/assets/css/site.css?v=20260901-1">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","headline":"Connect a Kujo Agent to Slack","name":"Connect a Kujo Agent to Slack","description":"Install a named Kujo bot with its catalog portrait in your Slack workspace.","url":"https://agents.kujolang.ai/connect-slack/","image":"https://agents.kujolang.ai/assets/images/social/connect-slack.jpg","publisher":{"@type":"Organization","name":"Kujo","url":"https://kujolang.ai"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","headline":"Connect a Kujo agent to Slack","name":"Connect a Kujo agent to Slack","description":"Connect a Kujo agent to your Slack workspace.","url":"https://agents.kujolang.ai/connect-slack/","image":"https://agents.kujolang.ai/assets/images/social/connect-slack.jpg","publisher":{"@type":"Organization","name":"Kujo","url":"https://kujolang.ai"}}</script>
 </head>
 <body>
 	<a class="sk-skip-link" href="#main-content">Skip to main content</a>
@@ -89,27 +89,12 @@
 		</aside>
 	</div>
 
-	<main class="site-shell" id="main-content">
+	<main class="site-shell slack-setup-page" id="main-content">
 	<article class="agent-body kujo-content">
-		<h1>Connect a Kujo Agent to Slack</h1>
-		<p>Set up a named Slack bot for the agent you selected. You need Node.js 24 or later, a <a href="https://github.com/kujolang/kujo-agents">Kujo Agents checkout</a>, and permission to create an app in the Slack workspace.</p>
-<h2>1. Start the local setup assistant</h2>
-<p><a href="/assets/downloads/kujo-slack-setup-0.1.1.tgz">Download the setup package</a>. Run the command below from your download folder. Replace <code>/path/to/kujo-agents</code> with your checkout path.</p>
-<h2>2. Install the bot and upload its portrait</h2>
-<p>Open the local setup assistant and follow its prefilled Slack manifest. In Slack’s <strong>Basic Information → Display Information</strong>, upload the PNG from this page as the app icon and save changes. Approve the app’s installation, invite the bot to your test channel, and enter its credentials in the local assistant. Slack handles app consent. The website never receives the credentials.</p>
-<h2>3. Verify the first reply</h2>
-<p>Send the test mention shown in the assistant and wait for your bot’s reply in the same thread. This verifies the Slack connection without using a model.</p>
-<p>For text advice, add your Software Factory checkout as the third positional argument and configure its model sign-in. General Commander uses ChatGPT. Other profiles use the configured Hermes free model. Every advisory request requires local approval. Profile-specific tools, Factory execution and native approvals require their own authorized host.</p>
-<p>For another bot, use its own state directory and a different <code>--port</code>. Open the loopback address printed by the assistant.</p>
-		<section id="slack-agent-setup" hidden>
-			<h2>Your Slack bot setup</h2>
-			<pre><code id="slack-setup-command"></code></pre>
-			<p><a id="slack-local-setup">Open the local setup assistant</a></p>
-			<p><a id="slack-portrait-download" download>Download this agent’s Slack portrait (PNG)</a></p>
-		</section>
-		<p id="slack-select-agent"><a href="/agents/">Choose an agent</a> and select Connect to Slack to see its setup command and portrait.</p>
+		<h1>Connect a Kujo agent to Slack</h1>
+		<p>Slack installation is in testing. When it’s available, select an agent, choose <strong>Add to Slack</strong>, and approve the installation in Slack. The bot arrives with the agent’s name and portrait.</p>
+		<p><a href="/agents/">Browse agents</a></p>
 	</article>
-	<script src="/assets/js/slack-setup.js" defer></script>
 </main>
 
 

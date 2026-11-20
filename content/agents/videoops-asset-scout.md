@@ -108,4 +108,4 @@ Tool or rights ambiguity blocks the specific asset. Premium reasoning is not a s
 
 ## Collaboration platforms
 
-- [Connect to Slack](/connect-slack/?agent=videoops.asset-scout) (self-hosted advisory preview). Operations: task.request, execution.observation.
+- [Slack setup in testing](/connect-slack/?agent=videoops.asset-scout). Operations: task.request, execution.observation.

@@ -1158,3 +1158,10 @@ body.mobile-menu-open .site-header { z-index: calc(var(--sk-z-modal) + 1); }
 		animation-duration: 0s !important;
 	}
 }
+
+.slack-setup-page {
+	width: min(100% - 2rem, 40rem);
+	max-width: 100%;
+	margin-inline: auto;
+	overflow-wrap: anywhere;
+}

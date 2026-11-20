@@ -112,4 +112,4 @@ Escalate only review to premium-multimodal when confidence is low, gates conflic
 
 ## Collaboration platforms
 
-- [Connect to Slack](/connect-slack/?agent=videoops.video-critic) (self-hosted advisory preview). Operations: task.request, execution.observation.
+- [Slack setup in testing](/connect-slack/?agent=videoops.video-critic). Operations: task.request, execution.observation.

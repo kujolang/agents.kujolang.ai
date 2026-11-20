@@ -30,7 +30,7 @@ def main():
                 if not meta.get(field): errors.append(f"{slug}: missing {field}")
             source_slug=slug.removeprefix("videoops-") if set_id=="videoops" else slug
             slack_url=f"/connect-slack/?agent={slack_groups[set_id]}.{source_slug}"
-            if f"[Connect to Slack]({slack_url})" not in text: errors.append(f"{slug}: missing scoped Slack setup link")
+            if f"[Slack setup in testing]({slack_url})" not in text: errors.append(f"{slug}: missing scoped Slack setup link")
             expected=f"/kujo-agents/blob/main/{set_id}/{source_slug}/AGENT.md"
             if expected not in meta.get("source_url",""): errors.append(f"{slug}: wrong canonical source URL")
             if not re.search(r"^last_updated: \d{4}-\d{2}-\d{2}$",text,re.M): errors.append(f"{slug}: invalid last_updated")
@@ -47,7 +47,7 @@ def main():
             if OUTPUT.is_dir() and not route.is_file(): errors.append(f"{slug}: generated route missing")
             elif OUTPUT.is_dir():
                 route_text=route.read_text()
-                if f'href="{slack_url}">Connect to Slack</a>' not in route_text:
+                if f'href="{slack_url}">Slack setup in testing</a>' not in route_text:
                     errors.append(f"{slug}: generated Slack setup link mismatch")
                 slack_png=OUTPUT/"assets/slack-portraits"/f"{slug}.png"
                 if not slack_png.is_file(): errors.append(f"{slug}: missing Slack portrait PNG")

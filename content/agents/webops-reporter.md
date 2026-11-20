@@ -97,4 +97,4 @@ Scheduled operation must skip unavailable modules after one preflight receipt; i
 
 ## Collaboration platforms
 
-- [Connect to Slack](/connect-slack/?agent=webops.webops-reporter) (self-hosted advisory preview). Operations: task.request, execution.observation.
+- [Slack setup in testing](/connect-slack/?agent=webops.webops-reporter). Operations: task.request, execution.observation.

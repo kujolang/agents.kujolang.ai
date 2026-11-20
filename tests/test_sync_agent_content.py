@@ -40,9 +40,9 @@ class SyncTests(unittest.TestCase):
             payload["entries"].append(preview)
             index.write_text(json.dumps(payload))
             chain = module.compatibility(source, "chain-of-command")
-            self.assertIn("[Connect to Slack](/connect-slack/?agent=chain.general-commander) (self-hosted advisory preview)",
+            self.assertIn("[Slack setup in testing](/connect-slack/?agent=chain.general-commander)",
                           module.compatibility_text(chain["general-commander"]))
-            self.assertIn("[Connect to Slack](/connect-slack/?agent=videoops.producer)",
+            self.assertIn("[Slack setup in testing](/connect-slack/?agent=videoops.producer)",
                           module.compatibility_text(module.compatibility(source, "videoops")["producer"]))
             matrix["setup_url"] = "https://agents.kujolang.ai/setup?token=secret"
             index.write_text(json.dumps(payload))

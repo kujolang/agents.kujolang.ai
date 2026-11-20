@@ -112,4 +112,4 @@ Retry one targeted economical revision after a failed gate. Escalate only this s
 
 ## Collaboration platforms
 
-- [Connect to Slack](/connect-slack/?agent=videoops.creative-director) (self-hosted advisory preview). Operations: task.request, execution.observation.
+- [Slack setup in testing](/connect-slack/?agent=videoops.creative-director). Operations: task.request, execution.observation.
