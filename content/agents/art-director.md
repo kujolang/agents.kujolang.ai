@@ -12,6 +12,7 @@ tags: ["Writing & Creative"]
 order: 12
 last_updated: 2026-08-14
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/publishing-house/art-director/AGENT.md"
+connection_options: "[{\"name\": \"Slack\", \"status\": \"experimental\", \"url\": \"/connect-slack/?agent=publishing-house.art-director\"}, {\"name\": \"Vercel Board\", \"status\": \"unavailable\"}, {\"name\": \"Microsoft Teams\", \"status\": \"unavailable\"}, {\"name\": \"Paperclip\", \"status\": \"unavailable\"}, {\"name\": \"Matrix\", \"status\": \"unavailable\"}]"
 ---
 ## Agent Contract
 
@@ -84,8 +85,3 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/publishing-house/
 
 - Do not treat image generation as art direction.
 - Do not approve editorial claims or external publication.
-
-
-## Collaboration platforms
-
-- [Slack setup in testing](/connect-slack/?agent=publishing-house.art-director). Operations: task.request, execution.observation.

@@ -12,6 +12,7 @@ tags: ["Knowledge"]
 order: 20
 last_updated: 2026-08-08
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/documentation-writer/AGENT.md"
+connection_options: "[{\"name\": \"Slack\", \"status\": \"experimental\", \"url\": \"/connect-slack/?agent=chain.documentation-writer\"}, {\"name\": \"Vercel Board\", \"status\": \"unavailable\"}, {\"name\": \"Microsoft Teams\", \"status\": \"unavailable\"}, {\"name\": \"Paperclip\", \"status\": \"unavailable\"}, {\"name\": \"Matrix\", \"status\": \"unavailable\"}]"
 ---
 ## Agent Contract
 
@@ -73,8 +74,3 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 ## Anti-Scope
 
 - Do not invent product claims or mark planned work as current.
-
-
-## Collaboration platforms
-
-- [Slack setup in testing](/connect-slack/?agent=chain.documentation-writer). Operations: task.request, execution.observation.

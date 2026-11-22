@@ -12,6 +12,7 @@ tags: ["Strategy & Intelligence"]
 order: 7
 last_updated: 2026-08-14
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/publishing-house/creative-director/AGENT.md"
+connection_options: "[{\"name\": \"Slack\", \"status\": \"experimental\", \"url\": \"/connect-slack/?agent=publishing-house.creative-director\"}, {\"name\": \"Vercel Board\", \"status\": \"unavailable\"}, {\"name\": \"Microsoft Teams\", \"status\": \"unavailable\"}, {\"name\": \"Paperclip\", \"status\": \"unavailable\"}, {\"name\": \"Matrix\", \"status\": \"unavailable\"}]"
 ---
 ## Agent Contract
 
@@ -84,8 +85,3 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/publishing-house/
 
 - Do not confuse novelty, provocation, or ornate language with a big idea.
 - Do not approve final copy, evidence, or publication.
-
-
-## Collaboration platforms
-
-- [Slack setup in testing](/connect-slack/?agent=publishing-house.creative-director). Operations: task.request, execution.observation.

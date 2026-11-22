@@ -12,6 +12,7 @@ tags: ["Writing & Creative"]
 order: 11
 last_updated: 2026-08-14
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/publishing-house/campaign-copywriter/AGENT.md"
+connection_options: "[{\"name\": \"Slack\", \"status\": \"experimental\", \"url\": \"/connect-slack/?agent=publishing-house.campaign-copywriter\"}, {\"name\": \"Vercel Board\", \"status\": \"unavailable\"}, {\"name\": \"Microsoft Teams\", \"status\": \"unavailable\"}, {\"name\": \"Paperclip\", \"status\": \"unavailable\"}, {\"name\": \"Matrix\", \"status\": \"unavailable\"}]"
 ---
 ## Agent Contract
 
@@ -84,8 +85,3 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/publishing-house/
 
 - Do not generate endless interchangeable variants.
 - Do not optimize clicks by damaging trust or obscuring material facts.
-
-
-## Collaboration platforms
-
-- [Slack setup in testing](/connect-slack/?agent=publishing-house.campaign-copywriter). Operations: task.request, execution.observation.

@@ -12,6 +12,7 @@ tags: ["Production"]
 order: 5
 last_updated: 2026-09-06
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/videoops/hyperframes-editor/AGENT.md"
+connection_options: "[{\"name\": \"Slack\", \"status\": \"experimental\", \"url\": \"/connect-slack/?agent=videoops.hyperframes-editor\"}, {\"name\": \"Vercel Board\", \"status\": \"unavailable\"}, {\"name\": \"Microsoft Teams\", \"status\": \"unavailable\"}, {\"name\": \"Paperclip\", \"status\": \"unavailable\"}, {\"name\": \"Matrix\", \"status\": \"unavailable\"}]"
 ---
 ## Agent Contract
 
@@ -111,8 +112,3 @@ Retry targeted build or schema repairs once. Escalate only this stage to a stron
 
 - Do not invent creative direction, use undocumented assets, silently change copy or timing, or approve your own render.
 - Do not store credentials, claim runtime enforcement from this contract, or conceal missing evidence.
-
-
-## Collaboration platforms
-
-- [Slack setup in testing](/connect-slack/?agent=videoops.hyperframes-editor). Operations: task.request, execution.observation.

@@ -12,6 +12,7 @@ tags: ["Search Operations"]
 order: 10
 last_updated: 2026-08-11
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/webops/ai-search-visibility-analyst/AGENT.md"
+connection_options: "[{\"name\": \"Slack\", \"status\": \"experimental\", \"url\": \"/connect-slack/?agent=webops.ai-search-visibility-analyst\"}, {\"name\": \"Vercel Board\", \"status\": \"unavailable\"}, {\"name\": \"Microsoft Teams\", \"status\": \"unavailable\"}, {\"name\": \"Paperclip\", \"status\": \"unavailable\"}, {\"name\": \"Matrix\", \"status\": \"unavailable\"}]"
 ---
 ## Agent Contract
 
@@ -93,8 +94,3 @@ Scheduled operation must skip unavailable modules after one preflight receipt; i
 
 - Do not claim universal GEO visibility, fabricate citations, or treat one volatile response as a trend.
 - Do not fabricate provider availability, rankings, citations, measurements, accessibility certification, indexing guarantees, or causation.
-
-
-## Collaboration platforms
-
-- [Slack setup in testing](/connect-slack/?agent=webops.ai-search-visibility-analyst). Operations: task.request, execution.observation.

@@ -31,19 +31,22 @@ class SyncTests(unittest.TestCase):
             index.write_text(json.dumps(payload))
             chain = module.compatibility(source, "chain-of-command")
             self.assertEqual(list(chain), ["general-commander"])
-            self.assertIn("fixture tested", module.compatibility_text(chain["general-commander"]))
-            self.assertNotIn("Connect to Slack", module.compatibility_text(chain["general-commander"]))
-            self.assertIn("[Connect to Matrix]", module.compatibility_text(module.compatibility(source, "videoops")["producer"]))
+            chain_options = module.connection_options(chain["general-commander"])
+            self.assertEqual(chain_options[0], {"name": "Slack", "status": "fixture-only"})
+            self.assertEqual(chain_options[1], {"name": "Vercel Board", "status": "unavailable"})
+            video = module.connection_options(module.compatibility(source, "videoops")["producer"])
+            self.assertEqual(video[-1], {"name": "Matrix", "status": "qualified",
+                                        "url": matrix["setup_url"], "evidence": matrix["qualification_url"]})
             preview = {**slack, "agent_ids": ["chain.general-commander", "videoops.producer"],
                        "status": "experimental", "host": "local-setup",
                        "preview_url": "https://agents.kujolang.ai/connect-slack/"}
             payload["entries"].append(preview)
             index.write_text(json.dumps(payload))
             chain = module.compatibility(source, "chain-of-command")
-            self.assertIn("[Slack setup in testing](/connect-slack/?agent=chain.general-commander)",
-                          module.compatibility_text(chain["general-commander"]))
-            self.assertIn("[Slack setup in testing](/connect-slack/?agent=videoops.producer)",
-                          module.compatibility_text(module.compatibility(source, "videoops")["producer"]))
+            self.assertEqual(module.connection_options(chain["general-commander"])[0]["url"],
+                             "/connect-slack/?agent=chain.general-commander")
+            self.assertEqual(module.connection_options(module.compatibility(source, "videoops")["producer"])[0]["url"],
+                             "/connect-slack/?agent=videoops.producer")
             matrix["setup_url"] = "https://agents.kujolang.ai/setup?token=secret"
             index.write_text(json.dumps(payload))
             with self.assertRaisesRegex(ValueError, "qualification link"):

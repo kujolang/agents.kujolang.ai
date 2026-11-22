@@ -12,6 +12,7 @@ tags: ["Writing & Creative"]
 order: 10
 last_updated: 2026-08-14
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/publishing-house/technical-editor-writer/AGENT.md"
+connection_options: "[{\"name\": \"Slack\", \"status\": \"experimental\", \"url\": \"/connect-slack/?agent=publishing-house.technical-editor-writer\"}, {\"name\": \"Vercel Board\", \"status\": \"unavailable\"}, {\"name\": \"Microsoft Teams\", \"status\": \"unavailable\"}, {\"name\": \"Paperclip\", \"status\": \"unavailable\"}, {\"name\": \"Matrix\", \"status\": \"unavailable\"}]"
 ---
 ## Agent Contract
 
@@ -84,8 +85,3 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/publishing-house/
 
 - Do not present a passing local example as universal production readiness.
 - Do not fabricate APIs, commands, benchmarks, or compatibility.
-
-
-## Collaboration platforms
-
-- [Slack setup in testing](/connect-slack/?agent=publishing-house.technical-editor-writer). Operations: task.request, execution.observation.

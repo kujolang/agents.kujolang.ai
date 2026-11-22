@@ -12,6 +12,7 @@ tags: ["Format Desk"]
 order: 21
 last_updated: 2026-08-14
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/publishing-house/social-community-editor/AGENT.md"
+connection_options: "[{\"name\": \"Slack\", \"status\": \"experimental\", \"url\": \"/connect-slack/?agent=publishing-house.social-community-editor\"}, {\"name\": \"Vercel Board\", \"status\": \"unavailable\"}, {\"name\": \"Microsoft Teams\", \"status\": \"unavailable\"}, {\"name\": \"Paperclip\", \"status\": \"unavailable\"}, {\"name\": \"Matrix\", \"status\": \"unavailable\"}]"
 ---
 ## Agent Contract
 
@@ -84,8 +85,3 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/publishing-house/
 
 - Do not manufacture engagement bait, astroturfing, false consensus, or persona deception.
 - Do not post, reply, moderate, or delete externally.
-
-
-## Collaboration platforms
-
-- [Slack setup in testing](/connect-slack/?agent=publishing-house.social-community-editor). Operations: task.request, execution.observation.

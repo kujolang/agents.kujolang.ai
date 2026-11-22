@@ -103,6 +103,22 @@
 				<p class="agent-provenance">Maintained by Kujo · Updated <time datetime="2026-07-05">2026-07-05</time> · <a href="https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/code-reviewer/AGENT.md">Source contract</a></p>
 			</div>
 			<div class="agent-mark"><img src="../../images/code-reviewer-f74d4017e408.webp" alt="Featured image for Code Reviewer" class="featured-image" width="640" height="640" loading="eager" fetchpriority="high" decoding="async"></div>
+			<section class="agent-connect" aria-labelledby="agent-connect-title" data-agent-connect="[{&quot;name&quot;: &quot;Slack&quot;, &quot;status&quot;: &quot;experimental&quot;, &quot;url&quot;: &quot;/connect-slack/?agent=chain.code-reviewer&quot;}, {&quot;name&quot;: &quot;Vercel Board&quot;, &quot;status&quot;: &quot;unavailable&quot;}, {&quot;name&quot;: &quot;Microsoft Teams&quot;, &quot;status&quot;: &quot;unavailable&quot;}, {&quot;name&quot;: &quot;Paperclip&quot;, &quot;status&quot;: &quot;unavailable&quot;}, {&quot;name&quot;: &quot;Matrix&quot;, &quot;status&quot;: &quot;unavailable&quot;}]">
+				<div class="agent-connect-intro">
+					<h2 id="agent-connect-title">Connect this agent</h2>
+					<p>Choose where you want to use this agent.</p>
+				</div>
+				<div class="agent-connect-controls" hidden>
+					<label for="agent-platform">Platform</label>
+					<div class="agent-connect-actions">
+						<select id="agent-platform" aria-describedby="agent-connect-status"></select>
+						<a class="sk-button" data-connect-action hidden>View setup</a>
+					</div>
+					<p id="agent-connect-status" role="status"></p>
+					<a class="agent-connect-evidence" hidden>View qualification evidence</a>
+				</div>
+				<p class="agent-connect-fallback"><a href="/connect-slack/">View Slack setup status</a></p>
+			</section>
 		</header>
 		<div class="agent-body kujo-content"><h2>Agent Contract</h2>
 <ul>
@@ -166,10 +182,6 @@
 <ul>
 <li>Do not rewrite the patch during review unless separately assigned.</li>
 <li>Do not nitpick style when functional risks exist.</li>
-</ul>
-<h2>Collaboration platforms</h2>
-<ul>
-<li><a href="/connect-slack/?agent=chain.code-reviewer">Slack setup in testing</a>. Operations: task.request, execution.observation.</li>
 </ul></div>
 	</article>
 	<nav class="agent-detail-nav" aria-label="Agent directory navigation">

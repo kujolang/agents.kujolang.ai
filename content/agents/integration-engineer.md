@@ -12,6 +12,7 @@ tags: ["Execution"]
 order: 13
 last_updated: 2026-08-29
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/integration-engineer/AGENT.md"
+connection_options: "[{\"name\": \"Slack\", \"status\": \"experimental\", \"url\": \"/connect-slack/?agent=chain.integration-engineer\"}, {\"name\": \"Vercel Board\", \"status\": \"unavailable\"}, {\"name\": \"Microsoft Teams\", \"status\": \"unavailable\"}, {\"name\": \"Paperclip\", \"status\": \"unavailable\"}, {\"name\": \"Matrix\", \"status\": \"unavailable\"}]"
 ---
 ## Agent Contract
 
@@ -76,8 +77,3 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 
 - Do not deploy, publish, mutate remote services, or store secrets without explicit authorization.
 - Do not treat adapter fixture success as proof of current provider model availability, pricing, quota, or retention policy.
-
-
-## Collaboration platforms
-
-- [Slack setup in testing](/connect-slack/?agent=chain.integration-engineer). Operations: task.request, execution.observation.

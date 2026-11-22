@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 import json
+import html
 import re
 import struct
 from pathlib import Path
@@ -30,7 +31,16 @@ def main():
                 if not meta.get(field): errors.append(f"{slug}: missing {field}")
             source_slug=slug.removeprefix("videoops-") if set_id=="videoops" else slug
             slack_url=f"/connect-slack/?agent={slack_groups[set_id]}.{source_slug}"
-            if f"[Slack setup in testing]({slack_url})" not in text: errors.append(f"{slug}: missing scoped Slack setup link")
+            try:
+                options=json.loads(json.loads(meta.get("connection_options","null")))
+                slack,= [option for option in options if option["name"]=="Slack"]
+                if slack["status"]=="experimental" and slack.get("url")!=slack_url:
+                    errors.append(f"{slug}: missing scoped Slack setup link")
+                if sum(option["name"]=="Vercel Board" for option in options)!=1:
+                    errors.append(f"{slug}: missing Vercel Board option")
+            except (ValueError, TypeError, KeyError):
+                options=None
+                errors.append(f"{slug}: invalid platform options")
             expected=f"/kujo-agents/blob/main/{set_id}/{source_slug}/AGENT.md"
             if expected not in meta.get("source_url",""): errors.append(f"{slug}: wrong canonical source URL")
             if not re.search(r"^last_updated: \d{4}-\d{2}-\d{2}$",text,re.M): errors.append(f"{slug}: invalid last_updated")
@@ -47,8 +57,9 @@ def main():
             if OUTPUT.is_dir() and not route.is_file(): errors.append(f"{slug}: generated route missing")
             elif OUTPUT.is_dir():
                 route_text=route.read_text()
-                if f'href="{slack_url}">Slack setup in testing</a>' not in route_text:
-                    errors.append(f"{slug}: generated Slack setup link mismatch")
+                rendered_options=re.findall(r'data-agent-connect="([^"]*)"',route_text)
+                if len(rendered_options)!=1 or html.unescape(rendered_options[0])!=json.dumps(options):
+                    errors.append(f"{slug}: generated platform options mismatch")
                 slack_png=OUTPUT/"assets/slack-portraits"/f"{slug}.png"
                 if not slack_png.is_file(): errors.append(f"{slug}: missing Slack portrait PNG")
                 else:

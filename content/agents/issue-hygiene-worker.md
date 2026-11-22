@@ -12,6 +12,7 @@ tags: ["Routine Worker"]
 order: 26
 last_updated: 2026-07-05
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/issue-hygiene-worker/AGENT.md"
+connection_options: "[{\"name\": \"Slack\", \"status\": \"experimental\", \"url\": \"/connect-slack/?agent=chain.issue-hygiene-worker\"}, {\"name\": \"Vercel Board\", \"status\": \"unavailable\"}, {\"name\": \"Microsoft Teams\", \"status\": \"unavailable\"}, {\"name\": \"Paperclip\", \"status\": \"unavailable\"}, {\"name\": \"Matrix\", \"status\": \"unavailable\"}]"
 ---
 ## Agent Contract
 
@@ -74,8 +75,3 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 ## Anti-Scope
 
 - Do not close, label, assign, prioritize, or comment unless explicitly authorized.
-
-
-## Collaboration platforms
-
-- [Slack setup in testing](/connect-slack/?agent=chain.issue-hygiene-worker). Operations: task.request, execution.observation.

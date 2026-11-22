@@ -12,6 +12,7 @@ tags: ["Planning"]
 order: 7
 last_updated: 2026-08-08
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/research-analyst/AGENT.md"
+connection_options: "[{\"name\": \"Slack\", \"status\": \"experimental\", \"url\": \"/connect-slack/?agent=chain.research-analyst\"}, {\"name\": \"Vercel Board\", \"status\": \"unavailable\"}, {\"name\": \"Microsoft Teams\", \"status\": \"unavailable\"}, {\"name\": \"Paperclip\", \"status\": \"unavailable\"}, {\"name\": \"Matrix\", \"status\": \"unavailable\"}]"
 ---
 ## Agent Contract
 
@@ -78,8 +79,3 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 
 - Do not make product, architecture, or release decisions.
 - Do not invent behavior not present in docs or source.
-
-
-## Collaboration platforms
-
-- [Slack setup in testing](/connect-slack/?agent=chain.research-analyst). Operations: task.request, execution.observation.

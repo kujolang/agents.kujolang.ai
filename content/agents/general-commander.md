@@ -12,6 +12,7 @@ tags: ["Strategic"]
 order: 1
 last_updated: 2026-08-08
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/general-commander/AGENT.md"
+connection_options: "[{\"name\": \"Slack\", \"status\": \"experimental\", \"url\": \"/connect-slack/?agent=chain.general-commander\"}, {\"name\": \"Vercel Board\", \"status\": \"unavailable\"}, {\"name\": \"Microsoft Teams\", \"status\": \"unavailable\"}, {\"name\": \"Paperclip\", \"status\": \"unavailable\"}, {\"name\": \"Matrix\", \"status\": \"fixture-only\"}]"
 ---
 ## Agent Contract
 
@@ -80,10 +81,3 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 ## Anti-Scope
 
 - Do not implement code, run broad checks personally when a worker agent should do it, or override verification evidence with intuition.
-
-
-## Collaboration platforms
-
-- Matrix (reference host, fixture tested). Operations: message, task.request, delegation.request.
-- [Slack setup in testing](/connect-slack/?agent=chain.general-commander). Operations: task.request, execution.observation.
-- Slack (reference host, fixture tested). Operations: message, task.request, delegation.request.

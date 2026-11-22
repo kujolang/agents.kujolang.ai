@@ -94,23 +94,32 @@ def compatibility(source_root: Path, source: str) -> dict[str, list[dict]]:
     return selected
 
 
-def compatibility_text(entries: list[dict], heading: str = "## Collaboration platforms") -> str:
-    if not entries:
-        return ""
-    rows = [heading, ""]
-    for row in sorted(entries, key=lambda item: (item["platform"], item["host"])):
-        name = PLATFORM_NAMES[row["platform"]]
-        status = QUALIFICATION[row["status"]]
-        label = f"{name} ({row['host']} host, {status})"
-        if row["status"] == "qualified":
-            label = f"[Connect to {name}]({row['setup_url']}) ({row['host']} host), [qualification]({row['qualification_url']})"
-        elif "preview_url" in row:
-            path = urlsplit(row['preview_url']).path
-            if path == "/connect-slack/":
-                path += "?" + urlencode({"agent": row["agent_id"]})
-            label = f"[Slack setup in testing]({path})"
-        rows.append(f"- {label}. Operations: {', '.join(row['operations'])}.")
-    return "\n\n" + "\n".join(rows) + "\n"
+DESTINATION_ORDER = ("slack", "board", "teams", "paperclip", "matrix", "mcp", "local")
+
+
+def connection_options(entries: list[dict]) -> list[dict]:
+    options = []
+    for platform in DESTINATION_ORDER:
+        matches = [row for row in entries if row["platform"] == platform]
+        if not matches and platform in {"mcp", "local"}:
+            continue
+        ordered = sorted(matches, key=lambda row: (
+            row["status"] != "qualified", "preview_url" not in row,
+            row["status"] != "experimental", row["host"],
+        ))
+        option = {"name": PLATFORM_NAMES[platform], "status": "unavailable"}
+        if ordered:
+            chosen = ordered[0]
+            option["status"] = chosen["status"]
+            if chosen["status"] == "qualified":
+                option.update(url=chosen["setup_url"], evidence=chosen["qualification_url"])
+            elif "preview_url" in chosen:
+                path = urlsplit(chosen["preview_url"]).path
+                if path == "/connect-slack/":
+                    path += "?" + urlencode({"agent": chosen["agent_id"]})
+                option["url"] = path
+        options.append(option)
+    return options
 
 
 def sync_set(source_root:Path,set_id:str,state:dict)->tuple[int,list[str]]:
@@ -131,9 +140,10 @@ def sync_set(source_root:Path,set_id:str,state:dict)->tuple[int,list[str]]:
         portrait=f"content/media/agents/{public_slug}.webp"
         featured=portrait if (SITE_ROOT/portrait).is_file() else "assets/images/kujo-logomark.svg"
         source_url=f"https://github.com/kujolang/kujo-agents/blob/main/{config['source']}/{slug}/AGENT.md"
-        frontmatter=["---",f"title: {json.dumps(title)}",f"custom_url: {json.dumps(public_slug)}",f"description: {json.dumps(purpose)}",f"excerpt: {json.dumps(purpose)}",f"seo_title: {json.dumps(title+' | Kujo '+config['category'])}",f"seo_description: {json.dumps(purpose)}",f"keywords: {json.dumps(config['keywords']+', '+title)}",f"featured_image: {json.dumps(featured)}",f"categories: [{json.dumps(config['category'])}]",f"tags: [{json.dumps(tag)}]",f"order: {order_by[slug]}",f"last_updated: {updated_date(source_root,contract)}",f"source_url: {json.dumps(source_url)}","---",""]
+        frontmatter=["---",f"title: {json.dumps(title)}",f"custom_url: {json.dumps(public_slug)}",f"description: {json.dumps(purpose)}",f"excerpt: {json.dumps(purpose)}",f"seo_title: {json.dumps(title+' | Kujo '+config['category'])}",f"seo_description: {json.dumps(purpose)}",f"keywords: {json.dumps(config['keywords']+', '+title)}",f"featured_image: {json.dumps(featured)}",f"categories: [{json.dumps(config['category'])}]",f"tags: [{json.dumps(tag)}]",f"order: {order_by[slug]}",f"last_updated: {updated_date(source_root,contract)}",f"source_url: {json.dumps(source_url)}",
+            f"connection_options: {json.dumps(json.dumps(connection_options(compatibility_by_slug.get(slug, []))))}","---",""]
         remainder=re.sub(r"(^- (?:Required KUJO skills|WebOps domain skills|Existing Kujo skills):\s*)(.+)$",lambda m:m.group(1)+m.group(2).replace("`",""),remainder,flags=re.MULTILINE)
-        destination=OUTPUT_ROOT/f"{public_slug}.md"; destination.write_text("\n".join(frontmatter)+remainder.lstrip()+"\n"+compatibility_text(compatibility_by_slug.get(slug,[])),encoding="utf-8"); generated.append(public_slug)
+        destination=OUTPUT_ROOT/f"{public_slug}.md"; destination.write_text("\n".join(frontmatter)+remainder.lstrip()+"\n",encoding="utf-8"); generated.append(public_slug)
     previous=set(state.get("sets",{}).get(set_id,[]))
     if not previous:
         previous={path.stem for path in OUTPUT_ROOT.glob("*.md") if current_category(path)==config["category"]}

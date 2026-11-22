@@ -12,6 +12,7 @@ tags: ["Quality Operations"]
 order: 19
 last_updated: 2026-08-11
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/webops/accessibility-auditor/AGENT.md"
+connection_options: "[{\"name\": \"Slack\", \"status\": \"experimental\", \"url\": \"/connect-slack/?agent=webops.accessibility-auditor\"}, {\"name\": \"Vercel Board\", \"status\": \"unavailable\"}, {\"name\": \"Microsoft Teams\", \"status\": \"unavailable\"}, {\"name\": \"Paperclip\", \"status\": \"unavailable\"}, {\"name\": \"Matrix\", \"status\": \"unavailable\"}]"
 ---
 ## Agent Contract
 
@@ -93,8 +94,3 @@ Scheduled operation must skip unavailable modules after one preflight receipt; i
 
 - Do not claim full WCAG compliance or apply broad design changes without authorization.
 - Do not fabricate provider availability, rankings, citations, measurements, accessibility certification, indexing guarantees, or causation.
-
-
-## Collaboration platforms
-
-- [Slack setup in testing](/connect-slack/?agent=webops.accessibility-auditor). Operations: task.request, execution.observation.

@@ -12,6 +12,22 @@
 				<p class="agent-provenance">Maintained by Kujo · Updated <time datetime="{{last_updated}}">{{last_updated}}</time> · <a href="{{source_url}}">Source contract</a></p>
 			</div>
 			<div class="agent-mark">{{featured_image_html}}</div>
+			<section class="agent-connect" aria-labelledby="agent-connect-title" data-agent-connect="{{connection_options}}">
+				<div class="agent-connect-intro">
+					<h2 id="agent-connect-title">Connect this agent</h2>
+					<p>Choose where you want to use this agent.</p>
+				</div>
+				<div class="agent-connect-controls" hidden>
+					<label for="agent-platform">Platform</label>
+					<div class="agent-connect-actions">
+						<select id="agent-platform" aria-describedby="agent-connect-status"></select>
+						<a class="sk-button" data-connect-action hidden>View setup</a>
+					</div>
+					<p id="agent-connect-status" role="status"></p>
+					<a class="agent-connect-evidence" hidden>View qualification evidence</a>
+				</div>
+				<p class="agent-connect-fallback"><a href="/connect-slack/">View Slack setup status</a></p>
+			</section>
 		</header>
 		<div class="agent-body kujo-content">{{body}}</div>
 	</article>

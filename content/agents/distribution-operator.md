@@ -12,6 +12,7 @@ tags: ["Operations & Management"]
 order: 26
 last_updated: 2026-08-11
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/webops/distribution-operator/AGENT.md"
+connection_options: "[{\"name\": \"Slack\", \"status\": \"experimental\", \"url\": \"/connect-slack/?agent=webops.distribution-operator\"}, {\"name\": \"Vercel Board\", \"status\": \"unavailable\"}, {\"name\": \"Microsoft Teams\", \"status\": \"unavailable\"}, {\"name\": \"Paperclip\", \"status\": \"unavailable\"}, {\"name\": \"Matrix\", \"status\": \"unavailable\"}]"
 ---
 ## Agent Contract
 
@@ -93,8 +94,3 @@ Scheduled operation must skip unavailable modules after one preflight receipt; i
 
 - Do not invent claims, publish drafts, post without ACT authority, or bind assets to one content platform.
 - Do not fabricate provider availability, rankings, citations, measurements, accessibility certification, indexing guarantees, or causation.
-
-
-## Collaboration platforms
-
-- [Slack setup in testing](/connect-slack/?agent=webops.distribution-operator). Operations: task.request, execution.observation.

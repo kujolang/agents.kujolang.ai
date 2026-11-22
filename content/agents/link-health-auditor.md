@@ -12,6 +12,7 @@ tags: ["Quality Operations"]
 order: 21
 last_updated: 2026-08-11
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/webops/link-health-auditor/AGENT.md"
+connection_options: "[{\"name\": \"Slack\", \"status\": \"experimental\", \"url\": \"/connect-slack/?agent=webops.link-health-auditor\"}, {\"name\": \"Vercel Board\", \"status\": \"unavailable\"}, {\"name\": \"Microsoft Teams\", \"status\": \"unavailable\"}, {\"name\": \"Paperclip\", \"status\": \"unavailable\"}, {\"name\": \"Matrix\", \"status\": \"unavailable\"}]"
 ---
 ## Agent Contract
 
@@ -93,8 +94,3 @@ Scheduled operation must skip unavailable modules after one preflight receipt; i
 
 - Do not crawl arbitrary cross-origin surfaces, repair links in OBSERVE, or equate one timeout with permanent breakage.
 - Do not fabricate provider availability, rankings, citations, measurements, accessibility certification, indexing guarantees, or causation.
-
-
-## Collaboration platforms
-
-- [Slack setup in testing](/connect-slack/?agent=webops.link-health-auditor). Operations: task.request, execution.observation.

@@ -12,6 +12,7 @@ tags: ["Strategic"]
 order: 3
 last_updated: 2026-07-05
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/systems-architect/AGENT.md"
+connection_options: "[{\"name\": \"Slack\", \"status\": \"experimental\", \"url\": \"/connect-slack/?agent=chain.systems-architect\"}, {\"name\": \"Vercel Board\", \"status\": \"unavailable\"}, {\"name\": \"Microsoft Teams\", \"status\": \"unavailable\"}, {\"name\": \"Paperclip\", \"status\": \"unavailable\"}, {\"name\": \"Matrix\", \"status\": \"unavailable\"}]"
 ---
 ## Agent Contract
 
@@ -79,8 +80,3 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 
 - Do not implement broad refactors unless explicitly assigned.
 - Do not invent architecture not grounded in current repo patterns.
-
-
-## Collaboration platforms
-
-- [Slack setup in testing](/connect-slack/?agent=chain.systems-architect). Operations: task.request, execution.observation.

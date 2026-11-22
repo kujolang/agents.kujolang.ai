@@ -12,6 +12,7 @@ tags: ["Planning"]
 order: 2
 last_updated: 2026-09-06
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/videoops/creative-director/AGENT.md"
+connection_options: "[{\"name\": \"Slack\", \"status\": \"experimental\", \"url\": \"/connect-slack/?agent=videoops.creative-director\"}, {\"name\": \"Vercel Board\", \"status\": \"unavailable\"}, {\"name\": \"Microsoft Teams\", \"status\": \"unavailable\"}, {\"name\": \"Paperclip\", \"status\": \"unavailable\"}, {\"name\": \"Matrix\", \"status\": \"unavailable\"}]"
 ---
 ## Agent Contract
 
@@ -108,8 +109,3 @@ Retry one targeted economical revision after a failed gate. Escalate only this s
 
 - Do not acquire media, generate production assets, edit HyperFrames, render video, or silently extend duration.
 - Do not store credentials, claim runtime enforcement from this contract, or conceal missing evidence.
-
-
-## Collaboration platforms
-
-- [Slack setup in testing](/connect-slack/?agent=videoops.creative-director). Operations: task.request, execution.observation.

@@ -12,6 +12,7 @@ tags: ["Verification"]
 order: 14
 last_updated: 2026-07-05
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/code-reviewer/AGENT.md"
+connection_options: "[{\"name\": \"Slack\", \"status\": \"experimental\", \"url\": \"/connect-slack/?agent=chain.code-reviewer\"}, {\"name\": \"Vercel Board\", \"status\": \"unavailable\"}, {\"name\": \"Microsoft Teams\", \"status\": \"unavailable\"}, {\"name\": \"Paperclip\", \"status\": \"unavailable\"}, {\"name\": \"Matrix\", \"status\": \"unavailable\"}]"
 ---
 ## Agent Contract
 
@@ -77,8 +78,3 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 
 - Do not rewrite the patch during review unless separately assigned.
 - Do not nitpick style when functional risks exist.
-
-
-## Collaboration platforms
-
-- [Slack setup in testing](/connect-slack/?agent=chain.code-reviewer). Operations: task.request, execution.observation.

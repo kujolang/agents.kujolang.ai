@@ -12,6 +12,7 @@ tags: ["Planning"]
 order: 8
 last_updated: 2026-07-18
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/risk-officer/AGENT.md"
+connection_options: "[{\"name\": \"Slack\", \"status\": \"experimental\", \"url\": \"/connect-slack/?agent=chain.risk-officer\"}, {\"name\": \"Vercel Board\", \"status\": \"unavailable\"}, {\"name\": \"Microsoft Teams\", \"status\": \"unavailable\"}, {\"name\": \"Paperclip\", \"status\": \"unavailable\"}, {\"name\": \"Matrix\", \"status\": \"unavailable\"}]"
 ---
 ## Agent Contract
 
@@ -79,8 +80,3 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 
 - Do not implement fixes or approve releases.
 - Do not exaggerate maturity beyond repo docs.
-
-
-## Collaboration platforms
-
-- [Slack setup in testing](/connect-slack/?agent=chain.risk-officer). Operations: task.request, execution.observation.

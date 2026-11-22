@@ -12,6 +12,7 @@ tags: ["Verification"]
 order: 18
 last_updated: 2026-08-01
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/release-verifier/AGENT.md"
+connection_options: "[{\"name\": \"Slack\", \"status\": \"experimental\", \"url\": \"/connect-slack/?agent=chain.release-verifier\"}, {\"name\": \"Vercel Board\", \"status\": \"unavailable\"}, {\"name\": \"Microsoft Teams\", \"status\": \"unavailable\"}, {\"name\": \"Paperclip\", \"status\": \"unavailable\"}, {\"name\": \"Matrix\", \"status\": \"unavailable\"}]"
 ---
 ## Agent Contract
 
@@ -76,8 +77,3 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 ## Anti-Scope
 
 - Do not publish, tag, deploy, or mutate release state without explicit authorization.
-
-
-## Collaboration platforms
-
-- [Slack setup in testing](/connect-slack/?agent=chain.release-verifier). Operations: task.request, execution.observation.

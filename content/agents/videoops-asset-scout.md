@@ -12,6 +12,7 @@ tags: ["Asseting"]
 order: 3
 last_updated: 2026-09-06
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/videoops/asset-scout/AGENT.md"
+connection_options: "[{\"name\": \"Slack\", \"status\": \"experimental\", \"url\": \"/connect-slack/?agent=videoops.asset-scout\"}, {\"name\": \"Vercel Board\", \"status\": \"unavailable\"}, {\"name\": \"Microsoft Teams\", \"status\": \"unavailable\"}, {\"name\": \"Paperclip\", \"status\": \"unavailable\"}, {\"name\": \"Matrix\", \"status\": \"unavailable\"}]"
 ---
 ## Agent Contract
 
@@ -104,8 +105,3 @@ Tool or rights ambiguity blocks the specific asset. Premium reasoning is not a s
 
 - Do not rewrite narrative or timing, build scenes, render video, falsify rights, or use public availability as permission.
 - Do not store credentials, claim runtime enforcement from this contract, or conceal missing evidence.
-
-
-## Collaboration platforms
-
-- [Slack setup in testing](/connect-slack/?agent=videoops.asset-scout). Operations: task.request, execution.observation.

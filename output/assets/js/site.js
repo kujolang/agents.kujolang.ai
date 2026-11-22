@@ -1,3 +1,49 @@
+function enhanceAgentConnections() {
+	const panel = document.querySelector("[data-agent-connect]");
+	if (!panel?.dataset.agentConnect) return;
+	let platforms;
+	try {
+		platforms = JSON.parse(panel.dataset.agentConnect);
+	} catch {
+		return;
+	}
+	if (!Array.isArray(platforms) || !platforms.length) return;
+
+	const controls = panel.querySelector(".agent-connect-controls");
+	const select = controls.querySelector("select");
+	const action = panel.querySelector("[data-connect-action]");
+	const status = panel.querySelector("[role=status]");
+	const evidence = panel.querySelector(".agent-connect-evidence");
+	for (const [index, platform] of platforms.entries()) {
+		select.add(new Option(platform.name, String(index)));
+	}
+
+	const update = () => {
+		const platform = platforms[Number(select.value)];
+		const ready = platform.status === "qualified";
+		action.hidden = !platform.url;
+		evidence.hidden = !platform.evidence;
+		if (platform.url) {
+			action.setAttribute("href", platform.url);
+			action.textContent = ready ? `Connect to ${platform.name}` : `View ${platform.name} setup`;
+		} else {
+			action.removeAttribute("href");
+		}
+		if (platform.evidence) evidence.setAttribute("href", platform.evidence);
+		else evidence.removeAttribute("href");
+		status.textContent = ready ? `Available to connect on ${platform.name}.`
+			: platform.url ? `${platform.name} setup is in private testing.`
+			: `Public setup for ${platform.name} is not available yet.`;
+	};
+
+	select.addEventListener("change", update);
+	update();
+	controls.hidden = false;
+	panel.querySelector(".agent-connect-fallback").hidden = true;
+}
+
+enhanceAgentConnections();
+
 document.querySelectorAll(".agent-set").forEach((agentSet) => {
 	const carousel = agentSet.querySelector(".agent-carousel");
 	const previous = agentSet.querySelector("[data-carousel-prev]");

@@ -12,6 +12,7 @@ tags: ["Asseting"]
 order: 4
 last_updated: 2026-09-06
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/videoops/media-generator/AGENT.md"
+connection_options: "[{\"name\": \"Slack\", \"status\": \"experimental\", \"url\": \"/connect-slack/?agent=videoops.media-generator\"}, {\"name\": \"Vercel Board\", \"status\": \"unavailable\"}, {\"name\": \"Microsoft Teams\", \"status\": \"unavailable\"}, {\"name\": \"Paperclip\", \"status\": \"unavailable\"}, {\"name\": \"Matrix\", \"status\": \"unavailable\"}]"
 ---
 ## Agent Contract
 
@@ -103,8 +104,3 @@ Escalate art direction only after a targeted retry fails. Paid or account-backed
 
 - Do not generate for non-GENERATE requirements, alter the thesis or timing, acquire external footage, or perform the final edit.
 - Do not store credentials, claim runtime enforcement from this contract, or conceal missing evidence.
-
-
-## Collaboration platforms
-
-- [Slack setup in testing](/connect-slack/?agent=videoops.media-generator). Operations: task.request, execution.observation.

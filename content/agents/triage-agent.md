@@ -12,6 +12,7 @@ tags: ["Verification"]
 order: 16
 last_updated: 2026-07-18
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/triage-agent/AGENT.md"
+connection_options: "[{\"name\": \"Slack\", \"status\": \"experimental\", \"url\": \"/connect-slack/?agent=chain.triage-agent\"}, {\"name\": \"Vercel Board\", \"status\": \"unavailable\"}, {\"name\": \"Microsoft Teams\", \"status\": \"unavailable\"}, {\"name\": \"Paperclip\", \"status\": \"unavailable\"}, {\"name\": \"Matrix\", \"status\": \"unavailable\"}]"
 ---
 ## Agent Contract
 
@@ -96,8 +97,3 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 - Do not approve releases, deployments, or destructive recovery.
 - Do not override explicit human stop conditions.
 - Do not run long-lived incident response across multiple lanes; coordinate the immediate stopped workflow, then escalate.
-
-
-## Collaboration platforms
-
-- [Slack setup in testing](/connect-slack/?agent=chain.triage-agent). Operations: task.request, execution.observation.

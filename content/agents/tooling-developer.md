@@ -12,6 +12,7 @@ tags: ["Execution"]
 order: 10
 last_updated: 2026-07-18
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/tooling-developer/AGENT.md"
+connection_options: "[{\"name\": \"Slack\", \"status\": \"experimental\", \"url\": \"/connect-slack/?agent=chain.tooling-developer\"}, {\"name\": \"Vercel Board\", \"status\": \"unavailable\"}, {\"name\": \"Microsoft Teams\", \"status\": \"unavailable\"}, {\"name\": \"Paperclip\", \"status\": \"unavailable\"}, {\"name\": \"Matrix\", \"status\": \"unavailable\"}]"
 ---
 ## Agent Contract
 
@@ -76,8 +77,3 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 
 - Do not add broad framework/plugin systems without a concrete need.
 - Do not weaken safety checks for convenience.
-
-
-## Collaboration platforms
-
-- [Slack setup in testing](/connect-slack/?agent=chain.tooling-developer). Operations: task.request, execution.observation.

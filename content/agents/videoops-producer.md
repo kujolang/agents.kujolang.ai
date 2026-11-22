@@ -12,6 +12,7 @@ tags: ["Orchestration"]
 order: 1
 last_updated: 2026-09-06
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/videoops/producer/AGENT.md"
+connection_options: "[{\"name\": \"Slack\", \"status\": \"experimental\", \"url\": \"/connect-slack/?agent=videoops.producer\"}, {\"name\": \"Vercel Board\", \"status\": \"unavailable\"}, {\"name\": \"Microsoft Teams\", \"status\": \"unavailable\"}, {\"name\": \"Paperclip\", \"status\": \"unavailable\"}, {\"name\": \"Matrix\", \"status\": \"fixture-only\"}]"
 ---
 ## Agent Contract
 
@@ -109,10 +110,3 @@ Escalate only the failing specialist stage after two bounded economical attempts
 
 - Do not perform specialist work under the producer identity, bypass stage gates, approve the editor's own work, incur paid generation cost, publish, or claim unavailable capabilities.
 - Do not store credentials, claim runtime enforcement from this contract, or conceal missing evidence.
-
-
-## Collaboration platforms
-
-- Matrix (reference host, fixture tested). Operations: message, task.request, delegation.request.
-- [Slack setup in testing](/connect-slack/?agent=videoops.producer). Operations: task.request, execution.observation.
-- Slack (reference host, fixture tested). Operations: message, task.request, delegation.request.

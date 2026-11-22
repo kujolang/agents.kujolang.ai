@@ -12,6 +12,7 @@ tags: ["Routine Worker"]
 order: 24
 last_updated: 2026-07-18
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/test-runner/AGENT.md"
+connection_options: "[{\"name\": \"Slack\", \"status\": \"experimental\", \"url\": \"/connect-slack/?agent=chain.test-runner\"}, {\"name\": \"Vercel Board\", \"status\": \"unavailable\"}, {\"name\": \"Microsoft Teams\", \"status\": \"unavailable\"}, {\"name\": \"Paperclip\", \"status\": \"unavailable\"}, {\"name\": \"Matrix\", \"status\": \"unavailable\"}]"
 ---
 ## Agent Contract
 
@@ -73,8 +74,3 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 ## Anti-Scope
 
 - Do not edit files, update snapshots, choose new tests, or debug.
-
-
-## Collaboration platforms
-
-- [Slack setup in testing](/connect-slack/?agent=chain.test-runner). Operations: task.request, execution.observation.

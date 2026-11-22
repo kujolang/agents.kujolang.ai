@@ -12,6 +12,7 @@ tags: ["Knowledge"]
 order: 21
 last_updated: 2026-08-01
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/context-packager/AGENT.md"
+connection_options: "[{\"name\": \"Slack\", \"status\": \"experimental\", \"url\": \"/connect-slack/?agent=chain.context-packager\"}, {\"name\": \"Vercel Board\", \"status\": \"unavailable\"}, {\"name\": \"Microsoft Teams\", \"status\": \"unavailable\"}, {\"name\": \"Paperclip\", \"status\": \"unavailable\"}, {\"name\": \"Matrix\", \"status\": \"unavailable\"}]"
 ---
 ## Agent Contract
 
@@ -77,8 +78,3 @@ source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/
 
 - Do not implement the packaged task.
 - Do not claim redaction is perfect.
-
-
-## Collaboration platforms
-
-- [Slack setup in testing](/connect-slack/?agent=chain.context-packager). Operations: task.request, execution.observation.
