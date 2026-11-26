@@ -28,21 +28,24 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
-      - name: Install Kujo 1.1.0
-        shell: bash
-        run: |
-          curl -fsSLO https://github.com/kujolang/kujo/releases/download/v1.1.0/kujo-v1.1.0-linux-x64.tar.gz
-          curl -fsSLO https://github.com/kujolang/kujo/releases/download/v1.1.0/kujo-v1.1.0-linux-x64.tar.gz.sha256
-          sha256sum --check kujo-v1.1.0-linux-x64.tar.gz.sha256
-          mkdir -p "$RUNNER_TEMP/kujo-bin"
-          tar -xzf kujo-v1.1.0-linux-x64.tar.gz -C "$RUNNER_TEMP/kujo-bin"
-          echo "$RUNNER_TEMP/kujo-bin" >> "$GITHUB_PATH"
+      - name: Configure Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+
+      - name: Install reviewed Kujo release
+        uses: kujolang/kujo/.github/actions/setup-kujo@a91702682e2969a66938b561b8059034ab2bc717
+        with:
+          version: v1.10.0
 
       - name: Build and validate site
         shell: bash
         run: |
+          python3 tests/test_sync_agent_content.py
           kujo run ./build.kujo -- --site-url https://agents.kujolang.ai
+          python3 scripts/validate-agent-content.py
           bash scripts/validate-generated-output.sh output
+          node scripts/test-webmcp-runtime.js output/assets/js/kujo-webmcp.min.js output/.well-known/kujo-site-index.json
 
       - name: Upload site artifact
         shell: bash
