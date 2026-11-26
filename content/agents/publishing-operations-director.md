@@ -10,9 +10,10 @@ featured_image: "content/media/agents/publishing-operations-director.webp"
 categories: ["Publishing House"]
 tags: ["Production & Publication"]
 order: 19
+connection_options: "[{\"name\": \"Slack\", \"status\": \"deployable\", \"url\": \"/connect-slack/?agent=publishing-house.publishing-operations-director\"}, {\"name\": \"Vercel Board\", \"status\": \"unavailable\"}, {\"name\": \"Microsoft Teams\", \"status\": \"unavailable\"}, {\"name\": \"Paperclip\", \"status\": \"unavailable\"}, {\"name\": \"Matrix\", \"status\": \"unavailable\"}]"
+slack_setup_url: "/connect-slack/?agent=publishing-house.publishing-operations-director"
 last_updated: 2026-08-14
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/publishing-house/publishing-operations-director/AGENT.md"
-connection_options: "[{\"name\": \"Slack\", \"status\": \"experimental\", \"url\": \"/connect-slack/?agent=publishing-house.publishing-operations-director\"}, {\"name\": \"Vercel Board\", \"status\": \"unavailable\"}, {\"name\": \"Microsoft Teams\", \"status\": \"unavailable\"}, {\"name\": \"Paperclip\", \"status\": \"unavailable\"}, {\"name\": \"Matrix\", \"status\": \"unavailable\"}]"
 ---
 ## Agent Contract
 

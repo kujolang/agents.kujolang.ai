@@ -10,9 +10,10 @@ featured_image: "content/media/agents/seo-auditor.webp"
 categories: ["WebOps"]
 tags: ["Search Operations"]
 order: 6
+connection_options: "[{\"name\": \"Slack\", \"status\": \"deployable\", \"url\": \"/connect-slack/?agent=webops.seo-auditor\"}, {\"name\": \"Vercel Board\", \"status\": \"unavailable\"}, {\"name\": \"Microsoft Teams\", \"status\": \"unavailable\"}, {\"name\": \"Paperclip\", \"status\": \"unavailable\"}, {\"name\": \"Matrix\", \"status\": \"unavailable\"}]"
+slack_setup_url: "/connect-slack/?agent=webops.seo-auditor"
 last_updated: 2026-08-11
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/webops/seo-auditor/AGENT.md"
-connection_options: "[{\"name\": \"Slack\", \"status\": \"experimental\", \"url\": \"/connect-slack/?agent=webops.seo-auditor\"}, {\"name\": \"Vercel Board\", \"status\": \"unavailable\"}, {\"name\": \"Microsoft Teams\", \"status\": \"unavailable\"}, {\"name\": \"Paperclip\", \"status\": \"unavailable\"}, {\"name\": \"Matrix\", \"status\": \"unavailable\"}]"
 ---
 ## Agent Contract
 

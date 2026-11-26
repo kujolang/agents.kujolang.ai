@@ -10,9 +10,10 @@ featured_image: "content/media/agents/information-architecture-auditor.webp"
 categories: ["WebOps"]
 tags: ["Operations & Management"]
 order: 25
+connection_options: "[{\"name\": \"Slack\", \"status\": \"deployable\", \"url\": \"/connect-slack/?agent=webops.information-architecture-auditor\"}, {\"name\": \"Vercel Board\", \"status\": \"unavailable\"}, {\"name\": \"Microsoft Teams\", \"status\": \"unavailable\"}, {\"name\": \"Paperclip\", \"status\": \"unavailable\"}, {\"name\": \"Matrix\", \"status\": \"unavailable\"}]"
+slack_setup_url: "/connect-slack/?agent=webops.information-architecture-auditor"
 last_updated: 2026-08-11
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/webops/information-architecture-auditor/AGENT.md"
-connection_options: "[{\"name\": \"Slack\", \"status\": \"experimental\", \"url\": \"/connect-slack/?agent=webops.information-architecture-auditor\"}, {\"name\": \"Vercel Board\", \"status\": \"unavailable\"}, {\"name\": \"Microsoft Teams\", \"status\": \"unavailable\"}, {\"name\": \"Paperclip\", \"status\": \"unavailable\"}, {\"name\": \"Matrix\", \"status\": \"unavailable\"}]"
 ---
 ## Agent Contract
 

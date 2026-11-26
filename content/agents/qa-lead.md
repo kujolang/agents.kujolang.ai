@@ -10,9 +10,10 @@ featured_image: "content/media/agents/qa-lead.webp"
 categories: ["Chain of Command"]
 tags: ["Verification"]
 order: 15
+connection_options: "[{\"name\": \"Slack\", \"status\": \"deployable\", \"url\": \"/connect-slack/?agent=chain.qa-lead\"}, {\"name\": \"Vercel Board\", \"status\": \"unavailable\"}, {\"name\": \"Microsoft Teams\", \"status\": \"unavailable\"}, {\"name\": \"Paperclip\", \"status\": \"unavailable\"}, {\"name\": \"Matrix\", \"status\": \"unavailable\"}]"
+slack_setup_url: "/connect-slack/?agent=chain.qa-lead"
 last_updated: 2026-07-25
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/qa-lead/AGENT.md"
-connection_options: "[{\"name\": \"Slack\", \"status\": \"experimental\", \"url\": \"/connect-slack/?agent=chain.qa-lead\"}, {\"name\": \"Vercel Board\", \"status\": \"unavailable\"}, {\"name\": \"Microsoft Teams\", \"status\": \"unavailable\"}, {\"name\": \"Paperclip\", \"status\": \"unavailable\"}, {\"name\": \"Matrix\", \"status\": \"unavailable\"}]"
 ---
 ## Agent Contract
 

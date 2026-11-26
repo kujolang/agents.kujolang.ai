@@ -10,9 +10,10 @@ featured_image: "content/media/agents/backend-developer.webp"
 categories: ["Chain of Command"]
 tags: ["Execution"]
 order: 12
+connection_options: "[{\"name\": \"Slack\", \"status\": \"deployable\", \"url\": \"/connect-slack/?agent=chain.backend-developer\"}, {\"name\": \"Vercel Board\", \"status\": \"unavailable\"}, {\"name\": \"Microsoft Teams\", \"status\": \"unavailable\"}, {\"name\": \"Paperclip\", \"status\": \"unavailable\"}, {\"name\": \"Matrix\", \"status\": \"unavailable\"}]"
+slack_setup_url: "/connect-slack/?agent=chain.backend-developer"
 last_updated: 2026-07-05
 source_url: "https://github.com/kujolang/kujo-agents/blob/main/chain-of-command/backend-developer/AGENT.md"
-connection_options: "[{\"name\": \"Slack\", \"status\": \"experimental\", \"url\": \"/connect-slack/?agent=chain.backend-developer\"}, {\"name\": \"Vercel Board\", \"status\": \"unavailable\"}, {\"name\": \"Microsoft Teams\", \"status\": \"unavailable\"}, {\"name\": \"Paperclip\", \"status\": \"unavailable\"}, {\"name\": \"Matrix\", \"status\": \"unavailable\"}]"
 ---
 ## Agent Contract
 

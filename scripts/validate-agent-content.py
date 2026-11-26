@@ -5,6 +5,7 @@ import html
 import re
 import struct
 from pathlib import Path
+from urllib.parse import parse_qs, urlsplit
 
 ROOT=Path(__file__).resolve().parents[1]; CONTENT=ROOT/"content/agents"; OUTPUT=ROOT/"output"
 REQUIRED=["title","custom_url","description","excerpt","seo_title","seo_description","keywords","featured_image","categories","tags","order","last_updated","source_url"]
@@ -20,6 +21,19 @@ def main():
     expected_counts={"chain-of-command":28,"webops":28,"publishing-house":23,"videoops":6}
     expected_categories={"chain-of-command":"Chain of Command","webops":"WebOps","publishing-house":"Publishing House","videoops":"VideoOps"}
     slack_groups={"chain-of-command":"chain","webops":"webops","publishing-house":"publishing-house","videoops":"videoops"}
+    release_path=ROOT/"assets/data/slack-templates.json"
+    release_templates={}
+    if release_path.is_file():
+        release=json.loads(release_path.read_text())
+        if release.get("schema")!="kujo.slack.templates/v1":
+            errors.append("invalid Slack template schema")
+        release_templates={row["slug"]: row for row in release["templates"]}
+        expected_slugs={slug for set_id in expected_counts for slug in sets.get(set_id,[])}
+        if len(release["templates"])!=len(expected_slugs) or release_templates.keys()!=expected_slugs:
+            errors.append("Slack template coverage does not match the catalog")
+        if OUTPUT.is_dir() and (not (OUTPUT/"assets/data/slack-templates.json").is_file()
+                or release_path.read_bytes()!=(OUTPUT/"assets/data/slack-templates.json").read_bytes()):
+            errors.append("generated Slack template index mismatch")
     for set_id,expected_count in expected_counts.items():
         slugs=sets.get(set_id,[])
         if len(slugs)!=expected_count or len(slugs)!=len(set(slugs)): errors.append(f"{set_id}: expected {expected_count} unique managed slugs")
@@ -30,11 +44,22 @@ def main():
             for field in REQUIRED:
                 if not meta.get(field): errors.append(f"{slug}: missing {field}")
             source_slug=slug.removeprefix("videoops-") if set_id=="videoops" else slug
-            slack_url=f"/connect-slack/?agent={slack_groups[set_id]}.{source_slug}"
+            profile_id=f"{slack_groups[set_id]}.{source_slug}"
+            slack_url=f"/connect-slack/?agent={profile_id}"
+            template=release_templates.get(slug)
+            if template:
+                source=f"https://github.com/kujolang/slack-agent-templates/tree/main/agents/{slug}"
+                deploy=urlsplit(template["deploy"])
+                if (template["id"]!=profile_id or template["source"]!=source
+                        or deploy.scheme!="https" or deploy.netloc!="deploy.workers.cloudflare.com"
+                        or deploy.path!="/" or deploy.fragment or parse_qs(deploy.query)!={"url":[source]}):
+                    errors.append(f"{slug}: invalid Cloudflare template link")
             try:
                 options=json.loads(json.loads(meta.get("connection_options","null")))
                 slack,= [option for option in options if option["name"]=="Slack"]
-                if slack["status"]=="experimental" and slack.get("url")!=slack_url:
+                if template and (slack["status"]!="deployable" or json.loads(meta["slack_setup_url"])!=slack_url):
+                    errors.append(f"{slug}: missing public Slack action")
+                if slack["status"] in {"experimental", "deployable"} and slack.get("url")!=slack_url:
                     errors.append(f"{slug}: missing scoped Slack setup link")
                 if sum(option["name"]=="Vercel Board" for option in options)!=1:
                     errors.append(f"{slug}: missing Vercel Board option")
@@ -57,6 +82,8 @@ def main():
             if OUTPUT.is_dir() and not route.is_file(): errors.append(f"{slug}: generated route missing")
             elif OUTPUT.is_dir():
                 route_text=route.read_text()
+                if template and f'href="{slack_url}">Connect to Slack</a>' not in route_text:
+                    errors.append(f"{slug}: missing rendered Slack action")
                 rendered_options=re.findall(r'data-agent-connect="([^"]*)"',route_text)
                 if len(rendered_options)!=1 or html.unescape(rendered_options[0])!=json.dumps(options):
                     errors.append(f"{slug}: generated platform options mismatch")

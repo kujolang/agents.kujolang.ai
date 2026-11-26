@@ -4548,6 +4548,7 @@ func build_site(settings) {
 					"last_updated": trim(to_string(meta["last_updated"])),
 					"source_url": trim(to_string(meta["source_url"])),
 					"connection_options": html_escape(to_string(meta["connection_options"])),
+					"slack_setup_url": html_escape(trim(to_string(meta["slack_setup_url"]))),
 					"prerequisites_html": docs_list_html(meta["prerequisites"], "docs-prerequisites-list"),
 					"docs_meta_html": docs_meta_html(item_meta_for_docs),
 					"toc": docs_toc_html(parsed["body"]),

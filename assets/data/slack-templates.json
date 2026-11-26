@@ -1,0 +1,600 @@
+{
+  "schema": "kujo.slack.templates/v1",
+  "templates": [
+    {
+      "id": "chain.backend-developer",
+      "name": "Backend Developer",
+      "slug": "backend-developer",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/backend-developer",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fbackend-developer"
+    },
+    {
+      "id": "chain.chief-of-staff",
+      "name": "Chief of Staff",
+      "slug": "chief-of-staff",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/chief-of-staff",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fchief-of-staff"
+    },
+    {
+      "id": "chain.code-reviewer",
+      "name": "Code Reviewer",
+      "slug": "code-reviewer",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/code-reviewer",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fcode-reviewer"
+    },
+    {
+      "id": "chain.context-packager",
+      "name": "Context Packager",
+      "slug": "context-packager",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/context-packager",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fcontext-packager"
+    },
+    {
+      "id": "chain.core-developer",
+      "name": "Core Developer",
+      "slug": "core-developer",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/core-developer",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fcore-developer"
+    },
+    {
+      "id": "chain.dependency-scanner",
+      "name": "Dependency Scanner",
+      "slug": "dependency-scanner",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/dependency-scanner",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fdependency-scanner"
+    },
+    {
+      "id": "chain.documentation-writer",
+      "name": "Documentation Writer",
+      "slug": "documentation-writer",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/documentation-writer",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fdocumentation-writer"
+    },
+    {
+      "id": "chain.frontend-developer",
+      "name": "Frontend Developer",
+      "slug": "frontend-developer",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/frontend-developer",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Ffrontend-developer"
+    },
+    {
+      "id": "chain.general-commander",
+      "name": "General Commander",
+      "slug": "general-commander",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/general-commander",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fgeneral-commander"
+    },
+    {
+      "id": "chain.integration-engineer",
+      "name": "Integration Engineer",
+      "slug": "integration-engineer",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/integration-engineer",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fintegration-engineer"
+    },
+    {
+      "id": "chain.issue-hygiene-worker",
+      "name": "Issue Hygiene Worker",
+      "slug": "issue-hygiene-worker",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/issue-hygiene-worker",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fissue-hygiene-worker"
+    },
+    {
+      "id": "chain.lint-runner",
+      "name": "Lint Runner",
+      "slug": "lint-runner",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/lint-runner",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Flint-runner"
+    },
+    {
+      "id": "chain.planner",
+      "name": "Planner",
+      "slug": "planner",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/planner",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fplanner"
+    },
+    {
+      "id": "chain.product-strategist",
+      "name": "Product Strategist",
+      "slug": "product-strategist",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/product-strategist",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fproduct-strategist"
+    },
+    {
+      "id": "chain.qa-lead",
+      "name": "QA Lead",
+      "slug": "qa-lead",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/qa-lead",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fqa-lead"
+    },
+    {
+      "id": "chain.receipt-collector",
+      "name": "Receipt Collector",
+      "slug": "receipt-collector",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/receipt-collector",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Freceipt-collector"
+    },
+    {
+      "id": "chain.release-verifier",
+      "name": "Release Verifier",
+      "slug": "release-verifier",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/release-verifier",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Frelease-verifier"
+    },
+    {
+      "id": "chain.research-analyst",
+      "name": "Research Analyst",
+      "slug": "research-analyst",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/research-analyst",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fresearch-analyst"
+    },
+    {
+      "id": "chain.risk-officer",
+      "name": "Risk Officer",
+      "slug": "risk-officer",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/risk-officer",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Frisk-officer"
+    },
+    {
+      "id": "chain.routine-worker",
+      "name": "Routine Worker",
+      "slug": "routine-worker",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/routine-worker",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Froutine-worker"
+    },
+    {
+      "id": "chain.security-reviewer",
+      "name": "Security Reviewer",
+      "slug": "security-reviewer",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/security-reviewer",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fsecurity-reviewer"
+    },
+    {
+      "id": "chain.sitrep-agent",
+      "name": "SITREP Agent",
+      "slug": "sitrep-agent",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/sitrep-agent",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fsitrep-agent"
+    },
+    {
+      "id": "chain.spec-writer",
+      "name": "Spec Writer",
+      "slug": "spec-writer",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/spec-writer",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fspec-writer"
+    },
+    {
+      "id": "chain.systems-architect",
+      "name": "Systems Architect",
+      "slug": "systems-architect",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/systems-architect",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fsystems-architect"
+    },
+    {
+      "id": "chain.test-runner",
+      "name": "Test Runner",
+      "slug": "test-runner",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/test-runner",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Ftest-runner"
+    },
+    {
+      "id": "chain.tooling-developer",
+      "name": "Tooling Developer",
+      "slug": "tooling-developer",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/tooling-developer",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Ftooling-developer"
+    },
+    {
+      "id": "chain.triage-agent",
+      "name": "Triage Agent",
+      "slug": "triage-agent",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/triage-agent",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Ftriage-agent"
+    },
+    {
+      "id": "chain.visual-qa-agent",
+      "name": "Visual QA Agent",
+      "slug": "visual-qa-agent",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/visual-qa-agent",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fvisual-qa-agent"
+    },
+    {
+      "id": "webops.trend-scout",
+      "name": "Trend Scout",
+      "slug": "trend-scout",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/trend-scout",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Ftrend-scout"
+    },
+    {
+      "id": "webops.keyword-opportunity-analyst",
+      "name": "Keyword Opportunity Analyst",
+      "slug": "keyword-opportunity-analyst",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/keyword-opportunity-analyst",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fkeyword-opportunity-analyst"
+    },
+    {
+      "id": "webops.competitor-intelligence-analyst",
+      "name": "Competitor Intelligence Analyst",
+      "slug": "competitor-intelligence-analyst",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/competitor-intelligence-analyst",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fcompetitor-intelligence-analyst"
+    },
+    {
+      "id": "webops.content-gap-analyst",
+      "name": "Content Gap Analyst",
+      "slug": "content-gap-analyst",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/content-gap-analyst",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fcontent-gap-analyst"
+    },
+    {
+      "id": "webops.backlink-mention-analyst",
+      "name": "Backlink & Mention Analyst",
+      "slug": "backlink-mention-analyst",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/backlink-mention-analyst",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fbacklink-mention-analyst"
+    },
+    {
+      "id": "webops.seo-auditor",
+      "name": "SEO Auditor",
+      "slug": "seo-auditor",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/seo-auditor",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fseo-auditor"
+    },
+    {
+      "id": "webops.search-performance-analyst",
+      "name": "Search Performance Analyst",
+      "slug": "search-performance-analyst",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/search-performance-analyst",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fsearch-performance-analyst"
+    },
+    {
+      "id": "webops.indexation-analyst",
+      "name": "Indexation Analyst",
+      "slug": "indexation-analyst",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/indexation-analyst",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Findexation-analyst"
+    },
+    {
+      "id": "webops.technical-seo-auditor",
+      "name": "Technical SEO Auditor",
+      "slug": "technical-seo-auditor",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/technical-seo-auditor",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Ftechnical-seo-auditor"
+    },
+    {
+      "id": "webops.ai-search-visibility-analyst",
+      "name": "AI Search Visibility Analyst",
+      "slug": "ai-search-visibility-analyst",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/ai-search-visibility-analyst",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fai-search-visibility-analyst"
+    },
+    {
+      "id": "webops.content-decay-analyst",
+      "name": "Content Decay Analyst",
+      "slug": "content-decay-analyst",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/content-decay-analyst",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fcontent-decay-analyst"
+    },
+    {
+      "id": "webops.internal-link-specialist",
+      "name": "Internal Link Specialist",
+      "slug": "internal-link-specialist",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/internal-link-specialist",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Finternal-link-specialist"
+    },
+    {
+      "id": "webops.content-accuracy-reviewer",
+      "name": "Content Accuracy Reviewer",
+      "slug": "content-accuracy-reviewer",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/content-accuracy-reviewer",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fcontent-accuracy-reviewer"
+    },
+    {
+      "id": "webops.cannibalization-analyst",
+      "name": "Cannibalization Analyst",
+      "slug": "cannibalization-analyst",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/cannibalization-analyst",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fcannibalization-analyst"
+    },
+    {
+      "id": "webops.content-portfolio-manager",
+      "name": "Content Portfolio Manager",
+      "slug": "content-portfolio-manager",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/content-portfolio-manager",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fcontent-portfolio-manager"
+    },
+    {
+      "id": "webops.content-pruning-analyst",
+      "name": "Content Pruning Analyst",
+      "slug": "content-pruning-analyst",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/content-pruning-analyst",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fcontent-pruning-analyst"
+    },
+    {
+      "id": "webops.site-qa-operator",
+      "name": "Site QA Operator",
+      "slug": "site-qa-operator",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/site-qa-operator",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fsite-qa-operator"
+    },
+    {
+      "id": "webops.performance-analyst",
+      "name": "Performance Analyst",
+      "slug": "performance-analyst",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/performance-analyst",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fperformance-analyst"
+    },
+    {
+      "id": "webops.accessibility-auditor",
+      "name": "Accessibility Auditor",
+      "slug": "accessibility-auditor",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/accessibility-auditor",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Faccessibility-auditor"
+    },
+    {
+      "id": "webops.schema-auditor",
+      "name": "Schema Auditor",
+      "slug": "schema-auditor",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/schema-auditor",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fschema-auditor"
+    },
+    {
+      "id": "webops.link-health-auditor",
+      "name": "Link Health Auditor",
+      "slug": "link-health-auditor",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/link-health-auditor",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Flink-health-auditor"
+    },
+    {
+      "id": "webops.metadata-auditor",
+      "name": "Metadata Auditor",
+      "slug": "metadata-auditor",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/metadata-auditor",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fmetadata-auditor"
+    },
+    {
+      "id": "webops.search-submission-operator",
+      "name": "Search Submission Operator",
+      "slug": "search-submission-operator",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/search-submission-operator",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fsearch-submission-operator"
+    },
+    {
+      "id": "webops.analytics-analyst",
+      "name": "Analytics Analyst",
+      "slug": "analytics-analyst",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/analytics-analyst",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fanalytics-analyst"
+    },
+    {
+      "id": "webops.information-architecture-auditor",
+      "name": "Information Architecture Auditor",
+      "slug": "information-architecture-auditor",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/information-architecture-auditor",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Finformation-architecture-auditor"
+    },
+    {
+      "id": "webops.distribution-operator",
+      "name": "Distribution Operator",
+      "slug": "distribution-operator",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/distribution-operator",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fdistribution-operator"
+    },
+    {
+      "id": "webops.search-web-standards-watch",
+      "name": "Search & Web Standards Watch",
+      "slug": "search-web-standards-watch",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/search-web-standards-watch",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fsearch-web-standards-watch"
+    },
+    {
+      "id": "webops.webops-reporter",
+      "name": "WebOps Reporter",
+      "slug": "webops-reporter",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/webops-reporter",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fwebops-reporter"
+    },
+    {
+      "id": "publishing-house.publisher",
+      "name": "Publisher",
+      "slug": "publisher",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/publisher",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fpublisher"
+    },
+    {
+      "id": "publishing-house.editor-in-chief",
+      "name": "Editor-in-Chief",
+      "slug": "editor-in-chief",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/editor-in-chief",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Feditor-in-chief"
+    },
+    {
+      "id": "publishing-house.managing-editor",
+      "name": "Managing Editor",
+      "slug": "managing-editor",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/managing-editor",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fmanaging-editor"
+    },
+    {
+      "id": "publishing-house.editorial-strategy-director",
+      "name": "Editorial Strategy Director",
+      "slug": "editorial-strategy-director",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/editorial-strategy-director",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Feditorial-strategy-director"
+    },
+    {
+      "id": "publishing-house.brand-strategy-director",
+      "name": "Brand Strategy Director",
+      "slug": "brand-strategy-director",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/brand-strategy-director",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fbrand-strategy-director"
+    },
+    {
+      "id": "publishing-house.director-of-editorial-intelligence",
+      "name": "Director of Editorial Intelligence",
+      "slug": "director-of-editorial-intelligence",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/director-of-editorial-intelligence",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fdirector-of-editorial-intelligence"
+    },
+    {
+      "id": "publishing-house.creative-director",
+      "name": "Creative Director",
+      "slug": "creative-director",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/creative-director",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fcreative-director"
+    },
+    {
+      "id": "publishing-house.commissioning-editor",
+      "name": "Commissioning Editor",
+      "slug": "commissioning-editor",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/commissioning-editor",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fcommissioning-editor"
+    },
+    {
+      "id": "publishing-house.features-writer",
+      "name": "Features Writer",
+      "slug": "features-writer",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/features-writer",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Ffeatures-writer"
+    },
+    {
+      "id": "publishing-house.technical-editor-writer",
+      "name": "Technical Editor & Writer",
+      "slug": "technical-editor-writer",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/technical-editor-writer",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Ftechnical-editor-writer"
+    },
+    {
+      "id": "publishing-house.campaign-copywriter",
+      "name": "Campaign Copywriter",
+      "slug": "campaign-copywriter",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/campaign-copywriter",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fcampaign-copywriter"
+    },
+    {
+      "id": "publishing-house.art-director",
+      "name": "Art Director",
+      "slug": "art-director",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/art-director",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fart-director"
+    },
+    {
+      "id": "publishing-house.developmental-editor",
+      "name": "Developmental Editor",
+      "slug": "developmental-editor",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/developmental-editor",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fdevelopmental-editor"
+    },
+    {
+      "id": "publishing-house.copy-chief",
+      "name": "Copy Chief",
+      "slug": "copy-chief",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/copy-chief",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fcopy-chief"
+    },
+    {
+      "id": "publishing-house.standards-evidence-editor",
+      "name": "Standards & Evidence Editor",
+      "slug": "standards-evidence-editor",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/standards-evidence-editor",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fstandards-evidence-editor"
+    },
+    {
+      "id": "publishing-house.franchise-adaptation-editor",
+      "name": "Franchise & Adaptation Editor",
+      "slug": "franchise-adaptation-editor",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/franchise-adaptation-editor",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Ffranchise-adaptation-editor"
+    },
+    {
+      "id": "publishing-house.audience-development-director",
+      "name": "Audience Development Director",
+      "slug": "audience-development-director",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/audience-development-director",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Faudience-development-director"
+    },
+    {
+      "id": "publishing-house.production-editor",
+      "name": "Production Editor",
+      "slug": "production-editor",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/production-editor",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fproduction-editor"
+    },
+    {
+      "id": "publishing-house.publishing-operations-director",
+      "name": "Publishing Operations Director",
+      "slug": "publishing-operations-director",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/publishing-operations-director",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fpublishing-operations-director"
+    },
+    {
+      "id": "publishing-house.newsletter-editor",
+      "name": "Newsletter Editor",
+      "slug": "newsletter-editor",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/newsletter-editor",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fnewsletter-editor"
+    },
+    {
+      "id": "publishing-house.social-community-editor",
+      "name": "Social & Community Editor",
+      "slug": "social-community-editor",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/social-community-editor",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fsocial-community-editor"
+    },
+    {
+      "id": "publishing-house.case-study-editor",
+      "name": "Case Study Editor",
+      "slug": "case-study-editor",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/case-study-editor",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fcase-study-editor"
+    },
+    {
+      "id": "publishing-house.video-audio-producer",
+      "name": "Video & Audio Producer",
+      "slug": "video-audio-producer",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/video-audio-producer",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fvideo-audio-producer"
+    },
+    {
+      "id": "videoops.producer",
+      "name": "VideoOps Producer",
+      "slug": "videoops-producer",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/videoops-producer",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fvideoops-producer"
+    },
+    {
+      "id": "videoops.creative-director",
+      "name": "Video Creative Director",
+      "slug": "videoops-creative-director",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/videoops-creative-director",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fvideoops-creative-director"
+    },
+    {
+      "id": "videoops.asset-scout",
+      "name": "Video Asset Scout",
+      "slug": "videoops-asset-scout",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/videoops-asset-scout",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fvideoops-asset-scout"
+    },
+    {
+      "id": "videoops.media-generator",
+      "name": "Video Media Generator",
+      "slug": "videoops-media-generator",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/videoops-media-generator",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fvideoops-media-generator"
+    },
+    {
+      "id": "videoops.hyperframes-editor",
+      "name": "Video HyperFrames Editor",
+      "slug": "videoops-hyperframes-editor",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/videoops-hyperframes-editor",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fvideoops-hyperframes-editor"
+    },
+    {
+      "id": "videoops.video-critic",
+      "name": "Video Critic",
+      "slug": "videoops-video-critic",
+      "source": "https://github.com/kujolang/slack-agent-templates/tree/main/agents/videoops-video-critic",
+      "deploy": "https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fkujolang%2Fslack-agent-templates%2Ftree%2Fmain%2Fagents%2Fvideoops-video-critic"
+    }
+  ]
+}

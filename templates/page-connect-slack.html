@@ -1,7 +1,9 @@
-<main class="site-shell slack-setup-page" id="main-content">
+<main class="site-shell slack-setup-page" id="main-content" data-slack-setup>
 	<article class="agent-body kujo-content">
 		<h1>{{title}}</h1>
+		<p><a class="sk-button" data-slack-deploy hidden>Deploy to Cloudflare</a></p>
+		<p data-slack-status role="status"></p>
 		{{body}}
-		<p><a href="/agents/">Browse agents</a></p>
+		<p><a href="/agents/">Browse agents</a> · <a href="https://github.com/kujolang/slack-agent-templates">View all Slack templates</a></p>
 	</article>
 </main>

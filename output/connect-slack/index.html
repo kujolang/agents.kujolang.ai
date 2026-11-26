@@ -4,14 +4,14 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Connect a Kujo agent to Slack | Kujo Agents</title>
-	<meta name="description" content="Connect a Kujo agent to your Slack workspace.">
+	<meta name="description" content="Deploy a Kujo Slack bot with its catalog portrait to your Cloudflare account.">
 	<meta name="author" content="Robert DeVore">
 
 <link rel="canonical" href="https://agents.kujolang.ai/connect-slack/">
 	<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
 
 	<meta property="og:title" content="Connect a Kujo agent to Slack">
-	<meta property="og:description" content="Connect a Kujo agent to your Slack workspace.">
+	<meta property="og:description" content="Deploy a Kujo Slack bot with its catalog portrait to your Cloudflare account.">
 	<meta property="og:url" content="https://agents.kujolang.ai/connect-slack/">
 	<meta property="og:type" content="website">
 	<meta property="og:site_name" content="Kujo Agents">
@@ -25,12 +25,12 @@
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@kujolang">
 	<meta name="twitter:title" content="Connect a Kujo agent to Slack">
-	<meta name="twitter:description" content="Connect a Kujo agent to your Slack workspace.">
+	<meta name="twitter:description" content="Deploy a Kujo Slack bot with its catalog portrait to your Cloudflare account.">
 <meta name="twitter:image" content="https://agents.kujolang.ai/assets/images/social/connect-slack.jpg">
 	<meta name="twitter:image:alt" content="Connect a Kujo agent to Slack social preview">
 	<link rel="stylesheet" href="/assets/sitekit/sitekit.css?v=1.0.0">
 	<link rel="stylesheet" href="/assets/css/site.css?v=20260901-1">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","headline":"Connect a Kujo agent to Slack","name":"Connect a Kujo agent to Slack","description":"Connect a Kujo agent to your Slack workspace.","url":"https://agents.kujolang.ai/connect-slack/","image":"https://agents.kujolang.ai/assets/images/social/connect-slack.jpg","publisher":{"@type":"Organization","name":"Kujo","url":"https://kujolang.ai"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","headline":"Connect a Kujo agent to Slack","name":"Connect a Kujo agent to Slack","description":"Deploy a Kujo Slack bot with its catalog portrait to your Cloudflare account.","url":"https://agents.kujolang.ai/connect-slack/","image":"https://agents.kujolang.ai/assets/images/social/connect-slack.jpg","publisher":{"@type":"Organization","name":"Kujo","url":"https://kujolang.ai"}}</script>
 </head>
 <body>
 	<a class="sk-skip-link" href="#main-content">Skip to main content</a>
@@ -89,17 +89,20 @@
 		</aside>
 	</div>
 
-	<main class="site-shell slack-setup-page" id="main-content">
+	<main class="site-shell slack-setup-page" id="main-content" data-slack-setup>
 	<article class="agent-body kujo-content">
 		<h1>Connect a Kujo agent to Slack</h1>
-		<p>Slack installation is in private testing. General Commander and VideoOps Producer have completed a live Slack handoff with their own names and catalog portraits.</p>
-<h2>How setup will work</h2>
-<p>1. Pick an agent and choose Slack on its profile.</p>
-<p>2. Approve the app in Slack.</p>
-<p>3. Open your channel and mention the agent to start. Slack may ask you to add the bot to that channel first.</p>
-<h2>How models will work</h2>
-<p>The proposed default is to use the workspace’s configured model without asking each installer to pick one. A workspace administrator can configure a supported model account or connect a compatible local runtime. Agents can share that workspace setting or use a different model when their role calls for it.</p>
-		<p><a href="/agents/">Browse agents</a></p>
+		<p><a class="sk-button" data-slack-deploy hidden>Deploy to Cloudflare</a></p>
+		<p data-slack-status role="status"></p>
+		<p>Deploy the agent to your Cloudflare account, give it a name, and connect it to your Slack workspace. The bot gets its catalog portrait automatically.</p>
+<h2>Set up your bot</h2>
+<p>1. Choose <strong>Deploy to Cloudflare</strong>. Sign in to Cloudflare and connect your Git provider. Use the setup key instructions to set <code>KUJO_SETUP_KEY</code> and keep it somewhere private.</p>
+<p>2. Open your new Worker and follow its guided setup. Choose your bot’s name and use a temporary Slack app configuration token to create it. Slack may require workspace admin permission.</p>
+<p>3. Verify the event URL in Slack, then approve the bot’s permissions. Add it to a channel and mention it to get a threaded reply.</p>
+<h2>What the Slack bot can do</h2>
+<p>The bot can help you plan, draft, and review in Slack. It uses Google Gemma 4 through Workers AI. It replies to the person who installed it in one channel. Tool execution and access to other conversations are outside this release.</p>
+<p>Your Cloudflare account hosts the bot and supplies the model. Usage counts against your Cloudflare plan’s allowances. <a href="https://developers.cloudflare.com/workers-ai/platform/pricing/">See Workers AI pricing</a>.</p>
+		<p><a href="/agents/">Browse agents</a> · <a href="https://github.com/kujolang/slack-agent-templates">View all Slack templates</a></p>
 	</article>
 </main>
 

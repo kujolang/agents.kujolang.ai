@@ -122,7 +122,7 @@ def compatibility(source_root: Path, source: str) -> dict[str, list[dict]]:
 DESTINATION_ORDER = ("slack", "board", "teams", "paperclip", "matrix", "mcp", "local")
 
 
-def connection_options(entries: list[dict]) -> list[dict]:
+def connection_options(entries: list[dict], slack_template: dict | None = None) -> list[dict]:
     options = []
     for platform in DESTINATION_ORDER:
         matches = [row for row in entries if row["platform"] == platform]
@@ -143,6 +143,8 @@ def connection_options(entries: list[dict]) -> list[dict]:
                 if path == "/connect-slack/":
                     path += "?" + urlencode({"agent": chosen["agent_id"]})
                 option["url"] = path
+        if platform == "slack" and slack_template:
+            option.update(status="deployable", url="/connect-slack/?" + urlencode({"agent": slack_template["id"]}))
         options.append(option)
     return options
 
@@ -161,6 +163,15 @@ def render_set(source_root: Path, set_id: str) -> dict[str, str]:
         raise ValueError(f"{set_id} order references missing contracts: {sorted(missing)}")
 
     compatibility_by_slug = compatibility(source_root, config["source"])
+    index_path = SITE_ROOT / "assets/data/slack-templates.json"
+    templates = {}
+    if index_path.is_file():
+        index = json.loads(index_path.read_text(encoding="utf-8"))
+        if index.get("schema") != "kujo.slack.templates/v1":
+            raise ValueError("unsupported Slack template index")
+        templates = {entry["slug"]: entry for entry in index["templates"]}
+        if len(templates) != len(index["templates"]):
+            raise ValueError("duplicate Slack template slug")
     generated = {}
     for position, slug in enumerate(order, 1):
         contract = contracts[slug]
@@ -176,13 +187,23 @@ def render_set(source_root: Path, set_id: str) -> dict[str, str]:
         portrait = f"content/media/agents/{public_slug}.webp"
         featured = portrait if (SITE_ROOT / portrait).is_file() else "assets/images/kujo-logomark.svg"
         source_url = f"https://github.com/kujolang/kujo-agents/blob/main/{config['source']}/{slug}/AGENT.md"
+        entries = compatibility_by_slug.get(slug, [])
+        slack_template = templates.get(public_slug)
+        if slack_template and (slack_template["name"].casefold() != title.casefold() or not any(
+            entry["platform"] == "slack" and entry["agent_id"] == slack_template["id"]
+            for entry in entries
+        )):
+            raise ValueError(f"Slack template does not match canonical agent: {public_slug}")
+        options = connection_options(entries, slack_template)
+        slack = next(option for option in options if option["name"] == "Slack")
         fields = {
             "title": title, "custom_url": public_slug, "description": purpose, "excerpt": purpose,
             "seo_title": f"{title} | Kujo {config['category']}", "seo_description": purpose,
             "keywords": f"{config['keywords']}, {title}", "featured_image": featured,
             "categories": [config["category"]], "tags": [field(body, config["tag_field"])],
             "order": position,
-             "connection_options": json.dumps(connection_options(compatibility_by_slug.get(slug, []))),
+             "connection_options": json.dumps(options),
+             "slack_setup_url": slack.get("url", "/connect-slack/"),
         }
         frontmatter = ["---", *(f"{key}: {json.dumps(value)}" for key, value in fields.items()),
                        f"last_updated: {updated_date(source_root, contract)}",

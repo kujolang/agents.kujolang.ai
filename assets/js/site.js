@@ -21,17 +21,19 @@ function enhanceAgentConnections() {
 	const update = () => {
 		const platform = platforms[Number(select.value)];
 		const ready = platform.status === "qualified";
+		const deployable = platform.status === "deployable";
 		action.hidden = !platform.url;
 		evidence.hidden = !platform.evidence;
 		if (platform.url) {
 			action.setAttribute("href", platform.url);
-			action.textContent = ready ? `Connect to ${platform.name}` : `View ${platform.name} setup`;
+			action.textContent = (ready || deployable) ? `Connect to ${platform.name}` : `View ${platform.name} setup`;
 		} else {
 			action.removeAttribute("href");
 		}
 		if (platform.evidence) evidence.setAttribute("href", platform.evidence);
 		else evidence.removeAttribute("href");
 		status.textContent = ready ? `Available to connect on ${platform.name}.`
+			: deployable ? "Deploy to your Cloudflare account, then finish setup in Slack."
 			: platform.url ? `${platform.name} setup is in private testing.`
 			: `Public setup for ${platform.name} is not available yet.`;
 	};
@@ -43,6 +45,42 @@ function enhanceAgentConnections() {
 }
 
 enhanceAgentConnections();
+
+async function enhanceSlackSetup() {
+	const setup = document.querySelector("[data-slack-setup]");
+	if (!setup) return;
+	const id = new URLSearchParams(window.location.search).get("agent");
+	if (!id) return;
+	const deploy = setup.querySelector("[data-slack-deploy]");
+	const status = setup.querySelector("[data-slack-status]");
+	try {
+		const response = await fetch("/assets/data/slack-templates.json");
+		if (!response.ok) throw new Error("Template index unavailable");
+		const index = await response.json();
+		if (index.schema !== "kujo.slack.templates/v1") throw new Error("Unsupported template index");
+		const template = index.templates.find((entry) => entry.id === id);
+		if (!template) {
+			status.textContent = "No Slack template matches this link. Choose an agent from the catalog.";
+			return;
+		}
+		const target = new URL(template.deploy);
+		const source = "https://github.com/kujolang/slack-agent-templates/tree/main/agents/" + template.slug;
+		if (target.origin !== "https://deploy.workers.cloudflare.com" ||
+			target.pathname !== "/" || target.searchParams.get("url") !== source ||
+			!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(template.slug)) {
+			throw new Error("Invalid deploy link");
+		}
+		setup.querySelector("h1").textContent = "Connect " + template.name + " to Slack";
+		deploy.href = target.href;
+		deploy.hidden = false;
+		status.textContent = "";
+	} catch {
+		status.textContent = "The selected template could not load. Choose it from the template list below.";
+	}
+}
+
+enhanceSlackSetup();
+
 
 document.querySelectorAll(".agent-set").forEach((agentSet) => {
 	const carousel = agentSet.querySelector(".agent-carousel");
