@@ -3,15 +3,20 @@
 from __future__ import annotations
 import argparse
 import json
+import os
 import re
+import stat
 import subprocess
 import sys
+import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
 
 SITE_ROOT=Path(__file__).resolve().parents[1]
 OUTPUT_ROOT=SITE_ROOT/"content/agents"
 STATE_PATH=OUTPUT_ROOT/".sync-state.json"
+STATE_SCHEMA = "agents-site.sync-state/v1"
+SLUG_PATTERN = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
 CHAIN_ORDER=["general-commander","chief-of-staff","systems-architect","product-strategist","planner","spec-writer","research-analyst","risk-officer","core-developer","tooling-developer","frontend-developer","backend-developer","integration-engineer","code-reviewer","qa-lead","triage-agent","visual-qa-agent","release-verifier","security-reviewer","documentation-writer","context-packager","sitrep-agent","routine-worker","test-runner","lint-runner","issue-hygiene-worker","dependency-scanner","receipt-collector"]
 SETS={
   "chain-of-command":{"source":"chain-of-command","category":"Chain of Command","tag_field":"Rank/layer","keywords":"Kujo agent, chain of command","order":CHAIN_ORDER,"catalog":None,"public_prefix":""},
@@ -32,60 +37,198 @@ def updated_date(repo:Path,contract:Path)->str:
     except (ValueError,OSError,subprocess.SubprocessError): pass
     return datetime.fromtimestamp(contract.stat().st_mtime,timezone.utc).date().isoformat()
 
-def current_category(path:Path)->str:
-    match=re.search(r'^categories:\s*\["([^"]+)"\]',path.read_text(encoding="utf-8"),re.M)
+def current_category(content: str) -> str:
+    if content.startswith("---\n"):
+        content = content.split("\n---\n", 1)[0]
+    match = re.search(r'^categories:\s*\["([^"]+)"\]', content, re.MULTILINE)
     return match.group(1) if match else ""
 
-def source_order(source_root:Path,set_id:str,config:dict)->list[str]:
-    if config["order"]: return config["order"]
-    catalog=source_root/config["source"]/(config["catalog"] or "")
-    if catalog.is_file(): return [x["slug"] for x in json.loads(catalog.read_text())["agents"]]
-    return sorted(x.parent.name for x in (source_root/config["source"]).glob("*/AGENT.md"))
 
-def sync_set(source_root:Path,set_id:str,state:dict)->tuple[int,list[str]]:
-    config=SETS[set_id]; source_dir=source_root/config["source"]
-    if not source_dir.is_dir(): raise ValueError(f"source directory not found: {source_dir}")
-    contracts={x.parent.name:x for x in source_dir.glob("*/AGENT.md")}
-    if not contracts: raise ValueError(f"no agent contracts found in: {source_dir}")
-    order=source_order(source_root,set_id,config); order_by={slug:i for i,slug in enumerate(order,1)}
-    missing=set(order)-set(contracts)
-    if missing: raise ValueError(f"{set_id} order references missing contracts: {sorted(missing)}")
-    generated=[]
-    for slug in order:
-        contract=contracts[slug]; body=contract.read_text(encoding="utf-8").strip(); heading,_,remainder=body.partition("\n")
-        if not heading.startswith("# "): raise ValueError(f"missing title heading: {contract}")
-        title=heading[2:].strip(); purpose=field(body,"Purpose"); tag=field(body,config["tag_field"])
-        public_slug=config["public_prefix"]+slug
-        portrait=f"content/media/agents/{public_slug}.webp"
-        featured=portrait if (SITE_ROOT/portrait).is_file() else "assets/images/kujo-logomark.svg"
-        source_url=f"https://github.com/kujolang/kujo-agents/blob/main/{config['source']}/{slug}/AGENT.md"
-        frontmatter=["---",f"title: {json.dumps(title)}",f"custom_url: {json.dumps(public_slug)}",f"description: {json.dumps(purpose)}",f"excerpt: {json.dumps(purpose)}",f"seo_title: {json.dumps(title+' | Kujo '+config['category'])}",f"seo_description: {json.dumps(purpose)}",f"keywords: {json.dumps(config['keywords']+', '+title)}",f"featured_image: {json.dumps(featured)}",f"categories: [{json.dumps(config['category'])}]",f"tags: [{json.dumps(tag)}]",f"order: {order_by[slug]}",f"last_updated: {updated_date(source_root,contract)}",f"source_url: {json.dumps(source_url)}","---",""]
-        remainder=re.sub(r"(^- (?:Required KUJO skills|WebOps domain skills|Existing Kujo skills):\s*)(.+)$",lambda m:m.group(1)+m.group(2).replace("`",""),remainder,flags=re.MULTILINE)
-        destination=OUTPUT_ROOT/f"{public_slug}.md"; destination.write_text("\n".join(frontmatter)+remainder.lstrip()+"\n",encoding="utf-8"); generated.append(public_slug)
-    previous=set(state.get("sets",{}).get(set_id,[]))
-    if not previous:
-        previous={path.stem for path in OUTPUT_ROOT.glob("*.md") if current_category(path)==config["category"]}
-    for stale in sorted(previous-set(generated)):
-        path=OUTPUT_ROOT/f"{stale}.md"
-        if path.is_file() and current_category(path)==config["category"]: path.unlink()
-    state.setdefault("sets",{})[set_id]=generated
-    return len(generated),generated
+def checked_slugs(values, description: str) -> list[str]:
+    if not isinstance(values, list) or any(
+        not isinstance(slug, str) or not SLUG_PATTERN.fullmatch(slug) for slug in values
+    ):
+        raise ValueError(f"{description} must contain lowercase URL slugs")
+    if len(values) != len(set(values)):
+        raise ValueError(f"{description} contains duplicate slugs")
+    return values
 
-def main()->int:
-    parser=argparse.ArgumentParser(); parser.add_argument("source",type=Path,help="path to kujo-agents root (legacy set directory also accepted)"); parser.add_argument("--set",dest="sets",action="append",choices=sorted(SETS)); args=parser.parse_args()
-    source=args.source.expanduser().resolve(); selected=args.sets or sorted(SETS)
-    if source.name in SETS and (source/"README.md").is_file(): selected=[source.name]; source=source.parent
-    if not any((source/set_id).is_dir() for set_id in SETS): print(f"kujo-agents root not found: {source}",file=sys.stderr); return 2
-    OUTPUT_ROOT.mkdir(parents=True,exist_ok=True); state=load_state(); total=0
+
+def source_order(source_dir: Path, config: dict, contracts: dict) -> list[str]:
+    if config["order"]:
+        return config["order"]
+    catalog = source_dir / config["catalog"]
+    if not catalog.is_file():
+        return checked_slugs(sorted(contracts), str(source_dir))
+    data = json.loads(catalog.read_text(encoding="utf-8"))
+    agents = data.get("agents") if isinstance(data, dict) else None
+    if not agents or not isinstance(agents, list) or any(not isinstance(agent, dict) for agent in agents):
+        raise ValueError(f"invalid agent catalog: {catalog}")
+    return checked_slugs([agent.get("slug") for agent in agents], str(catalog))
+
+
+def render_set(source_root: Path, set_id: str) -> dict[str, str]:
+    config = SETS[set_id]
+    source_dir = source_root / config["source"]
+    if not source_dir.is_dir() or source_dir.is_symlink():
+        raise ValueError(f"source directory not found: {source_dir}")
+    contracts = {path.parent.name: path for path in source_dir.glob("*/AGENT.md")}
+    if not contracts:
+        raise ValueError(f"no agent contracts found in: {source_dir}")
+    order = source_order(source_dir, config, contracts)
+    missing = set(order) - contracts.keys()
+    if missing:
+        raise ValueError(f"{set_id} order references missing contracts: {sorted(missing)}")
+
+    generated = {}
+    for position, slug in enumerate(order, 1):
+        contract = contracts[slug]
+        if contract.is_symlink() or contract.parent.is_symlink():
+            raise ValueError(f"agent contract must be a local file: {contract}")
+        body = contract.read_text(encoding="utf-8").strip()
+        heading, _, remainder = body.partition("\n")
+        if not heading.startswith("# "):
+            raise ValueError(f"missing title heading: {contract}")
+        title = heading[2:].strip()
+        purpose = field(body, "Purpose")
+        public_slug = config["public_prefix"] + slug
+        portrait = f"content/media/agents/{public_slug}.webp"
+        featured = portrait if (SITE_ROOT / portrait).is_file() else "assets/images/kujo-logomark.svg"
+        source_url = f"https://github.com/kujolang/kujo-agents/blob/main/{config['source']}/{slug}/AGENT.md"
+        fields = {
+            "title": title, "custom_url": public_slug, "description": purpose, "excerpt": purpose,
+            "seo_title": f"{title} | Kujo {config['category']}", "seo_description": purpose,
+            "keywords": f"{config['keywords']}, {title}", "featured_image": featured,
+            "categories": [config["category"]], "tags": [field(body, config["tag_field"])],
+            "order": position,
+        }
+        frontmatter = ["---", *(f"{key}: {json.dumps(value)}" for key, value in fields.items()),
+                       f"last_updated: {updated_date(source_root, contract)}",
+                       f"source_url: {json.dumps(source_url)}", "---", ""]
+        remainder = re.sub(r"(^- (?:Required KUJO skills|WebOps domain skills|Existing Kujo skills):\s*)(.+)$",
+                           lambda match: match.group(1) + match.group(2).replace("`", ""),
+                           remainder, flags=re.MULTILINE)
+        generated[public_slug] = "\n".join(frontmatter) + remainder.lstrip() + "\n"
+    return generated
+
+
+def publish(changes: dict[Path, str | None]) -> None:
+    OUTPUT_ROOT.mkdir(parents=True, exist_ok=True)
+    with tempfile.TemporaryDirectory(prefix=".sync-", dir=OUTPUT_ROOT) as directory:
+        scratch = Path(directory)
+        originals = {}
+        staged = {}
+        for position, (path, content) in enumerate(changes.items()):
+            if path.exists():
+                original = scratch / f"original-{position}"
+                os.link(path, original)
+                originals[path] = original
+            if content is not None:
+                updated = scratch / f"staged-{position}"
+                updated.write_text(content, encoding="utf-8")
+                if path in originals:
+                    updated.chmod(stat.S_IMODE(originals[path].stat().st_mode))
+                staged[path] = updated
+
+        applied = []
+        try:
+            for path in changes:
+                if path in staged:
+                    staged[path].replace(path)
+                else:
+                    path.unlink()
+                applied.append(path)
+        except (OSError, KeyboardInterrupt):
+            for path in reversed(applied):
+                if path in originals:
+                    originals[path].replace(path)
+                else:
+                    path.unlink()
+            raise
+
+
+def sync_sets(source_root: Path, selected: list[str], state: dict | None = None) -> dict[str, list[str]]:
+    if OUTPUT_ROOT.is_symlink() or not OUTPUT_ROOT.resolve().is_relative_to(SITE_ROOT.resolve()):
+        raise ValueError(f"unsafe managed content directory: {OUTPUT_ROOT}")
+    if STATE_PATH.is_symlink():
+        raise ValueError(f"unsafe sync state: {STATE_PATH}")
+    if state is None:
+        state = json.loads(STATE_PATH.read_text(encoding="utf-8")) if STATE_PATH.is_file() else {}
+    if not isinstance(state, dict) or state.get("schema", STATE_SCHEMA) != STATE_SCHEMA:
+        raise ValueError("unsupported sync state")
+    previous_sets = state.get("sets", {})
+    if not isinstance(previous_sets, dict) or any(set_id not in SETS for set_id in previous_sets):
+        raise ValueError("invalid agent set ownership in sync state")
+
+    owners = {}
+    for set_id, slugs in previous_sets.items():
+        for slug in checked_slugs(slugs, set_id):
+            if slug in owners:
+                raise ValueError(f"multiple owners for {slug}: {owners[slug]} and {set_id}")
+            owners[slug] = set_id
+
+    changes = {}
+    generated_sets = {}
+    for set_id in dict.fromkeys(selected):
+        generated = render_set(source_root, set_id)
+        category = SETS[set_id]["category"]
+        for slug, projection in generated.items():
+            path = OUTPUT_ROOT / f"{slug}.md"
+            if owners.setdefault(slug, set_id) != set_id:
+                raise ValueError(f"{slug} is already owned by {owners[slug]}")
+            if path.is_symlink() or (path.exists() and not path.is_file()):
+                raise ValueError(f"invalid managed agent file: {path}")
+            existing = path.read_text(encoding="utf-8") if path.exists() else None
+            if existing is not None and current_category(existing) != category:
+                raise ValueError(f"{slug} is outside the {set_id} set")
+            if existing != projection:
+                changes[path] = projection
+
+        previous = previous_sets.get(set_id) or [
+            path.stem for path in OUTPUT_ROOT.glob("*.md")
+            if path.is_file() and not path.is_symlink()
+            and current_category(path.read_text(encoding="utf-8")) == category
+        ]
+        for stale in sorted(set(previous) - generated.keys()):
+            path = OUTPUT_ROOT / f"{stale}.md"
+            if (owners.get(stale, set_id) == set_id and path.is_file() and not path.is_symlink()
+                    and current_category(path.read_text(encoding="utf-8")) == category):
+                changes[path] = None
+        generated_sets[set_id] = list(generated)
+
+    updated_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+    state = {**state, "schema": STATE_SCHEMA, "sets": {**previous_sets, **generated_sets},
+             "updated_at": updated_at}
+    changes[STATE_PATH] = json.dumps(state, indent=2) + "\n"
+    publish(changes)
+    return generated_sets
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("source", type=Path, help="path to kujo-agents root (legacy set directory also accepted)")
+    parser.add_argument("--set", dest="sets", action="append", choices=sorted(SETS))
+    args = parser.parse_args()
+    source = args.source.expanduser().resolve()
+    selected = args.sets or sorted(SETS)
+    if source.name in SETS and (source / "README.md").is_file():
+        selected = [source.name]
+        source = source.parent
+    if not any((source / set_id).is_dir() for set_id in SETS):
+        print(f"kujo-agents root not found: {source}", file=sys.stderr)
+        return 2
+
     try:
-        for set_id in selected:
-            count,_=sync_set(source,set_id,state); total+=count; print(f"Generated {count} {SETS[set_id]['category']} agent entries")
-    except (OSError,ValueError,json.JSONDecodeError) as exc: print(f"sync failed: {exc}",file=sys.stderr); return 1
-    state["schema"]="agents-site.sync-state/v1"; state["updated_at"]=datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00","Z"); STATE_PATH.write_text(json.dumps(state,indent=2)+"\n",encoding="utf-8")
-    print(f"Generated {total} agent entries in {OUTPUT_ROOT}"); return 0
+        results = sync_sets(source, selected)
+    except (OSError, ValueError) as exc:
+        print(f"sync failed: {exc}", file=sys.stderr)
+        return 1
 
-def load_state()->dict:
-    if not STATE_PATH.is_file(): return {"schema":"agents-site.sync-state/v1","sets":{}}
-    value=json.loads(STATE_PATH.read_text()); return value if isinstance(value,dict) else {"schema":"agents-site.sync-state/v1","sets":{}}
+    for set_id, slugs in results.items():
+        print(f"Generated {len(slugs)} {SETS[set_id]['category']} agent entries")
+    print(f"Generated {sum(map(len, results.values()))} agent entries in {OUTPUT_ROOT}")
+    return 0
 
-if __name__=="__main__": raise SystemExit(main())
+
+if __name__ == "__main__":
+    raise SystemExit(main())

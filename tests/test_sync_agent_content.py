@@ -4,6 +4,7 @@ import importlib.util
 import json
 import tempfile
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 
 SCRIPT=Path(__file__).resolve().parents[1]/"scripts/sync-agent-content.py"
@@ -25,7 +26,7 @@ class SyncTests(unittest.TestCase):
             stale_webops=output/"old-webops.md"; stale_webops.write_text('categories: ["WebOps"]\n')
             module.SITE_ROOT=Path(tmp); module.OUTPUT_ROOT=output; module.STATE_PATH=output/".sync-state.json"
             state={"sets":{"chain-of-command":["general-commander"],"webops":["old-webops"]}}
-            count,slugs=module.sync_set(root,"webops",state)
+            slugs=module.sync_sets(root,["webops"],state)["webops"]; count=len(slugs)
             self.assertEqual(1,count); self.assertEqual(["site-qa-operator"],slugs); self.assertTrue(old_chain.is_file()); self.assertFalse(stale_webops.exists()); self.assertTrue((output/"site-qa-operator.md").is_file())
 
     def test_publishing_house_uses_catalog_order_and_desk_category(self):
@@ -36,7 +37,7 @@ class SyncTests(unittest.TestCase):
                 (folder/"AGENT.md").write_text(contract(name,"Desk",desk,"A meaningful source-grounded purpose."))
             (root/"publishing-house/publishing-house-catalog.json").write_text(json.dumps({"agents":[{"slug":"features-writer"},{"slug":"publisher"}]}))
             module.SITE_ROOT=site; module.OUTPUT_ROOT=output; module.STATE_PATH=output/".sync-state.json"
-            count,slugs=module.sync_set(root,"publishing-house",{"sets":{}})
+            slugs=module.sync_sets(root,["publishing-house"],{"sets":{}})["publishing-house"]; count=len(slugs)
             self.assertEqual(2,count); self.assertEqual(["features-writer","publisher"],slugs)
             generated=(output/"features-writer.md").read_text()
             self.assertIn('categories: ["Publishing House"]',generated)
@@ -53,7 +54,7 @@ class SyncTests(unittest.TestCase):
             portrait=site/"content/media/agents/site-qa-operator.webp"; portrait.parent.mkdir(parents=True); portrait.write_bytes(b"portrait")
             output.mkdir(parents=True)
             module.SITE_ROOT=site; module.OUTPUT_ROOT=output; module.STATE_PATH=output/".sync-state.json"
-            module.sync_set(root,"webops",{"sets":{}})
+            module.sync_sets(root,["webops"],{"sets":{}})
             generated=(output/"site-qa-operator.md").read_text()
             self.assertIn('featured_image: "content/media/agents/site-qa-operator.webp"',generated)
 
@@ -65,11 +66,89 @@ class SyncTests(unittest.TestCase):
             (root/"videoops/videoops-catalog.json").write_text(json.dumps({"agents":[{"slug":"creative-director"}]}))
             existing=output/"creative-director.md"; existing.write_text('categories: ["Publishing House"]\n')
             module.SITE_ROOT=site; module.OUTPUT_ROOT=output; module.STATE_PATH=output/".sync-state.json"
-            count,slugs=module.sync_set(root,"videoops",{"sets":{}})
+            slugs=module.sync_sets(root,["videoops"],{"sets":{}})["videoops"]; count=len(slugs)
             self.assertEqual(1,count); self.assertEqual(["videoops-creative-director"],slugs)
             self.assertTrue(existing.is_file())
             generated=(output/"videoops-creative-director.md").read_text()
             self.assertIn('custom_url: "videoops-creative-director"',generated)
             self.assertIn('/videoops/creative-director/AGENT.md',generated)
+
+class PublicationTests(unittest.TestCase):
+    def setUp(self):
+        temp = tempfile.TemporaryDirectory()
+        self.addCleanup(temp.cleanup)
+        self.site = Path(temp.name)
+        self.source = self.site / "kujo-agents"
+        self.output = self.site / "content/agents"
+        self.output.mkdir(parents=True)
+        module.SITE_ROOT = self.site
+        module.OUTPUT_ROOT = self.output
+        module.STATE_PATH = self.output / ".sync-state.json"
+        self.state = module.STATE_PATH
+
+    def write_webops_agent(self, slug):
+        agent = self.source / "webops" / slug
+        agent.mkdir(parents=True)
+        (agent / "AGENT.md").write_text(contract(slug, "Category", "Quality", "A purpose."))
+
+    def test_refuses_to_overwrite_another_sets_slug(self):
+        self.write_webops_agent("publisher")
+        existing = self.output / "publisher.md"
+        original = 'categories: ["Publishing House"]\n'
+        existing.write_text(original)
+        self.state.write_text(json.dumps({"sets": {"publishing-house": ["publisher"]}}))
+        before = self.state.read_bytes()
+        with self.assertRaisesRegex(ValueError, "already owned by publishing-house"):
+            module.sync_sets(self.source, ["webops"])
+        self.assertEqual(existing.read_text(), original)
+        self.assertEqual(self.state.read_bytes(), before)
+
+    def test_invalid_later_set_leaves_all_sets_unmodified(self):
+        self.write_webops_agent("site-qa-operator")
+        with self.assertRaisesRegex(ValueError, "source directory not found"):
+            module.sync_sets(self.source, ["webops", "publishing-house"])
+        self.assertEqual(list(self.output.iterdir()), [])
+
+    def test_rejects_invalid_slugs_and_duplicate_catalog_entries(self):
+        self.write_webops_agent("site-qa-operator")
+        with self.assertRaisesRegex(ValueError, "lowercase URL slugs"):
+            module.sync_sets(self.source, ["webops"], {"sets": {"webops": ["bad/slug"]}})
+        catalog = self.source / "webops/webops-catalog.json"
+        catalog.write_text(json.dumps({"agents": [{"slug": "site-qa-operator"}] * 2}))
+        with self.assertRaisesRegex(ValueError, "duplicate slugs"):
+            module.sync_sets(self.source, ["webops"])
+        self.assertEqual(list(self.output.iterdir()), [])
+
+    def test_failed_state_publish_restores_updated_and_removed_files(self):
+        self.write_webops_agent("site-qa-operator")
+        original = 'categories: ["WebOps"]\nOld profile.\n'
+        for slug in ("site-qa-operator", "old-agent"):
+            (self.output / f"{slug}.md").write_text(original)
+        self.state.write_text(json.dumps({"sets": {"webops": ["site-qa-operator", "old-agent"]}}))
+        before = self.state.read_bytes()
+        replace = Path.replace
+
+        def fail_state_publish(source, target):
+            if target == self.state:
+                raise OSError("fixture state write failure")
+            return replace(source, target)
+
+        with patch.object(Path, "replace", fail_state_publish):
+            with self.assertRaisesRegex(OSError, "fixture state write failure"):
+                module.sync_sets(self.source, ["webops"])
+        self.assertEqual(self.state.read_bytes(), before)
+        self.assertEqual((self.output / "site-qa-operator.md").read_text(), original)
+        self.assertEqual((self.output / "old-agent.md").read_text(), original)
+        self.assertEqual({path.name for path in self.output.iterdir()},
+                         {self.state.name, "site-qa-operator.md", "old-agent.md"})
+
+    def test_preserves_the_file_when_its_projection_is_identical(self):
+        self.write_webops_agent("site-qa-operator")
+        module.sync_sets(self.source, ["webops"])
+        path = self.output / "site-qa-operator.md"
+        original = path.stat().st_ino
+        module.sync_sets(self.source, ["webops"])
+        self.assertEqual(path.stat().st_ino, original)
+
 
 if __name__=="__main__": unittest.main(verbosity=2)
